@@ -62,7 +62,7 @@
   }
   function markup(items,printing) {
     if(!items.length)return printing?'':'<p class="highlight-empty">No verified highlights researched for this matchup yet. Your notes remain available below.</p>';
-    return '<div class="'+(printing?'print-highlights':'note-highlights')+'"><strong>RESEARCHED HIGHLIGHTS</strong>'+(!printing?'<p>Already prepared for you · included in Print packet · dated research, not live updates.</p>':'')+'<ul>'+items.map(function(f){return '<li>'+esc(f.text)+' <a href="'+esc(/^https:\/\//.test(f.url || '')?f.url:'#')+'" target="_blank" rel="noreferrer">'+esc(f.label)+' ↗</a><small>'+esc(f.date)+'</small></li>';}).join('')+'</ul></div>';
+    return '<div class="'+(printing?'print-highlights':'note-highlights')+'"><strong>RESEARCHED HIGHLIGHTS</strong>'+(!printing?'<p>Prepared for the call · prints automatically · dated research.</p>':'')+'<ul>'+items.map(function(f){var caution=/VERIFY BEFORE AIR|not confirmed here|source totals differ/i.test(f.text);return '<li'+(caution?' class="highlight-caution"':'')+'>'+esc(f.text)+'<div class="highlight-meta"><a href="'+esc(/^https:\/\//.test(f.url || '')?f.url:'#')+'" target="_blank" rel="noreferrer">'+esc(f.label)+' ↗</a><small>'+esc(f.date)+'</small></div></li>';}).join('')+'</ul></div>';
   }
   window.LincolnPrep={facts:facts,markup:markup,render:function(sport,game){var f=facts(sport,game);Object.keys(f).forEach(function(k){document.getElementById(k+'Highlights').innerHTML=markup(f[k],false);});}};
 }());

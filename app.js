@@ -398,18 +398,13 @@
       return;
     }
     ensureGameShape(game);
-    var d = formatDate(game.date);
     var sportName = sportLabels[state.activeSport];
     var context = game.scheduleKind === 'Scrimmage' ? 'Scrimmage' : game.scheduleSourceId && !game.district ? 'School schedule' : game.district ? (state.activeSport === "football" ? "Class 2A-I District 3" : "Conference game") : "Non-district";
+    function recordMarkup(record) { var parts=(record || 'Record not entered').split(' · ');var isRecord=/^\d+\s*[–-]\s*\d+/.test(parts[0]);return '<strong class="booth-record'+(isRecord?'':' booth-record-text')+'">'+html(parts[0])+(parts[1]?' <small>'+html(parts.slice(1).join(' · '))+'</small>':'')+'</strong>'; }
     document.getElementById("matchupHero").innerHTML =
-      '<div class="matchup-content">' +
-        '<div class="date-block"><span class="month">' + html(d.month) + '</span><span class="day">' + html(d.day) + '</span><span class="dow">' + html(d.dow) + '</span></div>' +
-        '<div class="matchup-main"><div class="game-kicker"><span>' + html(sportName) + '</span><span class="district-pill">' + html(context) + '</span></div>' +
-          '<div class="versus"><h2>Lincoln Christian</h2><span class="vs">vs</span><h2>' + html(game.opponent) + '</h2></div>' +
-          '<div class="game-meta"><span><strong>' + html(game.time || "TBD") + '</strong> kickoff / tip</span><span><strong>' + html(game.site) + '</strong></span><span>' + html(game.venue || "Venue TBD") + '</span></div></div>' +
-        '<div class="record-cards"><div class="record-card"><span>Lincoln Christian</span><strong>' + html(game.lincolnRecord || "Record —") + '</strong><small>Bulldogs</small></div>' +
-          '<div class="record-card"><span>' + html(game.opponent) + '</span><strong>' + html(game.opponentRecord || "Record —") + '</strong><small>' + html(game.mascot || "Opponent") + '</small></div></div>' +
-      '</div>';
+      '<div class="booth-score-kicker"><div class="game-kicker"><span>' + html(sportName) + '</span><span class="district-pill">' + html(context) + '</span></div><time datetime="'+html(game.date)+'">'+html(formatFullDate(game.date))+'</time></div>' +
+      '<div class="booth-score-main"><div class="booth-team"><img src="lincoln-mark.png" alt=""><div><h2>Lincoln Christian</h2><span>Bulldogs</span></div>'+recordMarkup(game.lincolnRecord)+'</div><span class="booth-vs">VS</span><div class="booth-team"><div><h2>'+html(game.opponent)+'</h2><span>'+html(game.mascot || 'Opponent')+'</span></div>'+recordMarkup(game.opponentRecord)+'</div></div>' +
+      '<div class="booth-game-meta"><span><strong>'+html(displayGameTime(game.time))+'</strong> '+(state.activeSport==='football'?'kickoff':'tip')+'</span><span>'+html(game.site)+'</span><span>'+html(game.venue || 'Venue TBD')+'</span></div>';
     renderChecklist(game);
     document.getElementById("opponentName").textContent = game.opponent + (game.mascot ? " " + game.mascot : "");
     var snapshot = game.snapshot.length ? game.snapshot : ["Add verified opponent record, recent results, style and local reporting notes."];
@@ -424,6 +419,11 @@
     renderStats(game);
     if (window.LincolnPrep) window.LincolnPrep.render(state.activeSport,game);
     renderDeskRoster();
+  }
+  function displayGameTime(value) {
+    var time=String(value || '').match(/^(\d{2}):(\d{2})$/);
+    if(!time || +time[1]>23 || +time[2]>59)return value || 'Time TBD';
+    var hour=+time[1];return (hour%12 || 12)+':'+time[2]+' '+(hour>=12?'PM':'AM')+' CT';
   }
   function renderEmptyDesk() {
     document.getElementById("matchupHero").innerHTML =

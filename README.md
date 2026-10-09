@@ -29,6 +29,8 @@ The website and researched facts are public. The announcer's edits are saved in 
 
 ## Using the desk
 
+The Broadcast Booth screen theme uses charcoal navigation, white panels, crimson accents, a subdued Bulldog watermark, condensed sports headings and a compact matchup scoreboard. Section tabs stay in one scrollable row on small screens. Readable body text, existing saved notes and the original printer-friendly styling are retained; `broadcast-booth.css` is a screen-only presentation layer.
+
 Home is the landing page, with the next upcoming event, a combined football/boys/girls basketball calendar, sport filters, direct game preparation buttons, broadcast-tool shortcuts, sourced title history, and season records calculated only from posted official results. Selected Sheet players appear first in both roster views; search and notes remain available, and source roster ordering is not overwritten.
 
 The public schedule feed is collected from the school's visible schedule rows, including scrimmages and TBD opponents/times. Hidden structured-data times are not substituted for visibly missing times. Checks are scheduled every three hours using `.github/workflows/refresh-schedule.yml`; Home retrieves the latest repository feed every five minutes while visible, on return to the tab, or with Refresh. This is periodic synchronization, not instant scorekeeping. Scheduled GitHub jobs can be delayed or disabled after repository inactivity; timestamps, stale-data labels and source links remain visible. A failed source check retains its previous verified events with a warning. No district ranking is inferred. School events are planning information, not confirmed broadcaster assignments. Opening an event creates its local prep board only when needed and preserves existing prepared games.
@@ -43,4 +45,4 @@ Facts and rosters should be rechecked before each game. Unverified opponents are
 
 ## Files
 
-`index.html`, `styles.css`, `app.js`, `broadcast-data.js`, `school-history.js`, `history-desk.js`, and `live-stats.js` are served directly from the main branch root. No build step, account, downloaded HTML attachment, or backend is required for the announcer.
+`index.html`, `styles.css`, `broadcast-booth.css`, `app.js`, `broadcast-data.js`, `school-history.js`, `history-desk.js`, `prep-highlights.js`, `home-desk.js`, and `live-stats.js` are served directly from the main branch root. No build step, account, downloaded HTML attachment, or backend is required for the announcer.
