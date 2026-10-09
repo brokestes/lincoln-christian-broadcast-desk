@@ -8,7 +8,7 @@
   <title>Lincoln Christian Broadcast Desk</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%237a0019'/%3E%3Cpath d='M16 12v40h34V41H29V12z' fill='%23f0b323'/%3E%3Cpath d='M35 12v25h15V26h-7V12z' fill='white'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css?v=20261009a">
-  <link rel="stylesheet" href="broadcast-booth.css?v=20261009b" media="screen">
+  <link rel="stylesheet" href="broadcast-booth.css?v=20261009c" media="screen">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to workspace</a>
@@ -32,7 +32,7 @@
         <button class="nav-btn" data-view="desk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM8 2v6m8-6v6M4 10h16"/></svg>Game desk</button>
         <button class="nav-btn" data-view="schedule"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5zM8 2v4m8-4v4M8 10h8m-8 4h5"/></svg>Schedule</button>
         <button class="nav-btn" data-view="roster"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-4 2-7 6-7s6 3 6 7M16 7h5m-2-2v4m-2 5h4m-4 4h4"/></svg>Roster book</button>
-        <button class="nav-btn" data-view="research"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M8 8h4m-4 3h4"/></svg>Research shelf</button>
+        <button class="nav-btn" data-view="research"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M8 8h4m-4 3h4"/></svg>LC History</button>
       </nav>
       <div class="sidebar-footer">
         <div class="save-state"><i></i><span id="saveStatus">Saved on this device</span></div>
@@ -45,7 +45,7 @@
         <button class="mobile-menu" id="menuBtn" aria-label="Open navigation" aria-expanded="false">Menu</button>
         <div><p class="eyebrow" id="viewEyebrow">BROADCAST HEADQUARTERS</p><h1 id="viewTitle">Home</h1></div>
         <div class="top-actions">
-          <div class="as-of"><span>Research checked</span><strong>Oct 8, 2026</strong></div>
+          <div class="as-of"><span>Public data check</span><strong id="publicDataDate">Loading…</strong></div>
           <button class="secondary-btn" id="printBtn" aria-label="Print game sheet"><span class="desktop-label">Print game sheet</span><span class="mobile-label" aria-hidden="true">Print</span></button>
           <button class="primary-btn" id="newGameBtn">New game</button>
         </div>
@@ -60,6 +60,7 @@
           <section class="panel home-upcoming"><div class="home-panel-head"><div><span class="eyebrow">ON THE HORIZON</span><h2>Upcoming events</h2></div><button class="small-btn" id="homeRefresh">Refresh</button></div><label class="home-filter"><span>Show</span><select id="homeSportFilter" aria-label="Filter upcoming events by sport"><option value="all">All sports</option><option value="football">Football</option><option value="boys-basketball">Boys basketball</option><option value="girls-basketball">Girls basketball</option></select></label><p class="home-source-status" id="homeFeedStatus" role="status" aria-live="polite">Loading official schedules…</p><div id="homeEvents"></div><button class="text-btn home-more" id="homeMore" hidden>Show all upcoming events</button><p class="home-footnote">Varsity school schedule, not confirmed broadcast assignments. Times are Central. Scrimmages are labeled; missing times stay TBD.</p></section>
           <aside class="home-side"><section class="panel home-shortcuts"><div class="home-panel-head"><div><span class="eyebrow">STRAIGHT TO WORK</span><h2>Broadcast tools</h2></div></div><p id="homeSelectedGame" class="section-hint"></p><div class="home-shortcut-grid"><button data-home-section="prep"><span>01</span><strong>Prep notes</strong><small>Opening &amp; storylines</small></button><button data-home-section="rosters"><span>02</span><strong>Key players</strong><small>Names &amp; backgrounds</small></button><button data-home-section="stats"><span>03</span><strong>Player stats</strong><small>Offense &amp; defense</small></button><button data-home-section="live"><span>04</span><strong>Live game</strong><small>Score &amp; game log</small></button><button data-home-section="history"><span>05</span><strong>Team history</strong><small>Records &amp; traditions</small></button><button data-home-section="print"><span>06</span><strong>Print packet</strong><small>Ready for the booth</small></button></div></section><section class="panel home-legacy"><span class="eyebrow">BULLDOG LEGACY</span><h2>Built on tradition.</h2><div id="homeLegacy"></div><p class="home-footnote">Historical archive checked Oct. 8, 2026. <a href="https://www.iwasatthegame.com/SchoolPage.aspx?school=Lincoln%20Christian" target="_blank" rel="noreferrer">Open source ↗</a></p></section></aside>
         </div>
+        <section class="panel weekly-home-status" id="homePrepStatus" aria-label="Weekly football preparation status"></section>
         <section class="home-pulse"><div class="home-panel-head"><div><span class="eyebrow">AROUND THE PROGRAM</span><h2>Season pulse</h2></div><span class="home-footnote">Posted results · not district rankings</span></div><div id="homeRecords" class="home-record-grid"></div></section>
         <p class="home-footnote home-credits">Independent broadcaster workspace. School marks belong to Lincoln Christian. <a href="https://lcssports.com/sports/2020/6/19/school-colors-mascot" target="_blank" rel="noreferrer">Athletics branding ↗</a> · <a href="https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/" target="_blank" rel="noreferrer">Bulldog artwork source ↗</a></p>
       </section>
@@ -74,6 +75,7 @@
         <div class="desk-subnav" role="tablist" aria-label="Game desk sections">
           <button class="desk-tab active" id="desk-tab-prep" data-desk-tab="prep" role="tab" aria-selected="true" aria-controls="desk-panel-prep">Prep</button>
           <button class="desk-tab" id="desk-tab-rosters" data-desk-tab="rosters" role="tab" aria-selected="false" aria-controls="desk-panel-rosters" tabindex="-1">Rosters</button>
+          <button class="desk-tab" id="desk-tab-opponent-schedule" data-desk-tab="opponent-schedule" role="tab" aria-selected="false" aria-controls="desk-panel-opponent-schedule" tabindex="-1">Opponent schedule</button>
           <button class="desk-tab" id="desk-tab-stats" data-desk-tab="stats" role="tab" aria-selected="false" aria-controls="desk-panel-stats" tabindex="-1">Stats</button>
           <button class="desk-tab" id="desk-tab-live" data-desk-tab="live" role="tab" aria-selected="false" aria-controls="desk-panel-live" tabindex="-1">Live game</button>
           <button class="desk-tab" id="desk-tab-history" data-desk-tab="history" role="tab" aria-selected="false" aria-controls="desk-panel-history" tabindex="-1">History</button>
@@ -117,6 +119,10 @@
           </div>
         </section>
 
+        <section class="desk-section" id="desk-panel-opponent-schedule" data-desk-panel="opponent-schedule" role="tabpanel" aria-labelledby="desk-tab-opponent-schedule" hidden>
+          <section class="panel workbench" id="opponentSchedule" aria-label="Opponent season schedule and results"><p>Loading verified opponent schedule…</p></section>
+        </section>
+
         <section class="desk-section" id="desk-panel-stats" data-desk-panel="stats" role="tabpanel" aria-labelledby="desk-tab-stats" hidden>
           <div class="panel workbench">
             <div class="panel-heading split"><div><span class="eyebrow">THE NUMBERS</span><h2>Game &amp; season stats</h2></div><div class="tab-list" role="tablist" aria-label="Stat sections"><button class="tab-btn active" id="stats-tab-quick" data-tab="stats" role="tab" aria-selected="true" aria-controls="quickStatsPanel">Quick stats</button><button class="tab-btn" id="stats-tab-season" data-tab="season" role="tab" aria-selected="false" aria-controls="seasonStatsPanel" tabindex="-1">Season stats</button></div></div>
@@ -135,7 +141,8 @@
         </section>
 
         <section class="desk-section" id="desk-panel-sources" data-desk-panel="sources" role="tabpanel" aria-labelledby="desk-tab-sources" hidden>
-          <section class="panel source-card"><div class="panel-heading split"><div><span class="eyebrow">SOURCE CHECK</span><h2>Game sources</h2><p class="section-hint">Original reporting, schedules, rosters and history for this matchup.</p></div><button class="secondary-btn" data-open-research>Open research shelf</button></div><div id="gameSources" class="source-list game-source-grid"></div></section>
+          <section class="panel source-audit" id="sourceAudit" aria-label="Automatic data and research status"></section>
+          <section class="panel source-card"><div class="panel-heading split"><div><span class="eyebrow">SOURCE CHECK</span><h2>Game sources</h2><p class="section-hint">Original reporting, schedules, rosters and history for this matchup.</p></div><button class="secondary-btn" data-open-research>Open LC History</button></div><div id="gameSources" class="source-list game-source-grid"></div></section>
         </section>
 
         <section class="desk-section" id="desk-panel-print" data-desk-panel="print" role="tabpanel" aria-labelledby="desk-tab-print" hidden>
@@ -160,7 +167,7 @@
       </section>
 
       <section class="view" id="researchView" data-view-panel="research">
-        <div class="section-intro"><div><span class="eyebrow">VERIFIED CONTEXT</span><h2>Research shelf</h2><p>Primary sources first, local reporting second, aggregators for schedules and scores.</p></div></div>
+        <div class="section-intro"><div><span class="eyebrow">VERIFIED CONTEXT</span><h2>LC History</h2><p>Lincoln traditions and program history, with original sources for further research.</p></div></div>
         <div class="research-grid">
           <section class="panel history-panel">
             <div class="panel-heading"><span class="eyebrow">LINCOLN CHRISTIAN</span><h2>Traditions &amp; program context</h2></div>
@@ -206,7 +213,8 @@
   <script src="history-desk.js?v=20261008e"></script>
   <script src="live-stats.js?v=20261008e"></script>
   <script src="home-desk.js?v=20261008e"></script>
-  <script src="prep-highlights.js?v=20261009b"></script>
-  <script src="app.js?v=20261009b"></script>
+  <script src="weekly-data.js?v=20261009c"></script>
+  <script src="prep-highlights.js?v=20261009c"></script>
+  <script src="app.js?v=20261009c"></script>
 </body>
 </html>

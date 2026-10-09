@@ -135,7 +135,7 @@
   var state = loadState();
   migrateResearch();
   var currentView = "home";
-  var deskSections = ['prep','rosters','stats','live','history','sources','print'];
+  var deskSections = ['prep','rosters','opponent-schedule','stats','live','history','sources','print'];
   var activeDeskSection = deskSections.includes(state.deskSection) ? state.deskSection : 'prep';
   var activeTab = state.statsTab === 'season' ? 'season' : 'stats';
   var saveTimer = null;
@@ -163,7 +163,7 @@
       if (g.id === 'fb-heavener' && g.notes.lincolnStory) g.notes.lincolnStory = g.notes.lincolnStory.replace('Their 42-game winning streak ended against Shiloh Christian on Sept. 11.', 'Their 44-game winning streak ended against Shiloh Christian on Sept. 11.');
       if (g.id === 'fb-heavener' && !g.sources.some(function (s) { return s.name === 'Lincoln streak context'; })) g.sources.push({name:'Lincoln streak context',note:'Official Sept. 25 preview: 44 consecutive wins before Shiloh loss',url:'https://lcssports.com/news/2026/9/25/football-week-4-preview-no-1-lincoln-looks-to-get-back-on-track-in-district-opener-at-home.aspx'});
     });
-    state.printOptions = Object.assign({ offense:true, defense:true, special:false, fullRosters:false, live:true, history:true }, state.printOptions || {});
+    state.printOptions = Object.assign({ offense:true, defense:true, special:false, fullRosters:false, live:true, history:true, opponentSchedule:true }, state.printOptions || {});
     state.researchRevision = "2026-10-08";
   }
   function visibleRoster() {
@@ -186,6 +186,14 @@
     var info = g && state.activeSport === "football" ? research.opponents[g.opponent] : null;
     var message = rosterTeam === "lincoln" ? 'Lincoln: official roster; heights and weights cross-checked with MaxPreps. Missing measurements are labeled “Not listed”.' : !info ? 'Opponent roster has not been verified. Add confirmed players or check the original school roster.' : info.status === 'not-published' ? g.opponent + ': no players published on the checked MaxPreps roster. Manual entries can be added.' : info.status === 'unavailable' ? g.opponent + ': roster source could not be verified. This does not mean no roster exists.' : g.opponent + ': ' + visibleRoster().length + ' published players. ' + info.updated + '. Checked Oct. 8, 2026.';
     if (rosterTeam === 'opponent') message += g && g.opponent === 'Heavener' ? ' Public facts only; no verified public GPA found. A missing fact is not a negative claim about a player.' : ' Player background research has not been completed for this opponent. Only verified public facts should be added.';
+    if (state.activeSport === 'football' && window.LincolnWeekly) {
+      var publicTeam=window.LincolnWeekly.team(rosterTeam==='lincoln'?'Lincoln Christian':g && g.opponent,g);
+      var publicRoster=rosterTeam==='lincoln'?research.officialRosterInfo:publicTeam && publicTeam.roster;
+      if(publicRoster){message=(rosterTeam==='lincoln'?'Lincoln':g.opponent)+': '+(publicRoster.players||[]).length+' players in the published roster. Last successful check: '+window.LincolnWeekly.stamp(publicRoster.checkedAt)+'. Missing measurements are “Not listed”. '+(publicRoster.status==='error'?'Refresh failed; dated data retained. ':publicRoster.status==='not-published'?'No players published; manual entries are preserved. ':'');
+        var absent=visibleRoster().filter(function(p){return p.sourceAbsent;}).length;if(absent)message+=absent+' saved players are not on the latest published roster; kept to preserve your notes. Confirm before air. ';
+        if(rosterTeam==='opponent')message+='Background facts have their own source dates; refreshing a roster does not re-verify those facts.';
+      }
+    }
     var markup = '<p>' + html(message) + (rosterTeam === 'opponent' && info ? ' <a href="' + html(info.source) + '" target="_blank" rel="noreferrer">Open roster ↗</a>' : '') + '</p>';
     document.getElementById("deskRosterStatus").innerHTML = markup;
     document.getElementById("rosterStatus").innerHTML = markup;
@@ -199,12 +207,14 @@
   function renderSeasonStats() {
     var el = document.getElementById('seasonStats');
     if (state.activeSport !== 'football') { el.innerHTML = '<p class="source-note">No verified basketball player stats loaded for this season.</p>'; return; }
-    el.innerHTML = '<div class="stat-source"><strong>Lincoln player stats · 2026 · five games</strong><p>MaxPreps updated Oct. 3, 2026, 7:37 AM GMT. Checked Oct. 8. This is a sourced snapshot, not live season synchronization. Blank source cells remain —.</p><a href="' + research.statsSource + '" target="_blank" rel="noreferrer">Check latest MaxPreps stats ↗</a></div><div class="stat-group-nav"><a href="#offenseStats">Offense</a><a href="#defenseStats">Defense</a><a href="#specialStats">Special teams</a></div>' + ['offense','defense','special'].map(function (group) {
-      return '<section id="' + group + 'Stats"><h3>' + ({offense:'Offense',defense:'Defense',special:'Special teams & scoring'})[group] + '</h3>' + research.stats.filter(function (t) { return statGroup(t.title) === group; }).map(function (t) { return '<details class="stat-details"' + (['Passing','Rushing','Receiving','Tackles','Defensive Statistics'].includes(t.title) ? ' open' : '') + '><summary>' + html(t.title) + ' <small>' + t.rows.length + ' players</small></summary>' + sourceTable(t,false) + '</details>'; }).join('') + '</section>';
+    var published=window.LincolnWeekly && window.LincolnWeekly.statData(),tables=published?published.tables:research.stats;
+    var description=window.LincolnWeekly?window.LincolnWeekly.statDescription(published):'Five-game snapshot · MaxPreps updated Oct. 3, 2026 · checked Oct. 8, 2026';
+    el.innerHTML = '<div class="stat-source"><strong>Lincoln player stats · 2026 · '+(published?published.games:'five')+' games</strong><p>'+html(description)+'. Blank source cells remain —. '+html(published?window.LincolnWeekly.coverageWarning('Lincoln Christian'):'This is an older snapshot; a new source check is pending.')+'</p><a href="' + html(published?published.source:research.statsSource) + '" target="_blank" rel="noreferrer">Check latest MaxPreps stats ↗</a></div><div class="stat-group-nav"><a href="#offenseStats">Offense</a><a href="#defenseStats">Defense</a><a href="#specialStats">Special teams</a></div>' + ['offense','defense','special'].map(function (group) {
+      return '<section id="' + group + 'Stats"><h3>' + ({offense:'Offense',defense:'Defense',special:'Special teams & scoring'})[group] + '</h3>' + tables.filter(function (t) { return statGroup(t.title) === group; }).map(function (t) { return '<details class="stat-details"' + (['Passing','Rushing','Receiving','Tackles','Defensive Statistics'].includes(t.title) ? ' open' : '') + '><summary>' + html(t.title) + ' <small>' + t.rows.length + ' players</small></summary>' + sourceTable(t,false) + '</details>'; }).join('') + '</section>';
     }).join('');
   }
   function renderPrintOptions() {
-    document.getElementById('printOptions').innerHTML = Object.entries({offense:'Offensive stats',defense:'Defensive stats',special:'Special teams stats',fullRosters:'Full rosters (instead of highlights)',live:'Matching live-game stats',history:'Team history & matchup archive'}).map(function (entry) { return '<label class="check-field"><input type="checkbox" data-print-option="' + entry[0] + '"' + (state.printOptions[entry[0]] ? ' checked' : '') + '>' + entry[1] + '</label>'; }).join('');
+    document.getElementById('printOptions').innerHTML = Object.entries({offense:'Offensive stats',defense:'Defensive stats',special:'Special teams stats',fullRosters:'Full rosters (instead of highlights)',live:'Matching live-game stats',history:'Team history & matchup archive',opponentSchedule:'Opponent schedule & results'}).map(function (entry) { return '<label class="check-field"><input type="checkbox" data-print-option="' + entry[0] + '"' + (state.printOptions[entry[0]] ? ' checked' : '') + '>' + entry[1] + '</label>'; }).join('');
   }
 
   var sourcesBySport = {
@@ -326,6 +336,7 @@
     renderDeskTabs();
     window.LincolnLive.configure(state.activeSport === 'football' ? currentGame() : null, saveState);
     if (window.LincolnHome) window.LincolnHome.render();
+    if (window.LincolnWeekly) window.LincolnWeekly.render(state.activeSport,currentGame());
   }
   function renderDeskTabs() {
     document.querySelectorAll('[data-desk-tab]').forEach(function (button) {
@@ -399,17 +410,19 @@
     }
     ensureGameShape(game);
     var sportName = sportLabels[state.activeSport];
+    var publicRecord=function(name){return state.activeSport==='football'&&window.LincolnWeekly?window.LincolnWeekly.pregameRecord(name,game):'';};
+    var lincolnRecord=publicRecord('Lincoln Christian')||game.lincolnRecord,opponentRecord=publicRecord(game.opponent)||game.opponentRecord;
     var context = game.scheduleKind === 'Scrimmage' ? 'Scrimmage' : game.scheduleSourceId && !game.district ? 'School schedule' : game.district ? (state.activeSport === "football" ? "Class 2A-I District 3" : "Conference game") : "Non-district";
     function recordMarkup(record) { var parts=(record || 'Record not entered').split(' · ');var isRecord=/^\d+\s*[–-]\s*\d+/.test(parts[0]);return '<strong class="booth-record'+(isRecord?'':' booth-record-text')+'">'+html(parts[0])+(parts[1]?' <small>'+html(parts.slice(1).join(' · '))+'</small>':'')+'</strong>'; }
     document.getElementById("matchupHero").innerHTML =
       '<div class="booth-score-kicker"><div class="game-kicker"><span>' + html(sportName) + '</span><span class="district-pill">' + html(context) + '</span></div><time datetime="'+html(game.date)+'">'+html(formatFullDate(game.date))+'</time></div>' +
-      '<div class="booth-score-main"><div class="booth-team"><img src="lincoln-mark.png" alt=""><div><h2>Lincoln Christian</h2><span>Bulldogs</span></div>'+recordMarkup(game.lincolnRecord)+'</div><span class="booth-vs">VS</span><div class="booth-team"><div><h2>'+html(game.opponent)+'</h2><span>'+html(game.mascot || 'Opponent')+'</span></div>'+recordMarkup(game.opponentRecord)+'</div></div>' +
+      '<div class="booth-score-main"><div class="booth-team"><img src="lincoln-mark.png" alt=""><div><h2>Lincoln Christian</h2><span>Bulldogs</span></div>'+recordMarkup(lincolnRecord)+'</div><span class="booth-vs">VS</span><div class="booth-team"><div><h2>'+html(game.opponent)+'</h2><span>'+html(game.mascot || 'Opponent')+'</span></div>'+recordMarkup(opponentRecord)+'</div></div>' +
       '<div class="booth-game-meta"><span><strong>'+html(displayGameTime(game.time))+'</strong> '+(state.activeSport==='football'?'kickoff':'tip')+'</span><span>'+html(game.site)+'</span><span>'+html(game.venue || 'Venue TBD')+'</span></div>';
     renderChecklist(game);
     document.getElementById("opponentName").textContent = game.opponent + (game.mascot ? " " + game.mascot : "");
     var snapshot = game.snapshot.length ? game.snapshot : ["Add verified opponent record, recent results, style and local reporting notes."];
     document.getElementById("opponentSnapshot").innerHTML =
-      '<div class="snapshot-record"><div><strong>' + html((game.opponentRecord || "—").split(" · ")[0]) + '</strong><span>Overall</span></div><div><strong>' + html((game.opponentRecord || "—").split(" · ")[1] || "—") + '</strong><span>District</span></div><div><strong>' + html(game.site) + '</strong><span>Site</span></div></div>' +
+      '<div class="snapshot-record"><div><strong>' + html((opponentRecord || "—").split(" · ")[0]) + '</strong><span>Posted pregame finals</span></div><div><strong>' + html((opponentRecord || "—").split(" · ")[1] || "—") + '</strong><span>District</span></div><div><strong>' + html(game.site) + '</strong><span>Site</span></div></div>' +
       '<ul class="snapshot-list">' + snapshot.map(function (item) { return '<li>' + html(item) + '</li>'; }).join("") + '</ul>';
     document.getElementById("gameSources").innerHTML = game.sources.concat(window.LincolnHistory.sources(game)).filter(function (source,index,all) { return all.findIndex(function (s) { return s.url === source.url; }) === index; }).map(sourceLink).join("");
     document.querySelectorAll("[data-note]").forEach(function (field) {
@@ -519,7 +532,7 @@
     currentView = view;
     document.querySelectorAll(".nav-btn").forEach(function (btn) { btn.classList.toggle("active", btn.dataset.view === view); });
     document.querySelectorAll("[data-view-panel]").forEach(function (panel) { panel.classList.toggle("active", panel.dataset.viewPanel === view); });
-    var titles = { home:["BROADCAST HEADQUARTERS","Home"], desk:["GAME PREPARATION","Game Desk"], schedule:["SEASON CONTROL","Schedule"], roster:["NAME COMMAND","Roster Book"], research:["VERIFIED CONTEXT","Research Shelf"] };
+    var titles = { home:["BROADCAST HEADQUARTERS","Home"], desk:["GAME PREPARATION","Game Desk"], schedule:["SEASON CONTROL","Schedule"], roster:["NAME COMMAND","Roster Book"], research:["VERIFIED CONTEXT","LC History"] };
     document.getElementById("viewEyebrow").textContent = titles[view][0];
     document.getElementById("viewTitle").textContent = titles[view][1];
     document.querySelector(".sidebar").classList.remove("open");
@@ -638,11 +651,13 @@
     });
     if (state.activeSport === 'football') ['offense','defense','special'].forEach(function (group) {
       if (!state.printOptions[group]) return;
-      var tables = research.stats.filter(function (t) { return statGroup(t.title) === group && (group !== 'offense' || ['Passing','Rushing','Receiving'].includes(t.title)); });
-      print.innerHTML += '<div class="print-stat-group"><h2>Lincoln · ' + html(group) + ' · 2026 season</h2><p>Five games · MaxPreps updated Oct. 3, 2026 · ' + html(research.statsSource) + '</p>' + tables.map(function (t) { return '<section class="print-section"><h2>' + html(t.title) + '</h2>' + sourceTable(t,true) + '</section>'; }).join('') + '</div>';
+      var published=window.LincolnWeekly && window.LincolnWeekly.statData();
+      var tables = (published?published.tables:research.stats).filter(function (t) { return statGroup(t.title) === group && (group !== 'offense' || ['Passing','Rushing','Receiving'].includes(t.title)); });
+      print.innerHTML += '<div class="print-stat-group"><h2>Lincoln · ' + html(group) + ' · 2026 season</h2><p>' + html(window.LincolnWeekly?window.LincolnWeekly.statDescription(published):'Five games · MaxPreps updated Oct. 3, 2026')+' · ' + html(published?published.source:research.statsSource) + '</p>' + tables.map(function (t) { return '<section class="print-section"><h2>' + html(t.title) + '</h2>' + sourceTable(t,true) + '</section>'; }).join('') + '</div>';
     });
     if (state.printOptions.live) print.innerHTML += window.LincolnLive.printMarkup(game);
     if (state.printOptions.history) print.innerHTML += window.LincolnHistory.printMarkup(state.activeSport,game);
+    if (state.printOptions.opponentSchedule && window.LincolnWeekly) print.innerHTML += window.LincolnWeekly.printMarkup(state.activeSport,game);
     return true;
   }
 
@@ -817,12 +832,28 @@
     });
   }
 
+  function applyPublicFootball(feed) {
+    var fb=state.sports.football;
+    if(feed.officialRoster && feed.officialRoster.players && feed.officialRoster.players.length){
+      research.officialRosterInfo=feed.officialRoster;
+      var measurements=feed.teams['Lincoln Christian'].roster.players||[];
+      var players=feed.officialRoster.players.map(function(p){var copy=Object.assign({},p),m=measurements.find(function(r){return r.name.toLowerCase()===p.name.toLowerCase()&&r.number===p.number;});if(m){if(!copy.height)copy.height=m.height;if(!copy.weight)copy.weight=m.weight;}return copy;});
+      window.LincolnWeekly.mergeRoster(fb.roster,players);
+    }
+    fb.games.forEach(function(g){var team=window.LincolnWeekly.team(g.opponent,g);if(!team)return;
+      if(team.roster.status==='ok')window.LincolnWeekly.mergeRoster(g.opponentRoster||(g.opponentRoster=[]),team.roster.players);
+      var old=research.opponents[g.opponent]||{};research.opponents[g.opponent]=Object.assign({},old,{status:team.roster.status,checkedAt:team.roster.checkedAt,source:team.roster.source,players:g.opponentRoster||old.players||[]});
+    });
+    // Public refreshes never assign game notes, manual comparison stats, or Sheet selections.
+    saveState();
+  }
   var initialHash = window.location ? window.location.hash : '';
   renderAll();
   setView(currentView);
   if (window.location && initialHash) window.history.replaceState(null,'',window.location.pathname + window.location.search + initialHash);
   applyDeskHash();
   registerWebMCP();
+  if(window.LincolnWeekly)window.LincolnWeekly.init({apply:applyPublicFootball,render:renderAll,sport:function(){return state.activeSport;},game:currentGame});
   if (window.LincolnHome) window.LincolnHome.init({
     getState:function(){return state;},
     openSection:function(section,sport){

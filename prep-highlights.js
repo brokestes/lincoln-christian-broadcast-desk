@@ -31,7 +31,9 @@
     var qualifier=school && (school.qualifiers || []).find(function(r){return r[0]==={football:'FOOTBALL','boys-basketball':'BASKETBALL (BOYS)','girls-basketball':'BASKETBALL (GIRLS)'}[sport];});
     if(qualifier)result.opponentStory.push(entry('Latest archived '+(sport==='football'?'playoff':'state-tournament')+' season: '+qualifier[1].split(',')[0]+'. Archive coverage, not a prediction.',school.qualifiersSource,'Checked Oct. 8, 2026','History archive'));
     // This football snapshot is usable only after its five source games, in this season.
-    if(sport==='football' && game.date>='2026-10-09' && game.date<='2026-11-06') {
+    var dynamic=window.LincolnWeekly && window.LincolnWeekly.has(sport,game);
+    if(dynamic){var weekly=window.LincolnWeekly.facts(sport,game);Object.keys(result).forEach(function(k){result[k]=result[k].concat(weekly[k]||[]);});}
+    if(!dynamic && sport==='football' && game.date>='2026-10-09' && game.date<='2026-11-06') {
       var pass=total('Passing','Y/G'),rush=total('Rushing','Y/G'),yards=total('Total Yards','Y/G');
       if(pass && rush && yards)result.keys.push(entry('OFFENSE · '+yards+' yards/game: '+rush+' rushing and '+pass+' passing. Published five-game season totals.',data.statsSource,'Updated Oct. 3, 2026','MaxPreps'));
       result.keys.push(statFact('Passing','Yds',function(t,r){return value(t,r,'Yds')+' passing yards, '+value(t,r,'TD')+' TD, '+value(t,r,'Int')+' INT';}));
