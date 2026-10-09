@@ -152,6 +152,8 @@
       if (!g.notes) g.notes = blankNotes();
       if (g.id === "fb-heavener" && g.notes.reference === undefined) g.notes.reference = research.reference.notes + "\n\nHEAVENER COACHES\n" + research.opponents.Heavener.coaches;
       if (g.id === "fb-heavener" && !g.notes.reference && !state.researchRevision) g.notes.reference = research.reference.notes + "\n\nHEAVENER COACHES\n" + research.opponents.Heavener.coaches;
+      if (g.notes.reference) g.notes.reference = g.notes.reference.replace('Coach Rafe: 10th year, 112–14 career record (as written in the sheet).', 'Jerry Ricke is Lincoln’s head coach (official Lincoln athletics, Aug. 28, 2026). Photo lists 10th year and a 112–14 career record; confirm the record before air.');
+      if (g.id === 'fb-heavener' && !g.sources.some(function (s) { return s.name === 'Lincoln coaching context'; })) g.sources.push({name:'Lincoln coaching context',note:'Jerry Ricke, head coach; Jeff Comfort, defensive coordinator',url:'https://lcssports.com/news/2026/8/28/football-no-1-lincoln-controls-from-start-to-finish-in-win-at-highly-touted-jones-to-open-2026-season.aspx'});
     });
     state.printOptions = Object.assign({ offense:true, defense:true, special:false, fullRosters:false, live:true }, state.printOptions || {});
     state.researchRevision = "2026-10-08";

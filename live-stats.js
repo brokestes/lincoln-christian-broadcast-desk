@@ -32,7 +32,7 @@
       ['Passing','pass',[['Comp','comp'],['Att','att'],['Yds','yds'],['TD','td'],['INT','int']]],
       ['Rushing','rush',[['Att','att'],['Yds','yds'],['TD','td'],['Long','long']]],
       ['Receiving','rcv',[['Rec','no'],['Yds','yds'],['TD','td'],['Long','long']]],
-      ['Defense','defense',[['Solo','tackua'],['Assist','tacka'],['Tackles','tack'],['Sacks','sacks'],['INT','int'],['FF','ff'],['FR','fr'],['PBU','brup']]]
+      ['Defense','defense',[['Solo','tackua'],['Assist','tacka'],['Tackles','tack'],['TFL solo','tflua'],['TFL assist','tfla'],['Sacks','sacks'],['INT','int'],['FF','ff'],['FR','fr'],['PBU','brup']]]
     ];
     return data.teams.map(team=>'<section class="live-team"><h3>'+escape(team.name)+' · live player stats</h3>'+categories.map(([title,key,cols])=>{
       const players = (team.players || []).filter(p=>p.stats && p.stats[key] && Object.values(p.stats[key]).some(v=>Number(v)>0));
