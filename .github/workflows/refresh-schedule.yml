@@ -1,0 +1,31 @@
+name: Refresh official schedules
+on:
+  schedule:
+    - cron: '17 */3 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: official-schedule-refresh
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Collect public school schedules
+        run: node scripts/update-schedule.mjs schedule-feed.json
+      - name: Save the refreshed public feed
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- schedule-feed.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Refresh official Lincoln schedules"
+            git push
+          fi
