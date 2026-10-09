@@ -12,6 +12,7 @@ Single-announcer preparation workspace, hosted as a static GitHub Pages site.
 - Heavener player facts with individual sources: previous basketball participation, football highlights and public-school FFA results. No unverifiable personal social accounts or GPA claims.
 - Editable transcriptions of the announcer's prep photos. Unclear text and source conflicts are labeled for confirmation before air. Original photos are not uploaded.
 - Larger screen text and a printable packet with selectable offense, defense, special teams and full-roster sections.
+- I Was At The Game source links and researched history for Lincoln plus all nine Oklahoma football opponents on the loaded schedule. Includes archived W–L–T and games through 2025, state titles, playoff/state-tournament years, selected school scoring records for boys basketball, and scored past Lincoln matchups where listed. Shiloh Christian is explicitly unavailable in this Oklahoma directory. This is an October 8 research snapshot, not automatic source synchronization.
 - Direct TurboStats polling every 20 seconds while the browser tab is visible. Score, team totals, player offense/defense, scoring summary and recent plays depend on what the scorekeeper records.
 
 ## Live feed safeguards
@@ -28,10 +29,10 @@ The website and researched facts are public. The announcer's edits are saved in 
 
 ## Using the desk
 
-Choose a game in Schedule. In People or Roster book, choose Lincoln or the selected opponent. Mark Sheet checkboxes to include players, then add pronunciation and broadcast notes. Season stats contains the sourced statistical tables. The live feed is below the board on Game Desk; use Pause auto, Refresh now or Use link as needed. Select packet sections and use Preview packet before printing.
+Choose a game in Schedule. In Rosters or Roster book, choose Lincoln or the selected opponent. Mark Sheet checkboxes to include players, then add pronunciation and broadcast notes. Season stats contains the sourced statistical tables. History & broadcast nuggets follows the selected matchup and sport; its buttons append cited facts without replacing existing notes. Team history & matchup archive controls its optional print section. The live feed is below the board on Game Desk; use Pause auto, Refresh now or Use link as needed. Select packet sections and use Preview packet before printing.
 
 Facts and rosters should be rechecked before each game. Unverified opponents are labeled "not verified"; an inaccessible source is not described as an unpublished roster. Film interpretation and on-air judgment remain with the announcer.
 
 ## Files
 
-`index.html`, `styles.css`, `app.js`, `broadcast-data.js`, and `live-stats.js` are served directly from the main branch root. No build step, account, downloaded HTML attachment, or backend is required for the announcer.
+`index.html`, `styles.css`, `app.js`, `broadcast-data.js`, `school-history.js`, `history-desk.js`, and `live-stats.js` are served directly from the main branch root. No build step, account, downloaded HTML attachment, or backend is required for the announcer.

@@ -347,6 +347,23 @@ tr:hover td { background: #fffafb; }
   .dialog-actions { flex-direction: column-reverse; }
 }
 
+.matchup-history { margin-top:1.4rem; padding:1.4rem; }
+.matchup-history .panel-heading { padding:0; }
+.matchup-history .panel-heading a { font-size:.8rem; font-weight:800; color:var(--crimson); }
+.history-caveat { color:var(--muted); font-size:.84rem; max-width:100ch; margin:0 0 1rem; }
+.matchup-history-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+.history-team { background:var(--paper); border:1px solid var(--line); border-top:4px solid var(--crimson); border-radius:9px; padding:1.2rem; min-width:0; }
+.history-team h3,.history-series h3 { margin:0 0 .65rem; font-size:1.1rem; }
+.history-facts { margin:0 0 1rem; padding-left:1.15rem; font-size:.95rem; line-height:1.65; }
+.history-facts li { margin-bottom:.65rem; }
+.history-facts a,.history-series > a { font-size:.8rem; color:var(--crimson); font-weight:800; white-space:normal; }
+.history-details { border-top:1px solid var(--line); padding:.7rem 0; font-size:.85rem; }
+.history-details summary { cursor:pointer; font-weight:700; }
+.history-details p { line-height:1.7; }
+.history-series { margin-top:1rem; padding:1rem 1.2rem; border:1px solid var(--line); border-radius:9px; }
+.history-series p { font-size:.9rem; margin:0 0 .75rem; }
+.history-team .small-btn { margin-top:.6rem; }
+@media (max-width:800px) { .matchup-history-grid { grid-template-columns:1fr; } .matchup-history { padding:1rem; } }
 @media print {
   html { font-size:16px; }
   @page { margin: .35in; size: letter portrait; }
@@ -382,4 +399,13 @@ tr:hover td { background: #fffafb; }
   .print-sheet .live-scoreboard { color:black; background:white; border:1px solid #aaa; }
   .print-sheet .live-scoreboard strong { color:black; }
   .print-lines { height: 115px; background: repeating-linear-gradient(white 0 20px, #ccc 21px); }
+  .history-print-section { break-before:page; }
+  .history-print-section .panel-heading { padding:0; }
+  .history-print-section .panel-heading h2 { color:#7a0019; font-size:16pt; }
+  .history-print-section .panel-heading > a { display:none; }
+  .history-print-section .matchup-history-grid { display:block; }
+  .history-print-section .history-team,.history-print-section .history-series { background:white; border-radius:0; padding:8px; }
+  .history-print-section .history-facts,.history-print-section .history-series p { font-size:11pt; }
+  .history-print-section .history-caveat { font-size:10pt; }
+  .history-print-section a { font-size:9pt; }
 }

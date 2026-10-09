@@ -108,7 +108,7 @@
     "Last game: lost 36–29 to Hugo after a 52–0 loss at Checotah.",
     "A local preseason report described skill-position talent and young offensive and defensive lines."
   ];
-  heavener.notes.lincolnStory = "Lincoln is 4–1 overall and 2–0 in Class 2A-I District 3. The Bulldogs entered 2026 as three-time defending Class 3A champions, then moved to 2A-I. Their 42-game winning streak ended against Shiloh Christian on Sept. 11.";
+  heavener.notes.lincolnStory = "Lincoln is 4–1 overall and 2–0 in Class 2A-I District 3. The Bulldogs entered 2026 as three-time defending Class 3A champions, then moved to 2A-I. Their 44-game winning streak ended against Shiloh Christian on Sept. 11.";
   heavener.notes.opponentStory = "Heavener arrives 1–4 and 0–2 in district play. The Wolves beat Panama 48–7 and most recently lost 36–29 to Hugo. Their first five games produced 99 points scored and 153 allowed.";
   heavener.checklist.sources = true;
   heavener.checklist.roster = true;
@@ -154,8 +154,11 @@
       if (g.id === "fb-heavener" && !g.notes.reference && !state.researchRevision) g.notes.reference = research.reference.notes + "\n\nHEAVENER COACHES\n" + research.opponents.Heavener.coaches;
       if (g.notes.reference) g.notes.reference = g.notes.reference.replace('Coach Rafe: 10th year, 112–14 career record (as written in the sheet).', 'Jerry Ricke is Lincoln’s head coach (official Lincoln athletics, Aug. 28, 2026). Photo lists 10th year and a 112–14 career record; confirm the record before air.');
       if (g.id === 'fb-heavener' && !g.sources.some(function (s) { return s.name === 'Lincoln coaching context'; })) g.sources.push({name:'Lincoln coaching context',note:'Jerry Ricke, head coach; Jeff Comfort, defensive coordinator',url:'https://lcssports.com/news/2026/8/28/football-no-1-lincoln-controls-from-start-to-finish-in-win-at-highly-touted-jones-to-open-2026-season.aspx'});
+      // Correct only the old seeded sentence; preserve all other announcer writing.
+      if (g.id === 'fb-heavener' && g.notes.lincolnStory) g.notes.lincolnStory = g.notes.lincolnStory.replace('Their 42-game winning streak ended against Shiloh Christian on Sept. 11.', 'Their 44-game winning streak ended against Shiloh Christian on Sept. 11.');
+      if (g.id === 'fb-heavener' && !g.sources.some(function (s) { return s.name === 'Lincoln streak context'; })) g.sources.push({name:'Lincoln streak context',note:'Official Sept. 25 preview: 44 consecutive wins before Shiloh loss',url:'https://lcssports.com/news/2026/9/25/football-week-4-preview-no-1-lincoln-looks-to-get-back-on-track-in-district-opener-at-home.aspx'});
     });
-    state.printOptions = Object.assign({ offense:true, defense:true, special:false, fullRosters:false, live:true }, state.printOptions || {});
+    state.printOptions = Object.assign({ offense:true, defense:true, special:false, fullRosters:false, live:true, history:true }, state.printOptions || {});
     state.researchRevision = "2026-10-08";
   }
   function visibleRoster() {
@@ -193,30 +196,34 @@
     }).join('');
   }
   function renderPrintOptions() {
-    document.getElementById('printOptions').innerHTML = Object.entries({offense:'Offensive stats',defense:'Defensive stats',special:'Special teams stats',fullRosters:'Full rosters (instead of highlights)',live:'Matching live-game stats'}).map(function (entry) { return '<label class="check-field"><input type="checkbox" data-print-option="' + entry[0] + '"' + (state.printOptions[entry[0]] ? ' checked' : '') + '>' + entry[1] + '</label>'; }).join('');
+    document.getElementById('printOptions').innerHTML = Object.entries({offense:'Offensive stats',defense:'Defensive stats',special:'Special teams stats',fullRosters:'Full rosters (instead of highlights)',live:'Matching live-game stats',history:'Team history & matchup archive'}).map(function (entry) { return '<label class="check-field"><input type="checkbox" data-print-option="' + entry[0] + '"' + (state.printOptions[entry[0]] ? ' checked' : '') + '>' + entry[1] + '</label>'; }).join('');
   }
 
   var sourcesBySport = {
     football: [
       { label: "Official athletics schedule", url: "https://lcssports.com/sports/football/schedule" },
       { label: "MaxPreps football", url: "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/" },
-      { label: "SKORDLE football", url: "https://skordle.com/Schools/209/Lincoln_Christian_Bulldogs" }
+      { label: "SKORDLE football", url: "https://skordle.com/Schools/209/Lincoln_Christian_Bulldogs" },
+      { label: "I Was At The Game — school history", url: "https://www.iwasatthegame.com/Schools.aspx" }
     ],
     "boys-basketball": [
       { label: "Official boys schedule", url: "https://lcssports.com/sports/boys-basketball/schedule" },
       { label: "MaxPreps boys basketball", url: "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/basketball/" },
-      { label: "SKORDLE", url: "https://skordle.com/" }
+      { label: "SKORDLE", url: "https://skordle.com/" },
+      { label: "I Was At The Game — school history", url: "https://www.iwasatthegame.com/Schools.aspx" }
     ],
     "girls-basketball": [
       { label: "Official girls schedule", url: "https://lcssports.com/sports/womens-basketball/schedule" },
       { label: "MaxPreps girls basketball", url: "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/girls-basketball/" },
-      { label: "SKORDLE", url: "https://skordle.com/" }
+      { label: "SKORDLE", url: "https://skordle.com/" },
+      { label: "I Was At The Game — school history", url: "https://www.iwasatthegame.com/Schools.aspx" }
     ]
   };
   var researchLibrary = [
     { title: "Lincoln Christian Athletics", note: "Primary source for schedules, rosters, facilities, school traditions and program news.", url: "https://lcssports.com/" },
     { title: "MaxPreps", note: "Cross-check scores, opponent records, rosters and past seasons. Confirm late changes elsewhere.", url: "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/" },
     { title: "SKORDLE", note: "Oklahoma schedules, scores and school pages.", url: "https://skordle.com/" },
+    { title: "I Was At The Game", note: "Oklahoma school archives: football records, past matchups, title years, playoff and state-tournament appearances. Researched snapshots for Lincoln and the loaded football opponents appear on Game desk and in the print packet. Check coverage dates; these are not live 2026 player stats.", url: "https://www.iwasatthegame.com/Schools.aspx" },
     { title: "Tulsa World — High School Sports", note: "Tulsa-area reporting, previews and game coverage.", url: "https://tulsaworld.com/sports/high-school/" },
     { title: "VYPE Oklahoma — Tulsa", note: "Local athlete features and regional high-school coverage.", url: "https://vypeok.com/tulsa/" },
     { title: "OSSAA", note: "Official classifications, playoff brackets, rules and state championships.", url: "https://www.ossaa.com/" },
@@ -307,6 +314,7 @@
     renderResearch();
     renderSeasonStats();
     renderPrintOptions();
+    window.LincolnHistory.render(state.activeSport,currentGame());
     window.LincolnLive.configure(state.activeSport === 'football' ? currentGame() : null, saveState);
   }
   function renderSportButtons() {
@@ -343,7 +351,7 @@
     document.getElementById("opponentSnapshot").innerHTML =
       '<div class="snapshot-record"><div><strong>' + html((game.opponentRecord || "—").split(" · ")[0]) + '</strong><span>Overall</span></div><div><strong>' + html((game.opponentRecord || "—").split(" · ")[1] || "—") + '</strong><span>District</span></div><div><strong>' + html(game.site) + '</strong><span>Site</span></div></div>' +
       '<ul class="snapshot-list">' + snapshot.map(function (item) { return '<li>' + html(item) + '</li>'; }).join("") + '</ul>';
-    document.getElementById("gameSources").innerHTML = game.sources.length ? game.sources.map(sourceLink).join("") : '<p class="source-note">Add source links in your notes or open the research shelf.</p>';
+    document.getElementById("gameSources").innerHTML = game.sources.concat(window.LincolnHistory.sources(game)).filter(function (source,index,all) { return all.findIndex(function (s) { return s.url === source.url; }) === index; }).map(sourceLink).join("");
     document.querySelectorAll("[data-note]").forEach(function (field) {
       field.disabled = false;
       field.value = game.notes[field.dataset.note] || "";
@@ -553,7 +561,7 @@
     print.innerHTML += section('Coaches, program streaks & reference notes', notes.reference);
     [ {name:'Lincoln Christian',players:currentSportData().roster}, {name:game.opponent,players:game.opponentRoster || []} ].forEach(function (team) {
       var selected = team.players.filter(function (p) { return state.printOptions.fullRosters || p.spotlight; });
-      print.innerHTML += '<section class="print-section roster-print-section"><h2>' + html(team.name) + ' · ' + (state.printOptions.fullRosters ? 'Full roster' : 'Highlighted roster') + '</h2><table class="print-roster"><thead><tr><th>#</th><th>Player</th><th>Gr.</th><th>Pos.</th><th>Ht. / Wt.</th><th>Notes / sourced background</th></tr></thead><tbody>' + selected.map(function (p) { return '<tr><td>' + html(p.number) + '</td><td>' + html(p.name) + '</td><td>' + html(p.grade) + '</td><td>' + html(p.position || '—') + '</td><td>' + html((p.height || 'Not listed') + ' / ' + (p.weight || 'Not listed')) + '</td><td>' + html(p.note) + playerFacts(p) + '</td></tr>'; }).join('') + '</tbody></table>' + (!selected.length ? '<p>No verified players selected. Check roster availability in People.</p>' : '') + '</section>';
+      print.innerHTML += '<section class="print-section roster-print-section"><h2>' + html(team.name) + ' · ' + (state.printOptions.fullRosters ? 'Full roster' : 'Highlighted roster') + '</h2><table class="print-roster"><thead><tr><th>#</th><th>Player</th><th>Gr.</th><th>Pos.</th><th>Ht. / Wt.</th><th>Notes / sourced background</th></tr></thead><tbody>' + selected.map(function (p) { return '<tr><td>' + html(p.number) + '</td><td>' + html(p.name) + '</td><td>' + html(p.grade) + '</td><td>' + html(p.position || '—') + '</td><td>' + html((p.height || 'Not listed') + ' / ' + (p.weight || 'Not listed')) + '</td><td>' + html(p.note) + playerFacts(p) + '</td></tr>'; }).join('') + '</tbody></table>' + (!selected.length ? '<p>No verified players selected. Check roster availability in Rosters.</p>' : '') + '</section>';
     });
     if (state.activeSport === 'football') ['offense','defense','special'].forEach(function (group) {
       if (!state.printOptions[group]) return;
@@ -561,6 +569,7 @@
       print.innerHTML += '<div class="print-stat-group"><h2>Lincoln · ' + html(group) + ' · 2026 season</h2><p>Five games · MaxPreps updated Oct. 3, 2026 · ' + html(research.statsSource) + '</p>' + tables.map(function (t) { return '<section class="print-section"><h2>' + html(t.title) + '</h2>' + sourceTable(t,true) + '</section>'; }).join('') + '</div>';
     });
     if (state.printOptions.live) print.innerHTML += window.LincolnLive.printMarkup(game);
+    if (state.printOptions.history) print.innerHTML += window.LincolnHistory.printMarkup(state.activeSport,game);
     return true;
   }
 
@@ -569,6 +578,11 @@
     if (!target) return;
     if (target.matches(".sport-btn")) setSport(target.dataset.sport);
     if (target.matches(".nav-btn")) setView(target.dataset.view);
+    if (target.matches('[data-history-note]')) {
+      var added = window.LincolnHistory.addToNotes(state.activeSport,currentGame(),target.dataset.historyNote);
+      if (added) { saveState(); renderDesk(); toast('Sourced facts added; existing notes preserved'); }
+      else toast('These facts are already in your notes, or no verified facts are loaded');
+    }
     if (target.matches('[data-roster-team]')) { rosterTeam = target.dataset.rosterTeam; renderRoster(); renderDeskRoster(); }
     if (target.matches('#previewPrintBtn')) { if (renderPrintSheet()) { document.getElementById('printPreviewContent').innerHTML = document.getElementById('printSheet').innerHTML; document.getElementById('printPreview').showModal(); } }
     if (target.matches('#printPreviewGo')) { document.getElementById('printPreview').close(); if (renderPrintSheet()) window.print(); }
