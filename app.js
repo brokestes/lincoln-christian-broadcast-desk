@@ -2,7 +2,9 @@
   "use strict";
 
   var STORAGE_KEY = "lincoln-broadcast-desk-v1";
-  var SOURCE_DATE = "Oct. 6, 2026";
+  var SOURCE_DATE = "Oct. 8, 2026";
+  var research = window.BROADCAST_DATA;
+  var rosterTeam = "lincoln";
   var sportLabels = {
     football: "Football",
     "boys-basketball": "Boys basketball",
@@ -43,7 +45,7 @@
   });
 
   function blankNotes() {
-    return { opening: "", lincolnStory: "", opponentStory: "", film: "", keys: "", calls: "", liveLog: "", opponentUpdate: "" };
+    return { opening: "", lincolnStory: "", opponentStory: "", film: "", keys: "", calls: "", liveLog: "", opponentUpdate: "", reference: "" };
   }
   function blankChecklist() {
     return { sources: false, roster: false, history: false, film: false, stats: false, opening: false };
@@ -131,9 +133,66 @@
   };
 
   var state = loadState();
+  migrateResearch();
   var currentView = "desk";
   var activeTab = "notes";
   var saveTimer = null;
+
+  // Merge new sourced fields without replacing existing user notes, manual stats or highlights.
+  function migrateResearch() {
+    if (!research) return;
+    var fb = state.sports.football;
+    fb.roster.forEach(function (p) {
+      var m = research.lincolnMeasurements.find(function (r) { return r.name.toLowerCase() === p.name.toLowerCase() && r.number === p.number; });
+      if (m) { if (!p.height) p.height = m.height; if (!p.weight) p.weight = m.weight; }
+    });
+    fb.games.forEach(function (g) {
+      var info = research.opponents[g.opponent];
+      if (!Array.isArray(g.opponentRoster) && info) g.opponentRoster = clone(info.players);
+      if (!g.notes) g.notes = blankNotes();
+      if (g.id === "fb-heavener" && g.notes.reference === undefined) g.notes.reference = research.reference.notes + "\n\nHEAVENER COACHES\n" + research.opponents.Heavener.coaches;
+      if (g.id === "fb-heavener" && !g.notes.reference && !state.researchRevision) g.notes.reference = research.reference.notes + "\n\nHEAVENER COACHES\n" + research.opponents.Heavener.coaches;
+    });
+    state.printOptions = Object.assign({ offense:true, defense:true, special:false, fullRosters:false, live:true }, state.printOptions || {});
+    state.researchRevision = "2026-10-08";
+  }
+  function visibleRoster() {
+    var g = currentGame();
+    if (rosterTeam === "opponent" && g) { if (!Array.isArray(g.opponentRoster)) g.opponentRoster = []; return g.opponentRoster; }
+    return currentSportData().roster;
+  }
+  function findPlayer(id) { return visibleRoster().find(function (p) { return p.id === id; }); }
+  function playerFacts(p) {
+    return (p.facts || []).map(function (f) { return '<div class="player-fact">' + html(f.text) + ' <a target="_blank" rel="noreferrer" href="' + html(/^https:\/\//i.test(f.url) ? f.url : '#') + '">Source · ' + html(f.date) + ' ↗</a></div>'; }).join("");
+  }
+  function renderTeamSwitch() {
+    var g = currentGame();
+    var buttons = '<button class="small-btn' + (rosterTeam === "lincoln" ? ' selected' : '') + '" data-roster-team="lincoln">Lincoln roster</button><button class="small-btn' + (rosterTeam === "opponent" ? ' selected' : '') + '" data-roster-team="opponent"' + (!g ? ' disabled' : '') + '>' + html(g ? g.opponent : 'Opponent') + ' roster</button>';
+    document.getElementById("deskTeamSwitch").innerHTML = buttons;
+    document.getElementById("rosterTeamSwitch").innerHTML = buttons;
+    var info = g && state.activeSport === "football" ? research.opponents[g.opponent] : null;
+    var message = rosterTeam === "lincoln" ? 'Lincoln: official roster; heights and weights cross-checked with MaxPreps. Missing measurements are labeled “Not listed”.' : !info ? 'Opponent roster has not been verified. Add confirmed players or check the original school roster.' : info.status === 'not-published' ? g.opponent + ': no players published on the checked MaxPreps roster. Manual entries can be added.' : info.status === 'unavailable' ? g.opponent + ': roster source could not be verified. This does not mean no roster exists.' : g.opponent + ': ' + visibleRoster().length + ' published players. ' + info.updated + '. Checked Oct. 8, 2026.';
+    if (rosterTeam === 'opponent') message += g && g.opponent === 'Heavener' ? ' Public facts only; no verified public GPA found. A missing fact is not a negative claim about a player.' : ' Player background research has not been completed for this opponent. Only verified public facts should be added.';
+    var markup = '<p>' + html(message) + (rosterTeam === 'opponent' && info ? ' <a href="' + html(info.source) + '" target="_blank" rel="noreferrer">Open roster ↗</a>' : '') + '</p>';
+    document.getElementById("deskRosterStatus").innerHTML = markup;
+    document.getElementById("rosterStatus").innerHTML = markup;
+  }
+  function statGroup(title) { return /Tackles|Sacks|Defensive/.test(title) ? 'defense' : /Kick|Punt|PAT|Points|Touchdowns/.test(title) ? 'special' : 'offense'; }
+  function sourceTable(t, compact) {
+    var indices = t.headers.map(function (_, i) { return i; });
+    if (compact && t.headers.length > 10) indices = indices.filter(function (i) { return !['C/G','Y/G','TD/G','Int/G','Avg','QB Rate','C%','Lng','Blk Pnts','Blk FGs','FR Yds','Int Yds'].includes(t.headers[i]); });
+    return '<div class="table-scroll"><table class="season-table"><thead><tr>' + indices.map(function (i) { return '<th title="' + html(t.titles[i] || t.headers[i]) + '">' + html(t.headers[i] === 'Athlete Name' ? 'Player' : t.headers[i]) + '</th>'; }).join('') + '</tr></thead><tbody>' + t.rows.map(function (r) { return '<tr>' + indices.map(function (i) { return '<td>' + html(r[i] || '—') + '</td>'; }).join('') + '</tr>'; }).join('') + '</tbody>' + (t.total.length === t.headers.length ? '<tfoot><tr>' + indices.map(function (i) { return '<td><strong>' + html(t.total[i] || '—') + '</strong></td>'; }).join('') + '</tr></tfoot>' : '') + '</table></div>';
+  }
+  function renderSeasonStats() {
+    var el = document.getElementById('seasonStats');
+    if (state.activeSport !== 'football') { el.innerHTML = '<p class="source-note">No verified basketball player stats loaded for this season.</p>'; return; }
+    el.innerHTML = '<div class="stat-source"><strong>Lincoln player stats · 2026 · five games</strong><p>MaxPreps updated Oct. 3, 2026, 7:37 AM GMT. Checked Oct. 8. This is a sourced snapshot, not live season synchronization. Blank source cells remain —.</p><a href="' + research.statsSource + '" target="_blank" rel="noreferrer">Check latest MaxPreps stats ↗</a></div><div class="stat-group-nav"><a href="#offenseStats">Offense</a><a href="#defenseStats">Defense</a><a href="#specialStats">Special teams</a></div>' + ['offense','defense','special'].map(function (group) {
+      return '<section id="' + group + 'Stats"><h3>' + ({offense:'Offense',defense:'Defense',special:'Special teams & scoring'})[group] + '</h3>' + research.stats.filter(function (t) { return statGroup(t.title) === group; }).map(function (t) { return '<details class="stat-details"' + (['Passing','Rushing','Receiving','Tackles','Defensive Statistics'].includes(t.title) ? ' open' : '') + '><summary>' + html(t.title) + ' <small>' + t.rows.length + ' players</small></summary>' + sourceTable(t,false) + '</details>'; }).join('') + '</section>';
+    }).join('');
+  }
+  function renderPrintOptions() {
+    document.getElementById('printOptions').innerHTML = Object.entries({offense:'Offensive stats',defense:'Defensive stats',special:'Special teams stats',fullRosters:'Full rosters (instead of highlights)',live:'Matching live-game stats'}).map(function (entry) { return '<label class="check-field"><input type="checkbox" data-print-option="' + entry[0] + '"' + (state.printOptions[entry[0]] ? ' checked' : '') + '>' + entry[1] + '</label>'; }).join('');
+  }
 
   var sourcesBySport = {
     football: [
@@ -188,6 +247,11 @@
       }
     }, 180);
   }
+  // Flush the last keystroke if the page reloads before the short autosave debounce finishes.
+  window.addEventListener('pagehide', function () {
+    clearTimeout(saveTimer);
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (err) {}
+  });
   function html(value) {
     return String(value == null ? "" : value).replace(/[&<>"']/g, function (char) {
       return { "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#039;" }[char];
@@ -217,6 +281,7 @@
     if (!Array.isArray(game.stats)) game.stats = state.activeSport === "football" ? footballStats() : basketballStats();
     if (!Array.isArray(game.sources)) game.sources = [];
     if (!Array.isArray(game.snapshot)) game.snapshot = [];
+    if (!Array.isArray(game.opponentRoster) && state.activeSport === 'football' && research.opponents[game.opponent]) game.opponentRoster = clone(research.opponents[game.opponent].players);
   }
   function prepPercent(game) {
     if (!game) return 0;
@@ -238,6 +303,9 @@
     renderSchedule();
     renderRoster();
     renderResearch();
+    renderSeasonStats();
+    renderPrintOptions();
+    window.LincolnLive.configure(state.activeSport === 'football' ? currentGame() : null, saveState);
   }
   function renderSportButtons() {
     document.querySelectorAll(".sport-btn").forEach(function (btn) {
@@ -319,12 +387,13 @@
   }
   function renderDeskRoster() {
     var query = document.getElementById("deskRosterSearch").value.toLowerCase().trim();
-    var roster = currentSportData().roster.filter(function (p) {
+    renderTeamSwitch();
+    var roster = visibleRoster().filter(function (p) {
       return !query || (p.name + " " + p.number + " " + p.position).toLowerCase().indexOf(query) >= 0;
     });
     document.getElementById("deskRoster").innerHTML = roster.length ? roster.map(function (p) {
       return '<div class="person-row"><input type="checkbox" data-spotlight="' + p.id + '"' + (p.spotlight ? " checked" : "") + ' aria-label="Include ' + html(p.name) + ' on printout">' +
-        '<span class="num">#' + html(p.number) + '</span><div><strong>' + html(p.name) + '</strong><small>' + html([p.grade,p.position].filter(Boolean).join(" · ")) + '</small></div>' +
+        '<span class="num">#' + html(p.number) + '</span><div><strong>' + html(p.name) + '</strong><small>' + html([p.grade,p.position,p.height || 'Ht. not listed',p.weight || 'Wt. not listed'].filter(Boolean).join(" · ")) + '</small>' + (p.referenceHighlight ? '<span class="highlight-tag">Highlighted in prep sheet</span>' : '') + playerFacts(p) + '</div>' +
         '<input type="text" data-roster-note="' + p.id + '" value="' + html(p.note || "") + '" placeholder="Pronunciation / background note" aria-label="Notes for ' + html(p.name) + '"></div>';
     }).join("") : '<p class="source-note">No matching players.</p>';
   }
@@ -347,16 +416,17 @@
     }).join("");
   }
   function renderRoster() {
+    renderTeamSwitch();
     var query = document.getElementById("rosterSearch").value.toLowerCase().trim();
-    var roster = currentSportData().roster.filter(function (p) {
+    var roster = visibleRoster().filter(function (p) {
       return !query || (p.name + " " + p.number + " " + p.position + " " + p.grade).toLowerCase().indexOf(query) >= 0;
     });
     document.getElementById("rosterBody").innerHTML = roster.length ? roster.map(function (p) {
       return '<tr><td><input type="checkbox" data-spotlight="' + p.id + '"' + (p.spotlight ? " checked" : "") + ' aria-label="Include ' + html(p.name) + ' on printout"></td>' +
-        '<td><strong>#' + html(p.number) + '</strong></td><td><strong>' + html(p.name) + '</strong></td><td>' + html(p.grade) + '</td><td>' + html(p.position) + '</td>' +
+        '<td><strong>#' + html(p.number) + '</strong></td><td><strong>' + html(p.name) + '</strong>' + (p.referenceHighlight ? '<span class="highlight-tag">Prep-sheet highlight</span>' : '') + playerFacts(p) + '</td><td>' + html(p.grade) + '</td><td>' + html(p.position || 'Not listed') + '</td><td>' + html(p.height || 'Not listed') + '</td><td>' + html(p.weight || 'Not listed') + '</td>' +
         '<td><input type="text" data-roster-note="' + p.id + '" value="' + html(p.note || "") + '" placeholder="Pronunciation, hometown, family, milestone"></td>' +
         '<td><button class="remove-btn" data-delete-player="' + p.id + '" aria-label="Remove ' + html(p.name) + '">×</button></td></tr>';
-    }).join("") : '<tr><td colspan="7">No players yet. Add the first player or switch sports.</td></tr>';
+    }).join("") : '<tr><td colspan="9">No matching players. Check the roster status above.</td></tr>';
   }
   function renderResearch() {
     document.getElementById("programNotes").value = state.programNotes || "";
@@ -411,9 +481,9 @@
   }
   function addPlayer(form) {
     var fd = new FormData(form);
-    currentSportData().roster.push({
+    visibleRoster().push({
       id: uid(), number: String(fd.get("number") || ""), name: String(fd.get("name") || "").trim(),
-      grade: String(fd.get("grade") || "").trim(), position: String(fd.get("position") || "").trim(), note: "", spotlight: false
+      grade: String(fd.get("grade") || "").trim(), position: String(fd.get("position") || "").trim(), height: String(fd.get('height') || '').trim(), weight: String(fd.get('weight') || '').trim(), note: "", spotlight: false
     });
     form.reset();
     document.getElementById("playerDialog").close();
@@ -443,6 +513,7 @@
         if (!parsed || !parsed.sports || !parsed.activeGameIds) throw new Error("Invalid backup");
         if (!window.confirm("Replace the current desk with this backup?")) return;
         state = parsed;
+        migrateResearch();
         localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
         renderAll();
         toast("Backup restored");
@@ -470,10 +541,24 @@
     document.getElementById("printSheet").innerHTML =
       '<header class="print-header"><div><h1>Lincoln Christian vs ' + html(game.opponent) + '</h1><p>' + html(formatFullDate(game.date)) + ' · ' + html(game.time) + ' · ' + html(game.venue) + '</p></div><div class="print-badge">BROADCAST GAME SHEET<br>' + html(sportLabels[state.activeSport].toUpperCase()) + '</div></header>' +
       '<div class="print-grid"><div>' + section("Opening", notes.opening) + section("Lincoln storylines", notes.lincolnStory) + section("Opponent storylines", notes.opponentStory) + section("Film / scheme", notes.film) + section("Keys & matchups", notes.keys) + section("Calls & transitions", notes.calls) +
-      '<section class="print-section"><h2>Live game log</h2><div class="print-lines"></div></section></div>' +
+      section("Live game log", notes.liveLog) + '<section class="print-section"><h2>Booth scratchpad</h2><div class="print-lines"></div></section></div>' +
       '<div><section class="print-section"><h2>Quick stats</h2><table class="print-stats"><thead><tr><th>Stat</th><th>LC</th><th>' + html(game.opponent) + '</th></tr></thead><tbody>' + statRows + '</tbody></table></section>' +
       '<section class="print-section"><h2>On-sheet roster</h2><table class="print-roster"><thead><tr><th>#</th><th>Name</th><th>Pos.</th><th>Note</th></tr></thead><tbody>' + (playerRows || '<tr><td colspan="4">Mark players in the roster book.</td></tr>') + '</tbody></table></section>' +
       section("Opponent update", notes.opponentUpdate) + '</div></div>';
+    var print = document.getElementById('printSheet');
+    // Full-width roster pages avoid shrinking names and biographical notes into a tiny sidebar.
+    print.querySelector('.print-roster').closest('section').remove();
+    print.innerHTML += section('Coaches, program streaks & reference notes', notes.reference);
+    [ {name:'Lincoln Christian',players:currentSportData().roster}, {name:game.opponent,players:game.opponentRoster || []} ].forEach(function (team) {
+      var selected = team.players.filter(function (p) { return state.printOptions.fullRosters || p.spotlight; });
+      print.innerHTML += '<section class="print-section roster-print-section"><h2>' + html(team.name) + ' · ' + (state.printOptions.fullRosters ? 'Full roster' : 'Highlighted roster') + '</h2><table class="print-roster"><thead><tr><th>#</th><th>Player</th><th>Gr.</th><th>Pos.</th><th>Ht. / Wt.</th><th>Notes / sourced background</th></tr></thead><tbody>' + selected.map(function (p) { return '<tr><td>' + html(p.number) + '</td><td>' + html(p.name) + '</td><td>' + html(p.grade) + '</td><td>' + html(p.position || '—') + '</td><td>' + html((p.height || 'Not listed') + ' / ' + (p.weight || 'Not listed')) + '</td><td>' + html(p.note) + playerFacts(p) + '</td></tr>'; }).join('') + '</tbody></table>' + (!selected.length ? '<p>No verified players selected. Check roster availability in People.</p>' : '') + '</section>';
+    });
+    if (state.activeSport === 'football') ['offense','defense','special'].forEach(function (group) {
+      if (!state.printOptions[group]) return;
+      var tables = research.stats.filter(function (t) { return statGroup(t.title) === group && (group !== 'offense' || ['Passing','Rushing','Receiving'].includes(t.title)); });
+      print.innerHTML += '<div class="print-stat-group"><h2>Lincoln · ' + html(group) + ' · 2026 season</h2><p>Five games · MaxPreps updated Oct. 3, 2026 · ' + html(research.statsSource) + '</p>' + tables.map(function (t) { return '<section class="print-section"><h2>' + html(t.title) + '</h2>' + sourceTable(t,true) + '</section>'; }).join('') + '</div>';
+    });
+    if (state.printOptions.live) print.innerHTML += window.LincolnLive.printMarkup(game);
     return true;
   }
 
@@ -482,6 +567,9 @@
     if (!target) return;
     if (target.matches(".sport-btn")) setSport(target.dataset.sport);
     if (target.matches(".nav-btn")) setView(target.dataset.view);
+    if (target.matches('[data-roster-team]')) { rosterTeam = target.dataset.rosterTeam; renderRoster(); renderDeskRoster(); }
+    if (target.matches('#previewPrintBtn')) { if (renderPrintSheet()) { document.getElementById('printPreviewContent').innerHTML = document.getElementById('printSheet').innerHTML; document.getElementById('printPreview').showModal(); } }
+    if (target.matches('#printPreviewGo')) { document.getElementById('printPreview').close(); if (renderPrintSheet()) window.print(); }
     if (target.matches(".tab-btn")) {
       activeTab = target.dataset.tab;
       document.querySelectorAll(".tab-btn").forEach(function (b) { b.classList.toggle("active", b.dataset.tab === activeTab); });
@@ -502,9 +590,9 @@
       saveState(); renderStats(gameForStat);
     }
     if (target.matches("[data-delete-player]")) {
-      var player = currentSportData().roster.filter(function (p) { return p.id === target.dataset.deletePlayer; })[0];
+      var player = findPlayer(target.dataset.deletePlayer);
       if (player && window.confirm("Remove " + player.name + " from this roster?")) {
-        currentSportData().roster = currentSportData().roster.filter(function (p) { return p.id !== player.id; });
+        visibleRoster().splice(visibleRoster().indexOf(player),1);
         saveState(); renderRoster(); renderDeskRoster();
       }
     }
@@ -535,7 +623,7 @@
       if (stat) { stat[target.dataset.statField] = target.value; game.checklist.stats = game.stats.some(function (s) { return s.lincoln || s.opponent; }); saveState(); renderChecklist(game); }
     }
     if (target.matches("[data-roster-note]")) {
-      var player = currentSportData().roster.filter(function (p) { return p.id === target.dataset.rosterNote; })[0];
+      var player = findPlayer(target.dataset.rosterNote);
       if (player) { player.note = target.value; saveState(); }
     }
     if (target.matches("#programNotes")) { state.programNotes = target.value; saveState(); }
@@ -548,10 +636,11 @@
     var game = currentGame();
     if (target.matches("[data-check]") && game) { game.checklist[target.dataset.check] = target.checked; saveState(); renderChecklist(game); }
     if (target.matches("[data-spotlight]")) {
-      var player = currentSportData().roster.filter(function (p) { return p.id === target.dataset.spotlight; })[0];
+      var player = findPlayer(target.dataset.spotlight);
       if (player) { player.spotlight = target.checked; saveState(); }
     }
     if (target.matches("#importFile")) importBackup(target.files[0]);
+    if (target.matches('[data-print-option]')) { state.printOptions[target.dataset.printOption] = target.checked; saveState(); }
   });
 
   document.getElementById("gameForm").addEventListener("submit", function (event) {
@@ -603,7 +692,7 @@
       inputSchema: {
         type: "object",
         properties: {
-          section: { type: "string", enum: ["opening","lincolnStory","opponentStory","film","keys","calls","liveLog","opponentUpdate"] },
+          section: { type: "string", enum: ["opening","lincolnStory","opponentStory","film","keys","calls","liveLog","opponentUpdate","reference"] },
           text: { type: "string" }
         },
         required: ["section","text"],
