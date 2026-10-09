@@ -2,7 +2,7 @@
   "version": 1,
   "timeZone": "America/Chicago",
   "season": "2026-27",
-  "generatedAt": "2026-10-09T15:37:21.628Z",
+  "generatedAt": "2026-10-09T16:03:00.577Z",
   "target": {
     "date": "2026-10-09",
     "opponent": "Heavener",
@@ -13,7 +13,7 @@
   "officialSchedule": {
     "source": "https://lcssports.com/sports/football/schedule",
     "season": "2026-27",
-    "checkedAt": "2026-10-09T15:37:21.299Z",
+    "checkedAt": "2026-10-09T16:02:39.808Z",
     "status": "ok",
     "events": [
       {
@@ -174,7 +174,7 @@
   },
   "officialRoster": {
     "source": "https://lcssports.com/sports/football/roster",
-    "checkedAt": "2026-10-09T15:37:21.628Z",
+    "checkedAt": "2026-10-09T16:03:00.577Z",
     "status": "ok",
     "players": [
       {
@@ -756,13 +756,1343 @@
     ]
   },
   "teams": {
+    "Jones": {
+      "base": "https://www.maxpreps.com/ok/jones/jones-longhorns/football/",
+      "schedule": {
+        "school": "Jones",
+        "season": "2026-27",
+        "source": "https://www.maxpreps.com/ok/jones/jones-longhorns/football/schedule/",
+        "checkedAt": "2026-10-09T16:03:00.577Z",
+        "status": "ok",
+        "events": [
+          {
+            "id": "9fd7f076-ea03-4818-a271-a8981901723c",
+            "date": "2026-08-27",
+            "time": "19:00",
+            "opponent": "Lincoln Christian",
+            "opponentBase": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/",
+            "mascot": "Bulldogs",
+            "site": "Home",
+            "district": false,
+            "result": "L 25-13",
+            "score": 13,
+            "opponentScore": 25,
+            "status": "completed",
+            "url": "https://www.maxpreps.com/ok/football/game/jones-vs-lincoln-christian-tulsa/8-27-2026/?c=9fd7f076-ea03-4818-a271-a8981901723c",
+            "kind": "Game"
+          },
+          {
+            "id": "c9ce651a-75b8-438d-b141-7cface1ae0c3",
+            "date": "2026-09-04",
+            "time": "19:00",
+            "opponent": "Bethany",
+            "opponentBase": "https://www.maxpreps.com/ok/bethany/bethany-bronchos/football/",
+            "mascot": "Bronchos",
+            "site": "Home",
+            "district": false,
+            "result": "W 53-6",
+            "score": 53,
+            "opponentScore": 6,
+            "status": "completed",
+            "url": "https://www.maxpreps.com/ok/football/game/bethany-vs-jones/9-4-2026/?c=c9ce651a-75b8-438d-b141-7cface1ae0c3",
+            "kind": "Game"
+          },
+          {
+            "id": "956ad936-4686-4a9e-9013-bab314b85804",
+            "date": "2026-09-11",
+            "time": "19:00",
+            "opponent": "Mount St. Mary",
+            "opponentBase": "https://www.maxpreps.com/ok/oklahoma-city/mount-st-mary-rockets/football/",
+            "mascot": "Rockets",
+            "site": "Away",
+            "district": false,
+            "result": "W 42-21",
+            "score": 42,
+            "opponentScore": 21,
+            "status": "completed",
+            "url": "https://www.maxpreps.com/ok/football/game/jones-vs-mount-st-mary-oklahoma-city/9-11-2026/?c=956ad936-4686-4a9e-9013-bab314b85804",
+            "kind": "Game"
+          },
+          {
+            "id": "d9b9d55d-7ae3-454f-aaf3-bac149bf57a9",
+            "date": "2026-09-25",
+            "time": "19:00",
+            "opponent": "Webster",
+            "opponentBase": "https://www.maxpreps.com/ok/tulsa/webster-warriors/football/",
+            "mascot": "Warriors",
+            "site": "Home",
+            "district": true,
+            "result": "W 80-0",
+            "score": 80,
+            "opponentScore": 0,
+            "status": "completed",
+            "url": "https://www.maxpreps.com/ok/football/game/jones-vs-webster-tulsa/9-25-2026/?c=d9b9d55d-7ae3-454f-aaf3-bac149bf57a9",
+            "kind": "Game"
+          },
+          {
+            "id": "f932a750-d8f0-4308-84f1-b7c37c3c982f",
+            "date": "2026-10-02",
+            "time": "19:00",
+            "opponent": "Catoosa",
+            "opponentBase": "https://www.maxpreps.com/ok/catoosa/catoosa-indians/football/",
+            "mascot": "Indians",
+            "site": "Away",
+            "district": true,
+            "result": "W 56-7",
+            "score": 56,
+            "opponentScore": 7,
+            "status": "completed",
+            "url": "https://www.maxpreps.com/ok/football/game/catoosa-vs-jones/10-2-2026/?c=f932a750-d8f0-4308-84f1-b7c37c3c982f",
+            "kind": "Game"
+          },
+          {
+            "id": "c1db5647-91e2-4337-b0e5-c8a7cec9cc60",
+            "date": "2026-10-09",
+            "time": "19:00",
+            "opponent": "Eufaula",
+            "opponentBase": "https://www.maxpreps.com/ok/eufaula/eufaula-ironheads/football/",
+            "mascot": "Ironheads",
+            "site": "Home",
+            "district": true,
+            "result": "",
+            "score": null,
+            "opponentScore": null,
+            "status": "scheduled",
+            "url": "https://www.maxpreps.com/ok/football/game/eufaula-vs-jones/10-9-2026/?c=c1db5647-91e2-4337-b0e5-c8a7cec9cc60",
+            "kind": "Game"
+          },
+          {
+            "id": "767a4ea3-38ec-4778-86b4-33df38d41ba0",
+            "date": "2026-10-15",
+            "time": "19:00",
+            "opponent": "Vinita",
+            "opponentBase": "https://www.maxpreps.com/ok/vinita/vinita-hornets/football/",
+            "mascot": "Hornets",
+            "site": "Away",
+            "district": true,
+            "result": "",
+            "score": null,
+            "opponentScore": null,
+            "status": "scheduled",
+            "url": "https://www.maxpreps.com/ok/football/game/jones-vs-vinita/10-15-2026/?c=767a4ea3-38ec-4778-86b4-33df38d41ba0",
+            "kind": "Game"
+          },
+          {
+            "id": "f4107fce-17eb-44e2-882f-fc012ffb0d85",
+            "date": "2026-10-23",
+            "time": "19:00",
+            "opponent": "Metro Christian",
+            "opponentBase": "https://www.maxpreps.com/ok/tulsa/metro-christian-patriots/football/",
+            "mascot": "Patriots",
+            "site": "Away",
+            "district": true,
+            "result": "",
+            "score": null,
+            "opponentScore": null,
+            "status": "scheduled",
+            "url": "https://www.maxpreps.com/ok/football/game/jones-vs-metro-christian-tulsa/10-23-2026/?c=f4107fce-17eb-44e2-882f-fc012ffb0d85",
+            "kind": "Game"
+          },
+          {
+            "id": "e995ec8d-7ca1-48d3-8022-5e37e0de21de",
+            "date": "2026-10-30",
+            "time": "19:00",
+            "opponent": "Jay",
+            "opponentBase": "https://www.maxpreps.com/ok/jay/jay-bulldogs/football/",
+            "mascot": "Bulldogs",
+            "site": "Home",
+            "district": true,
+            "result": "",
+            "score": null,
+            "opponentScore": null,
+            "status": "scheduled",
+            "url": "https://www.maxpreps.com/ok/football/game/jay-vs-jones/10-30-2026/?c=e995ec8d-7ca1-48d3-8022-5e37e0de21de",
+            "kind": "Game"
+          },
+          {
+            "id": "70e2a700-5126-4ae4-a267-a3d95704a028",
+            "date": "2026-11-06",
+            "time": "19:00",
+            "opponent": "Berryhill",
+            "opponentBase": "https://www.maxpreps.com/ok/tulsa/berryhill-chiefs/football/",
+            "mascot": "Chiefs",
+            "site": "Away",
+            "district": true,
+            "result": "",
+            "score": null,
+            "opponentScore": null,
+            "status": "scheduled",
+            "url": "https://www.maxpreps.com/ok/football/game/berryhill-tulsa-vs-jones/11-6-2026/?c=70e2a700-5126-4ae4-a267-a3d95704a028",
+            "kind": "Game"
+          }
+        ],
+        "record": "4-1",
+        "districtRecord": "2-0",
+        "districtPlace": "1st",
+        "districtName": "3A District 4",
+        "pointsFor": 244,
+        "pointsAgainst": 59,
+        "streak": "4W",
+        "mascot": "Longhorns"
+      },
+      "roster": {
+        "source": "https://www.maxpreps.com/ok/jones/jones-longhorns/football/roster/",
+        "checkedAt": "2026-10-09T16:03:00.577Z",
+        "status": "ok",
+        "players": [
+          {
+            "sourceId": "9a5c8601-f39a-4482-803c-3c9bf2a25f17",
+            "number": "1",
+            "name": "Garritt Davis",
+            "grade": "Jr.",
+            "position": "",
+            "height": "6' 3\"",
+            "weight": "175 lb",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/garritt-davis/?careerid=gstog79mpvftd"
+          },
+          {
+            "sourceId": "66b17779-2592-436e-84c5-54c5e27d6089",
+            "number": "2",
+            "name": "Derek Templeton",
+            "grade": "Jr.",
+            "position": "CB, WR",
+            "height": "6' 2\"",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/derek-templeton/?careerid=2gn9piemgokaa"
+          },
+          {
+            "sourceId": "6cfc9210-583d-49e0-b8c7-1bfc14d9b06b",
+            "number": "3",
+            "name": "Hunter Purvis",
+            "grade": "Sr.",
+            "position": "WR, CB",
+            "height": "6' 1\"",
+            "weight": "170 lb",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/hunter-purvis/?careerid=6k1e5l3hv87j3"
+          },
+          {
+            "sourceId": "53d17d05-1a5c-4453-bfbb-deb93bdc06b6",
+            "number": "4",
+            "name": "Kade Templeton",
+            "grade": "Jr.",
+            "position": "CB, WR",
+            "height": "6' 2\"",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/kade-templeton/?careerid=78plu4vo39900"
+          },
+          {
+            "sourceId": "363932a9-1c74-4589-ba2d-ff73e759a6fc",
+            "number": "5",
+            "name": "Dash Gaines",
+            "grade": "",
+            "position": "",
+            "height": "5' 8\"",
+            "weight": "145 lb",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/dash-gaines/?careerid=5ipgdnbjikvj3"
+          },
+          {
+            "sourceId": "df50852c-b82a-4b6d-98f3-9a6d1e274331",
+            "number": "7",
+            "name": "Wade Davis",
+            "grade": "Jr.",
+            "position": "",
+            "height": "5' 10\"",
+            "weight": "155 lb",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/wade-davis/?careerid=qahva88h7hg33"
+          },
+          {
+            "sourceId": "77aafec2-29fb-4900-9329-f55c887f3988",
+            "number": "8",
+            "name": "Tripp Rogers",
+            "grade": "Sr.",
+            "position": "OLB, RB",
+            "height": "5' 11\"",
+            "weight": "175 lb",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/tripp-rogers/?careerid=tkbtg9j4dq2j3"
+          },
+          {
+            "sourceId": "30255e26-82a0-4175-b50c-0f6b36952448",
+            "number": "9",
+            "name": "Jet Biby",
+            "grade": "Sr.",
+            "position": "SS, WR",
+            "height": "5' 11\"",
+            "weight": "170 lb",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/jet-biby/?careerid=senqh2h4q8c44"
+          },
+          {
+            "sourceId": "c8b6cd5f-c078-47ca-8be3-48ca4e46e211",
+            "number": "10",
+            "name": "Drew Thomas",
+            "grade": "Sr.",
+            "position": "QB",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/drew-thomas/?careerid=8vskr54is1jg0"
+          },
+          {
+            "sourceId": "5c649841-a5ea-4a95-9473-d1b997ca5ca6",
+            "number": "11",
+            "name": "Kason Hammons",
+            "grade": "Jr.",
+            "position": "RB",
+            "height": "5' 10\"",
+            "weight": "190 lb",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/kason-hammons/?careerid=fkh8hdda1ambb"
+          },
+          {
+            "sourceId": "f8d8089c-6c3a-4102-ac46-b00c819287af",
+            "number": "12",
+            "name": "Jeymon Reed",
+            "grade": "So.",
+            "position": "QB",
+            "height": "6' 4\"",
+            "weight": "200 lb",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/jeymon-reed/?careerid=l6ke9al6c0rcc"
+          },
+          {
+            "sourceId": "6ebc0c16-e8e3-4689-b3a7-a124727fbaeb",
+            "number": "15",
+            "name": "Jaxon Long",
+            "grade": "Fr.",
+            "position": "QB",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/jaxon-long/?careerid=t6j5762vk29sc"
+          },
+          {
+            "sourceId": "dee9d626-acf9-4b92-93f2-564d2d22232b",
+            "number": "17",
+            "name": "Ryan Youngs",
+            "grade": "Fr.",
+            "position": "WR, FS",
+            "height": "5' 8\"",
+            "weight": "128 lb",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/ryan-youngs/?careerid=4v14rfl57de66"
+          },
+          {
+            "sourceId": "f8a52e7f-57ba-477b-92e7-babf44cf74fd",
+            "number": "18",
+            "name": "Luke Wilkinson",
+            "grade": "So.",
+            "position": "WR, FS",
+            "height": "6' 0\"",
+            "weight": "140 lb",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/luke-wilkinson/?careerid=l40mhcdr33322"
+          },
+          {
+            "sourceId": "ac5d8478-4f57-48ff-9fe1-cf51fe8e737a",
+            "number": "19",
+            "name": "Jeffrey Shaw",
+            "grade": "",
+            "position": "",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/jeffrey-shaw/?careerid=2vk20p0jcqldd"
+          },
+          {
+            "sourceId": "7f6257ae-9cd7-4748-a1f4-207c59507c1c",
+            "number": "21",
+            "name": "Parks McCaleb",
+            "grade": "Sr.",
+            "position": "WR",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/parks-mccaleb/?careerid=lrjvcem6qusk4"
+          },
+          {
+            "sourceId": "a4e8adfa-118c-4ad0-8d3a-6221e5e99488",
+            "number": "22",
+            "name": "Ben Williams",
+            "grade": "Jr.",
+            "position": "WR, CB",
+            "height": "5' 11\"",
+            "weight": "220 lb",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/ben-williams/?careerid=3v5ef142o6k99"
+          },
+          {
+            "sourceId": "71e66bde-b90a-4c64-9be7-ea9236abf38f",
+            "number": "24",
+            "name": "Leonidas Moralez",
+            "grade": "So.",
+            "position": "RB",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/leonidas-moralez/?careerid=p6b59n5quhu11"
+          },
+          {
+            "sourceId": "05000837-0523-452e-ace0-bd7c575284cf",
+            "number": "26",
+            "name": "Jose Taylor",
+            "grade": "Jr.",
+            "position": "RB, OLB",
+            "height": "5' 4\"",
+            "weight": "165 lb",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/jose-taylor/?careerid=je30jg235nh22"
+          },
+          {
+            "sourceId": "8722d80f-7f1e-48f7-8290-c7533d3dce09",
+            "number": "27",
+            "name": "Eli Debusk",
+            "grade": "Jr.",
+            "position": "OLB, MLB",
+            "height": "6' 2\"",
+            "weight": "165 lb",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/eli-debusk/?careerid=0lr71gavri8n7"
+          },
+          {
+            "sourceId": "38f9d60b-ac6c-40d6-9337-d6f084c71047",
+            "number": "30",
+            "name": "Mars Moralez",
+            "grade": "Sr.",
+            "position": "",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/mars-moralez/?careerid=gg416mhq142p9"
+          },
+          {
+            "sourceId": "c7813da7-65f6-43ae-b5e8-5455e8a98d5a",
+            "number": "34",
+            "name": "Jagger Collier",
+            "grade": "Fr.",
+            "position": "WR",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/jagger-collier/?careerid=dnk52jkj3svaa"
+          },
+          {
+            "sourceId": "6a9f4b50-5c0f-4fe2-9057-974e22ebb19a",
+            "number": "36",
+            "name": "Noah Norris",
+            "grade": "Sr.",
+            "position": "",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/noah-norris/?careerid=sto07v9b94vsc"
+          },
+          {
+            "sourceId": "24ccdca7-8610-413f-835f-0d805d1718c4",
+            "number": "41",
+            "name": "Caleb Myers",
+            "grade": "Fr.",
+            "position": "OLB",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/caleb-myers/?careerid=o1g2bafjjkb11"
+          },
+          {
+            "sourceId": "c4468174-0247-44ca-a6ad-17938f2a8727",
+            "number": "42",
+            "name": "Jesse Hernandez",
+            "grade": "Sr.",
+            "position": "OLB, SS",
+            "height": "6' 1\"",
+            "weight": "210 lb",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/jesse-hernandez/?careerid=gcao42t2d1og0"
+          },
+          {
+            "sourceId": "5b4e33e9-411d-4354-8022-a7df3a24fb7c",
+            "number": "50",
+            "name": "Jack Swarnes",
+            "grade": "Fr.",
+            "position": "T",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/jack-swarnes/?careerid=vekatd5vba2ue"
+          },
+          {
+            "sourceId": "c8c63596-8d87-4c2a-abf7-1c52b3863d68",
+            "number": "54",
+            "name": "Preston Williams",
+            "grade": "Fr.",
+            "position": "G",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/preston-williams/?careerid=ab5kh9ntp8t77"
+          },
+          {
+            "sourceId": "339e91d7-6c9b-4539-96aa-394075b75f30",
+            "number": "55",
+            "name": "Bryce MacFarlane",
+            "grade": "Jr.",
+            "position": "OLB",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/bryce-macfarlane/?careerid=u2l026m9t82td"
+          },
+          {
+            "sourceId": "2379a210-d429-4777-8393-c3f3ab985fe8",
+            "number": "55",
+            "name": "Leighton Sousa",
+            "grade": "So.",
+            "position": "T",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/leighton-sousa/?careerid=28t4r2k3fbvi2"
+          },
+          {
+            "sourceId": "20536022-c2cb-4e46-af38-d2120892469d",
+            "number": "58",
+            "name": "Jakob Mendoza",
+            "grade": "So.",
+            "position": "C",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/jakob-mendoza/?careerid=9ehob42ae2fk4"
+          },
+          {
+            "sourceId": "f232bf39-194f-4739-a703-e8b384a2fae2",
+            "number": "61",
+            "name": "Carl Burton",
+            "grade": "Fr.",
+            "position": "NG",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/carl-burton/?careerid=qhda80in16511"
+          },
+          {
+            "sourceId": "1f026c20-3326-4a28-b3a8-7dac34cc574d",
+            "number": "64",
+            "name": "Colt Williams",
+            "grade": "So.",
+            "position": "",
+            "height": "6' 0\"",
+            "weight": "190 lb",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/colt-williams/?careerid=srd6vc9h4av66"
+          },
+          {
+            "sourceId": "a632db41-a907-4134-807d-c2aa00cfb4eb",
+            "number": "66",
+            "name": "Dryce Loyd",
+            "grade": "Jr.",
+            "position": "C, DE",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/dryce-loyd/?careerid=o2j0prb6uc811"
+          },
+          {
+            "sourceId": "6829e6d7-f9ac-435c-b384-52cebe55817a",
+            "number": "67",
+            "name": "Kalani Johnson",
+            "grade": "So.",
+            "position": "DE",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/kalani-johnson/?careerid=ou91ehd01crp9"
+          },
+          {
+            "sourceId": "73bac83f-4bc8-4e52-ab21-15a1a9eca01e",
+            "number": "70",
+            "name": "Walker Wyatt",
+            "grade": "Jr.",
+            "position": "NG, G",
+            "height": "5' 11\"",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/walker-wyatt/?careerid=aviqbilhu4kh1"
+          },
+          {
+            "sourceId": "b5093872-6964-4c11-ac4f-a260076289e4",
+            "number": "77",
+            "name": "Ty Duren",
+            "grade": "Jr.",
+            "position": "G, C",
+            "height": "6' 0\"",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/ty-duren/?careerid=kkouhsfnug299"
+          },
+          {
+            "sourceId": "1d61c7b1-87fb-4c42-8d17-2472c01a2bd6",
+            "number": "78",
+            "name": "Garrett Clark",
+            "grade": "Sr.",
+            "position": "G",
+            "height": "6' 1\"",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/garrett-clark/?careerid=b0bdnvgrgjg55"
+          },
+          {
+            "sourceId": "c98dc3dc-1194-4142-963a-c86ff0591465",
+            "number": "80",
+            "name": "Johnny Shaw",
+            "grade": "So.",
+            "position": "",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/johnny-shaw/?careerid=cu1jbhakpr2bb"
+          },
+          {
+            "sourceId": "67536b32-55d5-43f3-a282-4e2b4c2a7d25",
+            "number": "81",
+            "name": "Keneth Pierce",
+            "grade": "So.",
+            "position": "",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/keneth-pierce/?careerid=afqh00gt75q00"
+          },
+          {
+            "sourceId": "36b7f2d9-6045-48ec-9b39-a87b318e48fd",
+            "number": "87",
+            "name": "Baxter Davis",
+            "grade": "Fr.",
+            "position": "",
+            "height": "6' 3\"",
+            "weight": "175 lb",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/baxter-davis/?careerid=vpfo8jhqjmjl5"
+          },
+          {
+            "sourceId": "7a70e0b2-73bb-4e60-92ae-f892ee513ee2",
+            "number": "88",
+            "name": "Wyatt Ellefson",
+            "grade": "Jr.",
+            "position": "TE",
+            "height": "6' 5\"",
+            "weight": "190 lb",
+            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/wyatt-ellefson/?careerid=udeqaaf8qic22"
+          }
+        ]
+      },
+      "stats": null
+    },
+    "Heritage Hall": {
+      "base": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/football/",
+      "schedule": {
+        "school": "Heritage Hall",
+        "season": "2026-27",
+        "source": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/football/schedule/",
+        "checkedAt": "2026-10-09T16:03:00.577Z",
+        "status": "ok",
+        "events": [
+          {
+            "id": "2f304641-7e5a-4de3-a75f-031ac07e43cb",
+            "date": "2026-08-28",
+            "time": "19:00",
+            "opponent": "Shiloh Christian",
+            "opponentBase": "https://www.maxpreps.com/ar/springdale/shiloh-christian-saints/football/",
+            "mascot": "Saints",
+            "site": "Away",
+            "district": false,
+            "result": "L 38-25",
+            "score": 25,
+            "opponentScore": 38,
+            "status": "completed",
+            "url": "https://www.maxpreps.com/inter-state/football/game/heritage-hall-oklahoma-city-ok-vs-shiloh-christian-springdale-ar/8-28-2026/?c=2f304641-7e5a-4de3-a75f-031ac07e43cb",
+            "kind": "Game"
+          },
+          {
+            "id": "cb1e1e65-21fb-4df7-a1b6-f914a1f3d863",
+            "date": "2026-09-04",
+            "time": "19:00",
+            "opponent": "Lincoln Christian",
+            "opponentBase": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/",
+            "mascot": "Bulldogs",
+            "site": "Home",
+            "district": false,
+            "result": "L 20-19",
+            "score": 19,
+            "opponentScore": 20,
+            "status": "completed",
+            "url": "https://www.maxpreps.com/ok/football/game/heritage-hall-oklahoma-city-vs-lincoln-christian-tulsa/9-4-2026/?c=cb1e1e65-21fb-4df7-a1b6-f914a1f3d863",
+            "kind": "Game"
+          },
+          {
+            "id": "8d02c638-7185-4adf-8bc2-7e60bab88ef2",
+            "date": "2026-09-18",
+            "time": "19:00",
+            "opponent": "Millwood",
+            "opponentBase": "https://www.maxpreps.com/ok/oklahoma-city/millwood-falcons/football/",
+            "mascot": "Falcons",
+            "site": "Away",
+            "district": false,
+            "result": "W 52-14",
+            "score": 52,
+            "opponentScore": 14,
+            "status": "completed",
+            "url": "https://www.maxpreps.com/ok/football/game/heritage-hall-oklahoma-city-vs-millwood-oklahoma-city/9-18-2026/?c=8d02c638-7185-4adf-8bc2-7e60bab88ef2",
+            "kind": "Game"
+          },
+          {
+            "id": "128e94a8-ab7b-4e7f-890b-33137e9555fd",
+            "date": "2026-09-25",
+            "time": "19:00",
+            "opponent": "Stigler",
+            "opponentBase": "https://www.maxpreps.com/ok/stigler/stigler-panthers/football/",
+            "mascot": "Panthers",
+            "site": "Home",
+            "district": true,
+            "result": "W 49-7",
+            "score": 49,
+            "opponentScore": 7,
+            "status": "completed",
+            "url": "https://www.maxpreps.com/ok/football/game/heritage-hall-oklahoma-city-vs-stigler/9-25-2026/?c=128e94a8-ab7b-4e7f-890b-33137e9555fd",
+            "kind": "Game"
+          },
+          {
+            "id": "71a187c9-200a-4328-a7a9-24134190a18f",
+            "date": "2026-10-02",
+            "time": "19:00",
+            "opponent": "Muldrow",
+            "opponentBase": "https://www.maxpreps.com/ok/muldrow/muldrow-bulldogs/football/",
+            "mascot": "Bulldogs",
+            "site": "Away",
+            "district": true,
+            "result": "W 42-6",
+            "score": 42,
+            "opponentScore": 6,
+            "status": "completed",
+            "url": "https://www.maxpreps.com/ok/football/game/heritage-hall-oklahoma-city-vs-muldrow/10-2-2026/?c=71a187c9-200a-4328-a7a9-24134190a18f",
+            "kind": "Game"
+          },
+          {
+            "id": "83ef5bd9-98f6-4da5-b90e-ee7e874ff40a",
+            "date": "2026-10-08",
+            "time": "19:00",
+            "opponent": "Bristow",
+            "opponentBase": "https://www.maxpreps.com/ok/bristow/bristow-purple-pirates/football/",
+            "mascot": "Purple Pirates",
+            "site": "Home",
+            "district": true,
+            "result": "W 52-23",
+            "score": 52,
+            "opponentScore": 23,
+            "status": "completed",
+            "url": "https://www.maxpreps.com/ok/football/game/bristow-vs-heritage-hall-oklahoma-city/10-8-2026/?c=83ef5bd9-98f6-4da5-b90e-ee7e874ff40a",
+            "kind": "Game"
+          },
+          {
+            "id": "41faaff0-6a0a-45cc-a6aa-61ee1dc99a39",
+            "date": "2026-10-15",
+            "time": "19:00",
+            "opponent": "Locust Grove",
+            "opponentBase": "https://www.maxpreps.com/ok/locust-grove/locust-grove-pirates/football/",
+            "mascot": "Pirates",
+            "site": "Away",
+            "district": true,
+            "result": "",
+            "score": null,
+            "opponentScore": null,
+            "status": "scheduled",
+            "url": "https://www.maxpreps.com/ok/football/game/heritage-hall-oklahoma-city-vs-locust-grove/10-15-2026/?c=41faaff0-6a0a-45cc-a6aa-61ee1dc99a39",
+            "kind": "Game"
+          },
+          {
+            "id": "57c802f3-6e87-4176-bd9d-46d0524e5a6e",
+            "date": "2026-10-23",
+            "time": "19:00",
+            "opponent": "Inola",
+            "opponentBase": "https://www.maxpreps.com/ok/inola/inola-longhorns/football/",
+            "mascot": "Longhorns",
+            "site": "Away",
+            "district": true,
+            "result": "",
+            "score": null,
+            "opponentScore": null,
+            "status": "scheduled",
+            "url": "https://www.maxpreps.com/ok/football/game/heritage-hall-oklahoma-city-vs-inola/10-23-2026/?c=57c802f3-6e87-4176-bd9d-46d0524e5a6e",
+            "kind": "Game"
+          },
+          {
+            "id": "b2d08442-85d4-4feb-a066-4bc33bfa7de4",
+            "date": "2026-10-30",
+            "time": "19:00",
+            "opponent": "Perkins-Tryon",
+            "opponentBase": "https://www.maxpreps.com/ok/perkins/perkins-tryon-demons/football/",
+            "mascot": "Demons",
+            "site": "Home",
+            "district": false,
+            "result": "",
+            "score": null,
+            "opponentScore": null,
+            "status": "scheduled",
+            "url": "https://www.maxpreps.com/ok/football/game/heritage-hall-oklahoma-city-vs-perkins-tryon/10-30-2026/?c=b2d08442-85d4-4feb-a066-4bc33bfa7de4",
+            "kind": "Game"
+          }
+        ],
+        "record": "4-2",
+        "districtRecord": "3-0",
+        "districtPlace": "1st",
+        "districtName": "3A District 3",
+        "pointsFor": 239,
+        "pointsAgainst": 108,
+        "streak": "4W",
+        "mascot": "Chargers"
+      },
+      "roster": {
+        "source": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/football/roster/",
+        "checkedAt": "2026-10-09T16:03:00.577Z",
+        "status": "ok",
+        "players": [
+          {
+            "sourceId": "16d49c6b-e204-481a-8aeb-c56ec23b2fb1",
+            "number": "0",
+            "name": "Rhett Sullivan",
+            "grade": "Jr.",
+            "position": "RB, FB",
+            "height": "6' 1\"",
+            "weight": "185 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/rhett-sullivan/?careerid=7pf1t90go53h1"
+          },
+          {
+            "sourceId": "04edafe6-ad7f-4dea-98b9-f68948a09cdc",
+            "number": "1",
+            "name": "Tripp Thomas",
+            "grade": "Jr.",
+            "position": "WR, FS",
+            "height": "6' 3\"",
+            "weight": "205 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/tripp-thomas/?careerid=48tffcl00lq00"
+          },
+          {
+            "sourceId": "abf04c40-9f20-437f-a40f-164ed8143b00",
+            "number": "2",
+            "name": "Max Everett",
+            "grade": "Jr.",
+            "position": "RB, WR",
+            "height": "5' 8\"",
+            "weight": "165 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/max-everett/?careerid=52mtc4c4a0di2"
+          },
+          {
+            "sourceId": "3c715470-3867-4679-b05d-2ec6fd8e31b6",
+            "number": "3",
+            "name": "Bennett Burns",
+            "grade": "Jr.",
+            "position": "QB, FS",
+            "height": "6' 4\"",
+            "weight": "170 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/bennett-burns/?careerid=0de88qv7rtph1"
+          },
+          {
+            "sourceId": "ecde5867-be24-4cbe-a4b1-51f5c9c2554a",
+            "number": "4",
+            "name": "Porter England",
+            "grade": "Sr.",
+            "position": "WR, CB",
+            "height": "5' 11\"",
+            "weight": "185 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/porter-england/?careerid=riep9k27gp7sc"
+          },
+          {
+            "sourceId": "42d58e71-c1cd-438e-925d-db18677e414b",
+            "number": "6",
+            "name": "Blaine Kirk",
+            "grade": "Sr.",
+            "position": "WR, CB",
+            "height": "6' 1\"",
+            "weight": "185 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/blaine-kirk/?careerid=ntinpjgc2nmvf"
+          },
+          {
+            "sourceId": "15537fc6-ec12-460f-a1b8-dc2138525f23",
+            "number": "7",
+            "name": "Kobe White",
+            "grade": "Jr.",
+            "position": "WR, CB",
+            "height": "6' 2\"",
+            "weight": "180 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/kobe-white/?careerid=7u17vsr2n8lk4"
+          },
+          {
+            "sourceId": "51fc7911-abcd-41bf-a022-42d01bbc88cc",
+            "number": "8",
+            "name": "Colson Rushing",
+            "grade": "Jr.",
+            "position": "MLB, TE",
+            "height": "6' 3\"",
+            "weight": "212 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/colson-rushing/?careerid=747sdl4cqd4ee"
+          },
+          {
+            "sourceId": "6a74d767-e9c0-491f-80f8-87af0cc7f3f9",
+            "number": "9",
+            "name": "Caleb Niver",
+            "grade": "So.",
+            "position": "WR, CB",
+            "height": "5' 9\"",
+            "weight": "146 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/caleb-niver/?careerid=fmf3hl9lat277"
+          },
+          {
+            "sourceId": "d2797656-c621-477a-9cb3-d3a36ed64e7e",
+            "number": "10",
+            "name": "Teagan Lawson",
+            "grade": "Sr.",
+            "position": "QB",
+            "height": "6' 2\"",
+            "weight": "172 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/teagan-lawson/?careerid=unfl4upje45qa"
+          },
+          {
+            "sourceId": "415d06f6-35f7-4c78-b15b-c7590cc207a5",
+            "number": "11",
+            "name": "Carson Phelps",
+            "grade": "Sr.",
+            "position": "FB, TE",
+            "height": "6' 3\"",
+            "weight": "225 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/carson-phelps/?careerid=ru17fkb4j7eff"
+          },
+          {
+            "sourceId": "5f29d130-c4ef-4a99-a459-777d2552729e",
+            "number": "12",
+            "name": "Rex Welker",
+            "grade": "Fr.",
+            "position": "WR, SS",
+            "height": "5' 10\"",
+            "weight": "160 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/rex-welker/?careerid=o0d10qpa0eovf"
+          },
+          {
+            "sourceId": "0d65f93e-1436-418e-99e7-c0656d76f085",
+            "number": "13",
+            "name": "Grant Sullivan",
+            "grade": "Jr.",
+            "position": "WR, SS",
+            "height": "6' 1\"",
+            "weight": "185 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/grant-sullivan/?careerid=uhfhseqdaj8p9"
+          },
+          {
+            "sourceId": "0b9bc958-5583-4c52-b8f7-3a7557190477",
+            "number": "14",
+            "name": "Vincent Oliver",
+            "grade": "So.",
+            "position": "WR, SS",
+            "height": "6' 2\"",
+            "weight": "170 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/vincent-oliver/?careerid=rekk8rbu792l5"
+          },
+          {
+            "sourceId": "e59d3a17-7970-42d3-b541-36a0902d3942",
+            "number": "15",
+            "name": "Drake Shepard",
+            "grade": "Fr.",
+            "position": "QB, FS",
+            "height": "5' 7\"",
+            "weight": "135 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/drake-shepard/?careerid=uohoomcvo66aa"
+          },
+          {
+            "sourceId": "9a079448-37fd-4f59-850a-14532ecdbcd2",
+            "number": "16",
+            "name": "James Parker",
+            "grade": "So.",
+            "position": "RB, CB",
+            "height": "5' 9\"",
+            "weight": "145 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/james-parker/?careerid=q1hkjih4geo22"
+          },
+          {
+            "sourceId": "e33f94fe-99fe-4569-9d20-f22094c35695",
+            "number": "17",
+            "name": "Sean Boyd",
+            "grade": "Sr.",
+            "position": "FB, TE",
+            "height": "6' 2\"",
+            "weight": "202 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/sean-boyd/?careerid=kgqd543idrvcc"
+          },
+          {
+            "sourceId": "04aa59f5-de3a-4b80-a769-7e5d59b227e0",
+            "number": "18",
+            "name": "Benjamin McReynolds",
+            "grade": "Jr.",
+            "position": "WR, CB",
+            "height": "5' 9\"",
+            "weight": "145 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/benjamin-mcreynolds/?careerid=5uh68s4fn6mp9"
+          },
+          {
+            "sourceId": "91492fc0-7e48-40a5-9bea-fc39fe9c4c77",
+            "number": "19",
+            "name": "Walker James Wedel",
+            "grade": "Sr.",
+            "position": "MLB, RB",
+            "height": "6' 2\"",
+            "weight": "192 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/walker-james-wedel/?careerid=ipml9ec83dui2"
+          },
+          {
+            "sourceId": "e9c196bf-213e-4298-8434-22d2e610a255",
+            "number": "20",
+            "name": "Austin King",
+            "grade": "Sr.",
+            "position": "OLB, WR",
+            "height": "6' 2\"",
+            "weight": "205 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/austin-king/?careerid=hrnvs166i6msc"
+          },
+          {
+            "sourceId": "dfae546c-cb4e-4159-b95f-a1bf93643a76",
+            "number": "21",
+            "name": "Cutter Lamb",
+            "grade": "Fr.",
+            "position": "WR, CB",
+            "height": "5' 6\"",
+            "weight": "110 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/cutter-lamb/?careerid=4f2u6rq8lc3h1"
+          },
+          {
+            "sourceId": "b42334a3-62b0-4432-84a7-06e34d2b5890",
+            "number": "22",
+            "name": "Brooks Eve",
+            "grade": "Jr.",
+            "position": "WR, CB",
+            "height": "5' 9\"",
+            "weight": "160 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/brooks-eve/?careerid=u5i5e6461n866"
+          },
+          {
+            "sourceId": "41ef4e54-8600-4a0a-8b6d-41b57dd92479",
+            "number": "23",
+            "name": "Nash Eiser",
+            "grade": "Sr.",
+            "position": "RB, OLB",
+            "height": "5' 8\"",
+            "weight": "180 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/nash-eiser/?careerid=fio8bs72a7obb"
+          },
+          {
+            "sourceId": "f723dd55-9c85-4afa-ba58-18143edb0f34",
+            "number": "24",
+            "name": "Austin Echalk",
+            "grade": "So.",
+            "position": "RB, MLB",
+            "height": "5' 11\"",
+            "weight": "160 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/austin-echalk/?careerid=4onoga6ctugi2"
+          },
+          {
+            "sourceId": "c40bc205-a7d9-4bc0-a6d7-5449b6223247",
+            "number": "25",
+            "name": "Noah Hurwitz",
+            "grade": "Jr.",
+            "position": "TE, MLB",
+            "height": "6' 0\"",
+            "weight": "192 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/noah-hurwitz/?careerid=3cjqtuvjbll22"
+          },
+          {
+            "sourceId": "7c15bc96-37e9-4176-ae43-b450235446ea",
+            "number": "26",
+            "name": "Jacob Lacy",
+            "grade": "Jr.",
+            "position": "RB, CB",
+            "height": "5' 10\"",
+            "weight": "145 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/jacob-lacy/?careerid=408ns6rgl4mi2"
+          },
+          {
+            "sourceId": "2b5873f3-4137-42a6-9998-0e2d3a806a86",
+            "number": "27",
+            "name": "Cole Huelskamp",
+            "grade": "So.",
+            "position": "WR, CB",
+            "height": "5' 10\"",
+            "weight": "147 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/cole-huelskamp/?careerid=p25mpn4hlig66"
+          },
+          {
+            "sourceId": "a44f176d-4bc9-4a3f-ab9f-87102820574a",
+            "number": "29",
+            "name": "Henry Wegener",
+            "grade": "Fr.",
+            "position": "WR, FS",
+            "height": "5' 10\"",
+            "weight": "120 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/henry-wegener/?careerid=jcabi3jplvd44"
+          },
+          {
+            "sourceId": "8681533d-887e-4b65-8901-ab75ed696bbd",
+            "number": "30",
+            "name": "Crew Holland",
+            "grade": "Fr.",
+            "position": "WR, CB",
+            "height": "5' 10\"",
+            "weight": "154 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/crew-holland/?careerid=ir707n1vi1q44"
+          },
+          {
+            "sourceId": "7e71f1c0-4043-4c30-94f2-bf9093817f31",
+            "number": "31",
+            "name": "Beau Butler",
+            "grade": "Sr.",
+            "position": "K, P",
+            "height": "6' 1\"",
+            "weight": "170 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/beau-butler/?careerid=1mr7sttemluue"
+          },
+          {
+            "sourceId": "f5303701-74b6-44f8-ac3e-3c1723a88832",
+            "number": "32",
+            "name": "Gage Burshears",
+            "grade": "Jr.",
+            "position": "WR, CB",
+            "height": "6' 0\"",
+            "weight": "192 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/gage-burshears/?careerid=i4g43ej72m1ff"
+          },
+          {
+            "sourceId": "435a652b-1c8e-4c86-9fcd-1fb0e31e001a",
+            "number": "33",
+            "name": "Jackson Echalk",
+            "grade": "Jr.",
+            "position": "MLB, WR",
+            "height": "6' 0\"",
+            "weight": "170 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/jackson-echalk/?careerid=lreh1358jshdd"
+          },
+          {
+            "sourceId": "f9c45985-e059-4c9f-bc8e-3fef0a9e6053",
+            "number": "34",
+            "name": "Tanner King",
+            "grade": "So.",
+            "position": "FB, MLB",
+            "height": "5' 10\"",
+            "weight": "172 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/tanner-king/?careerid=pb63rlp8tr2m6"
+          },
+          {
+            "sourceId": "4ba40b99-40c8-477e-8c28-d976dbf59e23",
+            "number": "35",
+            "name": "Boone Travis",
+            "grade": "Fr.",
+            "position": "RB, OLB",
+            "height": "5' 11\"",
+            "weight": "145 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/boone-travis/?careerid=ussrngmslgsvf"
+          },
+          {
+            "sourceId": "c724d528-4279-47b1-9eb4-b8d5ac912cf4",
+            "number": "36",
+            "name": "Asher Miller",
+            "grade": "So.",
+            "position": "WR, MLB",
+            "height": "5' 11\"",
+            "weight": "160 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/asher-miller/?careerid=n681nddbboa11"
+          },
+          {
+            "sourceId": "fc14f3d3-4e9f-44d0-83b9-8b0259bc9bad",
+            "number": "42",
+            "name": "Isaac Burns",
+            "grade": "Fr.",
+            "position": "WR, CB",
+            "height": "5' 6\"",
+            "weight": "110 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/isaac-burns/?careerid=cvkvbcv2p2evf"
+          },
+          {
+            "sourceId": "67dd635d-20f5-4b3f-8c78-c64f0407d539",
+            "number": "44",
+            "name": "Knox Strickland",
+            "grade": "So.",
+            "position": "WR, CB",
+            "height": "6' 0\"",
+            "weight": "160 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/knox-strickland/?careerid=jpkoh45epmq88"
+          },
+          {
+            "sourceId": "675ebf9f-b09f-4d23-a708-a85da0ca9044",
+            "number": "45",
+            "name": "Boston Jobes",
+            "grade": "Jr.",
+            "position": "RB, MLB",
+            "height": "5' 9\"",
+            "weight": "200 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/boston-jobes/?careerid=l9bre6buaugue"
+          },
+          {
+            "sourceId": "b6272d05-ddb9-43c8-9564-67aafc214597",
+            "number": "46",
+            "name": "Gino Granata",
+            "grade": "Jr.",
+            "position": "FB, TE",
+            "height": "5' 11\"",
+            "weight": "181 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/gino-granata/?careerid=308kqklbolq00"
+          },
+          {
+            "sourceId": "0a4060e2-e201-4059-b4bf-721aef4a29c4",
+            "number": "48",
+            "name": "Jace Clemons",
+            "grade": "Fr.",
+            "position": "WR, CB",
+            "height": "5' 8\"",
+            "weight": "124 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/jace-clemons/?careerid=r2o33ol41v7i2"
+          },
+          {
+            "sourceId": "062ec16f-1dfc-4109-aa16-7d0c98ee236c",
+            "number": "50",
+            "name": "Ryan Bullock",
+            "grade": "Sr.",
+            "position": "C, DT",
+            "height": "5' 9\"",
+            "weight": "210 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/ryan-bullock/?careerid=ocu7lqftkqlqa"
+          },
+          {
+            "sourceId": "cda8c37c-d75c-4006-b895-daff912812a1",
+            "number": "51",
+            "name": "Ayers Kurtz",
+            "grade": "Sr.",
+            "position": "T, NG",
+            "height": "6' 2\"",
+            "weight": "234 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/ayers-kurtz/?careerid=46m31mhm3pjaa"
+          },
+          {
+            "sourceId": "f5013073-8d89-4eae-91d1-e3a97ebae910",
+            "number": "53",
+            "name": "Jackson Lewellyn",
+            "grade": "Sr.",
+            "position": "DE, DT",
+            "height": "6' 0\"",
+            "weight": "245 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/jackson-lewellyn/?careerid=40ubgtc49qr00"
+          },
+          {
+            "sourceId": "c4210395-9ad6-4295-b07d-138cb1489fe8",
+            "number": "54",
+            "name": "Tom Sharpe",
+            "grade": "Fr.",
+            "position": "C, DT",
+            "height": "5' 9\"",
+            "weight": "208 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/tom-sharpe/?careerid=ak64j2vda8999"
+          },
+          {
+            "sourceId": "892a722d-49d7-45c0-9577-db5218c62b51",
+            "number": "55",
+            "name": "Cooper Leclercq",
+            "grade": "Sr.",
+            "position": "G, C",
+            "height": "5' 10\"",
+            "weight": "232 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/cooper-leclercq/?careerid=49chii7cttjrb"
+          },
+          {
+            "sourceId": "533c9613-3d37-48e3-b46e-8090fb5168f9",
+            "number": "58",
+            "name": "Andrick Golden",
+            "grade": "Sr.",
+            "position": "G, DE",
+            "height": "6' 0\"",
+            "weight": "235 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/andrick-golden/?careerid=kej45tak2d399"
+          },
+          {
+            "sourceId": "c73562d1-bb3b-4bfc-a264-9c2dfcaa3bd4",
+            "number": "60",
+            "name": "Alex Gold",
+            "grade": "Fr.",
+            "position": "G, DT",
+            "height": "5' 8\"",
+            "weight": "173 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/alex-gold/?careerid=mjqkbs6frbsg0"
+          },
+          {
+            "sourceId": "b64fa57a-c797-4b90-a0d2-d11e49cf0390",
+            "number": "64",
+            "name": "Jack Davis",
+            "grade": "Jr.",
+            "position": "T, DT",
+            "height": "6' 1\"",
+            "weight": "210 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/jack-davis/?careerid=oboha86blac44"
+          },
+          {
+            "sourceId": "543f9456-fc7c-4ad0-9adc-728762d4a818",
+            "number": "65",
+            "name": "Mason Leclercq",
+            "grade": "Fr.",
+            "position": "G, DE",
+            "height": "5' 9\"",
+            "weight": "155 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/mason-leclercq/?careerid=1r2sdb5ilksn7"
+          },
+          {
+            "sourceId": "29cc1ac5-a789-4ed3-ba66-6b5f0c0ec714",
+            "number": "70",
+            "name": "Luke Belisle",
+            "grade": "Sr.",
+            "position": "T, TE",
+            "height": "6' 5\"",
+            "weight": "227 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/luke-belisle/?careerid=u34nsqdcoo0vf"
+          },
+          {
+            "sourceId": "4545363d-196a-437c-beb9-06558e929df8",
+            "number": "74",
+            "name": "Riley Walker",
+            "grade": "Jr.",
+            "position": "DE, G",
+            "height": "6' 1\"",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/riley-walker/?careerid=opin2k3rf9vqa"
+          },
+          {
+            "sourceId": "c3459e4c-f00b-4074-81e0-8d4a0ad1c0df",
+            "number": "75",
+            "name": "Caleb Blue",
+            "grade": "Sr.",
+            "position": "T",
+            "height": "6' 6\"",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/caleb-blue/?careerid=k344gi0itqbqa"
+          },
+          {
+            "sourceId": "16505d11-a402-49f1-b2c3-774e11eb2779",
+            "number": "80",
+            "name": "Colton Burch",
+            "grade": "So.",
+            "position": "WR, CB",
+            "height": "6' 1\"",
+            "weight": "155 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/colton-burch/?careerid=58thlhv6gjgue"
+          },
+          {
+            "sourceId": "017fc37b-e7ad-4287-87c6-f5f86cc64275",
+            "number": "81",
+            "name": "Scott Allen",
+            "grade": "So.",
+            "position": "WR, FS",
+            "height": "5' 10\"",
+            "weight": "145 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/scott-allen/?careerid=ibdfeu2872cdd"
+          },
+          {
+            "sourceId": "df1ca39e-903b-467b-b06f-57daf9c7b3d7",
+            "number": "88",
+            "name": "Tucker Thomas",
+            "grade": "Fr.",
+            "position": "TE, DE",
+            "height": "6' 1\"",
+            "weight": "175 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/tucker-thomas/?careerid=9n58qsir6miue"
+          },
+          {
+            "sourceId": "992b8802-7a68-4f52-9e4f-1d639172b10f",
+            "number": "99",
+            "name": "Bobby Matlock",
+            "grade": "Jr.",
+            "position": "MLB, FB",
+            "height": "5' 10\"",
+            "weight": "190 lb",
+            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/bobby-matlock/?careerid=9tvp0qkvsrbl5"
+          }
+        ]
+      },
+      "stats": null
+    },
     "Lincoln Christian": {
       "base": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/",
       "schedule": {
         "school": "Lincoln Christian",
         "season": "2026-27",
         "source": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/schedule/",
-        "checkedAt": "2026-10-09T15:37:21.628Z",
+        "checkedAt": "2026-10-09T16:03:00.577Z",
         "status": "ok",
         "events": [
           {
@@ -937,7 +2267,7 @@
       },
       "roster": {
         "source": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/roster/",
-        "checkedAt": "2026-10-09T15:37:21.628Z",
+        "checkedAt": "2026-10-09T16:03:00.577Z",
         "status": "ok",
         "players": [
           {
@@ -1704,7 +3034,7 @@
       },
       "stats": {
         "source": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/stats/",
-        "checkedAt": "2026-10-09T15:37:21.628Z",
+        "checkedAt": "2026-10-09T16:03:00.577Z",
         "status": "ok",
         "tables": [
           {
@@ -3652,1343 +4982,13 @@
         "updatedAt": "2026-10-03T07:37:43Z"
       }
     },
-    "Heritage Hall": {
-      "base": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/football/",
-      "schedule": {
-        "school": "Heritage Hall",
-        "season": "2026-27",
-        "source": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/football/schedule/",
-        "checkedAt": "2026-10-09T15:37:21.628Z",
-        "status": "ok",
-        "events": [
-          {
-            "id": "2f304641-7e5a-4de3-a75f-031ac07e43cb",
-            "date": "2026-08-28",
-            "time": "19:00",
-            "opponent": "Shiloh Christian",
-            "opponentBase": "https://www.maxpreps.com/ar/springdale/shiloh-christian-saints/football/",
-            "mascot": "Saints",
-            "site": "Away",
-            "district": false,
-            "result": "L 38-25",
-            "score": 25,
-            "opponentScore": 38,
-            "status": "completed",
-            "url": "https://www.maxpreps.com/inter-state/football/game/heritage-hall-oklahoma-city-ok-vs-shiloh-christian-springdale-ar/8-28-2026/?c=2f304641-7e5a-4de3-a75f-031ac07e43cb",
-            "kind": "Game"
-          },
-          {
-            "id": "cb1e1e65-21fb-4df7-a1b6-f914a1f3d863",
-            "date": "2026-09-04",
-            "time": "19:00",
-            "opponent": "Lincoln Christian",
-            "opponentBase": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/",
-            "mascot": "Bulldogs",
-            "site": "Home",
-            "district": false,
-            "result": "L 20-19",
-            "score": 19,
-            "opponentScore": 20,
-            "status": "completed",
-            "url": "https://www.maxpreps.com/ok/football/game/heritage-hall-oklahoma-city-vs-lincoln-christian-tulsa/9-4-2026/?c=cb1e1e65-21fb-4df7-a1b6-f914a1f3d863",
-            "kind": "Game"
-          },
-          {
-            "id": "8d02c638-7185-4adf-8bc2-7e60bab88ef2",
-            "date": "2026-09-18",
-            "time": "19:00",
-            "opponent": "Millwood",
-            "opponentBase": "https://www.maxpreps.com/ok/oklahoma-city/millwood-falcons/football/",
-            "mascot": "Falcons",
-            "site": "Away",
-            "district": false,
-            "result": "W 52-14",
-            "score": 52,
-            "opponentScore": 14,
-            "status": "completed",
-            "url": "https://www.maxpreps.com/ok/football/game/heritage-hall-oklahoma-city-vs-millwood-oklahoma-city/9-18-2026/?c=8d02c638-7185-4adf-8bc2-7e60bab88ef2",
-            "kind": "Game"
-          },
-          {
-            "id": "128e94a8-ab7b-4e7f-890b-33137e9555fd",
-            "date": "2026-09-25",
-            "time": "19:00",
-            "opponent": "Stigler",
-            "opponentBase": "https://www.maxpreps.com/ok/stigler/stigler-panthers/football/",
-            "mascot": "Panthers",
-            "site": "Home",
-            "district": true,
-            "result": "W 49-7",
-            "score": 49,
-            "opponentScore": 7,
-            "status": "completed",
-            "url": "https://www.maxpreps.com/ok/football/game/heritage-hall-oklahoma-city-vs-stigler/9-25-2026/?c=128e94a8-ab7b-4e7f-890b-33137e9555fd",
-            "kind": "Game"
-          },
-          {
-            "id": "71a187c9-200a-4328-a7a9-24134190a18f",
-            "date": "2026-10-02",
-            "time": "19:00",
-            "opponent": "Muldrow",
-            "opponentBase": "https://www.maxpreps.com/ok/muldrow/muldrow-bulldogs/football/",
-            "mascot": "Bulldogs",
-            "site": "Away",
-            "district": true,
-            "result": "W 42-6",
-            "score": 42,
-            "opponentScore": 6,
-            "status": "completed",
-            "url": "https://www.maxpreps.com/ok/football/game/heritage-hall-oklahoma-city-vs-muldrow/10-2-2026/?c=71a187c9-200a-4328-a7a9-24134190a18f",
-            "kind": "Game"
-          },
-          {
-            "id": "83ef5bd9-98f6-4da5-b90e-ee7e874ff40a",
-            "date": "2026-10-08",
-            "time": "19:00",
-            "opponent": "Bristow",
-            "opponentBase": "https://www.maxpreps.com/ok/bristow/bristow-purple-pirates/football/",
-            "mascot": "Purple Pirates",
-            "site": "Home",
-            "district": true,
-            "result": "W 52-23",
-            "score": 52,
-            "opponentScore": 23,
-            "status": "completed",
-            "url": "https://www.maxpreps.com/ok/football/game/bristow-vs-heritage-hall-oklahoma-city/10-8-2026/?c=83ef5bd9-98f6-4da5-b90e-ee7e874ff40a",
-            "kind": "Game"
-          },
-          {
-            "id": "41faaff0-6a0a-45cc-a6aa-61ee1dc99a39",
-            "date": "2026-10-15",
-            "time": "19:00",
-            "opponent": "Locust Grove",
-            "opponentBase": "https://www.maxpreps.com/ok/locust-grove/locust-grove-pirates/football/",
-            "mascot": "Pirates",
-            "site": "Away",
-            "district": true,
-            "result": "",
-            "score": null,
-            "opponentScore": null,
-            "status": "scheduled",
-            "url": "https://www.maxpreps.com/ok/football/game/heritage-hall-oklahoma-city-vs-locust-grove/10-15-2026/?c=41faaff0-6a0a-45cc-a6aa-61ee1dc99a39",
-            "kind": "Game"
-          },
-          {
-            "id": "57c802f3-6e87-4176-bd9d-46d0524e5a6e",
-            "date": "2026-10-23",
-            "time": "19:00",
-            "opponent": "Inola",
-            "opponentBase": "https://www.maxpreps.com/ok/inola/inola-longhorns/football/",
-            "mascot": "Longhorns",
-            "site": "Away",
-            "district": true,
-            "result": "",
-            "score": null,
-            "opponentScore": null,
-            "status": "scheduled",
-            "url": "https://www.maxpreps.com/ok/football/game/heritage-hall-oklahoma-city-vs-inola/10-23-2026/?c=57c802f3-6e87-4176-bd9d-46d0524e5a6e",
-            "kind": "Game"
-          },
-          {
-            "id": "b2d08442-85d4-4feb-a066-4bc33bfa7de4",
-            "date": "2026-10-30",
-            "time": "19:00",
-            "opponent": "Perkins-Tryon",
-            "opponentBase": "https://www.maxpreps.com/ok/perkins/perkins-tryon-demons/football/",
-            "mascot": "Demons",
-            "site": "Home",
-            "district": false,
-            "result": "",
-            "score": null,
-            "opponentScore": null,
-            "status": "scheduled",
-            "url": "https://www.maxpreps.com/ok/football/game/heritage-hall-oklahoma-city-vs-perkins-tryon/10-30-2026/?c=b2d08442-85d4-4feb-a066-4bc33bfa7de4",
-            "kind": "Game"
-          }
-        ],
-        "record": "4-2",
-        "districtRecord": "3-0",
-        "districtPlace": "1st",
-        "districtName": "3A District 3",
-        "pointsFor": 239,
-        "pointsAgainst": 108,
-        "streak": "4W",
-        "mascot": "Chargers"
-      },
-      "roster": {
-        "source": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/football/roster/",
-        "checkedAt": "2026-10-09T15:37:21.628Z",
-        "status": "ok",
-        "players": [
-          {
-            "sourceId": "16d49c6b-e204-481a-8aeb-c56ec23b2fb1",
-            "number": "0",
-            "name": "Rhett Sullivan",
-            "grade": "Jr.",
-            "position": "RB, FB",
-            "height": "6' 1\"",
-            "weight": "185 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/rhett-sullivan/?careerid=7pf1t90go53h1"
-          },
-          {
-            "sourceId": "04edafe6-ad7f-4dea-98b9-f68948a09cdc",
-            "number": "1",
-            "name": "Tripp Thomas",
-            "grade": "Jr.",
-            "position": "WR, FS",
-            "height": "6' 3\"",
-            "weight": "205 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/tripp-thomas/?careerid=48tffcl00lq00"
-          },
-          {
-            "sourceId": "abf04c40-9f20-437f-a40f-164ed8143b00",
-            "number": "2",
-            "name": "Max Everett",
-            "grade": "Jr.",
-            "position": "RB, WR",
-            "height": "5' 8\"",
-            "weight": "165 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/max-everett/?careerid=52mtc4c4a0di2"
-          },
-          {
-            "sourceId": "3c715470-3867-4679-b05d-2ec6fd8e31b6",
-            "number": "3",
-            "name": "Bennett Burns",
-            "grade": "Jr.",
-            "position": "QB, FS",
-            "height": "6' 4\"",
-            "weight": "170 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/bennett-burns/?careerid=0de88qv7rtph1"
-          },
-          {
-            "sourceId": "ecde5867-be24-4cbe-a4b1-51f5c9c2554a",
-            "number": "4",
-            "name": "Porter England",
-            "grade": "Sr.",
-            "position": "WR, CB",
-            "height": "5' 11\"",
-            "weight": "185 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/porter-england/?careerid=riep9k27gp7sc"
-          },
-          {
-            "sourceId": "42d58e71-c1cd-438e-925d-db18677e414b",
-            "number": "6",
-            "name": "Blaine Kirk",
-            "grade": "Sr.",
-            "position": "WR, CB",
-            "height": "6' 1\"",
-            "weight": "185 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/blaine-kirk/?careerid=ntinpjgc2nmvf"
-          },
-          {
-            "sourceId": "15537fc6-ec12-460f-a1b8-dc2138525f23",
-            "number": "7",
-            "name": "Kobe White",
-            "grade": "Jr.",
-            "position": "WR, CB",
-            "height": "6' 2\"",
-            "weight": "180 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/kobe-white/?careerid=7u17vsr2n8lk4"
-          },
-          {
-            "sourceId": "51fc7911-abcd-41bf-a022-42d01bbc88cc",
-            "number": "8",
-            "name": "Colson Rushing",
-            "grade": "Jr.",
-            "position": "MLB, TE",
-            "height": "6' 3\"",
-            "weight": "212 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/colson-rushing/?careerid=747sdl4cqd4ee"
-          },
-          {
-            "sourceId": "6a74d767-e9c0-491f-80f8-87af0cc7f3f9",
-            "number": "9",
-            "name": "Caleb Niver",
-            "grade": "So.",
-            "position": "WR, CB",
-            "height": "5' 9\"",
-            "weight": "146 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/caleb-niver/?careerid=fmf3hl9lat277"
-          },
-          {
-            "sourceId": "d2797656-c621-477a-9cb3-d3a36ed64e7e",
-            "number": "10",
-            "name": "Teagan Lawson",
-            "grade": "Sr.",
-            "position": "QB",
-            "height": "6' 2\"",
-            "weight": "172 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/teagan-lawson/?careerid=unfl4upje45qa"
-          },
-          {
-            "sourceId": "415d06f6-35f7-4c78-b15b-c7590cc207a5",
-            "number": "11",
-            "name": "Carson Phelps",
-            "grade": "Sr.",
-            "position": "FB, TE",
-            "height": "6' 3\"",
-            "weight": "225 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/carson-phelps/?careerid=ru17fkb4j7eff"
-          },
-          {
-            "sourceId": "5f29d130-c4ef-4a99-a459-777d2552729e",
-            "number": "12",
-            "name": "Rex Welker",
-            "grade": "Fr.",
-            "position": "WR, SS",
-            "height": "5' 10\"",
-            "weight": "160 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/rex-welker/?careerid=o0d10qpa0eovf"
-          },
-          {
-            "sourceId": "0d65f93e-1436-418e-99e7-c0656d76f085",
-            "number": "13",
-            "name": "Grant Sullivan",
-            "grade": "Jr.",
-            "position": "WR, SS",
-            "height": "6' 1\"",
-            "weight": "185 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/grant-sullivan/?careerid=uhfhseqdaj8p9"
-          },
-          {
-            "sourceId": "0b9bc958-5583-4c52-b8f7-3a7557190477",
-            "number": "14",
-            "name": "Vincent Oliver",
-            "grade": "So.",
-            "position": "WR, SS",
-            "height": "6' 2\"",
-            "weight": "170 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/vincent-oliver/?careerid=rekk8rbu792l5"
-          },
-          {
-            "sourceId": "e59d3a17-7970-42d3-b541-36a0902d3942",
-            "number": "15",
-            "name": "Drake Shepard",
-            "grade": "Fr.",
-            "position": "QB, FS",
-            "height": "5' 7\"",
-            "weight": "135 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/drake-shepard/?careerid=uohoomcvo66aa"
-          },
-          {
-            "sourceId": "9a079448-37fd-4f59-850a-14532ecdbcd2",
-            "number": "16",
-            "name": "James Parker",
-            "grade": "So.",
-            "position": "RB, CB",
-            "height": "5' 9\"",
-            "weight": "145 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/james-parker/?careerid=q1hkjih4geo22"
-          },
-          {
-            "sourceId": "e33f94fe-99fe-4569-9d20-f22094c35695",
-            "number": "17",
-            "name": "Sean Boyd",
-            "grade": "Sr.",
-            "position": "FB, TE",
-            "height": "6' 2\"",
-            "weight": "202 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/sean-boyd/?careerid=kgqd543idrvcc"
-          },
-          {
-            "sourceId": "04aa59f5-de3a-4b80-a769-7e5d59b227e0",
-            "number": "18",
-            "name": "Benjamin McReynolds",
-            "grade": "Jr.",
-            "position": "WR, CB",
-            "height": "5' 9\"",
-            "weight": "145 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/benjamin-mcreynolds/?careerid=5uh68s4fn6mp9"
-          },
-          {
-            "sourceId": "91492fc0-7e48-40a5-9bea-fc39fe9c4c77",
-            "number": "19",
-            "name": "Walker James Wedel",
-            "grade": "Sr.",
-            "position": "MLB, RB",
-            "height": "6' 2\"",
-            "weight": "192 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/walker-james-wedel/?careerid=ipml9ec83dui2"
-          },
-          {
-            "sourceId": "e9c196bf-213e-4298-8434-22d2e610a255",
-            "number": "20",
-            "name": "Austin King",
-            "grade": "Sr.",
-            "position": "OLB, WR",
-            "height": "6' 2\"",
-            "weight": "205 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/austin-king/?careerid=hrnvs166i6msc"
-          },
-          {
-            "sourceId": "dfae546c-cb4e-4159-b95f-a1bf93643a76",
-            "number": "21",
-            "name": "Cutter Lamb",
-            "grade": "Fr.",
-            "position": "WR, CB",
-            "height": "5' 6\"",
-            "weight": "110 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/cutter-lamb/?careerid=4f2u6rq8lc3h1"
-          },
-          {
-            "sourceId": "b42334a3-62b0-4432-84a7-06e34d2b5890",
-            "number": "22",
-            "name": "Brooks Eve",
-            "grade": "Jr.",
-            "position": "WR, CB",
-            "height": "5' 9\"",
-            "weight": "160 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/brooks-eve/?careerid=u5i5e6461n866"
-          },
-          {
-            "sourceId": "41ef4e54-8600-4a0a-8b6d-41b57dd92479",
-            "number": "23",
-            "name": "Nash Eiser",
-            "grade": "Sr.",
-            "position": "RB, OLB",
-            "height": "5' 8\"",
-            "weight": "180 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/nash-eiser/?careerid=fio8bs72a7obb"
-          },
-          {
-            "sourceId": "f723dd55-9c85-4afa-ba58-18143edb0f34",
-            "number": "24",
-            "name": "Austin Echalk",
-            "grade": "So.",
-            "position": "RB, MLB",
-            "height": "5' 11\"",
-            "weight": "160 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/austin-echalk/?careerid=4onoga6ctugi2"
-          },
-          {
-            "sourceId": "c40bc205-a7d9-4bc0-a6d7-5449b6223247",
-            "number": "25",
-            "name": "Noah Hurwitz",
-            "grade": "Jr.",
-            "position": "TE, MLB",
-            "height": "6' 0\"",
-            "weight": "192 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/noah-hurwitz/?careerid=3cjqtuvjbll22"
-          },
-          {
-            "sourceId": "7c15bc96-37e9-4176-ae43-b450235446ea",
-            "number": "26",
-            "name": "Jacob Lacy",
-            "grade": "Jr.",
-            "position": "RB, CB",
-            "height": "5' 10\"",
-            "weight": "145 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/jacob-lacy/?careerid=408ns6rgl4mi2"
-          },
-          {
-            "sourceId": "2b5873f3-4137-42a6-9998-0e2d3a806a86",
-            "number": "27",
-            "name": "Cole Huelskamp",
-            "grade": "So.",
-            "position": "WR, CB",
-            "height": "5' 10\"",
-            "weight": "147 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/cole-huelskamp/?careerid=p25mpn4hlig66"
-          },
-          {
-            "sourceId": "a44f176d-4bc9-4a3f-ab9f-87102820574a",
-            "number": "29",
-            "name": "Henry Wegener",
-            "grade": "Fr.",
-            "position": "WR, FS",
-            "height": "5' 10\"",
-            "weight": "120 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/henry-wegener/?careerid=jcabi3jplvd44"
-          },
-          {
-            "sourceId": "8681533d-887e-4b65-8901-ab75ed696bbd",
-            "number": "30",
-            "name": "Crew Holland",
-            "grade": "Fr.",
-            "position": "WR, CB",
-            "height": "5' 10\"",
-            "weight": "154 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/crew-holland/?careerid=ir707n1vi1q44"
-          },
-          {
-            "sourceId": "7e71f1c0-4043-4c30-94f2-bf9093817f31",
-            "number": "31",
-            "name": "Beau Butler",
-            "grade": "Sr.",
-            "position": "K, P",
-            "height": "6' 1\"",
-            "weight": "170 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/beau-butler/?careerid=1mr7sttemluue"
-          },
-          {
-            "sourceId": "f5303701-74b6-44f8-ac3e-3c1723a88832",
-            "number": "32",
-            "name": "Gage Burshears",
-            "grade": "Jr.",
-            "position": "WR, CB",
-            "height": "6' 0\"",
-            "weight": "192 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/gage-burshears/?careerid=i4g43ej72m1ff"
-          },
-          {
-            "sourceId": "435a652b-1c8e-4c86-9fcd-1fb0e31e001a",
-            "number": "33",
-            "name": "Jackson Echalk",
-            "grade": "Jr.",
-            "position": "MLB, WR",
-            "height": "6' 0\"",
-            "weight": "170 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/jackson-echalk/?careerid=lreh1358jshdd"
-          },
-          {
-            "sourceId": "f9c45985-e059-4c9f-bc8e-3fef0a9e6053",
-            "number": "34",
-            "name": "Tanner King",
-            "grade": "So.",
-            "position": "FB, MLB",
-            "height": "5' 10\"",
-            "weight": "172 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/tanner-king/?careerid=pb63rlp8tr2m6"
-          },
-          {
-            "sourceId": "4ba40b99-40c8-477e-8c28-d976dbf59e23",
-            "number": "35",
-            "name": "Boone Travis",
-            "grade": "Fr.",
-            "position": "RB, OLB",
-            "height": "5' 11\"",
-            "weight": "145 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/boone-travis/?careerid=ussrngmslgsvf"
-          },
-          {
-            "sourceId": "c724d528-4279-47b1-9eb4-b8d5ac912cf4",
-            "number": "36",
-            "name": "Asher Miller",
-            "grade": "So.",
-            "position": "WR, MLB",
-            "height": "5' 11\"",
-            "weight": "160 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/asher-miller/?careerid=n681nddbboa11"
-          },
-          {
-            "sourceId": "fc14f3d3-4e9f-44d0-83b9-8b0259bc9bad",
-            "number": "42",
-            "name": "Isaac Burns",
-            "grade": "Fr.",
-            "position": "WR, CB",
-            "height": "5' 6\"",
-            "weight": "110 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/isaac-burns/?careerid=cvkvbcv2p2evf"
-          },
-          {
-            "sourceId": "67dd635d-20f5-4b3f-8c78-c64f0407d539",
-            "number": "44",
-            "name": "Knox Strickland",
-            "grade": "So.",
-            "position": "WR, CB",
-            "height": "6' 0\"",
-            "weight": "160 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/knox-strickland/?careerid=jpkoh45epmq88"
-          },
-          {
-            "sourceId": "675ebf9f-b09f-4d23-a708-a85da0ca9044",
-            "number": "45",
-            "name": "Boston Jobes",
-            "grade": "Jr.",
-            "position": "RB, MLB",
-            "height": "5' 9\"",
-            "weight": "200 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/boston-jobes/?careerid=l9bre6buaugue"
-          },
-          {
-            "sourceId": "b6272d05-ddb9-43c8-9564-67aafc214597",
-            "number": "46",
-            "name": "Gino Granata",
-            "grade": "Jr.",
-            "position": "FB, TE",
-            "height": "5' 11\"",
-            "weight": "181 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/gino-granata/?careerid=308kqklbolq00"
-          },
-          {
-            "sourceId": "0a4060e2-e201-4059-b4bf-721aef4a29c4",
-            "number": "48",
-            "name": "Jace Clemons",
-            "grade": "Fr.",
-            "position": "WR, CB",
-            "height": "5' 8\"",
-            "weight": "124 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/jace-clemons/?careerid=r2o33ol41v7i2"
-          },
-          {
-            "sourceId": "062ec16f-1dfc-4109-aa16-7d0c98ee236c",
-            "number": "50",
-            "name": "Ryan Bullock",
-            "grade": "Sr.",
-            "position": "C, DT",
-            "height": "5' 9\"",
-            "weight": "210 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/ryan-bullock/?careerid=ocu7lqftkqlqa"
-          },
-          {
-            "sourceId": "cda8c37c-d75c-4006-b895-daff912812a1",
-            "number": "51",
-            "name": "Ayers Kurtz",
-            "grade": "Sr.",
-            "position": "T, NG",
-            "height": "6' 2\"",
-            "weight": "234 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/ayers-kurtz/?careerid=46m31mhm3pjaa"
-          },
-          {
-            "sourceId": "f5013073-8d89-4eae-91d1-e3a97ebae910",
-            "number": "53",
-            "name": "Jackson Lewellyn",
-            "grade": "Sr.",
-            "position": "DE, DT",
-            "height": "6' 0\"",
-            "weight": "245 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/jackson-lewellyn/?careerid=40ubgtc49qr00"
-          },
-          {
-            "sourceId": "c4210395-9ad6-4295-b07d-138cb1489fe8",
-            "number": "54",
-            "name": "Tom Sharpe",
-            "grade": "Fr.",
-            "position": "C, DT",
-            "height": "5' 9\"",
-            "weight": "208 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/tom-sharpe/?careerid=ak64j2vda8999"
-          },
-          {
-            "sourceId": "892a722d-49d7-45c0-9577-db5218c62b51",
-            "number": "55",
-            "name": "Cooper Leclercq",
-            "grade": "Sr.",
-            "position": "G, C",
-            "height": "5' 10\"",
-            "weight": "232 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/cooper-leclercq/?careerid=49chii7cttjrb"
-          },
-          {
-            "sourceId": "533c9613-3d37-48e3-b46e-8090fb5168f9",
-            "number": "58",
-            "name": "Andrick Golden",
-            "grade": "Sr.",
-            "position": "G, DE",
-            "height": "6' 0\"",
-            "weight": "235 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/andrick-golden/?careerid=kej45tak2d399"
-          },
-          {
-            "sourceId": "c73562d1-bb3b-4bfc-a264-9c2dfcaa3bd4",
-            "number": "60",
-            "name": "Alex Gold",
-            "grade": "Fr.",
-            "position": "G, DT",
-            "height": "5' 8\"",
-            "weight": "173 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/alex-gold/?careerid=mjqkbs6frbsg0"
-          },
-          {
-            "sourceId": "b64fa57a-c797-4b90-a0d2-d11e49cf0390",
-            "number": "64",
-            "name": "Jack Davis",
-            "grade": "Jr.",
-            "position": "T, DT",
-            "height": "6' 1\"",
-            "weight": "210 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/jack-davis/?careerid=oboha86blac44"
-          },
-          {
-            "sourceId": "543f9456-fc7c-4ad0-9adc-728762d4a818",
-            "number": "65",
-            "name": "Mason Leclercq",
-            "grade": "Fr.",
-            "position": "G, DE",
-            "height": "5' 9\"",
-            "weight": "155 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/mason-leclercq/?careerid=1r2sdb5ilksn7"
-          },
-          {
-            "sourceId": "29cc1ac5-a789-4ed3-ba66-6b5f0c0ec714",
-            "number": "70",
-            "name": "Luke Belisle",
-            "grade": "Sr.",
-            "position": "T, TE",
-            "height": "6' 5\"",
-            "weight": "227 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/luke-belisle/?careerid=u34nsqdcoo0vf"
-          },
-          {
-            "sourceId": "4545363d-196a-437c-beb9-06558e929df8",
-            "number": "74",
-            "name": "Riley Walker",
-            "grade": "Jr.",
-            "position": "DE, G",
-            "height": "6' 1\"",
-            "weight": "",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/riley-walker/?careerid=opin2k3rf9vqa"
-          },
-          {
-            "sourceId": "c3459e4c-f00b-4074-81e0-8d4a0ad1c0df",
-            "number": "75",
-            "name": "Caleb Blue",
-            "grade": "Sr.",
-            "position": "T",
-            "height": "6' 6\"",
-            "weight": "",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/caleb-blue/?careerid=k344gi0itqbqa"
-          },
-          {
-            "sourceId": "16505d11-a402-49f1-b2c3-774e11eb2779",
-            "number": "80",
-            "name": "Colton Burch",
-            "grade": "So.",
-            "position": "WR, CB",
-            "height": "6' 1\"",
-            "weight": "155 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/colton-burch/?careerid=58thlhv6gjgue"
-          },
-          {
-            "sourceId": "017fc37b-e7ad-4287-87c6-f5f86cc64275",
-            "number": "81",
-            "name": "Scott Allen",
-            "grade": "So.",
-            "position": "WR, FS",
-            "height": "5' 10\"",
-            "weight": "145 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/scott-allen/?careerid=ibdfeu2872cdd"
-          },
-          {
-            "sourceId": "df1ca39e-903b-467b-b06f-57daf9c7b3d7",
-            "number": "88",
-            "name": "Tucker Thomas",
-            "grade": "Fr.",
-            "position": "TE, DE",
-            "height": "6' 1\"",
-            "weight": "175 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/tucker-thomas/?careerid=9n58qsir6miue"
-          },
-          {
-            "sourceId": "992b8802-7a68-4f52-9e4f-1d639172b10f",
-            "number": "99",
-            "name": "Bobby Matlock",
-            "grade": "Jr.",
-            "position": "MLB, FB",
-            "height": "5' 10\"",
-            "weight": "190 lb",
-            "profile": "https://www.maxpreps.com/ok/oklahoma-city/heritage-hall-chargers/athletes/bobby-matlock/?careerid=9tvp0qkvsrbl5"
-          }
-        ]
-      },
-      "stats": null
-    },
-    "Jones": {
-      "base": "https://www.maxpreps.com/ok/jones/jones-longhorns/football/",
-      "schedule": {
-        "school": "Jones",
-        "season": "2026-27",
-        "source": "https://www.maxpreps.com/ok/jones/jones-longhorns/football/schedule/",
-        "checkedAt": "2026-10-09T15:37:21.628Z",
-        "status": "ok",
-        "events": [
-          {
-            "id": "9fd7f076-ea03-4818-a271-a8981901723c",
-            "date": "2026-08-27",
-            "time": "19:00",
-            "opponent": "Lincoln Christian",
-            "opponentBase": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/",
-            "mascot": "Bulldogs",
-            "site": "Home",
-            "district": false,
-            "result": "L 25-13",
-            "score": 13,
-            "opponentScore": 25,
-            "status": "completed",
-            "url": "https://www.maxpreps.com/ok/football/game/jones-vs-lincoln-christian-tulsa/8-27-2026/?c=9fd7f076-ea03-4818-a271-a8981901723c",
-            "kind": "Game"
-          },
-          {
-            "id": "c9ce651a-75b8-438d-b141-7cface1ae0c3",
-            "date": "2026-09-04",
-            "time": "19:00",
-            "opponent": "Bethany",
-            "opponentBase": "https://www.maxpreps.com/ok/bethany/bethany-bronchos/football/",
-            "mascot": "Bronchos",
-            "site": "Home",
-            "district": false,
-            "result": "W 53-6",
-            "score": 53,
-            "opponentScore": 6,
-            "status": "completed",
-            "url": "https://www.maxpreps.com/ok/football/game/bethany-vs-jones/9-4-2026/?c=c9ce651a-75b8-438d-b141-7cface1ae0c3",
-            "kind": "Game"
-          },
-          {
-            "id": "956ad936-4686-4a9e-9013-bab314b85804",
-            "date": "2026-09-11",
-            "time": "19:00",
-            "opponent": "Mount St. Mary",
-            "opponentBase": "https://www.maxpreps.com/ok/oklahoma-city/mount-st-mary-rockets/football/",
-            "mascot": "Rockets",
-            "site": "Away",
-            "district": false,
-            "result": "W 42-21",
-            "score": 42,
-            "opponentScore": 21,
-            "status": "completed",
-            "url": "https://www.maxpreps.com/ok/football/game/jones-vs-mount-st-mary-oklahoma-city/9-11-2026/?c=956ad936-4686-4a9e-9013-bab314b85804",
-            "kind": "Game"
-          },
-          {
-            "id": "d9b9d55d-7ae3-454f-aaf3-bac149bf57a9",
-            "date": "2026-09-25",
-            "time": "19:00",
-            "opponent": "Webster",
-            "opponentBase": "https://www.maxpreps.com/ok/tulsa/webster-warriors/football/",
-            "mascot": "Warriors",
-            "site": "Home",
-            "district": true,
-            "result": "W 80-0",
-            "score": 80,
-            "opponentScore": 0,
-            "status": "completed",
-            "url": "https://www.maxpreps.com/ok/football/game/jones-vs-webster-tulsa/9-25-2026/?c=d9b9d55d-7ae3-454f-aaf3-bac149bf57a9",
-            "kind": "Game"
-          },
-          {
-            "id": "f932a750-d8f0-4308-84f1-b7c37c3c982f",
-            "date": "2026-10-02",
-            "time": "19:00",
-            "opponent": "Catoosa",
-            "opponentBase": "https://www.maxpreps.com/ok/catoosa/catoosa-indians/football/",
-            "mascot": "Indians",
-            "site": "Away",
-            "district": true,
-            "result": "W 56-7",
-            "score": 56,
-            "opponentScore": 7,
-            "status": "completed",
-            "url": "https://www.maxpreps.com/ok/football/game/catoosa-vs-jones/10-2-2026/?c=f932a750-d8f0-4308-84f1-b7c37c3c982f",
-            "kind": "Game"
-          },
-          {
-            "id": "c1db5647-91e2-4337-b0e5-c8a7cec9cc60",
-            "date": "2026-10-09",
-            "time": "19:00",
-            "opponent": "Eufaula",
-            "opponentBase": "https://www.maxpreps.com/ok/eufaula/eufaula-ironheads/football/",
-            "mascot": "Ironheads",
-            "site": "Home",
-            "district": true,
-            "result": "",
-            "score": null,
-            "opponentScore": null,
-            "status": "scheduled",
-            "url": "https://www.maxpreps.com/ok/football/game/eufaula-vs-jones/10-9-2026/?c=c1db5647-91e2-4337-b0e5-c8a7cec9cc60",
-            "kind": "Game"
-          },
-          {
-            "id": "767a4ea3-38ec-4778-86b4-33df38d41ba0",
-            "date": "2026-10-15",
-            "time": "19:00",
-            "opponent": "Vinita",
-            "opponentBase": "https://www.maxpreps.com/ok/vinita/vinita-hornets/football/",
-            "mascot": "Hornets",
-            "site": "Away",
-            "district": true,
-            "result": "",
-            "score": null,
-            "opponentScore": null,
-            "status": "scheduled",
-            "url": "https://www.maxpreps.com/ok/football/game/jones-vs-vinita/10-15-2026/?c=767a4ea3-38ec-4778-86b4-33df38d41ba0",
-            "kind": "Game"
-          },
-          {
-            "id": "f4107fce-17eb-44e2-882f-fc012ffb0d85",
-            "date": "2026-10-23",
-            "time": "19:00",
-            "opponent": "Metro Christian",
-            "opponentBase": "https://www.maxpreps.com/ok/tulsa/metro-christian-patriots/football/",
-            "mascot": "Patriots",
-            "site": "Away",
-            "district": true,
-            "result": "",
-            "score": null,
-            "opponentScore": null,
-            "status": "scheduled",
-            "url": "https://www.maxpreps.com/ok/football/game/jones-vs-metro-christian-tulsa/10-23-2026/?c=f4107fce-17eb-44e2-882f-fc012ffb0d85",
-            "kind": "Game"
-          },
-          {
-            "id": "e995ec8d-7ca1-48d3-8022-5e37e0de21de",
-            "date": "2026-10-30",
-            "time": "19:00",
-            "opponent": "Jay",
-            "opponentBase": "https://www.maxpreps.com/ok/jay/jay-bulldogs/football/",
-            "mascot": "Bulldogs",
-            "site": "Home",
-            "district": true,
-            "result": "",
-            "score": null,
-            "opponentScore": null,
-            "status": "scheduled",
-            "url": "https://www.maxpreps.com/ok/football/game/jay-vs-jones/10-30-2026/?c=e995ec8d-7ca1-48d3-8022-5e37e0de21de",
-            "kind": "Game"
-          },
-          {
-            "id": "70e2a700-5126-4ae4-a267-a3d95704a028",
-            "date": "2026-11-06",
-            "time": "19:00",
-            "opponent": "Berryhill",
-            "opponentBase": "https://www.maxpreps.com/ok/tulsa/berryhill-chiefs/football/",
-            "mascot": "Chiefs",
-            "site": "Away",
-            "district": true,
-            "result": "",
-            "score": null,
-            "opponentScore": null,
-            "status": "scheduled",
-            "url": "https://www.maxpreps.com/ok/football/game/berryhill-tulsa-vs-jones/11-6-2026/?c=70e2a700-5126-4ae4-a267-a3d95704a028",
-            "kind": "Game"
-          }
-        ],
-        "record": "4-1",
-        "districtRecord": "2-0",
-        "districtPlace": "1st",
-        "districtName": "3A District 4",
-        "pointsFor": 244,
-        "pointsAgainst": 59,
-        "streak": "4W",
-        "mascot": "Longhorns"
-      },
-      "roster": {
-        "source": "https://www.maxpreps.com/ok/jones/jones-longhorns/football/roster/",
-        "checkedAt": "2026-10-09T15:37:21.628Z",
-        "status": "ok",
-        "players": [
-          {
-            "sourceId": "9a5c8601-f39a-4482-803c-3c9bf2a25f17",
-            "number": "1",
-            "name": "Garritt Davis",
-            "grade": "Jr.",
-            "position": "",
-            "height": "6' 3\"",
-            "weight": "175 lb",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/garritt-davis/?careerid=gstog79mpvftd"
-          },
-          {
-            "sourceId": "66b17779-2592-436e-84c5-54c5e27d6089",
-            "number": "2",
-            "name": "Derek Templeton",
-            "grade": "Jr.",
-            "position": "CB, WR",
-            "height": "6' 2\"",
-            "weight": "",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/derek-templeton/?careerid=2gn9piemgokaa"
-          },
-          {
-            "sourceId": "6cfc9210-583d-49e0-b8c7-1bfc14d9b06b",
-            "number": "3",
-            "name": "Hunter Purvis",
-            "grade": "Sr.",
-            "position": "WR, CB",
-            "height": "6' 1\"",
-            "weight": "170 lb",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/hunter-purvis/?careerid=6k1e5l3hv87j3"
-          },
-          {
-            "sourceId": "53d17d05-1a5c-4453-bfbb-deb93bdc06b6",
-            "number": "4",
-            "name": "Kade Templeton",
-            "grade": "Jr.",
-            "position": "CB, WR",
-            "height": "6' 2\"",
-            "weight": "",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/kade-templeton/?careerid=78plu4vo39900"
-          },
-          {
-            "sourceId": "363932a9-1c74-4589-ba2d-ff73e759a6fc",
-            "number": "5",
-            "name": "Dash Gaines",
-            "grade": "",
-            "position": "",
-            "height": "5' 8\"",
-            "weight": "145 lb",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/dash-gaines/?careerid=5ipgdnbjikvj3"
-          },
-          {
-            "sourceId": "df50852c-b82a-4b6d-98f3-9a6d1e274331",
-            "number": "7",
-            "name": "Wade Davis",
-            "grade": "Jr.",
-            "position": "",
-            "height": "5' 10\"",
-            "weight": "155 lb",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/wade-davis/?careerid=qahva88h7hg33"
-          },
-          {
-            "sourceId": "77aafec2-29fb-4900-9329-f55c887f3988",
-            "number": "8",
-            "name": "Tripp Rogers",
-            "grade": "Sr.",
-            "position": "OLB, RB",
-            "height": "5' 11\"",
-            "weight": "175 lb",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/tripp-rogers/?careerid=tkbtg9j4dq2j3"
-          },
-          {
-            "sourceId": "30255e26-82a0-4175-b50c-0f6b36952448",
-            "number": "9",
-            "name": "Jet Biby",
-            "grade": "Sr.",
-            "position": "SS, WR",
-            "height": "5' 11\"",
-            "weight": "170 lb",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/jet-biby/?careerid=senqh2h4q8c44"
-          },
-          {
-            "sourceId": "c8b6cd5f-c078-47ca-8be3-48ca4e46e211",
-            "number": "10",
-            "name": "Drew Thomas",
-            "grade": "Sr.",
-            "position": "QB",
-            "height": "",
-            "weight": "",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/drew-thomas/?careerid=8vskr54is1jg0"
-          },
-          {
-            "sourceId": "5c649841-a5ea-4a95-9473-d1b997ca5ca6",
-            "number": "11",
-            "name": "Kason Hammons",
-            "grade": "Jr.",
-            "position": "RB",
-            "height": "5' 10\"",
-            "weight": "190 lb",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/kason-hammons/?careerid=fkh8hdda1ambb"
-          },
-          {
-            "sourceId": "f8d8089c-6c3a-4102-ac46-b00c819287af",
-            "number": "12",
-            "name": "Jeymon Reed",
-            "grade": "So.",
-            "position": "QB",
-            "height": "6' 4\"",
-            "weight": "200 lb",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/jeymon-reed/?careerid=l6ke9al6c0rcc"
-          },
-          {
-            "sourceId": "6ebc0c16-e8e3-4689-b3a7-a124727fbaeb",
-            "number": "15",
-            "name": "Jaxon Long",
-            "grade": "Fr.",
-            "position": "QB",
-            "height": "",
-            "weight": "",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/jaxon-long/?careerid=t6j5762vk29sc"
-          },
-          {
-            "sourceId": "dee9d626-acf9-4b92-93f2-564d2d22232b",
-            "number": "17",
-            "name": "Ryan Youngs",
-            "grade": "Fr.",
-            "position": "WR, FS",
-            "height": "5' 8\"",
-            "weight": "128 lb",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/ryan-youngs/?careerid=4v14rfl57de66"
-          },
-          {
-            "sourceId": "f8a52e7f-57ba-477b-92e7-babf44cf74fd",
-            "number": "18",
-            "name": "Luke Wilkinson",
-            "grade": "So.",
-            "position": "WR, FS",
-            "height": "6' 0\"",
-            "weight": "140 lb",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/luke-wilkinson/?careerid=l40mhcdr33322"
-          },
-          {
-            "sourceId": "ac5d8478-4f57-48ff-9fe1-cf51fe8e737a",
-            "number": "19",
-            "name": "Jeffrey Shaw",
-            "grade": "",
-            "position": "",
-            "height": "",
-            "weight": "",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/jeffrey-shaw/?careerid=2vk20p0jcqldd"
-          },
-          {
-            "sourceId": "7f6257ae-9cd7-4748-a1f4-207c59507c1c",
-            "number": "21",
-            "name": "Parks McCaleb",
-            "grade": "Sr.",
-            "position": "WR",
-            "height": "",
-            "weight": "",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/parks-mccaleb/?careerid=lrjvcem6qusk4"
-          },
-          {
-            "sourceId": "a4e8adfa-118c-4ad0-8d3a-6221e5e99488",
-            "number": "22",
-            "name": "Ben Williams",
-            "grade": "Jr.",
-            "position": "WR, CB",
-            "height": "5' 11\"",
-            "weight": "220 lb",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/ben-williams/?careerid=3v5ef142o6k99"
-          },
-          {
-            "sourceId": "71e66bde-b90a-4c64-9be7-ea9236abf38f",
-            "number": "24",
-            "name": "Leonidas Moralez",
-            "grade": "So.",
-            "position": "RB",
-            "height": "",
-            "weight": "",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/leonidas-moralez/?careerid=p6b59n5quhu11"
-          },
-          {
-            "sourceId": "05000837-0523-452e-ace0-bd7c575284cf",
-            "number": "26",
-            "name": "Jose Taylor",
-            "grade": "Jr.",
-            "position": "RB, OLB",
-            "height": "5' 4\"",
-            "weight": "165 lb",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/jose-taylor/?careerid=je30jg235nh22"
-          },
-          {
-            "sourceId": "8722d80f-7f1e-48f7-8290-c7533d3dce09",
-            "number": "27",
-            "name": "Eli Debusk",
-            "grade": "Jr.",
-            "position": "OLB, MLB",
-            "height": "6' 2\"",
-            "weight": "165 lb",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/eli-debusk/?careerid=0lr71gavri8n7"
-          },
-          {
-            "sourceId": "38f9d60b-ac6c-40d6-9337-d6f084c71047",
-            "number": "30",
-            "name": "Mars Moralez",
-            "grade": "Sr.",
-            "position": "",
-            "height": "",
-            "weight": "",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/mars-moralez/?careerid=gg416mhq142p9"
-          },
-          {
-            "sourceId": "c7813da7-65f6-43ae-b5e8-5455e8a98d5a",
-            "number": "34",
-            "name": "Jagger Collier",
-            "grade": "Fr.",
-            "position": "WR",
-            "height": "",
-            "weight": "",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/jagger-collier/?careerid=dnk52jkj3svaa"
-          },
-          {
-            "sourceId": "6a9f4b50-5c0f-4fe2-9057-974e22ebb19a",
-            "number": "36",
-            "name": "Noah Norris",
-            "grade": "Sr.",
-            "position": "",
-            "height": "",
-            "weight": "",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/noah-norris/?careerid=sto07v9b94vsc"
-          },
-          {
-            "sourceId": "24ccdca7-8610-413f-835f-0d805d1718c4",
-            "number": "41",
-            "name": "Caleb Myers",
-            "grade": "Fr.",
-            "position": "OLB",
-            "height": "",
-            "weight": "",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/caleb-myers/?careerid=o1g2bafjjkb11"
-          },
-          {
-            "sourceId": "c4468174-0247-44ca-a6ad-17938f2a8727",
-            "number": "42",
-            "name": "Jesse Hernandez",
-            "grade": "Sr.",
-            "position": "OLB, SS",
-            "height": "6' 1\"",
-            "weight": "210 lb",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/jesse-hernandez/?careerid=gcao42t2d1og0"
-          },
-          {
-            "sourceId": "5b4e33e9-411d-4354-8022-a7df3a24fb7c",
-            "number": "50",
-            "name": "Jack Swarnes",
-            "grade": "Fr.",
-            "position": "T",
-            "height": "",
-            "weight": "",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/jack-swarnes/?careerid=vekatd5vba2ue"
-          },
-          {
-            "sourceId": "c8c63596-8d87-4c2a-abf7-1c52b3863d68",
-            "number": "54",
-            "name": "Preston Williams",
-            "grade": "Fr.",
-            "position": "G",
-            "height": "",
-            "weight": "",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/preston-williams/?careerid=ab5kh9ntp8t77"
-          },
-          {
-            "sourceId": "339e91d7-6c9b-4539-96aa-394075b75f30",
-            "number": "55",
-            "name": "Bryce MacFarlane",
-            "grade": "Jr.",
-            "position": "OLB",
-            "height": "",
-            "weight": "",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/bryce-macfarlane/?careerid=u2l026m9t82td"
-          },
-          {
-            "sourceId": "2379a210-d429-4777-8393-c3f3ab985fe8",
-            "number": "55",
-            "name": "Leighton Sousa",
-            "grade": "So.",
-            "position": "T",
-            "height": "",
-            "weight": "",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/leighton-sousa/?careerid=28t4r2k3fbvi2"
-          },
-          {
-            "sourceId": "20536022-c2cb-4e46-af38-d2120892469d",
-            "number": "58",
-            "name": "Jakob Mendoza",
-            "grade": "So.",
-            "position": "C",
-            "height": "",
-            "weight": "",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/jakob-mendoza/?careerid=9ehob42ae2fk4"
-          },
-          {
-            "sourceId": "f232bf39-194f-4739-a703-e8b384a2fae2",
-            "number": "61",
-            "name": "Carl Burton",
-            "grade": "Fr.",
-            "position": "NG",
-            "height": "",
-            "weight": "",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/carl-burton/?careerid=qhda80in16511"
-          },
-          {
-            "sourceId": "1f026c20-3326-4a28-b3a8-7dac34cc574d",
-            "number": "64",
-            "name": "Colt Williams",
-            "grade": "So.",
-            "position": "",
-            "height": "6' 0\"",
-            "weight": "190 lb",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/colt-williams/?careerid=srd6vc9h4av66"
-          },
-          {
-            "sourceId": "a632db41-a907-4134-807d-c2aa00cfb4eb",
-            "number": "66",
-            "name": "Dryce Loyd",
-            "grade": "Jr.",
-            "position": "C, DE",
-            "height": "",
-            "weight": "",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/dryce-loyd/?careerid=o2j0prb6uc811"
-          },
-          {
-            "sourceId": "6829e6d7-f9ac-435c-b384-52cebe55817a",
-            "number": "67",
-            "name": "Kalani Johnson",
-            "grade": "So.",
-            "position": "DE",
-            "height": "",
-            "weight": "",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/kalani-johnson/?careerid=ou91ehd01crp9"
-          },
-          {
-            "sourceId": "73bac83f-4bc8-4e52-ab21-15a1a9eca01e",
-            "number": "70",
-            "name": "Walker Wyatt",
-            "grade": "Jr.",
-            "position": "NG, G",
-            "height": "5' 11\"",
-            "weight": "",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/walker-wyatt/?careerid=aviqbilhu4kh1"
-          },
-          {
-            "sourceId": "b5093872-6964-4c11-ac4f-a260076289e4",
-            "number": "77",
-            "name": "Ty Duren",
-            "grade": "Jr.",
-            "position": "G, C",
-            "height": "6' 0\"",
-            "weight": "",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/ty-duren/?careerid=kkouhsfnug299"
-          },
-          {
-            "sourceId": "1d61c7b1-87fb-4c42-8d17-2472c01a2bd6",
-            "number": "78",
-            "name": "Garrett Clark",
-            "grade": "Sr.",
-            "position": "G",
-            "height": "6' 1\"",
-            "weight": "",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/garrett-clark/?careerid=b0bdnvgrgjg55"
-          },
-          {
-            "sourceId": "c98dc3dc-1194-4142-963a-c86ff0591465",
-            "number": "80",
-            "name": "Johnny Shaw",
-            "grade": "So.",
-            "position": "",
-            "height": "",
-            "weight": "",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/johnny-shaw/?careerid=cu1jbhakpr2bb"
-          },
-          {
-            "sourceId": "67536b32-55d5-43f3-a282-4e2b4c2a7d25",
-            "number": "81",
-            "name": "Keneth Pierce",
-            "grade": "So.",
-            "position": "",
-            "height": "",
-            "weight": "",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/keneth-pierce/?careerid=afqh00gt75q00"
-          },
-          {
-            "sourceId": "36b7f2d9-6045-48ec-9b39-a87b318e48fd",
-            "number": "87",
-            "name": "Baxter Davis",
-            "grade": "Fr.",
-            "position": "",
-            "height": "6' 3\"",
-            "weight": "175 lb",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/baxter-davis/?careerid=vpfo8jhqjmjl5"
-          },
-          {
-            "sourceId": "7a70e0b2-73bb-4e60-92ae-f892ee513ee2",
-            "number": "88",
-            "name": "Wyatt Ellefson",
-            "grade": "Jr.",
-            "position": "TE",
-            "height": "6' 5\"",
-            "weight": "190 lb",
-            "profile": "https://www.maxpreps.com/ok/jones/jones-longhorns/athletes/wyatt-ellefson/?careerid=udeqaaf8qic22"
-          }
-        ]
-      },
-      "stats": null
-    },
     "Shiloh Christian": {
       "base": "https://www.maxpreps.com/ar/springdale/shiloh-christian-saints/football/",
       "schedule": {
         "school": "Shiloh Christian",
         "season": "2026-27",
         "source": "https://www.maxpreps.com/ar/springdale/shiloh-christian-saints/football/schedule/",
-        "checkedAt": "2026-10-09T15:37:21.628Z",
+        "checkedAt": "2026-10-09T16:03:00.577Z",
         "status": "ok",
         "events": [
           {
@@ -5179,7 +5179,7 @@
       },
       "roster": {
         "source": "https://www.maxpreps.com/ar/springdale/shiloh-christian-saints/football/roster/",
-        "checkedAt": "2026-10-09T15:37:21.628Z",
+        "checkedAt": "2026-10-09T16:03:00.577Z",
         "status": "ok",
         "players": [
           {
@@ -5762,7 +5762,7 @@
         "school": "Sequoyah",
         "season": "2026-27",
         "source": "https://www.maxpreps.com/ok/tahlequah/sequoyah-indians/football/schedule/",
-        "checkedAt": "2026-10-09T15:37:21.628Z",
+        "checkedAt": "2026-10-09T16:03:00.577Z",
         "status": "ok",
         "events": [
           {
@@ -5953,7 +5953,7 @@
       },
       "roster": {
         "source": "https://www.maxpreps.com/ok/tahlequah/sequoyah-indians/football/roster/",
-        "checkedAt": "2026-10-09T15:37:21.628Z",
+        "checkedAt": "2026-10-09T16:03:00.577Z",
         "status": "ok",
         "players": [
           {
@@ -6746,7 +6746,7 @@
         "school": "Victory Christian",
         "season": "2026-27",
         "source": "https://www.maxpreps.com/ok/tulsa/victory-christian-conquerors/football/schedule/",
-        "checkedAt": "2026-10-09T15:37:21.628Z",
+        "checkedAt": "2026-10-09T16:03:00.577Z",
         "status": "ok",
         "events": [
           {
@@ -6921,7 +6921,7 @@
       },
       "roster": {
         "source": "https://www.maxpreps.com/ok/tulsa/victory-christian-conquerors/football/roster/",
-        "checkedAt": "2026-10-09T15:37:21.628Z",
+        "checkedAt": "2026-10-09T16:03:00.577Z",
         "status": "ok",
         "players": [
           {
@@ -7488,427 +7488,13 @@
       },
       "stats": null
     },
-    "Spiro": {
-      "base": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/football/",
-      "schedule": {
-        "school": "Spiro",
-        "season": "2026-27",
-        "source": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/football/schedule/",
-        "checkedAt": "2026-10-09T15:37:21.628Z",
-        "status": "ok",
-        "events": [
-          {
-            "id": "d7ffe62c-0104-41a1-959f-1633cb9cd6d1",
-            "date": "2026-08-28",
-            "time": "19:00",
-            "opponent": "Westville",
-            "opponentBase": "https://www.maxpreps.com/ok/westville/westville-yellowjackets/football/",
-            "mascot": "Yellowjackets",
-            "site": "Home",
-            "district": false,
-            "result": "L 46-6",
-            "score": 6,
-            "opponentScore": 46,
-            "status": "completed",
-            "url": "https://www.maxpreps.com/ok/football/game/spiro-vs-westville/8-28-2026/?c=d7ffe62c-0104-41a1-959f-1633cb9cd6d1",
-            "kind": "Game"
-          },
-          {
-            "id": "b52ac650-fd73-4930-b3c4-cbf81d5e9968",
-            "date": "2026-09-04",
-            "time": "19:00",
-            "opponent": "Gore",
-            "opponentBase": "https://www.maxpreps.com/ok/gore/gore-pirates/football/",
-            "mascot": "Pirates",
-            "site": "Away",
-            "district": false,
-            "result": "L 47-6",
-            "score": 6,
-            "opponentScore": 47,
-            "status": "completed",
-            "url": "https://www.maxpreps.com/ok/football/game/gore-vs-spiro/9-4-2026/?c=b52ac650-fd73-4930-b3c4-cbf81d5e9968",
-            "kind": "Game"
-          },
-          {
-            "id": "e13ba21d-0782-46a2-98b7-003a2d37d733",
-            "date": "2026-09-11",
-            "time": "19:00",
-            "opponent": "Wilburton",
-            "opponentBase": "https://www.maxpreps.com/ok/wilburton/wilburton-diggers/football/",
-            "mascot": "Diggers",
-            "site": "Home",
-            "district": false,
-            "result": "L 42-0",
-            "score": 0,
-            "opponentScore": 42,
-            "status": "completed",
-            "url": "https://www.maxpreps.com/ok/football/game/spiro-vs-wilburton/9-11-2026/?c=e13ba21d-0782-46a2-98b7-003a2d37d733",
-            "kind": "Game"
-          },
-          {
-            "id": "63dcbe1a-8d4c-468a-9952-879c72d4a930",
-            "date": "2026-09-25",
-            "time": "19:00",
-            "opponent": "Hugo",
-            "opponentBase": "https://www.maxpreps.com/ok/hugo/hugo-buffaloes/football/",
-            "mascot": "Buffaloes",
-            "site": "Away",
-            "district": true,
-            "result": "L 45-0",
-            "score": 0,
-            "opponentScore": 45,
-            "status": "completed",
-            "url": "https://www.maxpreps.com/ok/football/game/hugo-vs-spiro/9-25-2026/?c=63dcbe1a-8d4c-468a-9952-879c72d4a930",
-            "kind": "Game"
-          },
-          {
-            "id": "fc267918-797d-4bae-91f0-19a8dfcbb81e",
-            "date": "2026-10-02",
-            "time": "19:00",
-            "opponent": "Checotah",
-            "opponentBase": "https://www.maxpreps.com/ok/checotah/checotah-wildcats/football/",
-            "mascot": "Wildcats",
-            "site": "Home",
-            "district": true,
-            "result": "L 2-0",
-            "score": 0,
-            "opponentScore": 2,
-            "status": "completed",
-            "url": "https://www.maxpreps.com/ok/football/game/checotah-vs-spiro/10-2-2026/?c=fc267918-797d-4bae-91f0-19a8dfcbb81e",
-            "kind": "Game"
-          },
-          {
-            "id": "f6da0f21-4c83-4bda-ad54-09ec52b1ee67",
-            "date": "2026-10-09",
-            "time": "19:00",
-            "opponent": "Roland",
-            "opponentBase": "https://www.maxpreps.com/ok/roland/roland-rangers/football/",
-            "mascot": "Rangers",
-            "site": "Away",
-            "district": true,
-            "result": "",
-            "score": null,
-            "opponentScore": null,
-            "status": "scheduled",
-            "url": "https://www.maxpreps.com/ok/football/game/roland-vs-spiro/10-9-2026/?c=f6da0f21-4c83-4bda-ad54-09ec52b1ee67",
-            "kind": "Game"
-          },
-          {
-            "id": "a2fd12c5-7d70-4e87-967c-68576d2e04f4",
-            "date": "2026-10-15",
-            "time": "19:00",
-            "opponent": "Lincoln Christian",
-            "opponentBase": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/",
-            "mascot": "Bulldogs",
-            "site": "Home",
-            "district": true,
-            "result": "",
-            "score": null,
-            "opponentScore": null,
-            "status": "scheduled",
-            "url": "https://www.maxpreps.com/ok/football/game/lincoln-christian-tulsa-vs-spiro/10-15-2026/?c=a2fd12c5-7d70-4e87-967c-68576d2e04f4",
-            "kind": "Game"
-          },
-          {
-            "id": "a3c5bc9a-c764-4ebe-9d98-f7bbecd1977e",
-            "date": "2026-10-23",
-            "time": "19:00",
-            "opponent": "Victory Christian",
-            "opponentBase": "https://www.maxpreps.com/ok/tulsa/victory-christian-conquerors/football/",
-            "mascot": "Conquerors",
-            "site": "Home",
-            "district": true,
-            "result": "",
-            "score": null,
-            "opponentScore": null,
-            "status": "scheduled",
-            "url": "https://www.maxpreps.com/ok/football/game/spiro-vs-victory-christian-tulsa/10-23-2026/?c=a3c5bc9a-c764-4ebe-9d98-f7bbecd1977e",
-            "kind": "Game"
-          },
-          {
-            "id": "cb09a07a-6b2d-4572-ba2c-124b1b943565",
-            "date": "2026-10-30",
-            "time": "19:00",
-            "opponent": "Sequoyah",
-            "opponentBase": "https://www.maxpreps.com/ok/tahlequah/sequoyah-indians/football/",
-            "mascot": "Indians",
-            "site": "Away",
-            "district": true,
-            "result": "",
-            "score": null,
-            "opponentScore": null,
-            "status": "scheduled",
-            "url": "https://www.maxpreps.com/ok/football/game/sequoyah-tahlequah-vs-spiro/10-30-2026/?c=cb09a07a-6b2d-4572-ba2c-124b1b943565",
-            "kind": "Game"
-          },
-          {
-            "id": "ff0874b7-7b2e-4072-b02d-ed9732be5b0c",
-            "date": "2026-10-30",
-            "time": "19:00",
-            "opponent": "Sequoyah",
-            "opponentBase": "https://www.maxpreps.com/ok/tahlequah/sequoyah-indians/football/",
-            "mascot": "Indians",
-            "site": "Away",
-            "district": true,
-            "result": "",
-            "score": null,
-            "opponentScore": null,
-            "status": "scheduled",
-            "url": "",
-            "kind": "Game"
-          },
-          {
-            "id": "2a0f2f6b-2be9-4584-96ef-0b53b5fe68eb",
-            "date": "2026-11-06",
-            "time": "19:00",
-            "opponent": "Heavener",
-            "opponentBase": "https://www.maxpreps.com/ok/heavener/heavener-wolves/football/",
-            "mascot": "Wolves",
-            "site": "Away",
-            "district": true,
-            "result": "",
-            "score": null,
-            "opponentScore": null,
-            "status": "scheduled",
-            "url": "https://www.maxpreps.com/ok/football/game/heavener-vs-spiro/11-6-2026/?c=2a0f2f6b-2be9-4584-96ef-0b53b5fe68eb",
-            "kind": "Game"
-          }
-        ],
-        "record": "0-5",
-        "districtRecord": "0-2",
-        "districtPlace": "6th",
-        "districtName": "2A-I District 3",
-        "pointsFor": 12,
-        "pointsAgainst": 182,
-        "streak": "5L",
-        "mascot": "Bulldogs"
-      },
-      "roster": {
-        "source": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/football/roster/",
-        "checkedAt": "2026-10-09T15:37:21.628Z",
-        "status": "ok",
-        "players": [
-          {
-            "sourceId": "4997cc81-a1ec-41fc-9baf-cc6ed1035d8d",
-            "number": "2",
-            "name": "Blaine Fant",
-            "grade": "Fr.",
-            "position": "WR, DB",
-            "height": "5' 10\"",
-            "weight": "150 lb",
-            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/blaine-fant/?careerid=0b8bc32qii722"
-          },
-          {
-            "sourceId": "c03c93b1-e7c3-432c-87c5-9197f9d48bf9",
-            "number": "5",
-            "name": "Braden Hammontree",
-            "grade": "Jr.",
-            "position": "WR, LB",
-            "height": "5' 11\"",
-            "weight": "127 lb",
-            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/braden-hammontree/?careerid=sf94vrlntafee"
-          },
-          {
-            "sourceId": "b8323e8f-9701-4476-af1e-0aca5e4188fe",
-            "number": "9",
-            "name": "Ferdinand Poerschke",
-            "grade": "Jr.",
-            "position": "K, P",
-            "height": "6' 0\"",
-            "weight": "151 lb",
-            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/ferdinand-poerschke/?careerid=suohdhaahc7qa"
-          },
-          {
-            "sourceId": "216ea018-abb4-431d-8684-7eb349d3a93f",
-            "number": "10",
-            "name": "Wyatt Wiedel",
-            "grade": "Fr.",
-            "position": "WR, DB",
-            "height": "5' 6\"",
-            "weight": "115 lb",
-            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/wyatt-wiedel/?careerid=bl5chuloqe822"
-          },
-          {
-            "sourceId": "d6355c9a-aa72-415f-b25c-b01db026f410",
-            "number": "11",
-            "name": "Shane Yoast",
-            "grade": "Jr.",
-            "position": "TE, LB",
-            "height": "6' 2\"",
-            "weight": "180 lb",
-            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/shane-yoast/?careerid=4m73sfb1o3ek4"
-          },
-          {
-            "sourceId": "aae31ceb-3a47-413d-a71e-22eb4c0259c2",
-            "number": "13",
-            "name": "Katcher Whitaker",
-            "grade": "So.",
-            "position": "WR, DB",
-            "height": "5' 4\"",
-            "weight": "105 lb",
-            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/katcher-whitaker/?careerid=qsg7tme65vng0"
-          },
-          {
-            "sourceId": "4fc626c6-a64c-4450-b5d9-f847d9f5e76e",
-            "number": "15",
-            "name": "Jacob Sullivan",
-            "grade": "Sr.",
-            "position": "QB, DL",
-            "height": "6' 2\"",
-            "weight": "172 lb",
-            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/jacob-sullivan/?careerid=o418jqs7gduk4"
-          },
-          {
-            "sourceId": "5914c631-072e-42fa-ad7b-ec24310d3852",
-            "number": "18",
-            "name": "Mason Owens",
-            "grade": "Jr.",
-            "position": "WR, DB",
-            "height": "6' 0\"",
-            "weight": "121 lb",
-            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/mason-owens/?careerid=mu3h03vk36osc"
-          },
-          {
-            "sourceId": "549477ca-833c-41de-915e-744e7c26555c",
-            "number": "22",
-            "name": "Joshua Collins",
-            "grade": "Jr.",
-            "position": "RB, LB",
-            "height": "5' 4\"",
-            "weight": "143 lb",
-            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/joshua-collins/?careerid=qhrgd74f2gebb"
-          },
-          {
-            "sourceId": "9887dcf7-6b58-47c1-b1eb-a5c730078cac",
-            "number": "23",
-            "name": "Noah Benefield",
-            "grade": "Fr.",
-            "position": "WR, DE",
-            "height": "5' 8\"",
-            "weight": "138 lb",
-            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/noah-benefield/?careerid=2cqtqvt7ht277"
-          },
-          {
-            "sourceId": "7b4ac32b-c034-447e-8bff-5bf011a177d3",
-            "number": "24",
-            "name": "Dreadon Phillips",
-            "grade": "Fr.",
-            "position": "FB, LB",
-            "height": "5' 7\"",
-            "weight": "201 lb",
-            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/dreadon-phillips/?careerid=gu0osko2r7sff"
-          },
-          {
-            "sourceId": "d4cfc3c2-a25c-4e79-8adc-e4dc589b76ac",
-            "number": "28",
-            "name": "Bentlee Stone",
-            "grade": "Fr.",
-            "position": "WR, DE",
-            "height": "5' 9\"",
-            "weight": "135 lb",
-            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/bentlee-stone/?careerid=ubv2h3ol9r644"
-          },
-          {
-            "sourceId": "93ae8ebc-47ed-46b1-9668-956bd4e83693",
-            "number": "30",
-            "name": "Braxon Sapp",
-            "grade": "Jr.",
-            "position": "FB, LB",
-            "height": "5' 10\"",
-            "weight": "185 lb",
-            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/braxon-sapp/?careerid=smmaupiu05prb"
-          },
-          {
-            "sourceId": "4f006510-1a8b-4e06-9ce0-1643959c91e8",
-            "number": "52",
-            "name": "Dredon Phillips",
-            "grade": "Fr.",
-            "position": "OL, DL",
-            "height": "5' 7\"",
-            "weight": "201 lb",
-            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/dredon-phillips/?careerid=ue0hq6p96fso8"
-          },
-          {
-            "sourceId": "1bb2292a-b545-4580-82fe-fc96e62eb6e6",
-            "number": "55",
-            "name": "Shane Yoast",
-            "grade": "Jr.",
-            "position": "OL, LB",
-            "height": "6' 2\"",
-            "weight": "180 lb",
-            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/shane-yoast/?careerid=4m73sfb1o3ek4"
-          },
-          {
-            "sourceId": "48cc683c-c632-492f-95cc-b4f9f4e77622",
-            "number": "60",
-            "name": "Ace Coker",
-            "grade": "So.",
-            "position": "OL, DL",
-            "height": "5' 11\"",
-            "weight": "218 lb",
-            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/ace-coker/?careerid=8njablcva79rb"
-          },
-          {
-            "sourceId": "a2c6c3c2-6674-44e2-9c28-ef00911ecb8d",
-            "number": "61",
-            "name": "Carson Duke",
-            "grade": "Fr.",
-            "position": "OL, DL",
-            "height": "5' 6\"",
-            "weight": "153 lb",
-            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/carson-duke/?careerid=4vhblkk42q2ue"
-          },
-          {
-            "sourceId": "716cc2e4-3e57-4f79-be2a-875863770371",
-            "number": "65",
-            "name": "Grayson Rone",
-            "grade": "Jr.",
-            "position": "OL, DL",
-            "height": "5' 11\"",
-            "weight": "200 lb",
-            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/grayson-rone/?careerid=ecafogc2sehbb"
-          },
-          {
-            "sourceId": "427e9b77-6f78-4f5c-bf50-7ace290264b4",
-            "number": "72",
-            "name": "Taylor Covey",
-            "grade": "Jr.",
-            "position": "OL, DL",
-            "height": "6' 1\"",
-            "weight": "264 lb",
-            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/taylor-covey/?careerid=le5l8vgg7o9dd"
-          },
-          {
-            "sourceId": "a9f1d8d0-e3c7-4c1a-87fc-280ab23bb6ee",
-            "number": "75",
-            "name": "Kason Watts",
-            "grade": "Jr.",
-            "position": "OL, DL",
-            "height": "6' 0\"",
-            "weight": "268 lb",
-            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/kason-watts/?careerid=vcrnoneti6j77"
-          },
-          {
-            "sourceId": "aa43b2dd-0e7c-4fd6-bba2-a1a648d9ae51",
-            "number": "88",
-            "name": "Wyatt West",
-            "grade": "Fr.",
-            "position": "TE, LB",
-            "height": "6' 0\"",
-            "weight": "170 lb",
-            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/wyatt-west/?careerid=r83g3ksd0duo8"
-          }
-        ]
-      },
-      "stats": null
-    },
     "Heavener": {
       "base": "https://www.maxpreps.com/ok/heavener/heavener-wolves/football/",
       "schedule": {
         "school": "Heavener",
         "season": "2026-27",
         "source": "https://www.maxpreps.com/ok/heavener/heavener-wolves/football/schedule/",
-        "checkedAt": "2026-10-09T15:37:21.628Z",
+        "checkedAt": "2026-10-09T16:03:00.577Z",
         "status": "ok",
         "events": [
           {
@@ -8083,7 +7669,7 @@
       },
       "roster": {
         "source": "https://www.maxpreps.com/ok/heavener/heavener-wolves/football/roster/",
-        "checkedAt": "2026-10-09T15:37:21.628Z",
+        "checkedAt": "2026-10-09T16:03:00.577Z",
         "status": "ok",
         "players": [
           {
@@ -8410,11 +7996,425 @@
       },
       "stats": {
         "source": "https://www.maxpreps.com/ok/heavener/heavener-wolves/football/stats/",
-        "checkedAt": "2026-10-09T15:37:21.628Z",
+        "checkedAt": "2026-10-09T16:03:00.577Z",
         "status": "not-published",
         "tables": [],
         "games": null
       }
+    },
+    "Spiro": {
+      "base": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/football/",
+      "schedule": {
+        "school": "Spiro",
+        "season": "2026-27",
+        "source": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/football/schedule/",
+        "checkedAt": "2026-10-09T16:03:00.577Z",
+        "status": "ok",
+        "events": [
+          {
+            "id": "d7ffe62c-0104-41a1-959f-1633cb9cd6d1",
+            "date": "2026-08-28",
+            "time": "19:00",
+            "opponent": "Westville",
+            "opponentBase": "https://www.maxpreps.com/ok/westville/westville-yellowjackets/football/",
+            "mascot": "Yellowjackets",
+            "site": "Home",
+            "district": false,
+            "result": "L 46-6",
+            "score": 6,
+            "opponentScore": 46,
+            "status": "completed",
+            "url": "https://www.maxpreps.com/ok/football/game/spiro-vs-westville/8-28-2026/?c=d7ffe62c-0104-41a1-959f-1633cb9cd6d1",
+            "kind": "Game"
+          },
+          {
+            "id": "b52ac650-fd73-4930-b3c4-cbf81d5e9968",
+            "date": "2026-09-04",
+            "time": "19:00",
+            "opponent": "Gore",
+            "opponentBase": "https://www.maxpreps.com/ok/gore/gore-pirates/football/",
+            "mascot": "Pirates",
+            "site": "Away",
+            "district": false,
+            "result": "L 47-6",
+            "score": 6,
+            "opponentScore": 47,
+            "status": "completed",
+            "url": "https://www.maxpreps.com/ok/football/game/gore-vs-spiro/9-4-2026/?c=b52ac650-fd73-4930-b3c4-cbf81d5e9968",
+            "kind": "Game"
+          },
+          {
+            "id": "e13ba21d-0782-46a2-98b7-003a2d37d733",
+            "date": "2026-09-11",
+            "time": "19:00",
+            "opponent": "Wilburton",
+            "opponentBase": "https://www.maxpreps.com/ok/wilburton/wilburton-diggers/football/",
+            "mascot": "Diggers",
+            "site": "Home",
+            "district": false,
+            "result": "L 42-0",
+            "score": 0,
+            "opponentScore": 42,
+            "status": "completed",
+            "url": "https://www.maxpreps.com/ok/football/game/spiro-vs-wilburton/9-11-2026/?c=e13ba21d-0782-46a2-98b7-003a2d37d733",
+            "kind": "Game"
+          },
+          {
+            "id": "63dcbe1a-8d4c-468a-9952-879c72d4a930",
+            "date": "2026-09-25",
+            "time": "19:00",
+            "opponent": "Hugo",
+            "opponentBase": "https://www.maxpreps.com/ok/hugo/hugo-buffaloes/football/",
+            "mascot": "Buffaloes",
+            "site": "Away",
+            "district": true,
+            "result": "L 45-0",
+            "score": 0,
+            "opponentScore": 45,
+            "status": "completed",
+            "url": "https://www.maxpreps.com/ok/football/game/hugo-vs-spiro/9-25-2026/?c=63dcbe1a-8d4c-468a-9952-879c72d4a930",
+            "kind": "Game"
+          },
+          {
+            "id": "fc267918-797d-4bae-91f0-19a8dfcbb81e",
+            "date": "2026-10-02",
+            "time": "19:00",
+            "opponent": "Checotah",
+            "opponentBase": "https://www.maxpreps.com/ok/checotah/checotah-wildcats/football/",
+            "mascot": "Wildcats",
+            "site": "Home",
+            "district": true,
+            "result": "L 2-0",
+            "score": 0,
+            "opponentScore": 2,
+            "status": "completed",
+            "url": "https://www.maxpreps.com/ok/football/game/checotah-vs-spiro/10-2-2026/?c=fc267918-797d-4bae-91f0-19a8dfcbb81e",
+            "kind": "Game"
+          },
+          {
+            "id": "f6da0f21-4c83-4bda-ad54-09ec52b1ee67",
+            "date": "2026-10-09",
+            "time": "19:00",
+            "opponent": "Roland",
+            "opponentBase": "https://www.maxpreps.com/ok/roland/roland-rangers/football/",
+            "mascot": "Rangers",
+            "site": "Away",
+            "district": true,
+            "result": "",
+            "score": null,
+            "opponentScore": null,
+            "status": "scheduled",
+            "url": "https://www.maxpreps.com/ok/football/game/roland-vs-spiro/10-9-2026/?c=f6da0f21-4c83-4bda-ad54-09ec52b1ee67",
+            "kind": "Game"
+          },
+          {
+            "id": "a2fd12c5-7d70-4e87-967c-68576d2e04f4",
+            "date": "2026-10-15",
+            "time": "19:00",
+            "opponent": "Lincoln Christian",
+            "opponentBase": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/",
+            "mascot": "Bulldogs",
+            "site": "Home",
+            "district": true,
+            "result": "",
+            "score": null,
+            "opponentScore": null,
+            "status": "scheduled",
+            "url": "https://www.maxpreps.com/ok/football/game/lincoln-christian-tulsa-vs-spiro/10-15-2026/?c=a2fd12c5-7d70-4e87-967c-68576d2e04f4",
+            "kind": "Game"
+          },
+          {
+            "id": "a3c5bc9a-c764-4ebe-9d98-f7bbecd1977e",
+            "date": "2026-10-23",
+            "time": "19:00",
+            "opponent": "Victory Christian",
+            "opponentBase": "https://www.maxpreps.com/ok/tulsa/victory-christian-conquerors/football/",
+            "mascot": "Conquerors",
+            "site": "Home",
+            "district": true,
+            "result": "",
+            "score": null,
+            "opponentScore": null,
+            "status": "scheduled",
+            "url": "https://www.maxpreps.com/ok/football/game/spiro-vs-victory-christian-tulsa/10-23-2026/?c=a3c5bc9a-c764-4ebe-9d98-f7bbecd1977e",
+            "kind": "Game"
+          },
+          {
+            "id": "cb09a07a-6b2d-4572-ba2c-124b1b943565",
+            "date": "2026-10-30",
+            "time": "19:00",
+            "opponent": "Sequoyah",
+            "opponentBase": "https://www.maxpreps.com/ok/tahlequah/sequoyah-indians/football/",
+            "mascot": "Indians",
+            "site": "Away",
+            "district": true,
+            "result": "",
+            "score": null,
+            "opponentScore": null,
+            "status": "scheduled",
+            "url": "https://www.maxpreps.com/ok/football/game/sequoyah-tahlequah-vs-spiro/10-30-2026/?c=cb09a07a-6b2d-4572-ba2c-124b1b943565",
+            "kind": "Game"
+          },
+          {
+            "id": "ff0874b7-7b2e-4072-b02d-ed9732be5b0c",
+            "date": "2026-10-30",
+            "time": "19:00",
+            "opponent": "Sequoyah",
+            "opponentBase": "https://www.maxpreps.com/ok/tahlequah/sequoyah-indians/football/",
+            "mascot": "Indians",
+            "site": "Away",
+            "district": true,
+            "result": "",
+            "score": null,
+            "opponentScore": null,
+            "status": "scheduled",
+            "url": "",
+            "kind": "Game"
+          },
+          {
+            "id": "2a0f2f6b-2be9-4584-96ef-0b53b5fe68eb",
+            "date": "2026-11-06",
+            "time": "19:00",
+            "opponent": "Heavener",
+            "opponentBase": "https://www.maxpreps.com/ok/heavener/heavener-wolves/football/",
+            "mascot": "Wolves",
+            "site": "Away",
+            "district": true,
+            "result": "",
+            "score": null,
+            "opponentScore": null,
+            "status": "scheduled",
+            "url": "https://www.maxpreps.com/ok/football/game/heavener-vs-spiro/11-6-2026/?c=2a0f2f6b-2be9-4584-96ef-0b53b5fe68eb",
+            "kind": "Game"
+          }
+        ],
+        "record": "0-5",
+        "districtRecord": "0-2",
+        "districtPlace": "6th",
+        "districtName": "2A-I District 3",
+        "pointsFor": 12,
+        "pointsAgainst": 182,
+        "streak": "5L",
+        "mascot": "Bulldogs"
+      },
+      "roster": {
+        "source": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/football/roster/",
+        "checkedAt": "2026-10-09T16:03:00.577Z",
+        "status": "ok",
+        "players": [
+          {
+            "sourceId": "4997cc81-a1ec-41fc-9baf-cc6ed1035d8d",
+            "number": "2",
+            "name": "Blaine Fant",
+            "grade": "Fr.",
+            "position": "WR, DB",
+            "height": "5' 10\"",
+            "weight": "150 lb",
+            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/blaine-fant/?careerid=0b8bc32qii722"
+          },
+          {
+            "sourceId": "c03c93b1-e7c3-432c-87c5-9197f9d48bf9",
+            "number": "5",
+            "name": "Braden Hammontree",
+            "grade": "Jr.",
+            "position": "WR, LB",
+            "height": "5' 11\"",
+            "weight": "127 lb",
+            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/braden-hammontree/?careerid=sf94vrlntafee"
+          },
+          {
+            "sourceId": "b8323e8f-9701-4476-af1e-0aca5e4188fe",
+            "number": "9",
+            "name": "Ferdinand Poerschke",
+            "grade": "Jr.",
+            "position": "K, P",
+            "height": "6' 0\"",
+            "weight": "151 lb",
+            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/ferdinand-poerschke/?careerid=suohdhaahc7qa"
+          },
+          {
+            "sourceId": "216ea018-abb4-431d-8684-7eb349d3a93f",
+            "number": "10",
+            "name": "Wyatt Wiedel",
+            "grade": "Fr.",
+            "position": "WR, DB",
+            "height": "5' 6\"",
+            "weight": "115 lb",
+            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/wyatt-wiedel/?careerid=bl5chuloqe822"
+          },
+          {
+            "sourceId": "d6355c9a-aa72-415f-b25c-b01db026f410",
+            "number": "11",
+            "name": "Shane Yoast",
+            "grade": "Jr.",
+            "position": "TE, LB",
+            "height": "6' 2\"",
+            "weight": "180 lb",
+            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/shane-yoast/?careerid=4m73sfb1o3ek4"
+          },
+          {
+            "sourceId": "aae31ceb-3a47-413d-a71e-22eb4c0259c2",
+            "number": "13",
+            "name": "Katcher Whitaker",
+            "grade": "So.",
+            "position": "WR, DB",
+            "height": "5' 4\"",
+            "weight": "105 lb",
+            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/katcher-whitaker/?careerid=qsg7tme65vng0"
+          },
+          {
+            "sourceId": "4fc626c6-a64c-4450-b5d9-f847d9f5e76e",
+            "number": "15",
+            "name": "Jacob Sullivan",
+            "grade": "Sr.",
+            "position": "QB, DL",
+            "height": "6' 2\"",
+            "weight": "172 lb",
+            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/jacob-sullivan/?careerid=o418jqs7gduk4"
+          },
+          {
+            "sourceId": "5914c631-072e-42fa-ad7b-ec24310d3852",
+            "number": "18",
+            "name": "Mason Owens",
+            "grade": "Jr.",
+            "position": "WR, DB",
+            "height": "6' 0\"",
+            "weight": "121 lb",
+            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/mason-owens/?careerid=mu3h03vk36osc"
+          },
+          {
+            "sourceId": "549477ca-833c-41de-915e-744e7c26555c",
+            "number": "22",
+            "name": "Joshua Collins",
+            "grade": "Jr.",
+            "position": "RB, LB",
+            "height": "5' 4\"",
+            "weight": "143 lb",
+            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/joshua-collins/?careerid=qhrgd74f2gebb"
+          },
+          {
+            "sourceId": "9887dcf7-6b58-47c1-b1eb-a5c730078cac",
+            "number": "23",
+            "name": "Noah Benefield",
+            "grade": "Fr.",
+            "position": "WR, DE",
+            "height": "5' 8\"",
+            "weight": "138 lb",
+            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/noah-benefield/?careerid=2cqtqvt7ht277"
+          },
+          {
+            "sourceId": "7b4ac32b-c034-447e-8bff-5bf011a177d3",
+            "number": "24",
+            "name": "Dreadon Phillips",
+            "grade": "Fr.",
+            "position": "FB, LB",
+            "height": "5' 7\"",
+            "weight": "201 lb",
+            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/dreadon-phillips/?careerid=gu0osko2r7sff"
+          },
+          {
+            "sourceId": "d4cfc3c2-a25c-4e79-8adc-e4dc589b76ac",
+            "number": "28",
+            "name": "Bentlee Stone",
+            "grade": "Fr.",
+            "position": "WR, DE",
+            "height": "5' 9\"",
+            "weight": "135 lb",
+            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/bentlee-stone/?careerid=ubv2h3ol9r644"
+          },
+          {
+            "sourceId": "93ae8ebc-47ed-46b1-9668-956bd4e83693",
+            "number": "30",
+            "name": "Braxon Sapp",
+            "grade": "Jr.",
+            "position": "FB, LB",
+            "height": "5' 10\"",
+            "weight": "185 lb",
+            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/braxon-sapp/?careerid=smmaupiu05prb"
+          },
+          {
+            "sourceId": "4f006510-1a8b-4e06-9ce0-1643959c91e8",
+            "number": "52",
+            "name": "Dredon Phillips",
+            "grade": "Fr.",
+            "position": "OL, DL",
+            "height": "5' 7\"",
+            "weight": "201 lb",
+            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/dredon-phillips/?careerid=ue0hq6p96fso8"
+          },
+          {
+            "sourceId": "1bb2292a-b545-4580-82fe-fc96e62eb6e6",
+            "number": "55",
+            "name": "Shane Yoast",
+            "grade": "Jr.",
+            "position": "OL, LB",
+            "height": "6' 2\"",
+            "weight": "180 lb",
+            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/shane-yoast/?careerid=4m73sfb1o3ek4"
+          },
+          {
+            "sourceId": "48cc683c-c632-492f-95cc-b4f9f4e77622",
+            "number": "60",
+            "name": "Ace Coker",
+            "grade": "So.",
+            "position": "OL, DL",
+            "height": "5' 11\"",
+            "weight": "218 lb",
+            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/ace-coker/?careerid=8njablcva79rb"
+          },
+          {
+            "sourceId": "a2c6c3c2-6674-44e2-9c28-ef00911ecb8d",
+            "number": "61",
+            "name": "Carson Duke",
+            "grade": "Fr.",
+            "position": "OL, DL",
+            "height": "5' 6\"",
+            "weight": "153 lb",
+            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/carson-duke/?careerid=4vhblkk42q2ue"
+          },
+          {
+            "sourceId": "716cc2e4-3e57-4f79-be2a-875863770371",
+            "number": "65",
+            "name": "Grayson Rone",
+            "grade": "Jr.",
+            "position": "OL, DL",
+            "height": "5' 11\"",
+            "weight": "200 lb",
+            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/grayson-rone/?careerid=ecafogc2sehbb"
+          },
+          {
+            "sourceId": "427e9b77-6f78-4f5c-bf50-7ace290264b4",
+            "number": "72",
+            "name": "Taylor Covey",
+            "grade": "Jr.",
+            "position": "OL, DL",
+            "height": "6' 1\"",
+            "weight": "264 lb",
+            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/taylor-covey/?careerid=le5l8vgg7o9dd"
+          },
+          {
+            "sourceId": "a9f1d8d0-e3c7-4c1a-87fc-280ab23bb6ee",
+            "number": "75",
+            "name": "Kason Watts",
+            "grade": "Jr.",
+            "position": "OL, DL",
+            "height": "6' 0\"",
+            "weight": "268 lb",
+            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/kason-watts/?careerid=vcrnoneti6j77"
+          },
+          {
+            "sourceId": "aa43b2dd-0e7c-4fd6-bba2-a1a648d9ae51",
+            "number": "88",
+            "name": "Wyatt West",
+            "grade": "Fr.",
+            "position": "TE, LB",
+            "height": "6' 0\"",
+            "weight": "170 lb",
+            "profile": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/athletes/wyatt-west/?careerid=r83g3ksd0duo8"
+          }
+        ]
+      },
+      "stats": null
     },
     "Checotah": {
       "base": "https://www.maxpreps.com/ok/checotah/checotah-wildcats/football/",
@@ -8422,7 +8422,7 @@
         "school": "Checotah",
         "season": "2026-27",
         "source": "https://www.maxpreps.com/ok/checotah/checotah-wildcats/football/schedule/",
-        "checkedAt": "2026-10-09T15:37:21.628Z",
+        "checkedAt": "2026-10-09T16:03:00.577Z",
         "status": "ok",
         "events": [
           {
@@ -8613,7 +8613,7 @@
       },
       "roster": {
         "source": "https://www.maxpreps.com/ok/checotah/checotah-wildcats/football/roster/",
-        "checkedAt": "2026-10-09T15:37:21.628Z",
+        "checkedAt": "2026-10-09T16:03:00.577Z",
         "status": "ok",
         "players": [
           {
@@ -9106,7 +9106,7 @@
         "school": "Hugo",
         "season": "2026-27",
         "source": "https://www.maxpreps.com/ok/hugo/hugo-buffaloes/football/schedule/",
-        "checkedAt": "2026-10-09T15:37:21.628Z",
+        "checkedAt": "2026-10-09T16:03:00.577Z",
         "status": "ok",
         "events": [
           {
@@ -9281,7 +9281,7 @@
       },
       "roster": {
         "source": "https://www.maxpreps.com/ok/hugo/hugo-buffaloes/football/roster/",
-        "checkedAt": "2026-10-09T15:37:21.628Z",
+        "checkedAt": "2026-10-09T16:03:00.577Z",
         "status": "ok",
         "players": [
           {
@@ -9744,7 +9744,7 @@
         "school": "Roland",
         "season": "2026-27",
         "source": "https://www.maxpreps.com/ok/roland/roland-rangers/football/schedule/",
-        "checkedAt": "2026-10-09T15:37:21.628Z",
+        "checkedAt": "2026-10-09T16:03:00.577Z",
         "status": "ok",
         "events": [
           {
@@ -9919,7 +9919,7 @@
       },
       "roster": {
         "source": "https://www.maxpreps.com/ok/roland/roland-rangers/football/roster/",
-        "checkedAt": "2026-10-09T15:37:21.628Z",
+        "checkedAt": "2026-10-09T16:03:00.577Z",
         "status": "ok",
         "players": [
           {
@@ -10209,7 +10209,7 @@
   },
   "news": {
     "source": "https://lcssports.com/sports/football",
-    "checkedAt": "2026-10-09T15:37:21.628Z",
+    "checkedAt": "2026-10-09T16:03:00.577Z",
     "status": "ok",
     "articles": [
       {
