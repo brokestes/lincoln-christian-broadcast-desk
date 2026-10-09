@@ -82,7 +82,7 @@
   function mergeRoster(existing,incoming){
     var seen=[];incoming.forEach(function(source){var matches=existing.filter(function(p){return p.sourceId===source.sourceId||norm(p.name)===norm(source.name)&&String(p.number)===String(source.number);});if(!matches.length){var names=existing.filter(function(p){return norm(p.name)===norm(source.name);});if(names.length===1)matches=names;}
       var player=matches[0];if(!player){player={id:'public-'+source.sourceId,note:'',spotlight:false,facts:[]};existing.push(player);}['sourceId','name','number','grade','position','height','weight','profile'].forEach(function(k){if(source[k]!=null)player[k]=source[k];});player.publicRoster=true;player.sourceAbsent=false;seen.push(player.id);
-    });existing.forEach(function(p){if(p.publicRoster&&!seen.includes(p.id))p.sourceAbsent=true;});return existing;
+    });existing.forEach(function(p){if(!seen.includes(p.id))p.sourceAbsent=true;});return existing;
   }
   function apply(){if(!api)return;if(document.activeElement&&document.activeElement.matches&&document.activeElement.matches('textarea,input:not([type="checkbox"])')){pending=true;return;}pending=false;if(feed)api.apply(feed);api.render();}
   async function get(file,local){var r=await fetch((local?'':remote)+file+'?t='+Date.now(),{cache:'no-store',signal:AbortSignal.timeout(15000)});if(!r.ok)throw Error('Feed unavailable');return r.json();}

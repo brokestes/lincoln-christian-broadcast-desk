@@ -176,7 +176,8 @@
     return roster.slice().sort(function(a,b){return Number(!!b.spotlight)-Number(!!a.spotlight);});
   }
   function playerFacts(p) {
-    return (p.facts || []).map(function (f) { return '<div class="player-fact">' + html(f.text) + ' <a target="_blank" rel="noreferrer" href="' + html(/^https:\/\//i.test(f.url) ? f.url : '#') + '">Source · ' + html(f.date) + ' ↗</a></div>'; }).join("");
+    var warning=p.sourceAbsent?'<div class="player-fact source-note">Saved entry not matched to the latest published roster. Confirm name and number before air.</div>':'';
+    return warning + (p.facts || []).map(function (f) { return '<div class="player-fact">' + html(f.text) + ' <a target="_blank" rel="noreferrer" href="' + html(/^https:\/\//i.test(f.url) ? f.url : '#') + '">Source · ' + html(f.date) + ' ↗</a></div>'; }).join("");
   }
   function renderTeamSwitch() {
     var g = currentGame();
