@@ -134,7 +134,7 @@
 
   var state = loadState();
   migrateResearch();
-  var currentView = "desk";
+  var currentView = "home";
   var deskSections = ['prep','rosters','stats','live','history','sources','print'];
   var activeDeskSection = deskSections.includes(state.deskSection) ? state.deskSection : 'prep';
   var activeTab = state.statsTab === 'season' ? 'season' : 'stats';
@@ -169,6 +169,9 @@
     return currentSportData().roster;
   }
   function findPlayer(id) { return visibleRoster().find(function (p) { return p.id === id; }); }
+  function keyPlayersFirst(roster) {
+    return roster.slice().sort(function(a,b){return Number(!!b.spotlight)-Number(!!a.spotlight);});
+  }
   function playerFacts(p) {
     return (p.facts || []).map(function (f) { return '<div class="player-fact">' + html(f.text) + ' <a target="_blank" rel="noreferrer" href="' + html(/^https:\/\//i.test(f.url) ? f.url : '#') + '">Source · ' + html(f.date) + ' ↗</a></div>'; }).join("");
   }
@@ -319,6 +322,7 @@
     window.LincolnHistory.render(state.activeSport,currentGame());
     renderDeskTabs();
     window.LincolnLive.configure(state.activeSport === 'football' ? currentGame() : null, saveState);
+    if (window.LincolnHome) window.LincolnHome.render();
   }
   function renderDeskTabs() {
     document.querySelectorAll('[data-desk-tab]').forEach(function (button) {
@@ -363,6 +367,7 @@
   }
   function applyDeskHash() {
     var hash = window.location ? window.location.hash.slice(1) : '';
+    if (['home','schedule','roster','research'].includes(hash)) { setView(hash); return; }
     var statAnchor = ['offenseStats','defenseStats','specialStats'].includes(hash);
     var section = statAnchor ? 'stats' : hash.replace(/^desk-/,'');
     if (!deskSections.includes(section)) return;
@@ -392,7 +397,7 @@
     ensureGameShape(game);
     var d = formatDate(game.date);
     var sportName = sportLabels[state.activeSport];
-    var context = game.district ? (state.activeSport === "football" ? "Class 2A-I District 3" : "Conference game") : "Non-district";
+    var context = game.scheduleKind === 'Scrimmage' ? 'Scrimmage' : game.scheduleSourceId && !game.district ? 'School schedule' : game.district ? (state.activeSport === "football" ? "Class 2A-I District 3" : "Conference game") : "Non-district";
     document.getElementById("matchupHero").innerHTML =
       '<div class="matchup-content">' +
         '<div class="date-block"><span class="month">' + html(d.month) + '</span><span class="day">' + html(d.day) + '</span><span class="dow">' + html(d.dow) + '</span></div>' +
@@ -455,11 +460,12 @@
   function renderDeskRoster() {
     var query = document.getElementById("deskRosterSearch").value.toLowerCase().trim();
     renderTeamSwitch();
-    var roster = visibleRoster().filter(function (p) {
+    var roster = keyPlayersFirst(visibleRoster().filter(function (p) {
       return !query || (p.name + " " + p.number + " " + p.position).toLowerCase().indexOf(query) >= 0;
-    });
-    document.getElementById("deskRoster").innerHTML = roster.length ? roster.map(function (p) {
-      return '<div class="person-row"><input type="checkbox" data-spotlight="' + p.id + '"' + (p.spotlight ? " checked" : "") + ' aria-label="Include ' + html(p.name) + ' on printout">' +
+    }));
+    document.getElementById("deskRoster").innerHTML = roster.length ? roster.map(function (p,index) {
+      var heading = index===0 || !!roster[index-1].spotlight !== !!p.spotlight ? '<h3 class="roster-group-heading">'+(p.spotlight?'Key players':'Remaining roster')+'</h3>' : '';
+      return heading + '<div class="person-row' + (p.spotlight ? ' key-player' : '') + '"><input type="checkbox" data-spotlight="' + p.id + '"' + (p.spotlight ? " checked" : "") + ' aria-label="Include ' + html(p.name) + ' on printout">' +
         '<span class="num">#' + html(p.number) + '</span><div><strong>' + html(p.name) + '</strong><small>' + html([p.grade,p.position,p.height || 'Ht. not listed',p.weight || 'Wt. not listed'].filter(Boolean).join(" · ")) + '</small>' + (p.referenceHighlight ? '<span class="highlight-tag">Highlighted in prep sheet</span>' : '') + playerFacts(p) + '</div>' +
         '<input type="text" data-roster-note="' + p.id + '" value="' + html(p.note || "") + '" placeholder="Pronunciation / background note" aria-label="Notes for ' + html(p.name) + '"></div>';
     }).join("") : '<p class="source-note">No matching players.</p>';
@@ -485,11 +491,12 @@
   function renderRoster() {
     renderTeamSwitch();
     var query = document.getElementById("rosterSearch").value.toLowerCase().trim();
-    var roster = visibleRoster().filter(function (p) {
+    var roster = keyPlayersFirst(visibleRoster().filter(function (p) {
       return !query || (p.name + " " + p.number + " " + p.position + " " + p.grade).toLowerCase().indexOf(query) >= 0;
-    });
-    document.getElementById("rosterBody").innerHTML = roster.length ? roster.map(function (p) {
-      return '<tr><td><input type="checkbox" data-spotlight="' + p.id + '"' + (p.spotlight ? " checked" : "") + ' aria-label="Include ' + html(p.name) + ' on printout"></td>' +
+    }));
+    document.getElementById("rosterBody").innerHTML = roster.length ? roster.map(function (p,index) {
+      var heading = index===0 || !!roster[index-1].spotlight !== !!p.spotlight ? '<tr class="roster-group-row"><th colspan="9">'+(p.spotlight?'Key players':'Remaining roster')+'</th></tr>' : '';
+      return heading + '<tr' + (p.spotlight ? ' class="key-player"' : '') + '><td><input type="checkbox" data-spotlight="' + p.id + '"' + (p.spotlight ? " checked" : "") + ' aria-label="Include ' + html(p.name) + ' on printout"></td>' +
         '<td><strong>#' + html(p.number) + '</strong></td><td><strong>' + html(p.name) + '</strong>' + (p.referenceHighlight ? '<span class="highlight-tag">Prep-sheet highlight</span>' : '') + playerFacts(p) + '</td><td>' + html(p.grade) + '</td><td>' + html(p.position || 'Not listed') + '</td><td>' + html(p.height || 'Not listed') + '</td><td>' + html(p.weight || 'Not listed') + '</td>' +
         '<td><input type="text" data-roster-note="' + p.id + '" value="' + html(p.note || "") + '" placeholder="Pronunciation, hometown, family, milestone"></td>' +
         '<td><button class="remove-btn" data-delete-player="' + p.id + '" aria-label="Remove ' + html(p.name) + '">×</button></td></tr>';
@@ -503,14 +510,17 @@
   }
 
   function setView(view) {
+    if (!['home','desk','schedule','roster','research'].includes(view)) return;
     currentView = view;
     document.querySelectorAll(".nav-btn").forEach(function (btn) { btn.classList.toggle("active", btn.dataset.view === view); });
     document.querySelectorAll("[data-view-panel]").forEach(function (panel) { panel.classList.toggle("active", panel.dataset.viewPanel === view); });
-    var titles = { desk:["GAME PREPARATION","Game Desk"], schedule:["SEASON CONTROL","Schedule"], roster:["NAME COMMAND","Roster Book"], research:["VERIFIED CONTEXT","Research Shelf"] };
+    var titles = { home:["BROADCAST HEADQUARTERS","Home"], desk:["GAME PREPARATION","Game Desk"], schedule:["SEASON CONTROL","Schedule"], roster:["NAME COMMAND","Roster Book"], research:["VERIFIED CONTEXT","Research Shelf"] };
     document.getElementById("viewEyebrow").textContent = titles[view][0];
     document.getElementById("viewTitle").textContent = titles[view][1];
     document.querySelector(".sidebar").classList.remove("open");
     document.getElementById("menuBtn").setAttribute("aria-expanded", "false");
+    if (window.history && window.location) window.history.replaceState(null,'',window.location.pathname + window.location.search + (view === 'desk' ? '#desk-'+activeDeskSection : '#'+view));
+    if (view==='home' && window.LincolnHome) window.LincolnHome.render();
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
   function setSport(sport) {
@@ -722,7 +732,13 @@
     if (target.matches("[data-check]") && game) { game.checklist[target.dataset.check] = target.checked; saveState(); renderChecklist(game); }
     if (target.matches("[data-spotlight]")) {
       var player = findPlayer(target.dataset.spotlight);
-      if (player) { player.spotlight = target.checked; saveState(); }
+      if (player) {
+        var rosterContainer=target.closest('#deskRoster')?'deskRoster':'rosterBody';
+        player.spotlight = target.checked; saveState(); renderDeskRoster(); renderRoster();
+        var moved=document.getElementById(rosterContainer).querySelector('[data-spotlight="'+player.id+'"]');
+        if(moved && moved.focus) moved.focus({preventScroll:true});
+        toast(player.spotlight ? player.name+' moved to key players at the top' : player.name+' returned to the remaining roster');
+      }
     }
     if (target.matches("#importFile")) importBackup(target.files[0]);
     if (target.matches('[data-print-option]')) { state.printOptions[target.dataset.printOption] = target.checked; saveState(); }
@@ -795,8 +811,34 @@
     });
   }
 
+  var initialHash = window.location ? window.location.hash : '';
   renderAll();
   setView(currentView);
+  if (window.location && initialHash) window.history.replaceState(null,'',window.location.pathname + window.location.search + initialHash);
   applyDeskHash();
   registerWebMCP();
+  if (window.LincolnHome) window.LincolnHome.init({
+    getState:function(){return state;},
+    openSection:function(section,sport){
+      if(sport && sportLabels[sport]) setSport(sport);
+      setDeskSection(section);setView('desk');
+    },
+    openEvent:function(event){
+      var sport=event.sport;
+      if(!sportLabels[sport])return;
+      state.activeSport=sport;
+      var normalized=function(name){return String(name).toLowerCase().replace(/[^a-z0-9 ]/g,'').trim();};
+      var game=state.sports[sport].games.find(function(g){
+        var a=normalized(g.opponent),b=normalized(event.opponent);
+        return (g.scheduleSourceId===event.sourceId && event.sourceId) || g.id===event.id || (g.date===event.date && (a===b || b.indexOf(a+' ')===0));
+      });
+      if(!game){
+        game=makeGame(event.id,event.date,event.opponent,'',event.site,event.venue,event.district,event.result);
+        game.time=event.time||'';game.stats=sport==='football'?footballStats():basketballStats();game.scheduleSourceId=event.sourceId;game.scheduleKind=event.kind;
+        game.sources=[{name:'Official Lincoln '+sportLabels[sport]+' schedule',note:'School schedule; game-day details may change',url:event.source}];
+        state.sports[sport].games.push(game);
+      }
+      openGame(game.id);setDeskSection('prep');
+    }
+  });
 })();

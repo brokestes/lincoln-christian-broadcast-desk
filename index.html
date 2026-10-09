@@ -7,7 +7,7 @@
   <meta name="description" content="Lincoln Christian broadcast preparation desk: verified rosters, player stats, live football stats and printable game packets.">
   <title>Lincoln Christian Broadcast Desk</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%237a0019'/%3E%3Cpath d='M16 12v40h34V41H29V12z' fill='%23f0b323'/%3E%3Cpath d='M35 12v25h15V26h-7V12z' fill='white'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css?v=20261008d">
+  <link rel="stylesheet" href="styles.css?v=20261008e">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to workspace</a>
@@ -15,7 +15,7 @@
     <aside class="sidebar" aria-label="Primary navigation">
       <div class="brand-lockup">
         <div class="brand-logo-wrap">
-          <img class="official-logo" src="https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/lincolnchristianhs.sidearmsports.com/images/logos/site/site.png" alt="Lincoln Christian Bulldogs athletics logo" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+          <img class="official-logo" src="lincoln-mark.png" alt="Lincoln Christian Bulldogs athletics logo" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
           <div class="brand-mark" aria-hidden="true" hidden>LC</div>
         </div>
         <div><strong>LINCOLN CHRISTIAN</strong><span>Broadcast Desk</span></div>
@@ -27,7 +27,8 @@
         <button class="sport-btn" data-sport="girls-basketball"><span>GB</span> Girls basketball</button>
       </div>
       <nav class="section-nav" aria-label="Workspace sections">
-        <button class="nav-btn active" data-view="desk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM8 2v6m8-6v6M4 10h16"/></svg>Game desk</button>
+        <button class="nav-btn active" data-view="home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h14V9M9 21v-7h6v7"/></svg>Home</button>
+        <button class="nav-btn" data-view="desk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM8 2v6m8-6v6M4 10h16"/></svg>Game desk</button>
         <button class="nav-btn" data-view="schedule"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5zM8 2v4m8-4v4M8 10h8m-8 4h5"/></svg>Schedule</button>
         <button class="nav-btn" data-view="roster"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-4 2-7 6-7s6 3 6 7M16 7h5m-2-2v4m-2 5h4m-4 4h4"/></svg>Roster book</button>
         <button class="nav-btn" data-view="research"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M8 8h4m-4 3h4"/></svg>Research shelf</button>
@@ -41,7 +42,7 @@
     <main id="main" class="main">
       <header class="topbar">
         <button class="mobile-menu" id="menuBtn" aria-label="Open navigation" aria-expanded="false">Menu</button>
-        <div><p class="eyebrow" id="viewEyebrow">GAME PREPARATION</p><h1 id="viewTitle">Game Desk</h1></div>
+        <div><p class="eyebrow" id="viewEyebrow">BROADCAST HEADQUARTERS</p><h1 id="viewTitle">Home</h1></div>
         <div class="top-actions">
           <div class="as-of"><span>Research checked</span><strong>Oct 8, 2026</strong></div>
           <button class="secondary-btn" id="printBtn">Print game sheet</button>
@@ -49,7 +50,20 @@
         </div>
       </header>
 
-      <section class="view active" id="deskView" data-view-panel="desk">
+      <section class="view active" id="homeView" data-view-panel="home">
+        <article class="home-hero">
+          <div class="home-hero-copy"><span class="eyebrow">LINCOLN CHRISTIAN · TULSA, OKLAHOMA</span><h2>The Bulldog<br>Broadcast Desk<span class="home-accent">.</span></h2><p>Your next game. Your key players. Everything ready for the call.</p><span class="home-today" id="homeToday"></span></div>
+          <div class="home-next" id="homeNext"><p>Loading the next scheduled game…</p></div>
+        </article>
+        <div class="home-grid">
+          <section class="panel home-upcoming"><div class="home-panel-head"><div><span class="eyebrow">ON THE HORIZON</span><h2>Upcoming events</h2></div><button class="small-btn" id="homeRefresh">Refresh</button></div><label class="home-filter"><span>Show</span><select id="homeSportFilter" aria-label="Filter upcoming events by sport"><option value="all">All sports</option><option value="football">Football</option><option value="boys-basketball">Boys basketball</option><option value="girls-basketball">Girls basketball</option></select></label><p class="home-source-status" id="homeFeedStatus" role="status" aria-live="polite">Loading official schedules…</p><div id="homeEvents"></div><button class="text-btn home-more" id="homeMore" hidden>Show all upcoming events</button><p class="home-footnote">Varsity school schedule, not confirmed broadcast assignments. Times are Central. Scrimmages are labeled; missing times stay TBD.</p></section>
+          <aside class="home-side"><section class="panel home-shortcuts"><div class="home-panel-head"><div><span class="eyebrow">STRAIGHT TO WORK</span><h2>Broadcast tools</h2></div></div><p id="homeSelectedGame" class="section-hint"></p><div class="home-shortcut-grid"><button data-home-section="prep"><span>01</span><strong>Prep notes</strong><small>Opening &amp; storylines</small></button><button data-home-section="rosters"><span>02</span><strong>Key players</strong><small>Names &amp; backgrounds</small></button><button data-home-section="stats"><span>03</span><strong>Player stats</strong><small>Offense &amp; defense</small></button><button data-home-section="live"><span>04</span><strong>Live game</strong><small>Score &amp; game log</small></button><button data-home-section="history"><span>05</span><strong>Team history</strong><small>Records &amp; traditions</small></button><button data-home-section="print"><span>06</span><strong>Print packet</strong><small>Ready for the booth</small></button></div></section><section class="panel home-legacy"><span class="eyebrow">BULLDOG LEGACY</span><h2>Built on tradition.</h2><div id="homeLegacy"></div><p class="home-footnote">Historical archive checked Oct. 8, 2026. <a href="https://www.iwasatthegame.com/SchoolPage.aspx?school=Lincoln%20Christian" target="_blank" rel="noreferrer">Open source ↗</a></p></section></aside>
+        </div>
+        <section class="home-pulse"><div class="home-panel-head"><div><span class="eyebrow">AROUND THE PROGRAM</span><h2>Season pulse</h2></div><span class="home-footnote">Posted results · not district rankings</span></div><div id="homeRecords" class="home-record-grid"></div></section>
+        <p class="home-footnote home-credits">Independent broadcaster workspace. School marks belong to Lincoln Christian. <a href="https://lcssports.com/sports/2020/6/19/school-colors-mascot" target="_blank" rel="noreferrer">Athletics branding ↗</a> · <a href="https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/" target="_blank" rel="noreferrer">Bulldog artwork source ↗</a></p>
+      </section>
+
+      <section class="view" id="deskView" data-view-panel="desk">
         <article class="matchup-hero" id="matchupHero"></article>
         <div class="progress-strip">
           <div><span class="eyebrow">PREP CHECKLIST</span><strong id="progressText">0 of 6 ready</strong></div>
@@ -95,7 +109,7 @@
 
         <section class="desk-section" id="desk-panel-rosters" data-desk-panel="rosters" role="tabpanel" aria-labelledby="desk-tab-rosters" hidden>
           <div class="panel workbench">
-            <div class="panel-heading"><span class="eyebrow">NAMES &amp; NUMBERS</span><h2>Game rosters</h2><p class="section-hint">Choose either team. Mark players for the printed sheet and add pronunciation or background notes.</p></div>
+            <div class="panel-heading"><span class="eyebrow">NAMES &amp; NUMBERS</span><h2>Game rosters</h2><p class="section-hint">Choose either team. Selected players appear first and go on the printed sheet. Add pronunciation or background notes.</p></div>
             <div class="team-switch" id="deskTeamSwitch" role="group" aria-label="Choose roster"></div>
             <div id="deskRosterStatus" class="roster-status"></div>
             <div class="people-toolbar"><label class="field roster-search-field"><span>Find a player</span><input id="deskRosterSearch" class="search-input" type="search" placeholder="Search name, number or position"></label></div>
@@ -139,7 +153,7 @@
       </section>
 
       <section class="view" id="rosterView" data-view-panel="roster">
-        <div class="section-intro"><div><span class="eyebrow">NAME COMMAND</span><h2 id="rosterHeading">Football roster book</h2><p>Names, numbers, pronunciations, backgrounds, and the players you want on the printed sheet.</p></div><div class="roster-tools"><input id="rosterSearch" class="search-input" type="search" placeholder="Search name, number, position"><button class="primary-btn" id="addPlayerBtn">Add player</button></div></div>
+        <div class="section-intro"><div><span class="eyebrow">NAME COMMAND</span><h2 id="rosterHeading">Football roster book</h2><p>Selected key players appear first. Names, numbers, backgrounds, and the players you want on the printed sheet.</p></div><div class="roster-tools"><input id="rosterSearch" class="search-input" type="search" placeholder="Search name, number, position"><button class="primary-btn" id="addPlayerBtn">Add player</button></div></div>
         <div class="team-switch" id="rosterTeamSwitch" role="group" aria-label="Choose roster book team"></div><div id="rosterStatus" class="roster-status"></div>
         <div class="panel table-panel"><div class="table-scroll"><table class="roster-table"><thead><tr><th>Sheet</th><th>No.</th><th>Player</th><th>Grade</th><th>Position</th><th>Ht.</th><th>Wt.</th><th>Pronunciation / background</th><th></th></tr></thead><tbody id="rosterBody"></tbody></table></div></div>
         <p class="source-note">Roster starter data is from the official athletics roster and MaxPreps. Verify late changes against the game program.</p>
@@ -187,10 +201,11 @@
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <div id="printSheet" class="print-sheet" aria-hidden="true"></div>
   <dialog id="printPreview" class="dialog packet-preview"><div class="dialog-head"><h2>Broadcast packet preview</h2><button type="button" class="icon-btn" aria-label="Close">×</button></div><p>Print uses full-width pages with readable type. Stat tables are separated by offense, defense and special teams.</p><div id="printPreviewContent"></div><button class="primary-btn" id="printPreviewGo">Print packet</button></dialog>
-  <script src="broadcast-data.js?v=20261008d"></script>
-  <script src="school-history.js?v=20261008d"></script>
-  <script src="history-desk.js?v=20261008d"></script>
-  <script src="live-stats.js?v=20261008d"></script>
-  <script src="app.js?v=20261008d"></script>
+  <script src="broadcast-data.js?v=20261008e"></script>
+  <script src="school-history.js?v=20261008e"></script>
+  <script src="history-desk.js?v=20261008e"></script>
+  <script src="live-stats.js?v=20261008e"></script>
+  <script src="home-desk.js?v=20261008e"></script>
+  <script src="app.js?v=20261008e"></script>
 </body>
 </html>
