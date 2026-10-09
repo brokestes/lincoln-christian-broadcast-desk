@@ -18,7 +18,9 @@
   function matches(selected, data) {
     if (!selected || !data) return false;
     const names = data.teams.map(t=>normalize(t.name));
-    return dateISO(data.gameInfo.date) === selected.date && names.includes('lincolnchristian') && names.includes(normalize(selected.opponent));
+    const opponentNames = [normalize(selected.opponent)];
+    if (selected.mascot) opponentNames.push(normalize(selected.opponent+' '+selected.mascot));
+    return dateISO(data.gameInfo.date) === selected.date && names.includes('lincolnchristian') && names.some(name=>opponentNames.includes(name));
   }
   const value = v => v === undefined || v === null || v === '' ? '—' : v;
   const at = (obj,path) => path.split('.').reduce((v,k)=>v == null ? undefined : v[k],obj);
