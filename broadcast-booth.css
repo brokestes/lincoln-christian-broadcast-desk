@@ -173,6 +173,7 @@ td { font-variant-numeric:tabular-nums; }
   #offenseStats,#defenseStats,#specialStats { scroll-margin-top:140px; }
 }
 @media (max-width:560px) {
+  .home-hero::after { opacity:.4; }
   .topbar { gap:.65rem; }
   .topbar .eyebrow { display:none; }
   #printBtn .desktop-label { display:none; }
