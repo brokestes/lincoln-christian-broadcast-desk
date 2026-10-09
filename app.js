@@ -152,8 +152,11 @@
       var info = research.opponents[g.opponent];
       if (!Array.isArray(g.opponentRoster) && info) g.opponentRoster = clone(info.players);
       if (!g.notes) g.notes = blankNotes();
-      if (g.id === "fb-heavener" && g.notes.reference === undefined) g.notes.reference = research.reference.notes + "\n\nHEAVENER COACHES\n" + research.opponents.Heavener.coaches;
-      if (g.id === "fb-heavener" && !g.notes.reference && !state.researchRevision) g.notes.reference = research.reference.notes + "\n\nHEAVENER COACHES\n" + research.opponents.Heavener.coaches;
+      // Retain legacy reference data in backups, but do not seed a separate transcription task.
+      if (g.notes.reference && !g.referenceIntegrated && !/^PROGRAM \/ STREAKS \(photo transcription/.test(g.notes.reference)) {
+        g.notes.keys = (g.notes.keys || '') + '\n\nEarlier saved notes\n' + g.notes.reference;
+        g.referenceIntegrated = true;
+      }
       if (g.notes.reference) g.notes.reference = g.notes.reference.replace('Coach Rafe: 10th year, 112–14 career record (as written in the sheet).', 'Jerry Ricke is Lincoln’s head coach (official Lincoln athletics, Aug. 28, 2026). Photo lists 10th year and a 112–14 career record; confirm the record before air.');
       if (g.id === 'fb-heavener' && !g.sources.some(function (s) { return s.name === 'Lincoln coaching context'; })) g.sources.push({name:'Lincoln coaching context',note:'Jerry Ricke, head coach; Jeff Comfort, defensive coordinator',url:'https://lcssports.com/news/2026/8/28/football-no-1-lincoln-controls-from-start-to-finish-in-win-at-highly-touted-jones-to-open-2026-season.aspx'});
       // Correct only the old seeded sentence; preserve all other announcer writing.
@@ -419,6 +422,7 @@
       field.value = game.notes[field.dataset.note] || "";
     });
     renderStats(game);
+    if (window.LincolnPrep) window.LincolnPrep.render(state.activeSport,game);
     renderDeskRoster();
   }
   function renderEmptyDesk() {
@@ -431,6 +435,7 @@
     document.getElementById("opponentSnapshot").innerHTML = '<p class="source-note">No opponent selected.</p>';
     document.getElementById("gameSources").innerHTML = sourcesBySport[state.activeSport].map(function (s) { return sourceLink({name:s.label,note:'Sport research source — no game selected',url:s.url}); }).join('');
     document.querySelectorAll("[data-note]").forEach(function (field) { field.value = ""; field.disabled = true; });
+    if (window.LincolnPrep) window.LincolnPrep.render(state.activeSport,null);
     document.getElementById("statGrid").innerHTML = "";
     document.getElementById("deskRoster").innerHTML = '<p class="source-note">Add a roster from the roster book.</p>';
   }
@@ -606,8 +611,10 @@
     if (!game) { toast("Add a game before printing"); return false; }
     var roster = currentSportData().roster.filter(function (p) { return p.spotlight; });
     var notes = game.notes;
+    var highlights = window.LincolnPrep ? window.LincolnPrep.facts(state.activeSport,game) : {};
     function section(title, value) {
-      return '<section class="print-section"><h2>' + html(title) + '</h2><p>' + html(value || "—") + '</p></section>';
+      var key = {'Lincoln storylines':'lincolnStory','Opponent storylines':'opponentStory','Keys & matchups':'keys'}[title];
+      return '<section class="print-section"><h2>' + html(title) + '</h2>' + (key && window.LincolnPrep ? window.LincolnPrep.markup(highlights[key] || [],true) : '') + '<p>' + html(value || "—") + '</p></section>';
     }
     var statRows = game.stats.map(function (s) {
       return '<tr><td>' + html(s.label) + '</td><td>' + html(s.lincoln) + '</td><td>' + html(s.opponent) + '</td></tr>';
@@ -625,7 +632,6 @@
     var print = document.getElementById('printSheet');
     // Full-width roster pages avoid shrinking names and biographical notes into a tiny sidebar.
     print.querySelector('.print-roster').closest('section').remove();
-    print.innerHTML += section('Coaches, program streaks & reference notes', notes.reference);
     [ {name:'Lincoln Christian',players:currentSportData().roster}, {name:game.opponent,players:game.opponentRoster || []} ].forEach(function (team) {
       var selected = team.players.filter(function (p) { return state.printOptions.fullRosters || p.spotlight; });
       print.innerHTML += '<section class="print-section roster-print-section"><h2>' + html(team.name) + ' · ' + (state.printOptions.fullRosters ? 'Full roster' : 'Highlighted roster') + '</h2><table class="print-roster"><thead><tr><th>#</th><th>Player</th><th>Gr.</th><th>Pos.</th><th>Ht. / Wt.</th><th>Notes / sourced background</th></tr></thead><tbody>' + selected.map(function (p) { return '<tr><td>' + html(p.number) + '</td><td>' + html(p.name) + '</td><td>' + html(p.grade) + '</td><td>' + html(p.position || '—') + '</td><td>' + html((p.height || 'Not listed') + ' / ' + (p.weight || 'Not listed')) + '</td><td>' + html(p.note) + playerFacts(p) + '</td></tr>'; }).join('') + '</tbody></table>' + (!selected.length ? '<p>No verified players selected. Check roster availability in Rosters.</p>' : '') + '</section>';
