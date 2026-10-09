@@ -7,7 +7,7 @@
   <meta name="description" content="Lincoln Christian broadcast preparation desk: verified rosters, player stats, live football stats and printable game packets.">
   <title>Lincoln Christian Broadcast Desk</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%237a0019'/%3E%3Cpath d='M16 12v40h34V41H29V12z' fill='%23f0b323'/%3E%3Cpath d='M35 12v25h15V26h-7V12z' fill='white'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css?v=20261008c">
+  <link rel="stylesheet" href="styles.css?v=20261008d">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to workspace</a>
@@ -56,13 +56,23 @@
           <div class="progress-track"><div id="progressBar"></div></div>
           <div id="checklist" class="checklist"></div>
         </div>
-        <div class="desk-grid">
+        <div class="desk-subnav" role="tablist" aria-label="Game desk sections">
+          <button class="desk-tab active" id="desk-tab-prep" data-desk-tab="prep" role="tab" aria-selected="true" aria-controls="desk-panel-prep">Prep</button>
+          <button class="desk-tab" id="desk-tab-rosters" data-desk-tab="rosters" role="tab" aria-selected="false" aria-controls="desk-panel-rosters" tabindex="-1">Rosters</button>
+          <button class="desk-tab" id="desk-tab-stats" data-desk-tab="stats" role="tab" aria-selected="false" aria-controls="desk-panel-stats" tabindex="-1">Stats</button>
+          <button class="desk-tab" id="desk-tab-live" data-desk-tab="live" role="tab" aria-selected="false" aria-controls="desk-panel-live" tabindex="-1">Live game</button>
+          <button class="desk-tab" id="desk-tab-history" data-desk-tab="history" role="tab" aria-selected="false" aria-controls="desk-panel-history" tabindex="-1">History</button>
+          <button class="desk-tab" id="desk-tab-sources" data-desk-tab="sources" role="tab" aria-selected="false" aria-controls="desk-panel-sources" tabindex="-1">Sources</button>
+          <button class="desk-tab" id="desk-tab-print" data-desk-tab="print" role="tab" aria-selected="false" aria-controls="desk-panel-print" tabindex="-1">Print packet</button>
+        </div>
+
+        <section class="desk-section" id="desk-panel-prep" data-desk-panel="prep" role="tabpanel" aria-labelledby="desk-tab-prep">
+        <div class="desk-grid prep-grid">
           <section class="panel workbench">
-            <div class="panel-heading split">
-              <div><span class="eyebrow">ON-AIR WORKBENCH</span><h2>Broadcast board</h2></div>
-              <div class="tab-list" role="tablist" aria-label="Broadcast board tabs"><button class="tab-btn active" data-tab="notes" role="tab">Notes</button><button class="tab-btn" data-tab="stats" role="tab">Stats</button><button class="tab-btn" data-tab="people" role="tab">Rosters</button><button class="tab-btn" data-tab="season" role="tab">Season stats</button></div>
+            <div class="panel-heading">
+              <span class="eyebrow">BEFORE THE BROADCAST</span><h2>Prep notes</h2>
+              <p class="section-hint">Your opening, storylines, film observations and calls for this matchup.</p>
             </div>
-            <div class="tab-panel active" data-tab-panel="notes">
               <div class="field-grid">
                 <label class="field field-wide"><span>Opening setup</span><textarea data-note="opening" rows="3" placeholder="First 20 seconds: setting, stakes, records, and why this game matters."></textarea></label>
                 <label class="field"><span>Lincoln storylines</span><textarea data-note="lincolnStory" rows="6" placeholder="Personnel, milestones, trends, injuries, context."></textarea></label>
@@ -70,22 +80,8 @@
                 <label class="field"><span>Film / scheme notes</span><textarea data-note="film" rows="6" placeholder="What you saw on film. Keep AI out of the judgment loop."></textarea></label>
                 <label class="field"><span>Keys &amp; matchups</span><textarea data-note="keys" rows="6" placeholder="What will decide the game? Which matchups matter?"></textarea></label>
                 <label class="field field-wide"><span>Reusable calls &amp; transitions</span><textarea data-note="calls" rows="3" placeholder="Short lines, sponsor transitions, resets, and halftime reminders."></textarea></label>
-                <label class="field field-wide"><span>Coaches, streaks &amp; prep-sheet reference notes</span><textarea data-note="reference" rows="12" placeholder="Coaching records, team trends, milestones and verified context."></textarea></label>
-                <p class="source-note field-wide">Photo transcriptions are labeled for confirmation. Published player stats appear separately under Season stats.</p>
+                <details class="prep-reference field-wide"><summary>Coaches, streaks &amp; prep-sheet reference</summary><label class="field"><span>Prep-sheet reference notes</span><textarea data-note="reference" rows="12" placeholder="Coaching records, team trends, milestones and verified context."></textarea></label><p class="source-note">Photo transcriptions are labeled for confirmation. Published player stats are under Stats → Season stats.</p></details>
               </div>
-            </div>
-            <div class="tab-panel" data-tab-panel="stats">
-              <div class="stats-toolbar"><p>Keep the numbers you need at a glance. Add or rename any row.</p><button class="small-btn" id="addStatBtn">Add stat row</button></div>
-              <div id="statGrid" class="stat-grid"></div>
-              <label class="field field-wide live-log"><span>Live game log</span><textarea data-note="liveLog" rows="8" placeholder="Time — score — play — player — note"></textarea></label>
-            </div>
-            <div class="tab-panel" data-tab-panel="people">
-              <div class="team-switch" id="deskTeamSwitch" role="group" aria-label="Choose roster"></div>
-              <div id="deskRosterStatus" class="roster-status"></div>
-              <div class="people-toolbar"><p>Mark players for the printed sheet and add pronunciation or background notes.</p><input id="deskRosterSearch" class="search-input" type="search" placeholder="Find a player"></div>
-              <div id="deskRoster" class="people-list"></div>
-            </div>
-            <div class="tab-panel" data-tab-panel="season"><div id="seasonStats"></div></div>
           </section>
           <aside class="right-rail">
             <section class="panel opponent-card">
@@ -93,15 +89,44 @@
               <div id="opponentSnapshot"></div>
               <label class="field compact"><span>What changed after research?</span><textarea data-note="opponentUpdate" rows="4" placeholder="Personnel changes, new result, late news."></textarea></label>
             </section>
-            <section class="panel source-card">
-              <div class="panel-heading split"><div><span class="eyebrow">SOURCE CHECK</span><h2>Open the originals</h2></div><span class="verified-chip">VERIFIED LINKS</span></div>
-              <div id="gameSources" class="source-list"></div>
-            </section>
           </aside>
         </div>
-        <section class="panel matchup-history" id="matchupHistory" aria-label="Team history from I Was At The Game"></section>
-        <section class="panel live-panel" id="livePanel" aria-label="TurboStats live game feed"></section>
+        </section>
+
+        <section class="desk-section" id="desk-panel-rosters" data-desk-panel="rosters" role="tabpanel" aria-labelledby="desk-tab-rosters" hidden>
+          <div class="panel workbench">
+            <div class="panel-heading"><span class="eyebrow">NAMES &amp; NUMBERS</span><h2>Game rosters</h2><p class="section-hint">Choose either team. Mark players for the printed sheet and add pronunciation or background notes.</p></div>
+            <div class="team-switch" id="deskTeamSwitch" role="group" aria-label="Choose roster"></div>
+            <div id="deskRosterStatus" class="roster-status"></div>
+            <div class="people-toolbar"><label class="field roster-search-field"><span>Find a player</span><input id="deskRosterSearch" class="search-input" type="search" placeholder="Search name, number or position"></label></div>
+            <div id="deskRoster" class="people-list"></div>
+          </div>
+        </section>
+
+        <section class="desk-section" id="desk-panel-stats" data-desk-panel="stats" role="tabpanel" aria-labelledby="desk-tab-stats" hidden>
+          <div class="panel workbench">
+            <div class="panel-heading split"><div><span class="eyebrow">THE NUMBERS</span><h2>Game &amp; season stats</h2></div><div class="tab-list" role="tablist" aria-label="Stat sections"><button class="tab-btn active" id="stats-tab-quick" data-tab="stats" role="tab" aria-selected="true" aria-controls="quickStatsPanel">Quick stats</button><button class="tab-btn" id="stats-tab-season" data-tab="season" role="tab" aria-selected="false" aria-controls="seasonStatsPanel" tabindex="-1">Season stats</button></div></div>
+            <div class="tab-panel active" id="quickStatsPanel" data-tab-panel="stats" role="tabpanel" aria-labelledby="stats-tab-quick"><div class="stats-toolbar"><p>Your editable comparison board. Add or rename any row.</p><button class="small-btn" id="addStatBtn">Add stat row</button></div><div id="statGrid" class="stat-grid"></div></div>
+            <div class="tab-panel" id="seasonStatsPanel" data-tab-panel="season" role="tabpanel" aria-labelledby="stats-tab-season" hidden><div id="seasonStats"></div></div>
+          </div>
+        </section>
+
+        <section class="desk-section" id="desk-panel-live" data-desk-panel="live" role="tabpanel" aria-labelledby="desk-tab-live" hidden>
+          <section class="panel live-panel" id="livePanel" aria-label="TurboStats live game feed"></section>
+          <section class="panel workbench live-notes"><div class="panel-heading"><span class="eyebrow">DURING THE GAME</span><h2>Live game log</h2></div><label class="field"><span>Plays, milestones &amp; on-air reminders</span><textarea data-note="liveLog" rows="8" placeholder="Time — score — play — player — note"></textarea></label></section>
+        </section>
+
+        <section class="desk-section" id="desk-panel-history" data-desk-panel="history" role="tabpanel" aria-labelledby="desk-tab-history" hidden>
+          <section class="panel matchup-history" id="matchupHistory" aria-label="Team history from I Was At The Game"></section>
+        </section>
+
+        <section class="desk-section" id="desk-panel-sources" data-desk-panel="sources" role="tabpanel" aria-labelledby="desk-tab-sources" hidden>
+          <section class="panel source-card"><div class="panel-heading split"><div><span class="eyebrow">SOURCE CHECK</span><h2>Game sources</h2><p class="section-hint">Original reporting, schedules, rosters and history for this matchup.</p></div><button class="secondary-btn" data-open-research>Open research shelf</button></div><div id="gameSources" class="source-list game-source-grid"></div></section>
+        </section>
+
+        <section class="desk-section" id="desk-panel-print" data-desk-panel="print" role="tabpanel" aria-labelledby="desk-tab-print" hidden>
         <section class="panel print-options"><div><span class="eyebrow">BOOTH PACKET</span><h2>Print what he needs</h2><p>Notes and both highlighted rosters are always included. Select optional stat sections.</p></div><div id="printOptions"></div><button class="secondary-btn" id="previewPrintBtn">Preview packet</button></section>
+        </section>
       </section>
 
       <section class="view" id="scheduleView" data-view-panel="schedule">
@@ -162,10 +187,10 @@
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <div id="printSheet" class="print-sheet" aria-hidden="true"></div>
   <dialog id="printPreview" class="dialog packet-preview"><div class="dialog-head"><h2>Broadcast packet preview</h2><button type="button" class="icon-btn" aria-label="Close">×</button></div><p>Print uses full-width pages with readable type. Stat tables are separated by offense, defense and special teams.</p><div id="printPreviewContent"></div><button class="primary-btn" id="printPreviewGo">Print packet</button></dialog>
-  <script src="broadcast-data.js?v=20261008c"></script>
-  <script src="school-history.js?v=20261008c"></script>
-  <script src="history-desk.js?v=20261008c"></script>
-  <script src="live-stats.js?v=20261008c"></script>
-  <script src="app.js?v=20261008c"></script>
+  <script src="broadcast-data.js?v=20261008d"></script>
+  <script src="school-history.js?v=20261008d"></script>
+  <script src="history-desk.js?v=20261008d"></script>
+  <script src="live-stats.js?v=20261008d"></script>
+  <script src="app.js?v=20261008d"></script>
 </body>
 </html>

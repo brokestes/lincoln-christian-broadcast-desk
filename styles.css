@@ -347,6 +347,35 @@ tr:hover td { background: #fffafb; }
   .dialog-actions { flex-direction: column-reverse; }
 }
 
+/* One focused workspace at a time, with the same selected matchup above each section. */
+#deskView .matchup-hero { min-height:190px; padding:1.3rem 1.5rem; }
+#deskView .matchup-content { min-height:160px; }
+#deskView .versus h2 { font-size:clamp(1.75rem,2.6vw,2.5rem); line-height:1.05; }
+.desk-subnav { position:sticky; top:97px; z-index:9; display:flex; flex-wrap:wrap; gap:.25rem; background:white; padding:.35rem; margin-top:1.2rem; border:1px solid var(--line); border-radius:10px; box-shadow:0 5px 16px rgba(29,20,22,.06); }
+.desk-tab { flex:1; min-height:46px; border:0; border-radius:7px; padding:.6rem .75rem; background:transparent; font-size:.84rem; font-weight:800; white-space:nowrap; color:var(--muted); }
+.desk-tab:hover { color:var(--crimson); background:#faf2f4; }
+.desk-tab.active { background:var(--crimson); color:white; box-shadow:0 3px 8px rgba(122,0,25,.15); }
+.desk-section { margin-top:1.1rem; }
+.desk-section[hidden],.tab-panel[hidden] { display:none; }
+.desk-section > .matchup-history,.desk-section > .live-panel,.desk-section > .print-options { margin-top:0; }
+.desk-section .prep-grid { margin-top:0; grid-template-columns:minmax(0,1.65fr) minmax(260px,.78fr); }
+.prep-grid .right-rail { display:block; }
+.section-hint { margin:.65rem 0 0; font-size:.85rem; line-height:1.6; color:var(--muted); }
+.prep-reference { border:1px solid var(--line); border-radius:8px; padding:.8rem; background:var(--paper); }
+.prep-reference summary { cursor:pointer; font-size:.85rem; color:var(--crimson); font-weight:800; }
+.prep-reference[open] .field { margin-top:1rem; }
+.roster-search-field { width:min(100%,400px); }
+.game-source-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.live-notes { margin-top:1.1rem; }
+#offenseStats,#defenseStats,#specialStats { scroll-margin-top:180px; }
+@media (max-width:1150px) { .desk-section .prep-grid { grid-template-columns:1fr; } }
+@media (max-width:800px) {
+  .desk-subnav { top:82px; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .desk-tab { padding:.6rem .3rem; font-size:.8rem; }
+  .game-source-grid { grid-template-columns:1fr; }
+  #offenseStats,#defenseStats,#specialStats { scroll-margin-top:260px; }
+}
+@media (max-width:560px) { #deskView .matchup-hero { min-height:0; padding:1.15rem; } }
 .matchup-history { margin-top:1.4rem; padding:1.4rem; }
 .matchup-history .panel-heading { padding:0; }
 .matchup-history .panel-heading a { font-size:.8rem; font-weight:800; color:var(--crimson); }

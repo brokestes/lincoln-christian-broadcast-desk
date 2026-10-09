@@ -29,7 +29,9 @@ The website and researched facts are public. The announcer's edits are saved in 
 
 ## Using the desk
 
-Choose a game in Schedule. In Rosters or Roster book, choose Lincoln or the selected opponent. Mark Sheet checkboxes to include players, then add pronunciation and broadcast notes. Season stats contains the sourced statistical tables. History & broadcast nuggets follows the selected matchup and sport; its buttons append cited facts without replacing existing notes. Team history & matchup archive controls its optional print section. The live feed is below the board on Game Desk; use Pause auto, Refresh now or Use link as needed. Select packet sections and use Preview packet before printing.
+Choose a game in Schedule. Game Desk is organized into seven sections: Prep, Rosters, Stats, Live game, History, Sources and Print packet. Only the selected section appears; the matchup and prep checklist remain above it. The section row stays accessible while scrolling, supports Left/Right/Home/End keys, and remembers the last selected section in this browser.
+
+Prep contains editable opening/storyline/film/call notes and the opponent snapshot. Long prep-sheet references are expandable. In Rosters or Roster book, choose Lincoln or the selected opponent. Mark Sheet checkboxes to include players, then add pronunciation and broadcast notes. Stats separates the editable Quick stats board from sourced Season stats tables. Live game contains TurboStats and the editable game log; use Pause auto, Refresh now or Use link as needed. History follows the selected matchup and sport; its buttons append cited facts without replacing existing notes. Sources contains the selected game's original links. Print packet contains selectable packet sections and Preview packet. Printing draws from the entire selected game's data, not just the currently visible section.
 
 Facts and rosters should be rechecked before each game. Unverified opponents are labeled "not verified"; an inaccessible source is not described as an unpublished roster. Film interpretation and on-air judgment remain with the announcer.
 

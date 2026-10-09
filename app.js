@@ -135,7 +135,9 @@
   var state = loadState();
   migrateResearch();
   var currentView = "desk";
-  var activeTab = "notes";
+  var deskSections = ['prep','rosters','stats','live','history','sources','print'];
+  var activeDeskSection = deskSections.includes(state.deskSection) ? state.deskSection : 'prep';
+  var activeTab = state.statsTab === 'season' ? 'season' : 'stats';
   var saveTimer = null;
 
   // Merge new sourced fields without replacing existing user notes, manual stats or highlights.
@@ -315,8 +317,63 @@
     renderSeasonStats();
     renderPrintOptions();
     window.LincolnHistory.render(state.activeSport,currentGame());
+    renderDeskTabs();
     window.LincolnLive.configure(state.activeSport === 'football' ? currentGame() : null, saveState);
   }
+  function renderDeskTabs() {
+    document.querySelectorAll('[data-desk-tab]').forEach(function (button) {
+      var selected = button.dataset.deskTab === activeDeskSection;
+      button.classList.toggle('active',selected);
+      button.setAttribute('aria-selected',String(selected));
+      button.setAttribute('tabindex',selected ? '0' : '-1');
+    });
+    document.querySelectorAll('[data-desk-panel]').forEach(function (panel) { panel.hidden = panel.dataset.deskPanel !== activeDeskSection; });
+    document.querySelectorAll('.tab-btn').forEach(function (button) {
+      var selected = button.dataset.tab === activeTab;
+      button.classList.toggle('active',selected);
+      button.setAttribute('aria-selected',String(selected));
+      button.setAttribute('tabindex',selected ? '0' : '-1');
+    });
+    document.querySelectorAll('[data-tab-panel]').forEach(function (panel) {
+      var selected = panel.dataset.tabPanel === activeTab;
+      panel.hidden = !selected;
+      panel.classList.toggle('active',selected);
+    });
+  }
+  function rememberDeskHash() {
+    if (window.history && window.location) window.history.replaceState(null,'',window.location.pathname + window.location.search + '#desk-' + activeDeskSection);
+  }
+  function setDeskSection(section) {
+    if (!deskSections.includes(section)) return;
+    activeDeskSection = section;
+    state.deskSection = section;
+    saveState(); renderDeskTabs(); rememberDeskHash(); keepDeskSectionInView();
+  }
+  function setStatsTab(tab) {
+    if (!['stats','season'].includes(tab)) return;
+    activeTab = tab; state.statsTab = tab;
+    saveState(); renderDeskTabs(); rememberDeskHash(); keepDeskSectionInView();
+  }
+  function keepDeskSectionInView() {
+    var panel = document.getElementById('desk-panel-' + activeDeskSection);
+    var nav = document.querySelector('.desk-subnav');
+    if (!panel || !nav || !panel.getBoundingClientRect || !nav.getBoundingClientRect || !window.scrollBy) return;
+    var panelTop = panel.getBoundingClientRect().top, navBottom = nav.getBoundingClientRect().bottom;
+    if (panelTop < navBottom + 12) window.scrollBy({top:panelTop - navBottom - 20,behavior:'smooth'});
+  }
+  function applyDeskHash() {
+    var hash = window.location ? window.location.hash.slice(1) : '';
+    var statAnchor = ['offenseStats','defenseStats','specialStats'].includes(hash);
+    var section = statAnchor ? 'stats' : hash.replace(/^desk-/,'');
+    if (!deskSections.includes(section)) return;
+    activeDeskSection = section; state.deskSection = section;
+    if (statAnchor) { activeTab = 'season'; state.statsTab = 'season'; }
+    renderDeskTabs(); saveState();
+    if (currentView !== 'desk') setView('desk');
+    var anchor = statAnchor ? document.getElementById(hash) : null;
+    if (anchor && anchor.scrollIntoView) anchor.scrollIntoView({block:'start'});
+  }
+  window.addEventListener('hashchange',applyDeskHash);
   function renderSportButtons() {
     document.querySelectorAll(".sport-btn").forEach(function (btn) {
       btn.classList.toggle("active", btn.dataset.sport === state.activeSport);
@@ -367,7 +424,7 @@
     document.getElementById("progressBar").style.width = "0%";
     document.getElementById("opponentName").textContent = "Opponent";
     document.getElementById("opponentSnapshot").innerHTML = '<p class="source-note">No opponent selected.</p>';
-    document.getElementById("gameSources").innerHTML = "";
+    document.getElementById("gameSources").innerHTML = sourcesBySport[state.activeSport].map(function (s) { return sourceLink({name:s.label,note:'Sport research source — no game selected',url:s.url}); }).join('');
     document.querySelectorAll("[data-note]").forEach(function (field) { field.value = ""; field.disabled = true; });
     document.getElementById("statGrid").innerHTML = "";
     document.getElementById("deskRoster").innerHTML = '<p class="source-note">Add a roster from the roster book.</p>';
@@ -578,6 +635,8 @@
     if (!target) return;
     if (target.matches(".sport-btn")) setSport(target.dataset.sport);
     if (target.matches(".nav-btn")) setView(target.dataset.view);
+    if (target.matches('[data-desk-tab]')) setDeskSection(target.dataset.deskTab);
+    if (target.matches('[data-open-research]')) setView('research');
     if (target.matches('[data-history-note]')) {
       var added = window.LincolnHistory.addToNotes(state.activeSport,currentGame(),target.dataset.historyNote);
       if (added) { saveState(); renderDesk(); toast('Sourced facts added; existing notes preserved'); }
@@ -586,11 +645,7 @@
     if (target.matches('[data-roster-team]')) { rosterTeam = target.dataset.rosterTeam; renderRoster(); renderDeskRoster(); }
     if (target.matches('#previewPrintBtn')) { if (renderPrintSheet()) { document.getElementById('printPreviewContent').innerHTML = document.getElementById('printSheet').innerHTML; document.getElementById('printPreview').showModal(); } }
     if (target.matches('#printPreviewGo')) { document.getElementById('printPreview').close(); if (renderPrintSheet()) window.print(); }
-    if (target.matches(".tab-btn")) {
-      activeTab = target.dataset.tab;
-      document.querySelectorAll(".tab-btn").forEach(function (b) { b.classList.toggle("active", b.dataset.tab === activeTab); });
-      document.querySelectorAll("[data-tab-panel]").forEach(function (p) { p.classList.toggle("active", p.dataset.tabPanel === activeTab); });
-    }
+    if (target.matches(".tab-btn")) setStatsTab(target.dataset.tab);
     if (target.matches("[data-open-game]")) openGame(target.dataset.openGame);
     if (target.matches("#newGameBtn, #scheduleNewGameBtn, .emptyAddGame")) document.getElementById("gameDialog").showModal();
     if (target.matches("#addPlayerBtn")) document.getElementById("playerDialog").showModal();
@@ -623,6 +678,20 @@
       event.preventDefault();
       target.closest("dialog").close();
     }
+  });
+
+  // Accessible arrow-key navigation, scoped to each tab row; note-field keys are unaffected.
+  document.addEventListener('keydown',function (event) {
+    var tab = event.target.closest('[data-desk-tab],.tab-btn');
+    if (!tab || !['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
+    event.preventDefault();
+    var isDesk = tab.hasAttribute('data-desk-tab');
+    var choices = isDesk ? deskSections : ['stats','season'];
+    var current = choices.indexOf(isDesk ? tab.dataset.deskTab : tab.dataset.tab);
+    var next = event.key === 'Home' ? 0 : event.key === 'End' ? choices.length - 1 : (current + (event.key === 'ArrowRight' ? 1 : -1) + choices.length) % choices.length;
+    if (isDesk) setDeskSection(choices[next]); else setStatsTab(choices[next]);
+    var button = document.querySelector(isDesk ? '[data-desk-tab="' + choices[next] + '"]' : '[data-tab="' + choices[next] + '"]');
+    if (button) button.focus();
   });
 
   document.addEventListener("input", function (event) {
@@ -728,5 +797,6 @@
 
   renderAll();
   setView(currentView);
+  applyDeskHash();
   registerWebMCP();
 })();
