@@ -52,5 +52,5 @@ if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){
  const {feed,failures}=await collect(previous);
  await fs.writeFile(target,JSON.stringify(feed,null,2)+'\n');
  console.log(JSON.stringify(Object.fromEntries(Object.entries(feed.sports).map(([sport,data])=>[sport,{season:data.season,events:data.events.length,status:data.status}]))));
- if(failures===3)process.exitCode=1;
+ if(failures)process.exitCode=1;
 }
