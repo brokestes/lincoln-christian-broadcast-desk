@@ -1,13 +1,13 @@
 {
   "version": 1,
   "timeZone": "America/Chicago",
-  "generatedAt": "2026-10-11T23:11:10.958Z",
+  "generatedAt": "2026-10-11T23:19:01.079Z",
   "entries": [
     {
       "sport": "football",
       "gameDate": "2026-10-15",
       "opponent": "Spiro",
-      "checkedAt": "2026-10-11T23:11:10.958Z",
+      "checkedAt": "2026-10-11T23:19:01.079Z",
       "status": "published-with-gaps",
       "gaps": [
         "Oct. 15 game/forfeit needs official confirmation",
@@ -20,6 +20,28 @@
         "date": "Article Oct. 9, 2026 · Research checked Oct. 11, 2026",
         "label": "Heavener-area newsletter"
       },
+      "resultNotes": [
+        {
+          "date": "2026-10-09",
+          "opponent": "Roland",
+          "fact": {
+            "text": "FORFEIT · awarded result, not a played game.",
+            "url": "https://www.touchdownfridaynight.com/teams/260/spiro-bulldogs/2026",
+            "date": "2026 schedule checked Oct. 11, 2026 · Research checked Oct. 11, 2026",
+            "label": "Touchdown Friday Night"
+          }
+        },
+        {
+          "date": "2026-10-02",
+          "opponent": "Checotah",
+          "fact": {
+            "text": "VERIFY BEFORE AIR · score/date conflict: this MaxPreps row is 0–2 on Oct. 2; Touchdown Friday Night lists 0–15 on Oct. 1.",
+            "url": "https://www.touchdownfridaynight.com/teams/260/spiro-bulldogs/2026",
+            "date": "2026 schedule checked Oct. 11, 2026 · Research checked Oct. 11, 2026",
+            "label": "Touchdown Friday Night"
+          }
+        }
+      ],
       "sections": {
         "lincolnStory": [
           {

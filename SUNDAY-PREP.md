@@ -44,6 +44,8 @@ Each fact is `{ "text": "Short factual highlight", "url": "https://original-sour
 
 Optional fields are `status` (`published` or `published-with-gaps`), `gaps` (short strings identifying unavailable information), and `matchupNotice` (a sourced fact shown prominently on Home, opponent schedule and in Keys). Use `published-with-gaps` when significant topics or game status remain unverified. `rosterFacts` maps `Lincoln Christian` and/or the exact opponent name to arrays of `{ "name": "Exact verified player name", "facts": [sourced facts] }`. These are a matchup-specific display overlay, not writes to local notes or Sheet selections. Pass the actual team name when printing both rosters. Duplicate names/jerseys in a source are roster entries, not proof of distinct players or a confirmed identity merge.
 
+`resultNotes` optionally adds `{ "date": "YYYY-MM-DD", "opponent": "Exact opponent on that schedule row", "fact": sourcedFact }` items to the selected opponent's season table. Use these to distinguish awarded forfeits and conflicting score/date reports beside the actual row, including print. Preserve the provider's original score rather than silently replacing it. These annotations are scoped to the researched matchup, not applied to another team's schedule.
+
 When a topic has no verified information, disclose the gap in the report rather than filling it with speculation. If research is incomplete, do not stamp the whole packet complete. Keep citations close to facts and keep quotations within source limits.
 
 ## Publish and verify
