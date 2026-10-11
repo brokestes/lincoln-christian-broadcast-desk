@@ -175,9 +175,11 @@
   function keyPlayersFirst(roster) {
     return roster.slice().sort(function(a,b){return Number(!!b.spotlight)-Number(!!a.spotlight);});
   }
-  function playerFacts(p) {
+  function playerFacts(p, teamName) {
     var warning=p.sourceAbsent?'<div class="player-fact source-note">Saved entry not matched to the latest published roster. Confirm name and number before air.</div>':'';
-    return warning + (p.facts || []).map(function (f) { return '<div class="player-fact">' + html(f.text) + ' <a target="_blank" rel="noreferrer" href="' + html(/^https:\/\//i.test(f.url) ? f.url : '#') + '">Source · ' + html(f.date) + ' ↗</a></div>'; }).join("");
+    var game=currentGame(),name=teamName || (rosterTeam==='lincoln'?'Lincoln Christian':game && game.opponent);
+    var facts=(p.facts || []).concat(window.LincolnWeekly ? window.LincolnWeekly.playerFacts(state.activeSport,game,name,p) : []),seen=new Set();
+    return warning + facts.filter(function(f){var key=f.text+'|'+f.url;if(seen.has(key))return false;seen.add(key);return true;}).map(function (f) { return '<div class="player-fact">' + html(f.text) + ' <a target="_blank" rel="noreferrer" href="' + html(/^https:\/\//i.test(f.url) ? f.url : '#') + '">Source · ' + html(f.date) + ' ↗</a></div>'; }).join("");
   }
   function renderTeamSwitch() {
     var g = currentGame();
@@ -190,7 +192,7 @@
     if (state.activeSport === 'football' && window.LincolnWeekly) {
       var publicTeam=window.LincolnWeekly.team(rosterTeam==='lincoln'?'Lincoln Christian':g && g.opponent,g);
       var publicRoster=rosterTeam==='lincoln'?research.officialRosterInfo:publicTeam && publicTeam.roster;
-      if(publicRoster){message=(rosterTeam==='lincoln'?'Lincoln':g.opponent)+': '+(publicRoster.players||[]).length+' players in the published roster. Last successful check: '+window.LincolnWeekly.stamp(publicRoster.checkedAt)+'. Missing measurements are “Not listed”. '+(publicRoster.status==='error'?'Refresh failed; dated data retained. ':publicRoster.status==='not-published'?'No players published; manual entries are preserved. ':'');
+      if(publicRoster){message=(rosterTeam==='lincoln'?'Lincoln':g.opponent)+': '+(publicRoster.players||[]).length+' published roster entries (not necessarily unique players). Last successful check: '+window.LincolnWeekly.stamp(publicRoster.checkedAt)+'. Missing measurements are “Not listed”. '+(publicRoster.status==='error'?'Refresh failed; dated data retained. ':publicRoster.status==='not-published'?'No players published; manual entries are preserved. ':'');
         var absent=visibleRoster().filter(function(p){return p.sourceAbsent;}).length;if(absent)message+=absent+' saved players are not on the latest published roster; kept to preserve your notes. Confirm before air. ';
         if(rosterTeam==='opponent')message+='Background facts have their own source dates; refreshing a roster does not re-verify those facts.';
       }
@@ -648,7 +650,7 @@
     print.querySelector('.print-roster').closest('section').remove();
     [ {name:'Lincoln Christian',players:currentSportData().roster}, {name:game.opponent,players:game.opponentRoster || []} ].forEach(function (team) {
       var selected = team.players.filter(function (p) { return state.printOptions.fullRosters || p.spotlight; });
-      print.innerHTML += '<section class="print-section roster-print-section"><h2>' + html(team.name) + ' · ' + (state.printOptions.fullRosters ? 'Full roster' : 'Highlighted roster') + '</h2><table class="print-roster"><thead><tr><th>#</th><th>Player</th><th>Gr.</th><th>Pos.</th><th>Ht. / Wt.</th><th>Notes / sourced background</th></tr></thead><tbody>' + selected.map(function (p) { return '<tr><td>' + html(p.number) + '</td><td>' + html(p.name) + '</td><td>' + html(p.grade) + '</td><td>' + html(p.position || '—') + '</td><td>' + html((p.height || 'Not listed') + ' / ' + (p.weight || 'Not listed')) + '</td><td>' + html(p.note) + playerFacts(p) + '</td></tr>'; }).join('') + '</tbody></table>' + (!selected.length ? '<p>No verified players selected. Check roster availability in Rosters.</p>' : '') + '</section>';
+      print.innerHTML += '<section class="print-section roster-print-section"><h2>' + html(team.name) + ' · ' + (state.printOptions.fullRosters ? 'Full roster' : 'Highlighted roster') + '</h2><table class="print-roster"><thead><tr><th>#</th><th>Player</th><th>Gr.</th><th>Pos.</th><th>Ht. / Wt.</th><th>Notes / sourced background</th></tr></thead><tbody>' + selected.map(function (p) { return '<tr><td>' + html(p.number) + '</td><td>' + html(p.name) + '</td><td>' + html(p.grade) + '</td><td>' + html(p.position || '—') + '</td><td>' + html((p.height || 'Not listed') + ' / ' + (p.weight || 'Not listed')) + '</td><td>' + html(p.note) + playerFacts(p,team.name) + '</td></tr>'; }).join('') + '</tbody></table>' + (!selected.length ? '<p>No verified players selected. Check roster availability in Rosters.</p>' : '') + '</section>';
     });
     if (state.activeSport === 'football') ['offense','defense','special'].forEach(function (group) {
       if (!state.printOptions[group]) return;

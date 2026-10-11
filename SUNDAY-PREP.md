@@ -42,6 +42,8 @@ Write only sourced, public facts to `weekly-highlights.json`. Preserve existing 
 
 Each fact is `{ "text": "Short factual highlight", "url": "https://original-source-page", "date": "Publication date and/or explicitly labeled research date", "label": "Source name" }`. Never use a new research timestamp to imply that an older article is new. The wrapper is `{ "version": 1, "timeZone": "America/Chicago", "generatedAt": "ISO UTC", "entries": [...] }`. Highlight facts are keyed to both sport and selected game date/opponent, and automatically appear and print without copying into private notes.
 
+Optional fields are `status` (`published` or `published-with-gaps`), `gaps` (short strings identifying unavailable information), and `matchupNotice` (a sourced fact shown prominently on Home, opponent schedule and in Keys). Use `published-with-gaps` when significant topics or game status remain unverified. `rosterFacts` maps `Lincoln Christian` and/or the exact opponent name to arrays of `{ "name": "Exact verified player name", "facts": [sourced facts] }`. These are a matchup-specific display overlay, not writes to local notes or Sheet selections. Pass the actual team name when printing both rosters. Duplicate names/jerseys in a source are roster entries, not proof of distinct players or a confirmed identity merge.
+
 When a topic has no verified information, disclose the gap in the report rather than filling it with speculation. If research is incomplete, do not stamp the whole packet complete. Keep citations close to facts and keep quotations within source limits.
 
 ## Publish and verify

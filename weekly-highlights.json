@@ -1,6 +1,254 @@
 {
   "version": 1,
   "timeZone": "America/Chicago",
-  "generatedAt": null,
-  "entries": []
+  "generatedAt": "2026-10-11T23:11:10.958Z",
+  "entries": [
+    {
+      "sport": "football",
+      "gameDate": "2026-10-15",
+      "opponent": "Spiro",
+      "checkedAt": "2026-10-11T23:11:10.958Z",
+      "status": "published-with-gaps",
+      "gaps": [
+        "Oct. 15 game/forfeit needs official confirmation",
+        "Spiro 2026 player stats are not published",
+        "Some player backgrounds and prior head-to-head history remain unverified"
+      ],
+      "matchupNotice": {
+        "text": "VERIFY BEFORE AIR · LIKELY SPIRO FORFEIT: the Oct. 9 Heavener-area newsletter reports two recent Spiro forfeits and expects forfeits for the rest of the season. Lincoln’s checked schedule still lists Oct. 15. Do not announce cancellation, a final score or an awarded Lincoln win until officially confirmed.",
+        "url": "https://heaveneronline.substack.com/p/heavener-area-newsletter-10-9-2026",
+        "date": "Article Oct. 9, 2026 · Research checked Oct. 11, 2026",
+        "label": "Heavener-area newsletter"
+      },
+      "sections": {
+        "lincolnStory": [
+          {
+            "text": "FRIDAY RECAP · Lincoln beat Heavener 55–0 on Oct. 9. MaxPreps lists Major Brooks 8-of-9 passing for 170 yards and 3 TD; Max Madrid 4 carries for 92 yards and 4 TD; Caleb Peterson 3 catches for 74 yards and 2 TD. These are single-game figures.",
+            "url": "https://www.maxpreps.com/ok/football/game/heavener-vs-lincoln-christian-tulsa/10-9-2026/?c=0414bb70-0040-4796-ac53-e383361a39a5&tab=Recap",
+            "date": "Game Oct. 9, 2026 · Research checked Oct. 11, 2026",
+            "label": "MaxPreps game recap"
+          },
+          {
+            "text": "DISTRICT STREAK · Lincoln’s Oct. 9 preview listed 52 consecutive district wins entering Heavener. Adding the verified 55–0 win gives 53 (calculated from the preview plus result, not a newly published school streak).",
+            "url": "https://lcssports.com/news/2026/10/9/football-week-6-preview-bulldogs-back-home-to-host-heavener-look-to-remain-perfect-in-district.aspx",
+            "date": "Article Oct. 9, 2026; calculation checked Oct. 11 · Research checked Oct. 11, 2026",
+            "label": "Lincoln athletics"
+          },
+          {
+            "text": "COACHING CONTEXT · Jerry Ricke is in his 10th Lincoln season. The school’s Oct. 9 preview listed his record as 112–14 entering the Heavener game; that figure is pre-Friday, not a newly updated career total.",
+            "url": "https://lcssports.com/news/2026/10/9/football-week-6-preview-bulldogs-back-home-to-host-heavener-look-to-remain-perfect-in-district.aspx",
+            "date": "Article Oct. 9, 2026 · Research checked Oct. 11, 2026",
+            "label": "Lincoln athletics"
+          },
+          {
+            "text": "MULTISPORT · Major Brooks was Lincoln’s spring 2026 baseball Offensive Player of the Year and first-team all-district designated hitter. He led the team with a .444 batting average, 13 doubles and 31 RBI.",
+            "url": "https://lcssports.com/news/2026/5/31/baseball-host-of-bulldogs-honored-after-state-semifinal-apperance-best-season-in-program-history.aspx",
+            "date": "Article May 31, 2026 · Research checked Oct. 11, 2026",
+            "label": "Lincoln athletics"
+          },
+          {
+            "text": "MULTISPORT · Caleb Peterson won the boys 100-meter state title in spring 2026, as reported in Lincoln’s year-end athletics review.",
+            "url": "https://lcssports.com/news/2026/6/3/general-2025-26-another-banner-year-for-lincoln-christian-athletics-as-bulldogs-continue-to-raise-championship-standard.aspx",
+            "date": "Article June 3, 2026 · Research checked Oct. 11, 2026",
+            "label": "Lincoln athletics"
+          },
+          {
+            "text": "PROGRAM HISTORY · I Was At The Game lists Lincoln football at 249–51–0 across 300 games from 2002–2025. This archive ends in 2025; it does not include this season.",
+            "url": "https://www.iwasatthegame.com/FBAllTimeWL.aspx",
+            "date": "Archive 2002–2025 · Research checked Oct. 11, 2026",
+            "label": "I Was At The Game"
+          }
+        ],
+        "opponentStory": [
+          {
+            "text": "NEW COACH · Ronnie Waid was hired Jan. 26, 2026. The hiring report lists 22 years of coaching experience and his previous role as Huntsville, Arkansas offensive coordinator/associate head coach; he also coached track.",
+            "url": "https://www.touchdownfridaynight.com/story/4465/spiro-hires-waid-as-head-coach",
+            "date": "Article Jan. 26, 2026 · Research checked Oct. 11, 2026",
+            "label": "Touchdown Friday Night"
+          },
+          {
+            "text": "REBUILDING CONTEXT · The Spiro hiring report says the Bulldogs went 0–10 in 2025. Current 0–6 / 0–3 district context includes awarded results, not six confirmed played games; do not use those scores to infer on-field defensive averages.",
+            "url": "https://www.touchdownfridaynight.com/story/4465/spiro-hires-waid-as-head-coach",
+            "date": "Article Jan. 26, 2026; current record checked Oct. 11 · Research checked Oct. 11, 2026",
+            "label": "Touchdown Friday Night"
+          },
+          {
+            "text": "PROGRAM HISTORY · Spiro’s archived football record is 490–270–4 over 764 games, covering 1957–2025. This does not include 2026.",
+            "url": "https://www.iwasatthegame.com/FBAllTimeWL.aspx",
+            "date": "Archive 1957–2025 · Research checked Oct. 11, 2026",
+            "label": "I Was At The Game"
+          },
+          {
+            "text": "SCHOOL TRADITION · Spiro has seven team titles listed in the OSSAA archive: baseball 1991; boys track 1977, 1978, 1979 and 1999; girls track 1982 and 2017. These are school-wide titles, not seven football championships.",
+            "url": "https://www.iwasatthegame.com/StateChampions.aspx?ad=23143&id=18224e07-4e68-40a1-b3be-9c5c6032cad6",
+            "date": "Historical championship archive · Research checked Oct. 11, 2026",
+            "label": "I Was At The Game"
+          },
+          {
+            "text": "MULTISPORT · Kason Watts placed eighth in shot put at the April 27, 2026 Keys meet: 36 feet, 4 inches. Published meet result, not a claimed personal best.",
+            "url": "https://ok.milesplit.com/meets/754195-2026-keys-hs-track-meet-2026/results/1289917/raw",
+            "date": "Meet April 27, 2026 · Research checked Oct. 11, 2026",
+            "label": "OK MileSplit results"
+          },
+          {
+            "text": "MULTISPORT · Taylor Covey placed ninth in shot put at the April 27, 2026 Keys meet: 35 feet, 6 inches. Published meet result, not a claimed personal best.",
+            "url": "https://ok.milesplit.com/meets/754195-2026-keys-hs-track-meet-2026/results/1289917/raw",
+            "date": "Meet April 27, 2026 · Research checked Oct. 11, 2026",
+            "label": "OK MileSplit results"
+          },
+          {
+            "text": "MULTISPORT · Joshua Collins competed for Spiro in the April 27, 2026 Keys track meet: 100 meters in 13.16 (24th), 200 in 26.88 (20th). These are that meet’s marks, not career bests.",
+            "url": "https://ok.milesplit.com/meets/754195-2026-keys-hs-track-meet-2026/results/1289917/raw",
+            "date": "Meet April 27, 2026 · Research checked Oct. 11, 2026",
+            "label": "OK MileSplit results"
+          },
+          {
+            "text": "VERIFY BEFORE AIR · No Spiro entry appears in Lincoln’s opponent selector in the checked head-to-head archive. That absence does not prove this is the schools’ first-ever meeting; the prior series is unverified.",
+            "url": "https://www.iwasatthegame.com/FBH2H.aspx",
+            "date": "Archive selector checked Oct. 11, 2026 · Research checked Oct. 11, 2026",
+            "label": "I Was At The Game"
+          }
+        ],
+        "keys": [
+          {
+            "text": "SCHEDULE STILL POSTED · Lincoln’s official schedule checked Oct. 11 lists the Spiro road game Thursday, Oct. 15 at 7:00 PM Central. This is the posted fixture, not confirmation that the game will be played.",
+            "url": "https://lcssports.com/sports/football/schedule",
+            "date": "Official schedule checked Oct. 11, 2026 · Research checked Oct. 11, 2026",
+            "label": "Lincoln athletics"
+          },
+          {
+            "text": "FORFEIT, NOT A PLAYED SHUTOUT · Touchdown Friday Night labels Oct. 9 Spiro 0–Roland 15 as a FORFEIT. Its Spiro page also lists the preceding Checotah result as 0–15 on Oct. 1.",
+            "url": "https://www.touchdownfridaynight.com/teams/260/spiro-bulldogs/2026",
+            "date": "2026 schedule checked Oct. 11, 2026 · Research checked Oct. 11, 2026",
+            "label": "Touchdown Friday Night"
+          },
+          {
+            "text": "VERIFY BEFORE AIR · Checotah score/date conflict: MaxPreps lists a Spiro 0–2 loss on Oct. 2; Touchdown Friday Night lists 0–15 on Oct. 1. Keep the source difference visible rather than choosing an unsupported final.",
+            "url": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/football/schedule/",
+            "date": "2026 schedule checked Oct. 11, 2026 · Research checked Oct. 11, 2026",
+            "label": "MaxPreps schedule"
+          },
+          {
+            "text": "OPPONENT STATS GAP · Spiro’s checked 2026 MaxPreps stats page has no published player-stat tables. Do not invent rushing, passing, tackles or leaders, and do not display missing figures as zero.",
+            "url": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/football/stats/",
+            "date": "2026 stats page checked Oct. 11, 2026 · Research checked Oct. 11, 2026",
+            "label": "MaxPreps stats"
+          },
+          {
+            "text": "DEFENSIVE DETAIL · Through six published games, Colt Monsey has 24 tackles, 11 tackles for loss and 4 sacks. Braxton McGinnis has 27 tackles. These supplement the automatically shown tackle and sack leaders.",
+            "url": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/stats/",
+            "date": "Six-game season totals · provider updated Oct. 10, 2026 · Research checked Oct. 11, 2026",
+            "label": "MaxPreps stats"
+          },
+          {
+            "text": "VERIFY BEFORE AIR · Current MaxPreps defensive totals report 7 interceptions and 2 fumble recoveries through six games. Lincoln’s Oct. 9 preview had already reported 10 forced turnovers through five games. Those totals are not reconciled; do not label 9 as Lincoln’s confirmed full-season takeaways.",
+            "url": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/stats/",
+            "date": "Six-game season totals · provider updated Oct. 10, 2026 · Research checked Oct. 11, 2026",
+            "label": "MaxPreps stats"
+          },
+          {
+            "text": "SPECIAL TEAMS · Freshman Ronan Jones returned a kickoff 88 yards for a touchdown in the Oct. 2 Victory game, reported in Lincoln’s Oct. 5 recap. Do not attribute that play to the Oct. 9 Heavener game.",
+            "url": "https://lcssports.com/news/2026/10/5/football-no-1-lincoln-dominates-at-victory-in-62-6-road-district-win.aspx",
+            "date": "Article Oct. 5, 2026 · game Oct. 2 · Research checked Oct. 11, 2026",
+            "label": "Lincoln athletics"
+          },
+          {
+            "text": "VERIFY BEFORE AIR · Spiro’s roster lists Shane Yoast twice (#11 TE/LB and #55 OL/LB). It also lists #24 Dreadon Phillips and #52 Dredon Phillips. Confirm jersey numbers and identity; no starters or duplicate identities have been guessed.",
+            "url": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/football/roster/",
+            "date": "2026 roster checked Oct. 11, 2026 · Research checked Oct. 11, 2026",
+            "label": "MaxPreps roster"
+          },
+          {
+            "text": "VERIFY BEFORE AIR · MaxPreps’ season Points table shows “Tot Pts” of 2, inconsistent with its TD/kicking columns and posted game scores. Do not read that field as Lincoln’s total points; the separate Oct. 2 Victory 62–6 / 61–6 score conflict also remains unresolved.",
+            "url": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/stats/",
+            "date": "Six-game season tables · provider updated Oct. 10, 2026 · Research checked Oct. 11, 2026",
+            "label": "MaxPreps stats"
+          }
+        ]
+      },
+      "rosterFacts": {
+        "Lincoln Christian": [
+          {
+            "name": "Major Brooks",
+            "facts": [
+              {
+                "text": "MULTISPORT · Major Brooks was Lincoln’s spring 2026 baseball Offensive Player of the Year and first-team all-district designated hitter. He led the team with a .444 batting average, 13 doubles and 31 RBI.",
+                "url": "https://lcssports.com/news/2026/5/31/baseball-host-of-bulldogs-honored-after-state-semifinal-apperance-best-season-in-program-history.aspx",
+                "date": "Article May 31, 2026 · Research checked Oct. 11, 2026",
+                "label": "Lincoln athletics"
+              }
+            ]
+          },
+          {
+            "name": "Caleb Peterson",
+            "facts": [
+              {
+                "text": "MULTISPORT · Caleb Peterson won the boys 100-meter state title in spring 2026, as reported in Lincoln’s year-end athletics review.",
+                "url": "https://lcssports.com/news/2026/6/3/general-2025-26-another-banner-year-for-lincoln-christian-athletics-as-bulldogs-continue-to-raise-championship-standard.aspx",
+                "date": "Article June 3, 2026 · Research checked Oct. 11, 2026",
+                "label": "Lincoln athletics"
+              }
+            ]
+          },
+          {
+            "name": "Eli Summerlin",
+            "facts": [
+              {
+                "text": "MULTISPORT · Eli Summerlin qualified for the 2026 outdoor state track meet in the 400 meters with a 52.40 regional time, placing fifth. This is a spring track result, not a football statistic.",
+                "url": "https://lcssports.com/news/2026/5/4/boys-track-and-field-track-teams-dominate-at-regionals-look-to-repeat-as-state-champs-this-weekend.aspx",
+                "date": "Article May 4, 2026 · Research checked Oct. 11, 2026",
+                "label": "Lincoln athletics"
+              }
+            ]
+          }
+        ],
+        "Spiro": [
+          {
+            "name": "Kason Watts",
+            "facts": [
+              {
+                "text": "MULTISPORT · Kason Watts placed eighth in shot put at the April 27, 2026 Keys meet: 36 feet, 4 inches. Published meet result, not a claimed personal best.",
+                "url": "https://ok.milesplit.com/meets/754195-2026-keys-hs-track-meet-2026/results/1289917/raw",
+                "date": "Meet April 27, 2026 · Research checked Oct. 11, 2026",
+                "label": "OK MileSplit results"
+              }
+            ]
+          },
+          {
+            "name": "Taylor Covey",
+            "facts": [
+              {
+                "text": "MULTISPORT · Taylor Covey placed ninth in shot put at the April 27, 2026 Keys meet: 35 feet, 6 inches. Published meet result, not a claimed personal best.",
+                "url": "https://ok.milesplit.com/meets/754195-2026-keys-hs-track-meet-2026/results/1289917/raw",
+                "date": "Meet April 27, 2026 · Research checked Oct. 11, 2026",
+                "label": "OK MileSplit results"
+              }
+            ]
+          },
+          {
+            "name": "Joshua Collins",
+            "facts": [
+              {
+                "text": "MULTISPORT · Joshua Collins competed for Spiro in the April 27, 2026 Keys track meet: 100 meters in 13.16 (24th), 200 in 26.88 (20th). These are that meet’s marks, not career bests.",
+                "url": "https://ok.milesplit.com/meets/754195-2026-keys-hs-track-meet-2026/results/1289917/raw",
+                "date": "Meet April 27, 2026 · Research checked Oct. 11, 2026",
+                "label": "OK MileSplit results"
+              }
+            ]
+          },
+          {
+            "name": "Jacob Sullivan",
+            "facts": [
+              {
+                "text": "2025 REFERENCE · Jacob Sullivan recorded two sacks against Muldrow in the September 19, 2025 game, according to the September 22 recap. Historical context only; no 2026 defensive totals are verified.",
+                "url": "https://www.maxpreps.com/news/9p0298bU6Em-4lpBC95l_Q/football-recap-spiro-comes-up-short.htm",
+                "date": "Article Sept. 22, 2025 · game Sept. 19, 2025 · Research checked Oct. 11, 2026",
+                "label": "MaxPreps recap"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
 }
