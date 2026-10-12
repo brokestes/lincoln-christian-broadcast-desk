@@ -9,8 +9,9 @@ Free GitHub data checks are implemented separately from fuller AI-assisted resea
 ## Next matchup, not necessarily Friday
 
 1. Refresh the public repository and run `node scripts/update-football.mjs football-feed.json schedule-feed.json` with Node 22 or later.
-2. Use the official Lincoln football schedule to select the next scheduled varsity game after today's Central date, excluding canceled games, byes and scrimmages. Thursday games count. On October 11, 2026 the currently published next game is Spiro on Thursday October 15. Recheck rather than hard-code that matchup.
-3. Check the previous Friday's (or latest scheduled) result and available season/player stats for both schools. Do not carry five-game totals forward as if they include six games. Compare reported GP with posted finals, disclose gaps, and cite provider update time separately from source check time.
+2. Use the official Lincoln football schedule plus confirmed updates in `schedule-overrides.json` to select the next scheduled varsity game after today's Central date, excluding canceled games, byes and scrimmages. Thursday games count. On October 11 the owner confirmed Spiro October 15 cancelled, so the next prep target is Checotah October 23. Do not award a win or score from a cancellation. Recheck rather than hard-code the target. Both collectors apply the same exact sport/date/opponent rules, including when retaining failed-source data.
+3. Home and the main Schedule tab use the same official three-sport feed. Public metadata/results refresh without overwriting saved notes, manual stats, checklists or Sheet selections. Cancelled games remain accessible as prep archives; conflicting saved/public results are labelled. The Schedule tab shows its source-check time and a refresh button.
+4. Check the previous Friday's (or latest scheduled) result and available season/player stats for both schools. Do not carry five-game totals forward as if they include six games. Compare reported GP with posted finals, disclose gaps, and cite provider update time separately from source check time. An awarded forfeit can explain a game-count gap; do not automatically call the latest game missing if current player/game pages include it. For early packets, identify any intervening scheduled game requiring another check.
 
 ## Information the broadcaster needs
 

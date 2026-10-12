@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "sport": "football",
+      "date": "2026-10-15",
+      "opponent": "Spiro",
+      "opponentNames": ["Spiro", "Spiro Bulldogs"],
+      "status": "cancelled",
+      "confirmedAt": "2026-10-12T00:41:11Z",
+      "provenance": "Cancellation confirmed by the broadcast desk owner on Oct. 11, 2026",
+      "note": "Officially cancelled. Retain the prep archive; no final score or awarded Lincoln win has been entered."
+    }
+  ]
+}

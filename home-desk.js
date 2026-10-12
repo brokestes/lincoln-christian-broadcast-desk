@@ -2,7 +2,7 @@
  'use strict';
  var labels={football:'Football','boys-basketball':'Boys basketball','girls-basketball':'Girls basketball'};
  var sources={football:'https://lcssports.com/sports/football/schedule','boys-basketball':'https://lcssports.com/sports/boys-basketball/schedule','girls-basketball':'https://lcssports.com/sports/womens-basketball/schedule'};
- var api=null,feed=null,filter='all',expanded=false,busy=false,connectionWarning='',timer=null;
+ var api=null,feed=null,filter='all',expanded=false,busy=false,connectionWarning='',timer=null,pending=false;
  var remote='https://raw.githubusercontent.com/brokestes/lincoln-christian-broadcast-desk/main/schedule-feed.json';
  function esc(value){return String(value==null?'':value).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c];});}
  function today(now){var parts=new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(now||new Date());var values={};parts.forEach(function(p){values[p.type]=p.value;});return values.year+'-'+values.month+'-'+values.day;}
@@ -12,7 +12,7 @@
   if(!value||value.version!==1||value.timeZone!=='America/Chicago'||!value.sports)throw Error('Invalid schedule feed');
   Object.keys(labels).forEach(function(sport){var data=value.sports[sport];if(!data||data.source!==sources[sport]||!Array.isArray(data.events)||data.events.length>250)throw Error('Invalid sport schedule');var seen={};data.events.forEach(function(e){if(e.sport!==sport||typeof e.id!=='string'||seen[e.id]||typeof e.opponent!=='string'||!/^20\d{2}-\d{2}-\d{2}$/.test(e.date)||e.time&&!/^([01]\d|2[0-3]):[0-5]\d$/.test(e.time))throw Error('Invalid event');seen[e.id]=true;});});return value;
  }
- function matches(a,b){var norm=function(n){return String(n).toLowerCase().replace(/[^a-z0-9 ]/g,'').trim();};var x=norm(a.opponent),y=norm(b.opponent);return a.sport===b.sport && (a.id===b.id || a.sourceId && a.sourceId===b.scheduleSourceId || a.date===b.date && (x===y||x.indexOf(y+' ')===0||y.indexOf(x+' ')===0));}
+ function matches(a,b){var norm=function(n){return String(n||'').toLowerCase().replace(/[^a-z0-9]/g,'');};var x=norm(a.opponent),y=norm(b.opponent);return a.sport===b.sport && (a.id===b.id || a.sourceId && a.sourceId===b.scheduleSourceId || a.date===b.date && (x===y||b.mascot&&x===norm(b.opponent+' '+b.mascot)||a.mascot&&y===norm(a.opponent+' '+a.mascot)));}
  function allEvents(state){
   var result=[];
   Object.keys(labels).forEach(function(sport){var data=feed&&feed.sports[sport];(data?data.events:[]).forEach(function(e){result.push(Object.assign({},e,{source:data.source,checkedAt:data.checkedAt}));});
@@ -39,20 +39,25 @@
   var footballTitles=school&&(school.titles||[]).find(function(t){return t[0]==='FOOTBALL';});
   var girlsTitles=school&&(school.titles||[]).find(function(t){return t[0]==='BASKETBALL (GIRLS)';});
   document.getElementById('homeLegacy').innerHTML='<div class="home-legacy-stat"><strong>'+esc(footballTitles?footballTitles[1].split(',').length:'—')+'</strong><span>Football state titles<br><small>'+esc(footballTitles?footballTitles[1]:'Not researched')+'</small></span></div><div class="home-legacy-stat"><strong>'+esc(girlsTitles?girlsTitles[1].split(',').length:'—')+'</strong><span>Girls basketball state titles<br><small>'+esc(girlsTitles?girlsTitles[1]:'Not researched')+'</small></span></div>';
-  document.getElementById('homeRecords').innerHTML=Object.keys(labels).map(function(sport){var data=feed&&feed.sports[sport],finals=(data?data.events:[]).filter(function(e){return e.kind!=='Scrimmage'&&/^[WLT][, ]/i.test(e.result);}),wins=finals.filter(function(e){return /^W/i.test(e.result);}).length,losses=finals.filter(function(e){return /^L/i.test(e.result);}).length,ties=finals.length-wins-losses,last=finals[finals.length-1];return '<article class="panel home-record-card"><span class="eyebrow">'+esc(labels[sport])+'</span><strong>'+esc(finals.length?wins+'–'+losses+(ties?'–'+ties:''):'No finals posted')+'</strong><p>'+esc(last?'Latest posted: '+last.result+' vs '+last.opponent:'Upcoming '+(data?data.season:'season')+' schedule. No record inferred from missing results.')+'</p><a href="'+sources[sport]+'" target="_blank" rel="noreferrer">Official schedule & results ↗</a><small>'+esc(stamp(data&&data.checkedAt))+(data&&data.status!=='ok'?' · retained data':'')+'</small>'+(sport==='football'?'<small class="home-conflict">Oct. 2 score differs between sources: official 62–6, MaxPreps 61–6. Confirm with the scorekeeper.</small>':'')+'</article>';}).join('');
+document.getElementById('homeRecords').innerHTML=Object.keys(labels).map(function(sport){var data=feed&&feed.sports[sport],finals=(data?data.events:[]).filter(function(e){return e.status!=='cancelled'&&e.kind!=='Scrimmage'&&/^[WLT][, ]/i.test(e.result);}),wins=finals.filter(function(e){return /^W/i.test(e.result);}).length,losses=finals.filter(function(e){return /^L/i.test(e.result);}).length,ties=finals.length-wins-losses,last=finals[finals.length-1];return '<article class="panel home-record-card"><span class="eyebrow">'+esc(labels[sport])+'</span><strong>'+esc(finals.length?wins+'–'+losses+(ties?'–'+ties:''):'No finals posted')+'</strong><p>'+esc(last?'Latest posted: '+last.result+' vs '+last.opponent:'Upcoming '+(data?data.season:'season')+' schedule. No record inferred from missing results.')+'</p><a href="'+sources[sport]+'" target="_blank" rel="noreferrer">Official schedule & results ↗</a><small>'+esc(stamp(data&&data.checkedAt))+(data&&data.status!=='ok'?' · retained data':'')+'</small>'+(sport==='football'?'<small class="home-conflict">Oct. 2 score differs between sources: official 62–6, MaxPreps 61–6. Confirm with the scorekeeper.</small>':'')+'</article>';}).join('');
+ }
+ function applyFeed(){
+  var active=document.activeElement;if(active&&active.matches&&active.matches('textarea,input:not([type=checkbox]):not([type=radio]):not([type=button])')){pending=true;render();return;}
+  pending=false;if(api.apply&&feed)api.apply(feed);if(api.render)api.render();else render();
  }
  async function refresh(){
   if(busy)return;busy=true;render();
   try{var response=await fetch(remote+'?t='+Date.now(),{cache:'no-store',signal:AbortSignal.timeout(15000)});if(!response.ok)throw Error('No feed');var value=validFeed(await response.json());if(!feed||new Date(value.generatedAt)>=new Date(feed.generatedAt))feed=value;connectionWarning='';}
   catch(e){connectionWarning='Could not retrieve the latest feed. Showing the last available schedule; check source dates below.';}
-  finally{busy=false;render();}
+  finally{busy=false;applyFeed();}
  }
  function init(options){
   api=options;render();
-  fetch('schedule-feed.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw Error('No local feed');return r.json();}).then(function(v){v=validFeed(v);if(!feed||new Date(v.generatedAt)>new Date(feed.generatedAt))feed=v;render();}).catch(function(){});
+  fetch('schedule-feed.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw Error('No local feed');return r.json();}).then(function(v){v=validFeed(v);if(!feed||new Date(v.generatedAt)>new Date(feed.generatedAt))feed=v;applyFeed();}).catch(function(){});
   refresh();clearInterval(timer);timer=setInterval(function(){if(!document.hidden)refresh();},300000);
   document.addEventListener('visibilitychange',function(){if(!document.hidden){render();refresh();}});
-  document.addEventListener('click',function(event){var target=event.target.closest('[data-home-event],[data-home-section],#homeRefresh,#homeMore');if(!target)return;if(target.id==='homeRefresh')refresh();if(target.id==='homeMore'){expanded=!expanded;render();}if(target.dataset.homeSection)api.openSection(target.dataset.homeSection);if(target.dataset.homeEvent){var entry=allEvents(api.getState()).find(function(e){return e.id===target.dataset.homeEvent&&e.sport===target.dataset.homeSport;});if(entry)api.openEvent(entry);}});
+  document.addEventListener('focusout',function(){if(pending)setTimeout(applyFeed,0);});
+  document.addEventListener('click',function(event){var target=event.target.closest('[data-home-event],[data-home-section],#homeRefresh,#scheduleRefresh,#homeMore');if(!target)return;if(target.id==='homeRefresh'||target.id==='scheduleRefresh')refresh();if(target.id==='homeMore'){expanded=!expanded;render();}if(target.dataset.homeSection)api.openSection(target.dataset.homeSection);if(target.dataset.homeEvent){var entry=allEvents(api.getState()).find(function(e){return e.id===target.dataset.homeEvent&&e.sport===target.dataset.homeSport;});if(entry)api.openEvent(entry);}});
   document.getElementById('homeSportFilter').addEventListener('change',function(){filter=this.value;expanded=false;render();});
  }
  window.LincolnHome={init:init,render:render,refresh:refresh};
