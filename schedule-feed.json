@@ -1,12 +1,12 @@
 {
   "version": 1,
   "timeZone": "America/Chicago",
-  "generatedAt": "2026-10-12T06:49:12.532Z",
+  "generatedAt": "2026-10-12T09:40:55.334Z",
   "sports": {
     "girls-basketball": {
       "source": "https://lcssports.com/sports/womens-basketball/schedule",
       "season": "2026-27",
-      "checkedAt": "2026-10-12T06:49:12.532Z",
+      "checkedAt": "2026-10-12T09:40:55.334Z",
       "status": "ok",
       "events": [
         {
@@ -378,7 +378,7 @@
     "boys-basketball": {
       "source": "https://lcssports.com/sports/boys-basketball/schedule",
       "season": "2026-27",
-      "checkedAt": "2026-10-12T06:49:12.532Z",
+      "checkedAt": "2026-10-12T09:40:55.334Z",
       "status": "ok",
       "events": [
         {
@@ -723,7 +723,7 @@
       "source": "https://lcssports.com/sports/football/schedule",
       "season": "2026-27",
       "checkedAt": "2026-10-12T06:49:12.532Z",
-      "status": "ok",
+      "status": "error",
       "events": [
         {
           "id": "official-football-5428",
@@ -886,7 +886,9 @@
           "kind": "Game",
           "status": "scheduled"
         }
-      ]
+      ],
+      "attemptedAt": "2026-10-12T09:40:55.334Z",
+      "warning": "Official source could not be refreshed; last successfully checked schedule retained."
     }
   }
 }
