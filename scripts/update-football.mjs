@@ -2,6 +2,7 @@
 import fs from 'node:fs/promises';
 import {pathToFileURL} from 'node:url';
 import {collect as collectSchool} from './update-schedule.mjs';
+import {readOverrides,applyOverrides} from './schedule-overrides.mjs';
 
 export const LC='https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/';
 export const clean=s=>String(s??'').replace(/<[^>]*>/g,' ').replace(/&#(\d+);/g,(_,n)=>String.fromCharCode(+n)).replace(/&#x([\da-f]+);/gi,(_,n)=>String.fromCharCode(parseInt(n,16))).replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/&apos;|&#39;|&#x27;/g,"'").replace(/&nbsp;/g,' ').replace(/\s+/g,' ').trim();
@@ -51,7 +52,9 @@ export function targetGame(schedule,now=new Date()){return (schedule?.events||[]
 export async function retained(source,previous,checkedAt,operation){try{return await operation();}catch(error){console.error(source+': '+error.message);return {...(previous||{}),source,status:'error',attemptedAt:checkedAt,warning:'Source could not be refreshed. Last successful data retained; do not treat its timestamp as a new verification.'};}}
 async function news(checkedAt){const h=await read('https://lcssports.com/sports/football'),urls=[...h.matchAll(/(?:href=|"url":)"((?:https:\/\/lcssports\.com)?\/news\/20\d{2}\/\d+\/\d+\/football[^"#]+\.aspx)"/g)].map(m=>new URL(m[1],'https://lcssports.com').href),unique=[...new Set(urls)].sort((a,b)=>{const date=u=>u.match(/\/news\/(\d{4})\/(\d+)\/(\d+)\//).slice(1).map(s=>s.padStart(2,'0')).join('-');return date(b).localeCompare(date(a));}).slice(0,4);if(!unique.length)throw Error('No recognizable official football news links');const articles=await Promise.all(unique.map(async url=>{const html=await read(url),title=clean(html.match(/<meta\s+(?:property|name)="og:title"\s+content="([^"]+)"/)?.[1]||html.match(/<title>([\s\S]*?)<\/title>/)?.[1]).replace(/ - Lincoln Christian School$/,'');const date=url.match(/\/news\/(\d{4})\/(\d+)\/(\d+)\//).slice(1).map(s=>s.padStart(2,'0')).join('-');return {title: title.split(' ').slice(0,24).join(' '),url,date};}));return {source:'https://lcssports.com/sports/football',checkedAt,status:'ok',articles};}
 export async function collectFootball(previous,official,now=new Date()){
+ const overrides=await readOverrides();applyOverrides(official,'football',overrides);
  const checkedAt=now.toISOString(),season=official.season,teams={},target=targetGame(official,now),lcSchedule=await retained(LC+'schedule/',previous.teams?.['Lincoln Christian']?.schedule,checkedAt,()=>read(LC+'schedule/').then(h=>parseTeamSchedule(h,'Lincoln Christian',season,checkedAt)));
+ applyOverrides(lcSchedule,'football',overrides);
  const registry=new Map([['Lincoln Christian',LC]]);(lcSchedule.events||[]).forEach(e=>registry.set(e.opponent,e.opponentBase));
  const list=[...registry.entries()];for(let i=0;i<list.length;i+=3)await Promise.all(list.slice(i,i+3).map(async([name,base])=>{const old=previous.teams?.[name]||{};const [schedule,roster]=await Promise.all([name==='Lincoln Christian'?lcSchedule:retained(base+'schedule/',old.schedule,checkedAt,()=>read(base+'schedule/').then(h=>parseTeamSchedule(h,name,season,checkedAt))),retained(base+'roster/',old.roster,checkedAt,()=>read(base+'roster/').then(h=>parseRoster(h,name,season,checkedAt)))]);teams[name]={base,schedule,roster,stats:old.stats||null};}));
  const currentOpponent=(lcSchedule.events||[]).find(e=>e.date===target?.date&&norm(target.opponent).startsWith(norm(e.opponent)))?.opponent;

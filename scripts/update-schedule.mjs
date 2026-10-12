@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import {pathToFileURL} from 'node:url';
+import {readOverrides,applyOverrides} from './schedule-overrides.mjs';
 
 export const sources = {
  football:'https://lcssports.com/sports/football/schedule',
@@ -36,7 +37,7 @@ export function parseSchedule(markup,sport,checkedAt) {
  return {source:sources[sport],season:season[0],checkedAt,status:'ok',events};
 }
 export async function collect(previous={sports:{}},now=new Date()) {
- const sports={};let failures=0;
+ const sports={},overrides=await readOverrides();let failures=0;
  await Promise.all(Object.entries(sources).map(async([sport,url])=>{
   try {
    const response=await fetch(url,{signal:AbortSignal.timeout(25000),headers:{'User-Agent':'LincolnBroadcastDesk/1.0 (public school schedule refresh)'}});
@@ -44,6 +45,7 @@ export async function collect(previous={sports:{}},now=new Date()) {
    sports[sport]=parseSchedule(await response.text(),sport,now.toISOString());
   }catch(error){failures++;sports[sport]={...(previous.sports?.[sport]||{source:url,events:[]}),status:'error',attemptedAt:now.toISOString(),warning:'Official source could not be refreshed; last successfully checked schedule retained.'};console.error(sport+': '+error.message);}
  }));
+ Object.keys(sports).forEach(sport=>applyOverrides(sports[sport],sport,overrides));
  return {feed:{version:1,timeZone:'America/Chicago',generatedAt:now.toISOString(),sports},failures};
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){
