@@ -503,7 +503,7 @@
       var resultClass = result.indexOf("W") === 0 ? "result-win" : (result.indexOf("L") === 0 ? "result-loss" : "");
       return '<tr class="game-row' + (game.id === activeId ? " active" : "") + '"><td><strong>' + html(formatDate(game.date).month + " " + formatDate(game.date).day) + '</strong><small>' + html(formatDate(game.date).dow) + ' · ' + html(displayGameTime(game.time)) + '</small></td>' +
         '<td><strong>' + html(game.opponent) + '</strong><small>' + html(game.mascot) + '</small></td><td>' + html(game.site) + '</td><td>' + (game.district ? "Yes" : "—") + '</td>' +
-        '<td class="' + resultClass + '">' + html(result || "Upcoming") + (game.status==='cancelled'?'<small>'+html(game.confirmedUpdate&&game.confirmedUpdate.provenance||'Source marks this game cancelled')+'</small>':game.publicSchedule&&game.result&&scoreKey(game.result)!==scoreKey(result)&&result?'<small>Saved result: '+html(game.result)+' · differs from school feed</small>':'') + '</td><td><div class="prep-meter" title="' + pct + '% ready"><i style="width:' + pct + '%"></i></div></td>' +
+        '<td class="' + resultClass + '">' + html(result || (game.scheduleKind==='Scrimmage'?'Scrimmage · no result':game.date<new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date())?'Final not posted':"Upcoming")) + (game.status==='cancelled'?'<small>'+html(game.confirmedUpdate&&game.confirmedUpdate.provenance||'Source marks this game cancelled')+'</small>':game.publicSchedule&&game.result&&scoreKey(game.result)!==scoreKey(result)&&result?'<small>Saved result: '+html(game.result)+' · differs from school feed</small>':'') + '</td><td><div class="prep-meter" title="' + pct + '% ready"><i style="width:' + pct + '%"></i></div></td>' +
         '<td><button class="open-game" data-open-game="' + game.id + '">Open</button></td></tr>';
     }).join("");
     var check=data.scheduleCheck;
@@ -840,7 +840,8 @@
 
   function applyPublicFootball(feed) {
     var fb=state.sports.football;
-    applySportSchedule('football',feed.officialSchedule);
+    var official=Object.assign({},feed.officialSchedule,{events:feed.officialSchedule.events.map(function(e){var game=fb.games.find(function(g){return scheduleMatch(g,e);}),source=feed.teams['Lincoln Christian'].schedule.events.find(function(p){return p.date===e.date&&(p.opponent===e.opponent||game&&p.opponent===game.opponent);});return Object.assign({},e,{district:!!(e.district||source&&source.district)});})});
+    applySportSchedule('football',official);
     if(feed.officialRoster && feed.officialRoster.players && feed.officialRoster.players.length){
       research.officialRosterInfo=feed.officialRoster;
       var measurements=feed.teams['Lincoln Christian'].roster.players||[];
@@ -865,7 +866,7 @@
     schedule.events.forEach(function(event){
       var game=data.games.find(function(g){return scheduleMatch(g,event);});
       if(!game){game=makeGame(event.id,event.date,event.opponent,'',event.site,event.venue,event.district,'');game.stats=sport==='football'?footballStats():basketballStats();game.sources=[{name:'Official Lincoln '+sportLabels[sport]+' schedule',url:schedule.source,note:'Public school schedule'}];data.games.push(game);}
-      game.date=event.date;game.time=event.time||'';game.site=event.site;game.district=event.district;if(event.venue)game.venue=event.venue;
+      game.date=event.date;game.time=event.time||'';game.site=event.site;if(event.district)game.district=true;if(event.venue)game.venue=event.venue;
       game.scheduleSourceId=event.sourceId;game.scheduleKind=event.kind;game.status=event.status;game.confirmedUpdate=event.confirmedUpdate||null;
       // Keep saved/manual results, notes, comparison stats, checklists and player flags intact.
       game.publicSchedule={result:event.result||'',source:schedule.source,checkedAt:schedule.checkedAt};
