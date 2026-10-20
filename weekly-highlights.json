@@ -1,7 +1,7 @@
 {
   "version": 1,
   "timeZone": "America/Chicago",
-  "generatedAt": "2026-10-12T00:57:27.276Z",
+  "generatedAt": "2026-10-20T00:28:54.200Z",
   "entries": [
     {
       "sport": "football",
@@ -269,29 +269,41 @@
       "sport": "football",
       "gameDate": "2026-10-23",
       "opponent": "Checotah",
-      "checkedAt": "2026-10-12T00:57:27.276Z",
+      "checkedAt": "2026-10-20T00:28:54.200Z",
       "status": "published-with-gaps",
       "gaps": [
-        "Early Oct. 23 packet: Checotah still plays at Victory Christian on Oct. 15; that result and new stats are not yet available",
-        "Checotah MaxPreps player rows show up to 5 GP but season-total rows show 6; the Oct. 9 update timestamp is before kickoff although game/player pages include Oct. 9 stats; do not call these reconciled per-game averages",
-        "Checotah record/forfeit reporting differs across providers; see highlighted before-air checks and schedule-row notes",
-        "Cole Rolland grade and Landynn Thomason weight differ between public pages; current roster values are shown, confirmation needed before air",
-        "No independently verified GPA, current scholarship offers or additional individual awards found; paywalled reporting and private social content were not used",
-        "Lincoln Oct. 2 Victory score and defensive takeaway totals remain inconsistent between sources"
+        "Checotah player rows now include the Oct. 15 Victory game and show up to 6 GP, while team totals use 7; forfeit accounting affects per-game comparisons",
+        "Checotah record/district classification still differs: MaxPreps 6–1 / 3–1 versus Touchdown Friday Night 7–1 / 4–1; Hilldale and Eufaula classifications are flagged",
+        "Lincoln school schedule still leaves Spiro blank; separate school reporting confirms cancellation/forfeit and MaxPreps/TDFN report an awarded 15–0, not a played game",
+        "Lincoln Oct. 2 score, Heavener Peterson receiving yards, defensive takeaways and the MaxPreps Points field still have source conflicts",
+        "Hugo–Sequoyah Oct. 15 is 47–6 on MaxPreps but 41–6 on Touchdown Friday Night; confirm before a district-score roundup",
+        "Cole Rolland’s June local feature calls him senior versus current junior/Class of 2028; GPA and current offers remain unverified"
       ],
       "matchupNotice": {
-        "text": "EARLY CHECOTAH PACKET · Lincoln hosts Checotah Friday, Oct. 23 at 7 PM CT. Checotah visits Victory Christian Thursday, Oct. 15 first; refresh after that game before using this as the final broadcast packet.",
-        "url": "https://www.maxpreps.com/ok/checotah/checotah-wildcats/football/schedule/",
-        "date": "2026 schedule · Research checked Oct. 11, 2026",
-        "label": "MaxPreps schedule"
+        "text": "GAME WEEK · Lincoln hosts Checotah Friday, Oct. 23, 7 PM CT. Reviewed Oct. 19; the completed Victory recap and Lincoln’s forfeit distinction are highlighted below.",
+        "url": "https://lcssports.com/sports/football/schedule",
+        "date": "Oct. 23 schedule · Checked Oct. 19, 2026",
+        "label": "Lincoln official schedule"
       },
       "sections": {
         "lincolnStory": [
           {
-            "text": "FRIDAY RECAP · Lincoln beat Heavener 55–0 on Oct. 9. MaxPreps lists Major Brooks 8-of-9 passing for 170 yards and 3 TD; Max Madrid 4 carries for 92 yards and 4 TD; Caleb Peterson 3 catches for 74 yards and 2 TD. These are single-game figures.",
-            "url": "https://www.maxpreps.com/ok/football/game/heavener-vs-lincoln-christian-tulsa/10-9-2026/?c=0414bb70-0040-4796-ac53-e383361a39a5&tab=Recap",
-            "date": "Game Oct. 9, 2026 · Research checked Oct. 11, 2026",
-            "label": "MaxPreps game recap"
+            "text": "LAST WEEK · Spiro cancelled/forfeited; Lincoln did not play. Its latest played result remains the Oct. 9 Heavener shutout, 55–0.",
+            "url": "https://lcssports.com/news/2026/10/13/football-no-1-lincoln-dominates-from-start-to-finish-in-shutout-vs-heavener.aspx",
+            "date": "Article Oct. 13; Heavener game Oct. 9 · Checked Oct. 19, 2026",
+            "label": "Lincoln athletics"
+          },
+          {
+            "text": "RECORD CONTEXT · MaxPreps now lists Lincoln 6–1, 4–0 district, including the Oct. 15 15–0 forfeit award. The official calendar still leaves that row blank; the desk retains Cancelled while labelling and counting the sourced award.",
+            "url": "https://www.maxpreps.com/ok/football/game/lincoln-christian-tulsa-vs-spiro/10-15-2026/?c=a2fd12c5-7d70-4e87-967c-68576d2e04f4",
+            "date": "Published award checked Oct. 19, 2026",
+            "label": "MaxPreps awarded result"
+          },
+          {
+            "text": "HOME / PROGRAM · School report: 61–1 at home across nine years; 53 straight district wins after Heavener; pursuing district title No. 10 straight and state title No. 4 straight. Dated claims, not incremented for a forfeit.",
+            "url": "https://lcssports.com/news/2026/10/13/football-no-1-lincoln-dominates-from-start-to-finish-in-shutout-vs-heavener.aspx",
+            "date": "Article Oct. 13, 2026 · Checked Oct. 19, 2026",
+            "label": "Lincoln athletics"
           },
           {
             "text": "COACHING CONTEXT · Jerry Ricke is in his 10th Lincoln season. The school’s Oct. 9 preview listed his record as 112–14 entering the Heavener game; that figure is pre-Friday, not a newly updated career total.",
@@ -313,6 +325,24 @@
           }
         ],
         "opponentStory": [
+          {
+            "text": "LAST GAME · Oct. 15: Checotah won 49–7 at Victory. Quarter scores: 14–7, 7–0, 14–0, 14–0. It rebounded from losing 50–34 to Sequoyah.",
+            "url": "https://www.maxpreps.com/ok/football/game/checotah-vs-victory-christian-tulsa/10-15-2026/?c=5a114be3-89de-40a3-9d90-349229225521&tab=Recap",
+            "date": "Game Oct. 15, 2026 · Checked Oct. 19, 2026",
+            "label": "MaxPreps game report"
+          },
+          {
+            "text": "DUAL-THREAT NIGHT · Rolland: 12/21 passing, 374 yards / 3 TD; 17 carries, 158 yards / 3 TD. Calculated: 532 passing+rushing yards and six TD involvements.",
+            "url": "https://www.maxpreps.com/ok/football/game/checotah-vs-victory-christian-tulsa/10-15-2026/?c=5a114be3-89de-40a3-9d90-349229225521&tab=Recap",
+            "date": "Game Oct. 15, 2026 · Checked Oct. 19, 2026",
+            "label": "MaxPreps game report"
+          },
+          {
+            "text": "EXPLOSIVE TARGET · Thomason: 6 catches, 227 yards, 2 TD at Victory; 37.8 yards/catch in that game, not his season average.",
+            "url": "https://www.maxpreps.com/ok/football/game/checotah-vs-victory-christian-tulsa/10-15-2026/?c=5a114be3-89de-40a3-9d90-349229225521&tab=Recap",
+            "date": "Game Oct. 15, 2026 · Checked Oct. 19, 2026",
+            "label": "MaxPreps game report"
+          },
           {
             "text": "COACHING · Checotah’s school lists Zac Ross as head coach. Assistants: Jordan Alexander, Tom Butler, John Capps, Matthew Brimacomb, Drew Dan and Marcus Cunningham.",
             "url": "https://www.checotah.k12.ok.us/o/a/page/football/",
@@ -336,12 +366,6 @@
             "url": "https://www.mcintoshdemocrat.com/article/3421%2Cchecotah-wildcats-claw-past-the-eufaula-ironheads-61-12-in-111th-rivalry-meeting",
             "date": "Article Sept. 23, 2026 · Research checked Oct. 11, 2026",
             "label": "McIntosh County Democrat"
-          },
-          {
-            "text": "LAST GAME · Oct. 9: Sequoyah won 50–34 at Checotah. Cole Rolland: 11/23 passing, 152 yards, 2 TD, 1 INT; 25 carries, 235 yards, 3 TD. Landynn Thomason: 4 catches, 105 yards, 2 TD.",
-            "url": "https://www.maxpreps.com/ok/football/game/checotah-vs-sequoyah-tahlequah/10-9-2026/?c=5330dd45-17e2-4cbd-9381-22516751dcba&tab=Recap",
-            "date": "Game Oct. 9, 2026 · Research checked Oct. 11, 2026",
-            "label": "MaxPreps game report"
           },
           {
             "text": "PROGRAM ARCHIVE · Checotah is listed 354–364–2 across 720 games, 1957–2025. These are archived coverage years; 2026 results are not included.",
@@ -370,40 +394,94 @@
         ],
         "keys": [
           {
-            "text": "CHECOTAH QB / RUN · #3 Cole Rolland: published 51/79, 880 passing yards, 12 TD, 1 INT; 71 carries, 652 yards, 13 rushing TD. Totals are dated and coverage is not reconciled.",
+            "text": "MATCHUP WATCH / ANALYSIS · Track Rolland’s rushing and Thomason’s receiving production. Stats suggest useful booth checkpoints—not verified formations, coverage or film analysis.",
+            "url": "https://www.maxpreps.com/ok/football/game/checotah-vs-victory-christian-tulsa/10-15-2026/?c=5a114be3-89de-40a3-9d90-349229225521&tab=Recap",
+            "date": "Analysis from posted Oct. 15 box score · Checked Oct. 19, 2026",
+            "label": "MaxPreps game report"
+          },
+          {
+            "text": "CHECOTAH QB / RUN · #3 Cole Rolland: 63/100, 1,254 passing yards, 15 TD, 1 INT; 88 carries, 810 yards, 16 rushing TD. These replace the older 880/652-yard totals.",
             "url": "https://www.maxpreps.com/ok/checotah/checotah-wildcats/football/stats/",
-            "date": "2026 season totals · provider updated Oct. 9 · Research checked Oct. 11, 2026; coverage counts differ",
+            "date": "2026 totals · provider updated Oct. 19 · Checked Oct. 19, 2026; player GP 6, team GP 7",
             "label": "MaxPreps stats"
           },
           {
-            "text": "CHECOTAH TARGETS · #1 Landynn Thomason: 21 catches, 459 yards, 6 TD; #5 Tommy Calico: 24 carries, 289 yards, 4 rushing TD. These are posted totals, not scouting or a predicted starting lineup.",
+            "text": "CHECOTAH TARGETS · #1 Landynn Thomason: 27 catches, 686 yards, 8 TD; #17 Kross Stauffer: 13 catches, 269 yards, 4 TD. #5 Tommy Calico adds 330 rushing yards / 5 TD; #21 Kaden Holladay 251 / 4.",
             "url": "https://www.maxpreps.com/ok/checotah/checotah-wildcats/football/stats/",
-            "date": "2026 season totals · provider updated Oct. 9 · Research checked Oct. 11, 2026; coverage counts differ",
+            "date": "2026 totals · provider updated Oct. 19 · Checked Oct. 19, 2026; player GP 6, team GP 7",
             "label": "MaxPreps stats"
           },
           {
-            "text": "CHECOTAH DEFENSE · #32 Woodrow Spears: 33 tackles, 8 TFL in 4 reported GP; #22 Jacob Stith: 30 tackles, 10 TFL in 4 GP; #21 Kaden Holladay: 21 tackles, 10 TFL, 2 sacks in 5 GP.",
+            "text": "CHECOTAH DEFENSE · #32 Woodrow Spears: 54 tackles / 9 TFL; #22 Jacob Stith 51 / 10; #56 Gabe Scarborough 37 / 11; #21 Kaden Holladay 35 / 12 and 2 sacks. Each of these posted player lines lists 6 GP.",
             "url": "https://www.maxpreps.com/ok/checotah/checotah-wildcats/football/stats/",
-            "date": "2026 season totals · provider updated Oct. 9 · Research checked Oct. 11, 2026; coverage counts differ",
+            "date": "2026 totals · provider updated Oct. 19 · Checked Oct. 19, 2026; player GP 6, team GP 7",
             "label": "MaxPreps stats"
           },
           {
-            "text": "CHECOTAH TAKEAWAYS · Reported team totals: 8 INT, 5 fumble recoveries, 3 sacks. Thomason has 3 INT; Kross Stauffer has 2. Missing fields are not zeros.",
+            "text": "CHECOTAH TAKEAWAYS / SPECIAL TEAMS · Reported team totals: 11 INT, 6 fumble recoveries, 3 sacks; Thomason has 4 INT. #12 Traegan Duvall: 27/32 PAT, 1/3 FG, long 37. Missing fields are not zeros.",
             "url": "https://www.maxpreps.com/ok/checotah/checotah-wildcats/football/stats/",
-            "date": "2026 season totals · provider updated Oct. 9 · Research checked Oct. 11, 2026; coverage counts differ",
+            "date": "2026 totals · provider updated Oct. 19 · Checked Oct. 19, 2026; player GP 6, team GP 7",
             "label": "MaxPreps stats"
           },
           {
-            "text": "CHECOTAH SPECIAL TEAMS · #12 Traegan Duvall: 20/25 PAT and 1/3 field goals, long 37. The return table has only one posted Thomason kickoff return, 67 yards; it is not proof of complete return coverage.",
+            "text": "STAT COMPARISON CAUTION · Checotah’s Oct. 15 stats are included: player GP 6, team GP 7. Lincoln has 6 played games plus an award. Per-game denominators are not equivalent.",
             "url": "https://www.maxpreps.com/ok/checotah/checotah-wildcats/football/stats/",
-            "date": "2026 season totals · provider updated Oct. 9 · Research checked Oct. 11, 2026; coverage counts differ",
+            "date": "Provider updated Oct. 19; Lincoln provider Oct. 12 · Checked Oct. 19, 2026",
             "label": "MaxPreps stats"
           },
           {
-            "text": "BEFORE AIR · MaxPreps lists Checotah 5–1, 2–1 district; Touchdown Friday Night lists 6–1, 3–1 and includes Hilldale Aug. 27 plus a different Spiro award/date. Do not reconcile this by inventing a result or changing the provider’s original rows.",
-            "url": "https://www.touchdownfridaynight.com/teams/50/checotah-wildcats/2026",
-            "date": "Both providers checked Oct. 11, 2026",
+            "text": "DISTRICT ROUNDUP · Other Oct. 15 results on MaxPreps: Sequoyah 47–6 Hugo; Roland 20–6 Heavener. Lincoln’s remaining opponents Hugo and Roland are each listed 4–3 overall / 2–2 district. No playoff clinch is inferred from these standings.",
+            "url": "https://www.maxpreps.com/ok/football/game/hugo-vs-sequoyah-tahlequah/10-15-2026/?c=5c8975b1-752a-4778-ba48-e3ff58105143&tab=Recap",
+            "date": "Games Oct. 15, 2026 · Checked Oct. 19, 2026",
+            "label": "MaxPreps game / schedule"
+          },
+          {
+            "text": "ROUNDUP CROSS-CHECK · Roland’s 20–6 road win at Heavener is confirmed on its game page. Roland hosts Hugo Oct. 23 while Lincoln hosts Checotah; Lincoln visits Hugo Oct. 30 and hosts Roland Nov. 6.",
+            "url": "https://www.maxpreps.com/ok/football/game/heavener-vs-roland/10-15-2026/?c=dd74e631-8b80-4dbb-82fb-c1943b04ae8b&tab=Recap",
+            "date": "Oct. 15 result / future schedule · Checked Oct. 19, 2026",
+            "label": "MaxPreps game report"
+          },
+          {
+            "text": "BEFORE AIR · Touchdown Friday Night lists Hugo–Sequoyah 41–6; MaxPreps lists 47–6. Keep the two reports distinct rather than guessing a corrected district score.",
+            "url": "https://www.touchdownfridaynight.com/scores/2026-10-15",
+            "date": "Scoreboard checked Oct. 19, 2026",
             "label": "Touchdown Friday Night"
+          },
+          {
+            "text": "STANDINGS CHECK · MaxPreps lists Checotah 6–1 / 3–1 district; Touchdown Friday Night lists 7–1 / 4–1, counts Hilldale Aug. 27 and marks Eufaula district. MaxPreps does not count a Hilldale final and marks Eufaula non-district. No combined record is invented.",
+            "url": "https://www.touchdownfridaynight.com/teams/50/checotah-wildcats/2026",
+            "date": "Both provider schedules checked Oct. 19, 2026",
+            "label": "Touchdown Friday Night"
+          },
+          {
+            "text": "COMMON OPPONENTS / LC · Lincoln’s calendar lists wins over Sequoyah 35–21, Heavener 55–0 and Victory 62–6 (MaxPreps differs on the Victory score). Compare context, not predicted margins.",
+            "url": "https://lcssports.com/sports/football/schedule",
+            "date": "2026 official results · Checked Oct. 19, 2026",
+            "label": "Lincoln official schedule"
+          },
+          {
+            "text": "COMMON OPPONENTS / CHECOTAH · Wildcats results: loss to Sequoyah 50–34; wins over Heavener 52–0 and Victory 49–7. These are comparison points, not a score prediction.",
+            "url": "https://www.maxpreps.com/ok/checotah/checotah-wildcats/football/schedule/",
+            "date": "2026 posted results · Checked Oct. 19, 2026",
+            "label": "MaxPreps schedule"
+          },
+          {
+            "text": "LINCOLN DEFENSE · Heavener game: school reports 12 TFL, 77 yards allowed, opponents 2/12 on third down. Individual defensive notes appear beside the players.",
+            "url": "https://lcssports.com/news/2026/10/13/football-no-1-lincoln-dominates-from-start-to-finish-in-shutout-vs-heavener.aspx",
+            "date": "Article Oct. 13; game Oct. 9 · Checked Oct. 19, 2026",
+            "label": "Lincoln athletics"
+          },
+          {
+            "text": "LINCOLN EFFICIENCY · Heavener game: seven first-half TD on 13 plays; 367 total yards on 27 plays. No new on-field stats from Spiro.",
+            "url": "https://lcssports.com/news/2026/10/13/football-no-1-lincoln-dominates-from-start-to-finish-in-shutout-vs-heavener.aspx",
+            "date": "Article Oct. 13; game Oct. 9 · Checked Oct. 19, 2026",
+            "label": "Lincoln athletics"
+          },
+          {
+            "text": "VERIFY YARDS · Heavener: school lists Peterson 72 receiving yards; MaxPreps 74. Both: 3 catches / 2 TD. Confirm yards before air.",
+            "url": "https://lcssports.com/news/2026/10/13/football-no-1-lincoln-dominates-from-start-to-finish-in-shutout-vs-heavener.aspx",
+            "date": "School Oct. 13 / MaxPreps game checked Oct. 19",
+            "label": "Lincoln athletics / MaxPreps"
           },
           {
             "text": "SCHEDULE CLASSIFICATION CHECK · Local preseason reporting calls Sept. 4 vs Beggs the regular-season opener after two scrimmages. MaxPreps leaves Aug. 27 Hilldale without a final; another provider counts it as a 13–0 win. Confirm its classification before using record/points averages.",
@@ -418,27 +496,15 @@
             "label": "Eufaula Indian Journal"
           },
           {
-            "text": "ROSTER CHECK · Thomason’s current football roster lists 180 lb; his profile summary lists 165 lb. The roster measurement is retained, not silently treated as an independently confirmed weigh-in.",
-            "url": "https://www.maxpreps.com/ok/checotah/checotah-wildcats/athletes/landynn-thomason/?careerid=s53knj3ea9aqa",
-            "date": "Public profile / 2026 roster · Research checked Oct. 11, 2026",
-            "label": "MaxPreps profile"
-          },
-          {
             "text": "VERIFY BEFORE AIR · Current MaxPreps defensive totals report 7 interceptions and 2 fumble recoveries through six games. Lincoln’s Oct. 9 preview had already reported 10 forced turnovers through five games. Those totals are not reconciled; do not label 9 as Lincoln’s confirmed full-season takeaways.",
             "url": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/stats/",
-            "date": "Six-game season totals · provider updated Oct. 10, 2026 · Research checked Oct. 11, 2026",
+            "date": "Six played games · provider updated Oct. 12 · Checked Oct. 19, 2026",
             "label": "MaxPreps stats"
-          },
-          {
-            "text": "SPECIAL TEAMS · Freshman Ronan Jones returned a kickoff 88 yards for a touchdown in the Oct. 2 Victory game, reported in Lincoln’s Oct. 5 recap. Do not attribute that play to the Oct. 9 Heavener game.",
-            "url": "https://lcssports.com/news/2026/10/5/football-no-1-lincoln-dominates-at-victory-in-62-6-road-district-win.aspx",
-            "date": "Article Oct. 5, 2026 · game Oct. 2 · Research checked Oct. 11, 2026",
-            "label": "Lincoln athletics"
           },
           {
             "text": "VERIFY BEFORE AIR · MaxPreps’ season Points table shows “Tot Pts” of 2, inconsistent with its TD/kicking columns and posted game scores. Do not read that field as Lincoln’s total points; the separate Oct. 2 Victory 62–6 / 61–6 score conflict also remains unresolved.",
             "url": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/stats/",
-            "date": "Six-game season tables · provider updated Oct. 10, 2026 · Research checked Oct. 11, 2026",
+            "date": "Six played games · provider updated Oct. 12 · Checked Oct. 19, 2026",
             "label": "MaxPreps stats"
           }
         ]
@@ -477,6 +543,39 @@
                 "label": "Lincoln athletics"
               }
             ]
+          },
+          {
+            "name": "Nate Uyetake",
+            "facts": [
+              {
+                "text": "HEAVENER OCT. 9 · 5 tackles, 2 TFL, forced fumble.",
+                "url": "https://lcssports.com/news/2026/10/13/football-no-1-lincoln-dominates-from-start-to-finish-in-shutout-vs-heavener.aspx",
+                "date": "Article Oct. 13; game Oct. 9 · Checked Oct. 19, 2026",
+                "label": "Lincoln athletics"
+              }
+            ]
+          },
+          {
+            "name": "Colt Monsey",
+            "facts": [
+              {
+                "text": "HEAVENER OCT. 9 · 5 tackles, 3 TFL.",
+                "url": "https://lcssports.com/news/2026/10/13/football-no-1-lincoln-dominates-from-start-to-finish-in-shutout-vs-heavener.aspx",
+                "date": "Article Oct. 13; game Oct. 9 · Checked Oct. 19, 2026",
+                "label": "Lincoln athletics"
+              }
+            ]
+          },
+          {
+            "name": "Rain Ragland",
+            "facts": [
+              {
+                "text": "HEAVENER OCT. 9 · 4 tackles, 2 TFL.",
+                "url": "https://lcssports.com/news/2026/10/13/football-no-1-lincoln-dominates-from-start-to-finish-in-shutout-vs-heavener.aspx",
+                "date": "Article Oct. 13; game Oct. 9 · Checked Oct. 19, 2026",
+                "label": "Lincoln athletics"
+              }
+            ]
           }
         ],
         "Checotah": [
@@ -494,6 +593,12 @@
                 "url": "https://www.mcintoshdemocrat.com/article/3421%2Cchecotah-wildcats-claw-past-the-eufaula-ironheads-61-12-in-111th-rivalry-meeting",
                 "date": "Article Sept. 23, 2026 · Research checked Oct. 11, 2026",
                 "label": "McIntosh County Democrat"
+              },
+              {
+                "text": "LAST GAME · Victory Oct. 15: 374 passing yards / 3 TD; 158 rushing yards / 3 TD. Combined 532 yards, not rushing alone.",
+                "url": "https://www.maxpreps.com/ok/football/game/checotah-vs-victory-christian-tulsa/10-15-2026/?c=5a114be3-89de-40a3-9d90-349229225521&tab=Recap",
+                "date": "Game Oct. 15, 2026 · Checked Oct. 19, 2026",
+                "label": "MaxPreps game report"
               }
             ]
           },
@@ -507,10 +612,10 @@
                 "label": "MaxPreps profile"
               },
               {
-                "text": "LAST GAME · 4 catches, 105 yards and 2 receiving TD vs Sequoyah Oct. 9.",
-                "url": "https://www.maxpreps.com/ok/football/game/checotah-vs-sequoyah-tahlequah/10-9-2026/?c=5330dd45-17e2-4cbd-9381-22516751dcba&tab=Recap",
-                "date": "Game Oct. 9, 2026 · Research checked Oct. 11, 2026",
-                "label": "MaxPreps game report"
+                "text": "LAST GAME · 6 catches, 227 receiving yards, 2 TD at Victory Oct. 15. Current profile and football roster now both list 180 lb; the previous 165-lb profile discrepancy has cleared.",
+                "url": "https://www.maxpreps.com/ok/checotah/checotah-wildcats/athletes/landynn-thomason/?careerid=s53knj3ea9aqa",
+                "date": "Profile / Oct. 15 game checked Oct. 19, 2026",
+                "label": "MaxPreps profile"
               }
             ]
           },
@@ -585,6 +690,16 @@
             "url": "https://www.eufaulaindianjournal.com/article/3488%2C2026-checotah-wildcats-football-schedule",
             "date": "Article July 29, 2026 · Research checked Oct. 11, 2026",
             "label": "Eufaula Indian Journal"
+          }
+        },
+        {
+          "date": "2026-10-15",
+          "opponent": "Victory Christian",
+          "fact": {
+            "text": "LATEST PLAYED GAME · 49–7 win. Player stats now published; see Prep.",
+            "url": "https://www.maxpreps.com/ok/football/game/checotah-vs-victory-christian-tulsa/10-15-2026/?c=5a114be3-89de-40a3-9d90-349229225521&tab=Recap",
+            "date": "Game Oct. 15 · Checked Oct. 19, 2026",
+            "label": "MaxPreps game report"
           }
         }
       ]

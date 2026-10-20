@@ -420,7 +420,7 @@
     document.getElementById("matchupHero").innerHTML =
       '<div class="booth-score-kicker"><div class="game-kicker"><span>' + html(sportName) + '</span><span class="district-pill">' + html(context) + '</span></div><time datetime="'+html(game.date)+'">'+html(formatFullDate(game.date))+'</time></div>' +
       '<div class="booth-score-main"><div class="booth-team"><img src="lincoln-mark.png" alt=""><div><h2>Lincoln Christian</h2><span>Bulldogs</span></div>'+recordMarkup(lincolnRecord)+'</div><span class="booth-vs">VS</span><div class="booth-team"><div><h2>'+html(game.opponent)+'</h2><span>'+html(game.mascot || 'Opponent')+'</span></div>'+recordMarkup(opponentRecord)+'</div></div>' +
-      '<div class="booth-game-meta"><span><strong>'+html(game.status==='cancelled'?'CANCELLED':displayGameTime(game.time))+'</strong> '+(game.status==='cancelled'?'prep archive':state.activeSport==='football'?'kickoff':'tip')+'</span><span>'+html(game.site)+'</span><span>'+html(game.venue || 'Venue TBD')+'</span></div>'+(game.status==='cancelled'?'<p class="weekly-warning">Officially cancelled · '+html(game.confirmedUpdate&&game.confirmedUpdate.provenance||'Public schedule')+'. No score or awarded win has been entered.</p>':'');
+      '<div class="booth-game-meta"><span><strong>'+html(game.status==='cancelled'?'CANCELLED':displayGameTime(game.time))+'</strong> '+(game.status==='cancelled'?'prep archive':state.activeSport==='football'?'kickoff':'tip')+'</span><span>'+html(game.site)+'</span><span>'+html(game.venue || 'Venue TBD')+'</span></div>'+(game.status==='cancelled'?'<p class="weekly-warning">Officially cancelled · '+html(game.confirmedUpdate&&game.confirmedUpdate.provenance||'Public schedule')+'. '+awardMarkup(game)+'</p>':'');
     renderChecklist(game);
     document.getElementById("opponentName").textContent = game.opponent + (game.mascot ? " " + game.mascot : "");
     var snapshot = game.snapshot.length ? game.snapshot : ["Add verified opponent record, recent results, style and local reporting notes."];
@@ -503,7 +503,7 @@
       var resultClass = result.indexOf("W") === 0 ? "result-win" : (result.indexOf("L") === 0 ? "result-loss" : "");
       return '<tr class="game-row' + (game.id === activeId ? " active" : "") + '"><td><strong>' + html(formatDate(game.date).month + " " + formatDate(game.date).day) + '</strong><small>' + html(formatDate(game.date).dow) + ' · ' + html(displayGameTime(game.time)) + '</small></td>' +
         '<td><strong>' + html(game.opponent) + '</strong><small>' + html(game.mascot) + '</small></td><td>' + html(game.site) + '</td><td>' + (game.district ? "Yes" : "—") + '</td>' +
-'<td class="' + resultClass + '">' + '<strong>' + html(result || (game.scheduleKind==='Scrimmage'?'Scrimmage · no result':game.date<new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date())?'Final not posted':"Upcoming")) + '</strong>' + (game.status==='cancelled'?'<small>'+html(game.confirmedUpdate&&game.confirmedUpdate.provenance||'Source marks this game cancelled')+'</small>':game.publicSchedule&&game.result&&scoreKey(game.result)!==scoreKey(result)&&result?'<small>Saved result: '+html(game.result)+' · differs from school feed</small>':'') + '</td><td><div class="prep-meter" title="' + pct + '% ready"><i style="width:' + pct + '%"></i></div></td>' +
+'<td class="' + resultClass + '">' + '<strong>' + html(result || (game.scheduleKind==='Scrimmage'?'Scrimmage · no result':game.date<new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date())?'Final not posted':"Upcoming")) + '</strong>' + (game.status==='cancelled'?'<small>'+html(game.confirmedUpdate&&game.confirmedUpdate.provenance||'Source marks this game cancelled')+'</small>'+(game.publishedAward?'<small>'+awardMarkup(game)+'</small>':''):game.publicSchedule&&game.result&&scoreKey(game.result)!==scoreKey(result)&&result?'<small>Saved result: '+html(game.result)+' · differs from school feed</small>':'') + '</td><td><div class="prep-meter" title="' + pct + '% ready"><i style="width:' + pct + '%"></i></div></td>' +
         '<td><button class="open-game" data-open-game="' + game.id + '">Open</button></td></tr>';
     }).join("");
     var check=data.scheduleCheck;
@@ -643,7 +643,7 @@
     }).join("");
     document.getElementById("printSheet").innerHTML =
       '<header class="print-header"><div><h1>Lincoln Christian vs ' + html(game.opponent) + '</h1><p>' + html(formatFullDate(game.date)) + ' · ' + html(game.time) + ' · ' + html(game.venue) + '</p></div><div class="print-badge">BROADCAST GAME SHEET<br>' + html(sportLabels[state.activeSport].toUpperCase()) + '</div></header>' +
-      (game.status==='cancelled'?'<p class="weekly-warning">OFFICIALLY CANCELLED · Prep archive only. No final score or awarded win entered.</p>':'')+'<div class="print-grid"><div>' + section("Opening", notes.opening) + section("Lincoln storylines", notes.lincolnStory) + section("Opponent storylines", notes.opponentStory) + section("Film / scheme", notes.film) + section("Keys & matchups", notes.keys) + section("Calls & transitions", notes.calls) +
+      (game.status==='cancelled'?'<p class="weekly-warning">OFFICIALLY CANCELLED · Prep archive only. '+awardMarkup(game)+'</p>':'')+'<div class="print-grid"><div>' + section("Opening", notes.opening) + section("Lincoln storylines", notes.lincolnStory) + section("Opponent storylines", notes.opponentStory) + section("Film / scheme", notes.film) + section("Keys & matchups", notes.keys) + section("Calls & transitions", notes.calls) +
       section("Live game log", notes.liveLog) + '<section class="print-section"><h2>Booth scratchpad</h2><div class="print-lines"></div></section></div>' +
       '<div><section class="print-section"><h2>Quick stats</h2><table class="print-stats"><thead><tr><th>Stat</th><th>LC</th><th>' + html(game.opponent) + '</th></tr></thead><tbody>' + statRows + '</tbody></table></section>' +
       '<section class="print-section"><h2>On-sheet roster</h2><table class="print-roster"><thead><tr><th>#</th><th>Name</th><th>Pos.</th><th>Note</th></tr></thead><tbody>' + (playerRows || '<tr><td colspan="4">Mark players in the roster book.</td></tr>') + '</tbody></table></section>' +
@@ -855,6 +855,7 @@
     // Public refreshes never assign game notes, manual comparison stats, or Sheet selections.
     saveState();
   }
+  function awardMarkup(game){var a=game.publishedAward;return a?'Published forfeit award: '+html(a.result)+' · not played; no on-field stats. '+(/^https:\/\/(?:www\.maxpreps\.com|lcssports\.com|www\.touchdownfridaynight\.com)\//.test(a.source)?'<a href="'+html(a.source)+'" target="_blank" rel="noreferrer">Award source ↗</a>':'Source unavailable'):'No score or awarded win has been entered.';}
   function scoreKey(s){return (String(s||'').toUpperCase().match(/[WLT]|\d+/g)||[]).join('|');}
   function scheduleMatch(game,event){
     var norm=function(s){var n=String(s||'').toLowerCase().replace(/[^a-z0-9]/g,'');return {sequoyah:'tahlequahsequoyah',sequoyahindians:'tahlequahsequoyahindians',sequoyahtahlequah:'tahlequahsequoyah'}[n]||n;};
@@ -867,7 +868,7 @@
       var game=data.games.find(function(g){return scheduleMatch(g,event);});
       if(!game){game=makeGame(event.id,event.date,event.opponent,'',event.site,event.venue,event.district,'');game.stats=sport==='football'?footballStats():basketballStats();game.sources=[{name:'Official Lincoln '+sportLabels[sport]+' schedule',url:schedule.source,note:'Public school schedule'}];data.games.push(game);}
       game.date=event.date;game.time=event.time||'';game.site=event.site;if(event.district)game.district=true;if(event.venue)game.venue=event.venue;
-      game.scheduleSourceId=event.sourceId;game.scheduleKind=event.kind;game.status=event.status;game.confirmedUpdate=event.confirmedUpdate||null;
+      game.scheduleSourceId=event.sourceId;game.scheduleKind=event.kind;game.status=event.status;game.confirmedUpdate=event.confirmedUpdate||null;game.publishedAward=event.publishedAward||null;
       // Keep saved/manual results, notes, comparison stats, checklists and player flags intact.
       game.publicSchedule={result:event.result||'',source:schedule.source,checkedAt:schedule.checkedAt};
     });

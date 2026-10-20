@@ -9,7 +9,16 @@
       "status": "cancelled",
       "confirmedAt": "2026-10-12T00:41:11Z",
       "provenance": "Cancellation confirmed by the broadcast desk owner on Oct. 11, 2026",
-      "note": "Officially cancelled. Retain the prep archive; no final score or awarded Lincoln win has been entered."
+      "note": "Cancelled and forfeited, not played. MaxPreps and Touchdown Friday Night now report a 15-0 Lincoln forfeit award; the school confirms the cancellation/forfeit in its Oct. 13 recap.",
+      "publishedAward": {
+        "kind": "forfeit",
+        "result": "W 15-0",
+        "score": 15,
+        "opponentScore": 0,
+        "source": "https://www.maxpreps.com/ok/football/game/lincoln-christian-tulsa-vs-spiro/10-15-2026/?c=a2fd12c5-7d70-4e87-967c-68576d2e04f4",
+        "confirmationSource": "https://lcssports.com/news/2026/10/13/football-no-1-lincoln-dominates-from-start-to-finish-in-shutout-vs-heavener.aspx",
+        "checkedAt": "2026-10-20T00:18:43.201Z"
+      }
     }
   ]
 }
