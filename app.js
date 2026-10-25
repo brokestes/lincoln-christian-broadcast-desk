@@ -503,7 +503,7 @@
       var resultClass = result.indexOf("W") === 0 ? "result-win" : (result.indexOf("L") === 0 ? "result-loss" : "");
       return '<tr class="game-row' + (game.id === activeId ? " active" : "") + '"><td><strong>' + html(formatDate(game.date).month + " " + formatDate(game.date).day) + '</strong><small>' + html(formatDate(game.date).dow) + ' · ' + html(displayGameTime(game.time)) + '</small></td>' +
         '<td><strong>' + html(game.opponent) + '</strong><small>' + html(game.mascot) + '</small></td><td>' + html(game.site) + '</td><td>' + (game.district ? "Yes" : "—") + '</td>' +
-'<td class="' + resultClass + '">' + '<strong>' + html(result || (game.scheduleKind==='Scrimmage'?'Scrimmage · no result':game.date<new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date())?'Final not posted':"Upcoming")) + '</strong>' + (game.status==='cancelled'?'<small>'+html(game.confirmedUpdate&&game.confirmedUpdate.provenance||'Source marks this game cancelled')+'</small>'+(game.publishedAward?'<small>'+awardMarkup(game)+'</small>':''):game.publicSchedule&&game.result&&scoreKey(game.result)!==scoreKey(result)&&result?'<small>Saved result: '+html(game.result)+' · differs from school feed</small>':'') + '</td><td><div class="prep-meter" title="' + pct + '% ready"><i style="width:' + pct + '%"></i></div></td>' +
+'<td class="' + resultClass + '">' + '<strong>' + html(result || (game.scheduleKind==='Scrimmage'?'Scrimmage · no result':game.date<new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date())?'Final not posted':"Upcoming")) + '</strong>' + (game.status==='cancelled'?'<small>'+html(game.confirmedUpdate&&game.confirmedUpdate.provenance||'Source marks this game cancelled')+'</small>'+(game.publishedAward?'<small>'+awardMarkup(game)+'</small>':''):game.publicSchedule&&game.publicSchedule.note&&result?'<small>'+html(game.publicSchedule.note)+(game.publicSchedule.source?' <a href="'+html(game.publicSchedule.source)+'" target="_blank" rel="noreferrer">Result source ↗</a>':'')+'</small>':game.publicSchedule&&game.result&&scoreKey(game.result)!==scoreKey(result)&&result?'<small>Saved result: '+html(game.result)+' · differs from school feed</small>':'') + '</td><td><div class="prep-meter" title="' + pct + '% ready"><i style="width:' + pct + '%"></i></div></td>' +
         '<td><button class="open-game" data-open-game="' + game.id + '">Open</button></td></tr>';
     }).join("");
     var check=data.scheduleCheck;
@@ -870,7 +870,7 @@
       game.date=event.date;game.time=event.time||'';game.site=event.site;if(event.district)game.district=true;if(event.venue)game.venue=event.venue;
       game.scheduleSourceId=event.sourceId;game.scheduleKind=event.kind;game.status=event.status;game.confirmedUpdate=event.confirmedUpdate||null;game.publishedAward=event.publishedAward||null;
       // Keep saved/manual results, notes, comparison stats, checklists and player flags intact.
-      game.publicSchedule={result:event.result||'',source:schedule.source,checkedAt:schedule.checkedAt};
+      game.publicSchedule={result:event.result||'',source:event.resultProvenance?.source||schedule.source,checkedAt:event.resultProvenance?.checkedAt||schedule.checkedAt,note:event.resultProvenance?.note||''};
     });
     data.games.sort(function(a,b){return (a.date+(a.time||'')).localeCompare(b.date+(b.time||''));});
     data.scheduleCheck={checkedAt:schedule.checkedAt,status:schedule.status,source:schedule.source};

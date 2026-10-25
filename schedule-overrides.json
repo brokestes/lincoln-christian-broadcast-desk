@@ -5,7 +5,10 @@
       "sport": "football",
       "date": "2026-10-15",
       "opponent": "Spiro",
-      "opponentNames": ["Spiro", "Spiro Bulldogs"],
+      "opponentNames": [
+        "Spiro",
+        "Spiro Bulldogs"
+      ],
       "status": "cancelled",
       "confirmedAt": "2026-10-12T00:41:11Z",
       "provenance": "Cancellation confirmed by the broadcast desk owner on Oct. 11, 2026",
@@ -18,6 +21,25 @@
         "source": "https://www.maxpreps.com/ok/football/game/lincoln-christian-tulsa-vs-spiro/10-15-2026/?c=a2fd12c5-7d70-4e87-967c-68576d2e04f4",
         "confirmationSource": "https://lcssports.com/news/2026/10/13/football-no-1-lincoln-dominates-from-start-to-finish-in-shutout-vs-heavener.aspx",
         "checkedAt": "2026-10-20T00:18:43.201Z"
+      }
+    },
+    {
+      "sport": "football",
+      "date": "2026-10-23",
+      "opponent": "Checotah",
+      "opponentNames": [
+        "Checotah",
+        "Checotah Wildcats"
+      ],
+      "status": "completed",
+      "confirmedAt": "2026-10-25T17:36:53.740Z",
+      "provenance": "Verified public final for the completed October 23 game",
+      "note": "The official Lincoln calendar had not posted a final when this result was verified.",
+      "publishedResult": {
+        "result": "W, 63-20",
+        "source": "https://www.maxpreps.com/ok/football/game/checotah-vs-lincoln-christian-tulsa/10-23-2026/?c=66c0214f-2205-40f8-802f-72c035658de4",
+        "checkedAt": "2026-10-25T17:36:53.740Z",
+        "note": "MaxPreps posted final; official school calendar result was blank at check time."
       }
     }
   ]

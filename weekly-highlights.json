@@ -1,7 +1,7 @@
 {
   "version": 1,
   "timeZone": "America/Chicago",
-  "generatedAt": "2026-10-20T00:28:54.200Z",
+  "generatedAt": "2026-10-25T17:43:14.066Z",
   "entries": [
     {
       "sport": "football",
@@ -703,6 +703,300 @@
           }
         }
       ]
+    },
+    {
+      "sport": "football",
+      "gameDate": "2026-10-30",
+      "opponent": "Hugo",
+      "checkedAt": "2026-10-25T17:43:14.066Z",
+      "status": "published-with-gaps",
+      "gaps": [
+        "Lincoln’s official calendar has not posted the Oct. 23 Checotah final at the time of this update; the desk shows the independently posted 63–20 result and labels its MaxPreps source.",
+        "Lincoln player rows list up to 7 GP while season-total rows use 8; Hugo player rows and team totals use 8. Lincoln’s Spiro forfeit explains part of the record/stat-coverage difference; do not compare unqualified per-game averages.",
+        "Hugo has 45 published roster entries; several entries have no listed position, height or weight. Missing fields remain “Not listed.”",
+        "No verified current GPA, offers, injuries or private social-media information was added. Automated film or scheme analysis is not included."
+      ],
+      "sections": {
+        "lincolnStory": [
+          {
+            "text": "LAST GAME · Lincoln beat Checotah 63–20 on Oct. 23. Major Brooks went 11/16 for 224 yards and 4 TD; Max Madrid had 14 carries for 186 yards and 3 TD; Caleb Peterson caught 5 for 92 yards and 2 TD.",
+            "url": "https://www.maxpreps.com/ok/football/game/checotah-vs-lincoln-christian-tulsa/10-23-2026/?c=66c0214f-2205-40f8-802f-72c035658de4&tab=Recap",
+            "date": "Game Oct. 23, 2026 · Checked Oct. 25, 2026",
+            "label": "MaxPreps game report"
+          },
+          {
+            "text": "UPDATED PRODUCTION · Published Lincoln player lines: Brooks 90/129, 1,411 passing yards, 16 TD; Madrid 767 rushing yards, 13 TD; Peterson 38 catches, 613 yards, 10 TD. Player rows list 7 GP.",
+            "url": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/stats/",
+            "date": "2026 posted totals · provider updated Oct. 24 · Checked Oct. 25, 2026",
+            "label": "MaxPreps stats"
+          },
+          {
+            "text": "RECENT FORM · Lincoln: 7–1 from eight posted results before Hugo, including the sourced Spiro forfeit award. The Checotah result is a played game.",
+            "url": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/schedule/",
+            "date": "Source checked Oct. 25, 2026",
+            "label": "MaxPreps"
+          },
+          {
+            "text": "DISTRICT CONTEXT · Lincoln enters the Hugo game 5–0 in 2A-I District 3 on the current MaxPreps schedule. This is a posted standing, not a playoff prediction.",
+            "url": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/schedule/",
+            "date": "Source checked Oct. 25, 2026",
+            "label": "MaxPreps"
+          }
+        ],
+        "opponentStory": [
+          {
+            "text": "LAST GAME · Hugo won 20–14 at Roland on Oct. 23. Quarter scores: 6–0, 6–6, 0–0, 8–8. The Buffaloes had 49 plays and 16 first downs; Roland had 45 plays and 15 first downs.",
+            "url": "https://www.maxpreps.com/ok/football/game/hugo-vs-roland/10-23-2026/?c=5572c89c-14aa-4fcd-800e-e94d8fce464e&tab=Recap",
+            "date": "Game Oct. 23, 2026 · Checked Oct. 25, 2026",
+            "label": "MaxPreps game report"
+          },
+          {
+            "text": "LAST GAME LEADERS · Jayka Santillan completed 11/15 for 78 yards with no interceptions. Ja’Mari Scroggins ran 20 times for 152 yards and 2 TD; D’airreon Jeffries had 3 catches for 40 yards.",
+            "url": "https://www.maxpreps.com/ok/football/game/hugo-vs-roland/10-23-2026/?c=5572c89c-14aa-4fcd-800e-e94d8fce464e&tab=Recap",
+            "date": "Game Oct. 23, 2026 · Checked Oct. 25, 2026",
+            "label": "MaxPreps game report"
+          },
+          {
+            "text": "COACHING · Hugo is in Scott Schier’s second season as head coach. An August KXII preview said the group had 11 seniors and a large junior line class; it identified Kamarien Pugh and Zaven Siniga among the senior leadership.",
+            "url": "https://www.kxii.com/2026/08/26/hugo-buffaloes-preview/?outputType=amp",
+            "date": "Article Aug. 25, 2026 · Checked Oct. 25, 2026",
+            "label": "KXII"
+          },
+          {
+            "text": "EARLY SEASON RECAP · Santillan threw for 322 yards and 2 TD and added 41 rushing yards and 2 scores in Hugo’s Sept. 4 win at Atoka. Kamden Bostic and Gion Balcazar had the reported interceptions.",
+            "url": "https://www.maxpreps.com/news/7OXpQPUJHEmPS8MGDMVA9A/football-recap-jayka-santillan-comes-up-big-in-hugos-win.htm",
+            "date": "Article Sept. 6, 2026 · Checked Oct. 25, 2026",
+            "label": "MaxPreps recap"
+          },
+          {
+            "text": "RECENT FORM · Hugo: 5–3 from eight posted results before Lincoln, including a 3–2 district record. MaxPreps lists the Buffaloes fifth in 2A-I District 3.",
+            "url": "https://www.maxpreps.com/ok/hugo/hugo-buffaloes/football/schedule/",
+            "date": "Source checked Oct. 25, 2026",
+            "label": "MaxPreps"
+          },
+          {
+            "text": "SOURCE CROSS-CHECK · Touchdown Friday Night also lists Scott Schier as Hugo’s head coach. Its district standings show the same 5–3 overall and 3–2 district record after the Roland win.",
+            "url": "https://touchdownfridaynight.com/teams/328/hugo-buffaloes/2026",
+            "date": "Scoreboard checked Oct. 25, 2026",
+            "label": "Touchdown Friday Night"
+          }
+        ],
+        "keys": [
+          {
+            "text": "GAME WEEK · Lincoln visits Hugo Friday, Oct. 30 at 7 PM CT. Hugo’s MaxPreps schedule lists the game at home; verify gate and broadcast logistics with Hugo before travel.",
+            "url": "https://www.maxpreps.com/ok/hugo/hugo-buffaloes/football/schedule/",
+            "date": "Oct. 30 schedule · Checked Oct. 25, 2026",
+            "label": "MaxPreps schedule"
+          },
+          {
+            "text": "HUGO QUARTERBACK · #18 Jayka Santillan: 103/168, 1,525 passing yards, 15 TD, 2 INT; also 217 rushing yards and 5 rushing TD. Posted player line covers 8 GP.",
+            "url": "https://www.maxpreps.com/ok/hugo/hugo-buffaloes/football/stats/",
+            "date": "2026 posted totals · provider updated Oct. 24 · Checked Oct. 25, 2026",
+            "label": "MaxPreps stats"
+          },
+          {
+            "text": "HUGO SKILL PLAYERS · #8 Ja’Mari Scroggins: 608 rushing yards, 9 TD plus 19 receptions; #6 Kamden Bostic: 22 receptions, 556 yards, 8 TD; #3 Kyng Benson: 19 catches, 337 yards, 2 TD.",
+            "url": "https://www.maxpreps.com/ok/hugo/hugo-buffaloes/football/stats/",
+            "date": "2026 posted totals · provider updated Oct. 24 · Checked Oct. 25, 2026",
+            "label": "MaxPreps stats"
+          },
+          {
+            "text": "HUGO DEFENSE · #13 Zaven Siniga: 111 tackles, 14 TFL, 3 sacks; #8 Scroggins: 60 tackles, 8 TFL, 2 sacks; #1 Kamarien Pugh: 49 tackles, 6 TFL, 1 sack. Each listed line covers 8 GP.",
+            "url": "https://www.maxpreps.com/ok/hugo/hugo-buffaloes/football/stats/",
+            "date": "2026 posted totals · provider updated Oct. 24 · Checked Oct. 25, 2026",
+            "label": "MaxPreps stats"
+          },
+          {
+            "text": "HUGO TAKEAWAYS · Posted team totals: 12 interceptions, 10 fumble recoveries, 7 sacks, 3 blocked punts and 3 blocked field goals. #5 Gion Balcazar has 3 INT; #2 Kaydn Jones has 2.",
+            "url": "https://www.maxpreps.com/ok/hugo/hugo-buffaloes/football/stats/",
+            "date": "2026 posted totals · provider updated Oct. 24 · Checked Oct. 25, 2026",
+            "label": "MaxPreps stats"
+          },
+          {
+            "text": "HUGO SPECIAL TEAMS · Scroggins has 11 kickoffs and 19 punts (32.6 average); Bostic has 8 kickoff returns for 225 yards with a long of 79. Recorded rows can be incomplete, so blank fields are not zeros.",
+            "url": "https://www.maxpreps.com/ok/hugo/hugo-buffaloes/football/stats/",
+            "date": "2026 posted totals · provider updated Oct. 24 · Checked Oct. 25, 2026",
+            "label": "MaxPreps stats"
+          },
+          {
+            "text": "MATCHUP WATCH / ANALYSIS · Use Santillan’s passing, Scroggins’ rushing and Bostic’s receiving as production checkpoints. These are posted stats, not automated film, formation or coverage analysis.",
+            "url": "https://www.maxpreps.com/ok/hugo/hugo-buffaloes/football/stats/",
+            "date": "Research based on posted stats · Checked Oct. 25, 2026",
+            "label": "MaxPreps stats"
+          },
+          {
+            "text": "COMMON OPPONENTS · Lincoln beat Heavener 55–0 and Victory 62–6; Hugo beat Heavener 36–29, lost to Victory 29–26, then lost at Sequoyah 47–6. Results are context only and do not predict this score.",
+            "url": "https://www.maxpreps.com/ok/hugo/hugo-buffaloes/football/schedule/",
+            "date": "Posted 2026 schedules · Checked Oct. 25, 2026",
+            "label": "MaxPreps schedule"
+          },
+          {
+            "text": "LINCOLN DEFENSE · Published player rows now list Beisel 50 tackles, Monsey 29 tackles / 12 TFL / 5 sacks, McGinnis 35 tackles, and Mathurin 4 INT. Rows list 7 GP.",
+            "url": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/stats/",
+            "date": "2026 posted totals · provider updated Oct. 24 · Checked Oct. 25, 2026",
+            "label": "MaxPreps stats"
+          },
+          {
+            "text": "COVERAGE CHECK · Lincoln player rows list 7 GP, while season-total rows list 8 and the schedule has seven played results plus the Spiro forfeit award. Treat published total and player coverage as distinct until the provider reconciles it.",
+            "url": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/stats/",
+            "date": "Provider updated Oct. 24 · Checked Oct. 25, 2026",
+            "label": "MaxPreps stats"
+          }
+        ]
+      },
+      "rosterFacts": {
+        "Lincoln Christian": [
+          {
+            "name": "Major Brooks",
+            "facts": [
+              {
+                "text": "LAST GAME · 11/16 passing, 224 yards and 4 TD against Checotah Oct. 23.",
+                "url": "https://www.maxpreps.com/ok/football/game/checotah-vs-lincoln-christian-tulsa/10-23-2026/?c=66c0214f-2205-40f8-802f-72c035658de4&tab=Recap",
+                "date": "Game Oct. 23, 2026 · Checked Oct. 25, 2026",
+                "label": "MaxPreps game report"
+              }
+            ]
+          },
+          {
+            "name": "Max Madrid",
+            "facts": [
+              {
+                "text": "LAST GAME · 14 carries, 186 yards and 3 TD against Checotah Oct. 23.",
+                "url": "https://www.maxpreps.com/ok/football/game/checotah-vs-lincoln-christian-tulsa/10-23-2026/?c=66c0214f-2205-40f8-802f-72c035658de4&tab=Recap",
+                "date": "Game Oct. 23, 2026 · Checked Oct. 25, 2026",
+                "label": "MaxPreps game report"
+              }
+            ]
+          },
+          {
+            "name": "Caleb Peterson",
+            "facts": [
+              {
+                "text": "LAST GAME · 5 catches, 92 yards and 2 TD against Checotah Oct. 23.",
+                "url": "https://www.maxpreps.com/ok/football/game/checotah-vs-lincoln-christian-tulsa/10-23-2026/?c=66c0214f-2205-40f8-802f-72c035658de4&tab=Recap",
+                "date": "Game Oct. 23, 2026 · Checked Oct. 25, 2026",
+                "label": "MaxPreps game report"
+              }
+            ]
+          },
+          {
+            "name": "Colt Monsey",
+            "facts": [
+              {
+                "text": "UPDATED SEASON LINE · 29 tackles, 12 TFL and 5 sacks in the published player row (7 GP).",
+                "url": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/stats/",
+                "date": "Provider updated Oct. 24 · Checked Oct. 25, 2026",
+                "label": "MaxPreps stats"
+              }
+            ]
+          }
+        ],
+        "Hugo": [
+          {
+            "name": "Jayka Santillan",
+            "facts": [
+              {
+                "text": "LAST GAME · 11/15 passing, 78 yards, no TD and no INT at Roland Oct. 23.",
+                "url": "https://www.maxpreps.com/ok/football/game/hugo-vs-roland/10-23-2026/?c=5572c89c-14aa-4fcd-800e-e94d8fce464e&tab=Recap",
+                "date": "Game Oct. 23, 2026 · Checked Oct. 25, 2026",
+                "label": "MaxPreps game report"
+              },
+              {
+                "text": "SEASON PRODUCTION · 1,525 passing yards / 15 TD plus 217 rushing yards / 5 TD in 8 posted GP.",
+                "url": "https://www.maxpreps.com/ok/hugo/hugo-buffaloes/football/stats/",
+                "date": "Provider updated Oct. 24 · Checked Oct. 25, 2026",
+                "label": "MaxPreps stats"
+              }
+            ]
+          },
+          {
+            "name": "Ja'mari Scroggins",
+            "facts": [
+              {
+                "text": "LAST GAME · 20 carries, 152 yards and 2 TD at Roland Oct. 23.",
+                "url": "https://www.maxpreps.com/ok/football/game/hugo-vs-roland/10-23-2026/?c=5572c89c-14aa-4fcd-800e-e94d8fce464e&tab=Recap",
+                "date": "Game Oct. 23, 2026 · Checked Oct. 25, 2026",
+                "label": "MaxPreps game report"
+              },
+              {
+                "text": "TWO-WAY PRODUCTION · 608 rushing yards / 9 TD and 60 tackles / 8 TFL in 8 posted GP.",
+                "url": "https://www.maxpreps.com/ok/hugo/hugo-buffaloes/football/stats/",
+                "date": "Provider updated Oct. 24 · Checked Oct. 25, 2026",
+                "label": "MaxPreps stats"
+              }
+            ]
+          },
+          {
+            "name": "Kamden Bostic",
+            "facts": [
+              {
+                "text": "SEASON PRODUCTION · 22 receptions, 556 yards and 8 TD in 8 posted GP; roster lists 6-foot-3, 172 lb.",
+                "url": "https://www.maxpreps.com/ok/hugo/hugo-buffaloes/football/stats/",
+                "date": "Provider updated Oct. 24 · Checked Oct. 25, 2026",
+                "label": "MaxPreps stats"
+              },
+              {
+                "text": "PUBLIC PROFILE · Prep Redzone lists Bostic as a 2027 prospect at Hugo and 6-foot-3. It does not independently verify current offers.",
+                "url": "https://prepredzone.com/player/kamden-bostic/",
+                "date": "Profile checked Oct. 25, 2026",
+                "label": "Prep Redzone"
+              }
+            ]
+          },
+          {
+            "name": "Zaven Siniga",
+            "facts": [
+              {
+                "text": "DEFENSIVE PRODUCTION · 111 tackles, 14 TFL and 3 sacks in 8 posted GP.",
+                "url": "https://www.maxpreps.com/ok/hugo/hugo-buffaloes/football/stats/",
+                "date": "Provider updated Oct. 24 · Checked Oct. 25, 2026",
+                "label": "MaxPreps stats"
+              },
+              {
+                "text": "TEAM CONTEXT · KXII’s August preview quoted Siniga on the team’s difficult district schedule.",
+                "url": "https://www.kxii.com/2026/08/26/hugo-buffaloes-preview/?outputType=amp",
+                "date": "Article Aug. 25, 2026 · Checked Oct. 25, 2026",
+                "label": "KXII"
+              }
+            ]
+          },
+          {
+            "name": "Kamarien Pugh",
+            "facts": [
+              {
+                "text": "DEFENSIVE PRODUCTION · 49 tackles, 6 TFL, 1 sack, 1 interception and 1 fumble recovery in 8 posted GP.",
+                "url": "https://www.maxpreps.com/ok/hugo/hugo-buffaloes/football/stats/",
+                "date": "Provider updated Oct. 24 · Checked Oct. 25, 2026",
+                "label": "MaxPreps stats"
+              },
+              {
+                "text": "TEAM CONTEXT · KXII’s August preview identified Pugh as part of Hugo’s senior leadership group.",
+                "url": "https://www.kxii.com/2026/08/26/hugo-buffaloes-preview/?outputType=amp",
+                "date": "Article Aug. 25, 2026 · Checked Oct. 25, 2026",
+                "label": "KXII"
+              }
+            ]
+          },
+          {
+            "name": "Gion Balcazar",
+            "facts": [
+              {
+                "text": "TAKEAWAY PRODUCTION · 3 interceptions and 6 passes defended in 8 posted GP.",
+                "url": "https://www.maxpreps.com/ok/hugo/hugo-buffaloes/football/stats/",
+                "date": "Provider updated Oct. 24 · Checked Oct. 25, 2026",
+                "label": "MaxPreps stats"
+              },
+              {
+                "text": "EARLY-SEASON NOTE · MaxPreps credited Balcazar with an interception in the Sept. 4 win at Atoka.",
+                "url": "https://www.maxpreps.com/news/7OXpQPUJHEmPS8MGDMVA9A/football-recap-jayka-santillan-comes-up-big-in-hugos-win.htm",
+                "date": "Article Sept. 6, 2026 · Checked Oct. 25, 2026",
+                "label": "MaxPreps recap"
+              }
+            ]
+          }
+        ]
+      },
+      "resultNotes": []
     }
   ]
 }
