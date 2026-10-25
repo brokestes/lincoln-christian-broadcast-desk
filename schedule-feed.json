@@ -1,12 +1,12 @@
 {
   "version": 1,
   "timeZone": "America/Chicago",
-  "generatedAt": "2026-10-25T17:35:43.420Z",
+  "generatedAt": "2026-10-25T20:56:29.484Z",
   "sports": {
     "football": {
       "source": "https://lcssports.com/sports/football/schedule",
       "season": "2026-27",
-      "checkedAt": "2026-10-25T17:35:43.420Z",
+      "checkedAt": "2026-10-25T20:56:29.484Z",
       "status": "ok",
       "events": [
         {
@@ -150,17 +150,17 @@
           "result": "W, 63-20",
           "kind": "Game",
           "status": "completed",
-          "resultProvenance": {
-            "source": "https://www.maxpreps.com/ok/football/game/checotah-vs-lincoln-christian-tulsa/10-23-2026/?c=66c0214f-2205-40f8-802f-72c035658de4",
-            "checkedAt": "2026-10-25T17:36:53.740Z",
-            "note": "MaxPreps posted final; official school calendar result was blank at check time."
-          },
-          "providerStatus": "completed",
+          "providerStatus": "scheduled",
           "confirmedUpdate": {
             "status": "completed",
             "confirmedAt": "2026-10-25T17:36:53.740Z",
             "provenance": "Verified public final for the completed October 23 game",
             "note": "The official Lincoln calendar had not posted a final when this result was verified."
+          },
+          "resultProvenance": {
+            "source": "https://www.maxpreps.com/ok/football/game/checotah-vs-lincoln-christian-tulsa/10-23-2026/?c=66c0214f-2205-40f8-802f-72c035658de4",
+            "checkedAt": "2026-10-25T17:36:53.740Z",
+            "note": "MaxPreps posted final; official school calendar result was blank at check time."
           }
         },
         {
@@ -196,7 +196,7 @@
     "boys-basketball": {
       "source": "https://lcssports.com/sports/boys-basketball/schedule",
       "season": "2026-27",
-      "checkedAt": "2026-10-25T17:35:43.420Z",
+      "checkedAt": "2026-10-25T20:56:29.484Z",
       "status": "ok",
       "events": [
         {
@@ -540,7 +540,7 @@
     "girls-basketball": {
       "source": "https://lcssports.com/sports/womens-basketball/schedule",
       "season": "2026-27",
-      "checkedAt": "2026-10-25T17:35:43.420Z",
+      "checkedAt": "2026-10-25T20:56:29.484Z",
       "status": "ok",
       "events": [
         {
