@@ -1,12 +1,12 @@
 {
   "version": 1,
   "timeZone": "America/Chicago",
-  "generatedAt": "2026-10-27T00:31:31.915Z",
+  "generatedAt": "2026-10-27T09:06:50.372Z",
   "sports": {
     "football": {
       "source": "https://lcssports.com/sports/football/schedule",
       "season": "2026-27",
-      "checkedAt": "2026-10-27T00:31:31.915Z",
+      "checkedAt": "2026-10-27T09:06:50.372Z",
       "status": "ok",
       "events": [
         {
@@ -196,7 +196,7 @@
     "girls-basketball": {
       "source": "https://lcssports.com/sports/womens-basketball/schedule",
       "season": "2026-27",
-      "checkedAt": "2026-10-27T00:31:31.915Z",
+      "checkedAt": "2026-10-27T09:06:50.372Z",
       "status": "ok",
       "events": [
         {
@@ -568,7 +568,7 @@
     "boys-basketball": {
       "source": "https://lcssports.com/sports/boys-basketball/schedule",
       "season": "2026-27",
-      "checkedAt": "2026-10-27T00:31:31.915Z",
+      "checkedAt": "2026-10-27T09:06:50.372Z",
       "status": "ok",
       "events": [
         {
