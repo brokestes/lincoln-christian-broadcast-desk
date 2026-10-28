@@ -1,12 +1,12 @@
 {
   "version": 1,
   "timeZone": "America/Chicago",
-  "generatedAt": "2026-10-28T13:06:03.392Z",
+  "generatedAt": "2026-10-28T20:20:14.049Z",
   "sports": {
     "football": {
       "source": "https://lcssports.com/sports/football/schedule",
       "season": "2026-27",
-      "checkedAt": "2026-10-28T13:06:03.392Z",
+      "checkedAt": "2026-10-28T20:20:14.049Z",
       "status": "ok",
       "events": [
         {
@@ -117,10 +117,10 @@
           "site": "Away",
           "venue": "",
           "district": false,
-          "result": "",
+          "result": "Canceled",
           "kind": "Game",
           "status": "cancelled",
-          "providerStatus": "scheduled",
+          "providerStatus": "cancelled",
           "confirmedUpdate": {
             "status": "cancelled",
             "confirmedAt": "2026-10-12T00:41:11Z",
@@ -150,7 +150,7 @@
           "result": "W, 63-20",
           "kind": "Game",
           "status": "completed",
-          "providerStatus": "scheduled",
+          "providerStatus": "completed",
           "confirmedUpdate": {
             "status": "completed",
             "confirmedAt": "2026-10-25T17:36:53.740Z",
@@ -196,7 +196,7 @@
     "boys-basketball": {
       "source": "https://lcssports.com/sports/boys-basketball/schedule",
       "season": "2026-27",
-      "checkedAt": "2026-10-28T13:06:03.392Z",
+      "checkedAt": "2026-10-28T20:20:14.049Z",
       "status": "ok",
       "events": [
         {
@@ -540,7 +540,7 @@
     "girls-basketball": {
       "source": "https://lcssports.com/sports/womens-basketball/schedule",
       "season": "2026-27",
-      "checkedAt": "2026-10-28T13:06:03.392Z",
+      "checkedAt": "2026-10-28T20:20:14.049Z",
       "status": "ok",
       "events": [
         {
