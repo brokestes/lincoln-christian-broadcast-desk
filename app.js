@@ -137,7 +137,7 @@
   var currentView = "home";
   var deskSections = ['prep','rosters','opponent-schedule','stats','live','history','sources','print'];
   var activeDeskSection = deskSections.includes(state.deskSection) ? state.deskSection : 'prep';
-  var activeTab = state.statsTab === 'season' ? 'season' : 'stats';
+  var activeTab = ['season','opponent'].includes(state.statsTab) ? state.statsTab : 'stats';
   var saveTimer = null;
 
   // Merge new sourced fields without replacing existing user notes, manual stats or highlights.
@@ -217,7 +217,9 @@
       var description=window.LincolnWeekly.statDescription(stats);
       return '<section class="stat-team"><div class="stat-source"><strong>'+html(teamName)+' player stats · 2026 · '+html(stats.games||'published')+' games</strong><p>'+html(description)+'. Blank source cells remain —. '+html(window.LincolnWeekly.coverageWarning(teamName))+'</p><a href="'+html(stats.source)+'" target="_blank" rel="noreferrer">Check latest MaxPreps stats ↗</a></div><div class="stat-group-nav">'+groups.map(function(group){return '<a href="#'+prefix+group+'Stats">'+({offense:'Offense',defense:'Defense',special:'Special teams'})[group]+'</a>';}).join('')+'</div>'+groups.map(function(group){return '<section id="'+prefix+group+'Stats"><h3>'+({offense:'Offense',defense:'Defense',special:'Special teams & scoring'})[group]+'</h3>'+stats.tables.filter(function(t){return statGroup(t.title)===group;}).map(function(t){return '<details class="stat-details"'+(['Passing','Rushing','Receiving','Tackles','Defensive Statistics'].includes(t.title)?' open':'')+'><summary>'+html(t.title)+' <small>'+t.rows.length+' players</small></summary>'+sourceTable(t,false)+'</details>';}).join('')+'</section>';}).join('')+'</section>';
     }
-    el.innerHTML=block('Lincoln Christian',lincoln,'lincoln-',true)+(game?block(game.opponent,opponent,'opponent-',false):'');
+    el.innerHTML=block('Lincoln Christian',lincoln,'lincoln-',true);
+    var opponentEl=document.getElementById('opponentStats');
+    if(opponentEl)opponentEl.innerHTML=game?block(game.opponent,opponent,'opponent-',false):'<p class="source-note">Open a scheduled game to load its opponent’s published stats.</p>';
   }
   function renderPrintOptions() {
     document.getElementById('printOptions').innerHTML = Object.entries({offense:'Offensive stats',defense:'Defensive stats',special:'Special teams stats',fullRosters:'Full rosters (instead of highlights)',live:'Matching live-game stats',history:'Team history & matchup archive',opponentSchedule:'Opponent schedule & results'}).map(function (entry) { return '<label class="check-field"><input type="checkbox" data-print-option="' + entry[0] + '"' + (state.printOptions[entry[0]] ? ' checked' : '') + '>' + entry[1] + '</label>'; }).join('');
@@ -374,7 +376,7 @@
     saveState(); renderDeskTabs(); rememberDeskHash(); keepDeskSectionInView();
   }
   function setStatsTab(tab) {
-    if (!['stats','season'].includes(tab)) return;
+    if (!['stats','season','opponent'].includes(tab)) return;
     activeTab = tab; state.statsTab = tab;
     saveState(); renderDeskTabs(); rememberDeskHash(); keepDeskSectionInView();
   }
@@ -726,7 +728,7 @@
     if (!tab || !['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
     event.preventDefault();
     var isDesk = tab.hasAttribute('data-desk-tab');
-    var choices = isDesk ? deskSections : ['stats','season'];
+    var choices = isDesk ? deskSections : ['stats','season','opponent'];
     var current = choices.indexOf(isDesk ? tab.dataset.deskTab : tab.dataset.tab);
     var next = event.key === 'Home' ? 0 : event.key === 'End' ? choices.length - 1 : (current + (event.key === 'ArrowRight' ? 1 : -1) + choices.length) % choices.length;
     if (isDesk) setDeskSection(choices[next]); else setStatsTab(choices[next]);
