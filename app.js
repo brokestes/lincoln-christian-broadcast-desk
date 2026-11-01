@@ -860,7 +860,7 @@
     // Switch once when public data advances to a new matchup, without overwriting notes or a later user choice.
     var target=feed.target,targetKey=target&&target.date&&target.opponent?target.date+'|'+target.opponent:'';
     if(targetKey&&state.lastPublicFootballTarget!==targetKey){
-      var next=fb.games.find(function(g){return g.date===target.date&&g.opponent===target.opponent;});
+      var next=fb.games.find(function(g){return g.date===target.date&&(g.opponent===target.opponent||String(g.opponent||'').indexOf(target.opponent+' ')===0);});
       if(next)state.activeGameIds.football=next.id;
       state.lastPublicFootballTarget=targetKey;
     }
