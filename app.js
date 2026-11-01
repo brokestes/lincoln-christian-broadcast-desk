@@ -280,7 +280,11 @@
 
   function renderPrintOptions() {
     if (state.activeSport !== 'football') {
-      document.getElementById('printOptions').innerHTML = '<p class="source-note">The basketball game sheet is designed to print on one page with verified Lincoln season totals, player averages, game-point tally lines, and quarter-by-quarter scoring boxes.</p>';
+      var basketballFeed = currentSportData().basketballStats;
+      var basketballMessage = basketballFeed && !Number(basketballFeed.games)
+        ? 'No verified current-season game statistics are loaded yet. This one-page sheet uses the Hudl player list as a roster candidate and provides large game-point tally boxes plus quarter-by-quarter scoring.'
+        : 'The basketball game sheet is designed to print on one page with verified Lincoln season totals, player averages, game-point tally lines, and quarter-by-quarter scoring boxes.';
+      document.getElementById('printOptions').innerHTML = '<p class="source-note">'+html(basketballMessage)+'</p>';
       return;
     }
     document.getElementById('printOptions').innerHTML = Object.entries({offense:'Offensive stats',defense:'Defensive stats',special:'Special teams stats',fullRosters:'Full rosters (instead of highlights)',live:'Matching live-game stats',history:'Team history & matchup archive',opponentSchedule:'Opponent schedule & results'}).map(function (entry) { return '<label class="check-field"><input type="checkbox" data-print-option="' + entry[0] + '"' + (state.printOptions[entry[0]] ? ' checked' : '') + '>' + entry[1] + '</label>'; }).join('');
@@ -710,7 +714,7 @@
       '<section class="bb-print-opponent"><b>'+html(game.opponent)+' season</b> · PPG ______ · PAPG ______ · FG% ______ · 3PT% ______ · FT% ______ · REB/G ______ · TO/G ______</section>'+
       '<section class="bb-print-players">'+names.map(function(p){return '<div class="bb-print-player"><div><strong>#'+v(p.number || '—')+' '+html(p.name)+'</strong><span>'+playerLine(p)+'</span></div><div class="bb-tally"><span>GAME PTS</span><i></i></div></div>';}).join('')+'</section>'+
       '<section class="bb-quarter-grid"><h2>Player scoring by quarter</h2><table><thead><tr><th>Player</th><th>1ST</th><th>2ND</th><th>3RD</th><th>4TH</th><th>OT</th><th>TOTAL</th></tr></thead><tbody>'+names.map(function(p){return '<tr><th>#'+v(p.number || '—')+' '+html(p.name)+'</th><td></td><td></td><td></td><td></td><td></td><td></td></tr>';}).join('')+'</tbody></table></section>'+
-      '<footer>Hudl totals and averages checked '+html(window.LincolnWeekly ? window.LincolnWeekly.stamp(feed.checkedAt) : feed.checkedAt)+'. Opponent blanks are intentional until a verified source is connected.</footer></article>';
+      '<footer>'+(Number(feed.games) ? 'Hudl totals and averages checked ' : 'No verified current-season Hudl game stats. Hudl player list reviewed ')+html(window.LincolnWeekly ? window.LincolnWeekly.stamp(feed.checkedAt) : feed.checkedAt)+'. Opponent blanks are intentional until a verified source is connected.</footer></article>';
     return true;
   }
 
