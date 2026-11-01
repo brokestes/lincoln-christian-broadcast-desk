@@ -269,6 +269,10 @@
   }
 
   function renderPrintOptions() {
+    if (state.activeSport !== 'football') {
+      document.getElementById('printOptions').innerHTML = '<p class="source-note">The basketball game sheet is designed to print on one page with verified Lincoln season totals, player averages, game-point tally lines, and quarter-by-quarter scoring boxes.</p>';
+      return;
+    }
     document.getElementById('printOptions').innerHTML = Object.entries({offense:'Offensive stats',defense:'Defensive stats',special:'Special teams stats',fullRosters:'Full rosters (instead of highlights)',live:'Matching live-game stats',history:'Team history & matchup archive',opponentSchedule:'Opponent schedule & results'}).map(function (entry) { return '<label class="check-field"><input type="checkbox" data-print-option="' + entry[0] + '"' + (state.printOptions[entry[0]] ? ' checked' : '') + '>' + entry[1] + '</label>'; }).join('');
   }
 
@@ -681,10 +685,15 @@
     var feed = currentSportData().basketballStats;
     if (!feed) { toast("Basketball stats have not been verified yet"); return false; }
     var t = feed.team.totals, a = feed.team.averages, names = feed.players.slice().sort(function(x,y){return y.pts-x.pts || x.name.localeCompare(y.name);});
+    var timeText = 'Time TBD';
+    if (/^\d{1,2}:\d{2}$/.test(String(game.time || ''))) {
+      var parts = String(game.time).split(':'), hour = Number(parts[0]), minute = parts[1];
+      timeText = ((hour % 12) || 12) + ':' + minute + (hour >= 12 ? ' PM' : ' AM');
+    }
     function v(x){return x === undefined || x === null || x === "" ? "—" : html(x);}
     function playerLine(p){return 'PTS '+v(p.pts)+' ('+v(p.ppg)+' PPG) · REB '+v(p.reb)+' · OREB '+v(p.oreb)+' · AST '+v(p.ast)+' · STL '+v(p.steals)+' · BLK '+v(p.blocks)+' · 3PT '+v(p.threeM)+'/'+v(p.threeA)+' ('+v(p.threePct)+') · FT '+v(p.ftm)+'/'+v(p.fta)+' ('+v(p.ftPct)+')';}
     document.getElementById("printSheet").innerHTML =
-      '<article class="basketball-print-sheet"><header><div><p class="print-kicker">LINCOLN CHRISTIAN BASKETBALL</p><h1>Lincoln Christian vs '+html(game.opponent)+'</h1><p>'+html(formatFullDate(game.date))+' · '+html(game.time || 'Time TBD')+' · '+html(game.site || 'Site TBD')+'</p></div><strong>'+html(sportLabels[state.activeSport].toUpperCase())+' GAME SHEET</strong></header>'+
+      '<article class="basketball-print-sheet"><header><div><p class="print-kicker">LINCOLN CHRISTIAN BASKETBALL</p><h1>Lincoln Christian vs '+html(game.opponent)+'</h1><p>'+html(formatFullDate(game.date))+' · '+html(timeText)+' · '+html(game.site || 'Site TBD')+'</p></div><strong>'+html(sportLabels[state.activeSport].toUpperCase())+' GAME SHEET</strong></header>'+
       '<section class="bb-print-team"><h2>Lincoln season · '+html(feed.games)+' recorded game'+(feed.games===1?'':'s')+'</h2><p><b>PTS</b> '+v(t.pf)+' · '+v(a.ppg)+' PPG &nbsp; <b>OPP PTS</b> '+v(t.pa)+' · '+v(a.papg)+' PAPG &nbsp; <b>FG</b> '+v(t.fgm)+'/'+v(t.fga)+' ('+v(a.fgPct)+') &nbsp; <b>3PT</b> '+v(t.threeM)+'/'+v(t.threeA)+' ('+v(a.threePct)+') &nbsp; <b>FT</b> '+v(t.ftm)+'/'+v(t.fta)+' ('+v(a.ftPct)+')<br><b>REB</b> '+v(t.reb)+' · '+v(a.reb)+' /G &nbsp; <b>AST</b> '+v(t.ast)+' · '+v(a.ast)+' /G &nbsp; <b>TO</b> '+v(t.turnovers)+' · '+v(a.turnovers)+' /G &nbsp; <b>STL</b> '+v(t.steals)+' · <b>BLK</b> '+v(t.blocks)+' · <b>CHG</b> '+v(t.charges)+'</p></section>'+
       '<section class="bb-print-opponent"><b>'+html(game.opponent)+' season</b> · PPG ______ · PAPG ______ · FG% ______ · 3PT% ______ · FT% ______ · REB/G ______ · TO/G ______</section>'+
       '<section class="bb-print-players">'+names.map(function(p){return '<div class="bb-print-player"><div><strong>#'+v(p.number || '—')+' '+html(p.name)+'</strong><span>'+playerLine(p)+'</span></div><div class="bb-tally"><span>GAME PTS</span><i></i></div></div>';}).join('')+'</section>'+
