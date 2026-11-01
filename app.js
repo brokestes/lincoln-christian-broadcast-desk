@@ -684,6 +684,8 @@
   function renderBasketballPrintSheet(game) {
     var feed = currentSportData().basketballStats;
     if (!feed) { toast("Basketball stats have not been verified yet"); return false; }
+    var previewHint = document.getElementById('printPreviewHint');
+    if (previewHint) previewHint.textContent = 'One-page game sheet with Lincoln season totals, player averages, point-tally lines and quarter-by-quarter scoring boxes.';
     var t = feed.team.totals, a = feed.team.averages, names = feed.players.slice().sort(function(x,y){return y.pts-x.pts || x.name.localeCompare(y.name);});
     var timeText = 'Time TBD';
     if (/^\d{1,2}:\d{2}$/.test(String(game.time || ''))) {
