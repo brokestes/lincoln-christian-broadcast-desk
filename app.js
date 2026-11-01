@@ -135,7 +135,7 @@
   var state = loadState();
   migrateResearch();
   var currentView = "home";
-  var deskSections = ['prep','rosters','opponent-schedule','stats','live','history','sources','print'];
+  var deskSections = ['prep','rosters','opponent-schedule','stats','standings','live','history','sources','print'];
   var activeDeskSection = deskSections.includes(state.deskSection) ? state.deskSection : 'prep';
   var activeTab = ['season','opponent'].includes(state.statsTab) ? state.statsTab : 'stats';
   var saveTimer = null;
