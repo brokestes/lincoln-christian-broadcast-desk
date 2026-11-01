@@ -220,6 +220,10 @@
         if(rosterTeam==='opponent')message+='Background facts have their own source dates; refreshing a roster does not re-verify those facts.';
       }
     }
+    if (state.activeSport !== 'football' && rosterTeam === 'lincoln') {
+      var basketballCheck = currentSportData().basketballCheck;
+      message = 'Lincoln basketball player list: ' + visibleRoster().length + ' names imported from the authenticated Hudl player list. This is not an official Lincoln Christian roster release, and no heights, grades, positions, or player stats are assumed. Confirm with Lincoln before using it on air.' + (basketballCheck ? ' Last reviewed ' + basketballCheck.checkedAt + '.' : '');
+    }
     var markup = '<p>' + html(message) + (rosterTeam === 'opponent' && info ? ' <a href="' + html(info.source) + '" target="_blank" rel="noreferrer">Open roster ↗</a>' : '') + '</p>';
     document.getElementById("deskRosterStatus").innerHTML = markup;
     document.getElementById("rosterStatus").innerHTML = markup;
@@ -238,6 +242,12 @@
       if (!feed) {
         el.innerHTML = '<p class="source-note">No verified '+html(sportLabels[state.activeSport].toLowerCase())+' player stats are loaded yet.</p>';
         if (opponentEl) opponentEl.innerHTML = '<p class="source-note">Opponent basketball stats are not available from the current source.</p>';
+        return;
+      }
+      if (!Number(feed.games)) {
+        var rosterRows = (feed.roster || []).map(function(p){ return '<tr><td>'+html(p.number ? '#'+p.number : '—')+'</td><td><strong>'+html(p.name)+'</strong></td><td>'+html(p.source || 'Hudl player list')+'</td></tr>'; }).join('');
+        el.innerHTML = '<section class="stat-team basketball-stat-team"><div class="stat-source"><strong>Lincoln Christian '+html(sportLabels[state.activeSport].toLowerCase())+' · '+html(feed.season)+' · no verified games yet</strong><p>No current-season statistics are displayed because Lincoln has not played a verified game. The names below came from the authenticated Hudl player list—not an official Lincoln roster release—and should be confirmed before air.</p><a href="'+html(feed.source)+'" target="_blank" rel="noreferrer">Open Hudl report ↗</a></div><section><h3>Hudl player list awaiting roster confirmation</h3><div class="table-scroll"><table class="basketball-player-table"><thead><tr><th>#</th><th>Player</th><th>Source</th></tr></thead><tbody>'+rosterRows+'</tbody></table></div></section></section>';
+        if (opponentEl) opponentEl.innerHTML = '<section class="stat-team"><h2>'+html(game ? game.opponent : 'Opponent')+' basketball stats</h2><p class="source-note">No verified opponent basketball stats are connected for this game. This is not shown as zero.</p></section>';
         return;
       }
       var team = feed.team, a = team.averages, t = team.totals;
@@ -693,7 +703,7 @@
       timeText = ((hour % 12) || 12) + ':' + minute + (hour >= 12 ? ' PM' : ' AM');
     }
     function v(x){return x === undefined || x === null || x === "" ? "—" : html(x);}
-    function playerLine(p){return 'PTS '+v(p.pts)+' ('+v(p.ppg)+' PPG) · REB '+v(p.reb)+' · OREB '+v(p.oreb)+' · AST '+v(p.ast)+' · STL '+v(p.steals)+' · BLK '+v(p.blocks)+' · 3PT '+v(p.threeM)+'/'+v(p.threeA)+' ('+v(p.threePct)+') · FT '+v(p.ftm)+'/'+v(p.fta)+' ('+v(p.ftPct)+')';}
+    function playerLine(p){ if (!Number(feed.games)) return 'No verified current-season stat line yet.'; return 'PTS '+v(p.pts)+' ('+v(p.ppg)+' PPG) · REB '+v(p.reb)+' · OREB '+v(p.oreb)+' · AST '+v(p.ast)+' · STL '+v(p.steals)+' · BLK '+v(p.blocks)+' · 3PT '+v(p.threeM)+'/'+v(p.threeA)+' ('+v(p.threePct)+') · FT '+v(p.ftm)+'/'+v(p.fta)+' ('+v(p.ftPct)+')';}
     document.getElementById("printSheet").innerHTML =
       '<article class="basketball-print-sheet"><header><div><p class="print-kicker">LINCOLN CHRISTIAN BASKETBALL</p><h1>Lincoln Christian vs '+html(game.opponent)+'</h1><p>'+html(formatFullDate(game.date))+' · '+html(timeText)+' · '+html(game.site || 'Site TBD')+'</p></div><strong>'+html(sportLabels[state.activeSport].toUpperCase())+' GAME SHEET</strong></header>'+
       '<section class="bb-print-team"><h2>Lincoln season · '+html(feed.games)+' recorded game'+(feed.games===1?'':'s')+'</h2><p><b>PTS</b> '+v(t.pf)+' · '+v(a.ppg)+' PPG &nbsp; <b>OPP PTS</b> '+v(t.pa)+' · '+v(a.papg)+' PAPG &nbsp; <b>FG</b> '+v(t.fgm)+'/'+v(t.fga)+' ('+v(a.fgPct)+') &nbsp; <b>3PT</b> '+v(t.threeM)+'/'+v(t.threeA)+' ('+v(a.threePct)+') &nbsp; <b>FT</b> '+v(t.ftm)+'/'+v(t.fta)+' ('+v(a.ftPct)+')<br><b>REB</b> '+v(t.reb)+' · '+v(a.reb)+' /G &nbsp; <b>AST</b> '+v(t.ast)+' · '+v(a.ast)+' /G &nbsp; <b>TO</b> '+v(t.turnovers)+' · '+v(a.turnovers)+' /G &nbsp; <b>STL</b> '+v(t.steals)+' · <b>BLK</b> '+v(t.blocks)+' · <b>CHG</b> '+v(t.charges)+'</p></section>'+
