@@ -2,7 +2,7 @@
   "version": 1,
   "timeZone": "America/Chicago",
   "season": "2026-27",
-  "generatedAt": "2026-11-01T14:00:00.000Z",
+  "generatedAt": "2026-11-01T14:15:00.000Z",
   "target": {
     "date": "2026-11-06",
     "opponent": "Roland",
@@ -14936,7 +14936,7 @@
             "opponentBase": "https://www.maxpreps.com/ok/spiro/spiro-bulldogs/football/",
             "mascot": "Bulldogs",
             "site": "Home",
-            "district": true,
+            "district": false,
             "result": "W 15-0",
             "score": 15,
             "opponentScore": 0,
