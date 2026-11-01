@@ -137,7 +137,7 @@
   var currentView = "home";
   var deskSections = ['prep','rosters','opponent-schedule','stats','standings','live','history','sources','print'];
   var activeDeskSection = deskSections.includes(state.deskSection) ? state.deskSection : 'prep';
-  var activeTab = ['season','opponent'].includes(state.statsTab) ? state.statsTab : 'stats';
+  var activeTab = ['season','opponent'].includes(state.statsTab) ? state.statsTab : 'season';
   var saveTimer = null;
 
   // Merge new sourced fields without replacing existing user notes, manual stats or highlights.
@@ -376,7 +376,7 @@
     saveState(); renderDeskTabs(); rememberDeskHash(); keepDeskSectionInView();
   }
   function setStatsTab(tab) {
-    if (!['stats','season','opponent'].includes(tab)) return;
+    if (!['season','opponent'].includes(tab)) return;
     activeTab = tab; state.statsTab = tab;
     saveState(); renderDeskTabs(); rememberDeskHash(); keepDeskSectionInView();
   }
@@ -449,9 +449,6 @@
   function renderEmptyDesk() {
     document.getElementById("matchupHero").innerHTML =
       '<div class="matchup-content"><div class="matchup-main"><div class="game-kicker"><span>' + html(sportLabels[state.activeSport]) + '</span></div><div class="versus"><h2>No verified games loaded</h2></div><div class="game-meta"><span>Open the official schedule, then add the first confirmed game.</span></div></div></div>';
-    document.getElementById("checklist").innerHTML = "";
-    document.getElementById("progressText").textContent = "Start with a game";
-    document.getElementById("progressBar").style.width = "0%";
     document.getElementById("opponentName").textContent = "Opponent";
     document.getElementById("opponentSnapshot").innerHTML = '<p class="source-note">No opponent selected.</p>';
     document.getElementById("gameSources").innerHTML = sourcesBySport[state.activeSport].map(function (s) { return sourceLink({name:s.label,note:'Sport research source — no game selected',url:s.url}); }).join('');
@@ -461,6 +458,7 @@
     document.getElementById("deskRoster").innerHTML = '<p class="source-note">Add a roster from the roster book.</p>';
   }
   function renderChecklist(game) {
+    if (!document.getElementById("checklist")) return;
     var labels = { sources:"Sources", roster:"Roster", history:"History", film:"Film", stats:"Stats", opening:"Opening" };
     var keys = Object.keys(labels);
     var ready = keys.filter(function (key) { return game.checklist[key]; }).length;
@@ -474,6 +472,7 @@
     return '<a class="source-link" href="' + html(source.url) + '" target="_blank" rel="noreferrer"><div><strong>' + html(source.name) + '</strong><span>' + html(source.note) + '</span></div><i>↗</i></a>';
   }
   function renderStats(game) {
+    if (!document.getElementById("statGrid")) return;
     var rows = '<span class="stat-head">Stat</span><span class="stat-head">Lincoln</span><span class="stat-head">' + html(game.opponent) + '</span><span></span>';
     rows += game.stats.map(function (stat) {
       return '<input aria-label="Stat name" data-stat-id="' + stat.id + '" data-stat-field="label" value="' + html(stat.label) + '">' +
@@ -728,7 +727,7 @@
     if (!tab || !['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
     event.preventDefault();
     var isDesk = tab.hasAttribute('data-desk-tab');
-    var choices = isDesk ? deskSections : ['stats','season','opponent'];
+    var choices = isDesk ? deskSections : ['season','opponent'];
     var current = choices.indexOf(isDesk ? tab.dataset.deskTab : tab.dataset.tab);
     var next = event.key === 'Home' ? 0 : event.key === 'End' ? choices.length - 1 : (current + (event.key === 'ArrowRight' ? 1 : -1) + choices.length) % choices.length;
     if (isDesk) setDeskSection(choices[next]); else setStatsTab(choices[next]);
