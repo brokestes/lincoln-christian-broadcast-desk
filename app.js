@@ -420,13 +420,13 @@
     var panel = document.getElementById('desk-panel-standings');
     if (!tab || !panel) return;
     if (state.activeSport === 'football') {
-      tab.textContent = '2A-I standings';
+      tab.textContent = 'Standings';
       if (panel.dataset.standingsSport !== 'football') panel.innerHTML = footballStandingsMarkup;
       panel.dataset.standingsSport = 'football';
       return;
     }
     var label = sportLabels[state.activeSport] || 'Basketball';
-    tab.textContent = 'Basketball standings';
+    tab.textContent = 'Standings';
     panel.dataset.standingsSport = state.activeSport;
     panel.innerHTML = '<div class="section-heading"><p class="eyebrow">SPORT-SPECIFIC STANDINGS</p><h2>'+html(label.toUpperCase())+' STANDINGS &amp; RANKINGS</h2><p>Basketball uses its own class, rankings, and standings source. Football’s Class 2A-I district tables are intentionally not shown here.</p></div><section class="stat-team"><h3>Awaiting verified basketball source</h3><p class="source-note">No basketball standings have been entered yet. When a current OSSAA or other official basketball standings source is confirmed, this panel will show only '+html(label.toLowerCase())+' data.</p></section>';
   }
