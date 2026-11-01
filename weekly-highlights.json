@@ -1,7 +1,7 @@
 {
   "version": 1,
   "timeZone": "America/Chicago",
-  "generatedAt": "2026-10-25T17:43:14.066Z",
+  "generatedAt": "2026-11-01T14:00:00.000Z",
   "entries": [
     {
       "sport": "football",
@@ -997,6 +997,177 @@
         ]
       },
       "resultNotes": []
+    },
+    {
+      "sport": "football",
+      "gameDate": "2026-11-06",
+      "opponent": "Roland",
+      "checkedAt": "2026-11-01T14:00:00.000Z",
+      "status": "published-with-gaps",
+      "gaps": [
+        "Roland has a published 2026 roster, but MaxPreps reports that player stats have not been entered. Missing player production is not displayed as zero.",
+        "Roland’s posted roster was last updated August 26; verify any game-day number or lineup change before air.",
+        "This prep uses public schedules, rosters, results and reports only; it does not replace film review."
+      ],
+      "matchupNotice": {
+        "text": "GAME WEEK · Lincoln hosts Roland Friday, Nov. 6 at 7:00 PM CT at Dennis Byrd Stadium / Willie George Field.",
+        "url": "https://lcssports.com/sports/football/schedule/2026-27?grid=true",
+        "date": "Official schedule checked Nov. 1, 2026",
+        "label": "Lincoln athletics"
+      },
+      "sections": {
+        "lincolnStory": [
+          {
+            "text": "HUGO FINAL · Lincoln won 58–0 at Hugo on Oct. 30. MaxPreps lists 279 passing yards and 148 rushing yards for Lincoln in the game.",
+            "url": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/",
+            "date": "Checked November 1, 2026",
+            "label": "MaxPreps"
+          },
+          {
+            "text": "DISTRICT POSITION · The official OSSAA standings list Lincoln Christian first in 2A-I District 3 at 5–0 district and 8–1 overall entering Roland.",
+            "url": "https://www.ossaarankings.com/default.aspx?sel=districts&spgk=Football",
+            "date": "Checked November 1, 2026",
+            "label": "Official OSSAA standings"
+          },
+          {
+            "text": "SEASON STATS · Lincoln’s MaxPreps season player-stat page was updated Oct. 31 after the Hugo game. The desk’s Lincoln Stats tab shows the posted player tables.",
+            "url": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/stats/",
+            "date": "Checked November 1, 2026",
+            "label": "MaxPreps stats"
+          }
+        ],
+        "opponentStory": [
+          {
+            "text": "LAST GAME · Roland lost 56–14 at Checotah on Oct. 30. That result leaves the Rangers 4–5 overall and 1–4 in 2A-I District 3 in the official standings.",
+            "url": "https://www.ossaarankings.com/default.aspx?sc=260&sel=ssch&t=183861",
+            "date": "Checked November 1, 2026",
+            "label": "OSSAA Rankings"
+          },
+          {
+            "text": "COACHING · Kenyatta Wright is Roland’s head coach. Public reporting describes the former Vian, Oklahoma State and NFL linebacker beginning his first season with the Rangers in 2026.",
+            "url": "https://www.touchdownfridaynight.com/story/4652/roland-names-kenaytta-wright-head-coach",
+            "date": "Checked November 1, 2026",
+            "label": "Touchdown Friday Night"
+          },
+          {
+            "text": "PROGRAM CONTEXT · The Roland coaching announcement says the Rangers’ last winning season was 2021 and their most recent playoff appearance was 2015. This is historical context, not a current-season statistic.",
+            "url": "https://www.touchdownfridaynight.com/story/4652/roland-names-kenaytta-wright-head-coach",
+            "date": "Checked November 1, 2026",
+            "label": "Touchdown Friday Night"
+          }
+        ],
+        "keys": [
+          {
+            "text": "OPPONENT STATS GAP · Roland’s 2026 MaxPreps football page says player stats have not been entered. The Opponent Stats tab keeps this unavailable rather than inventing leaders.",
+            "url": "https://www.maxpreps.com/ok/roland/roland-rangers/football/",
+            "date": "Checked November 1, 2026",
+            "label": "MaxPreps"
+          },
+          {
+            "text": "RECENT FORM · Roland’s posted results: W 20–6 at Heavener on Oct. 15, L 20–14 vs. Hugo on Oct. 23, and L 56–14 at Checotah on Oct. 30.",
+            "url": "https://www.ossaarankings.com/default.aspx?sc=260&sel=ssch&t=183861",
+            "date": "Checked November 1, 2026",
+            "label": "OSSAA Rankings"
+          },
+          {
+            "text": "ROSTER SPOTLIGHT · #0 Uriah Phillips is listed as a senior CB/WR at 6-foot-2, 175 pounds; #1 Derrick Allen is a senior WR/CB at 6-foot-1, 164 pounds. Listed measurements are from Roland’s posted roster.",
+            "url": "https://www.maxpreps.com/ok/roland/roland-rangers/football/roster/",
+            "date": "Checked November 1, 2026",
+            "label": "MaxPreps roster"
+          },
+          {
+            "text": "TWO-WAY ROSTER · Roland’s published roster lists QB/OLB Kayden Hartt (#6), QB/SS Austin Benham (#9), and RB/MLB Ryder Bean (#3). Positions are roster listings, not a confirmed depth chart.",
+            "url": "https://www.maxpreps.com/ok/roland/roland-rangers/football/roster/",
+            "date": "Checked November 1, 2026",
+            "label": "MaxPreps roster"
+          },
+          {
+            "text": "STANDINGS CONTEXT · Roland is sixth in the current seven-team 2A-I District 3 table. Lincoln is first. The Game Desk now includes all four 2A-I district tables from the OSSAA standings page.",
+            "url": "https://www.ossaarankings.com/default.aspx?sel=districts&spgk=Football",
+            "date": "Checked November 1, 2026",
+            "label": "Official OSSAA standings"
+          },
+          {
+            "text": "AIR CHECK · Roland’s online roster was last updated Aug. 26. Confirm active players, starters and any jersey changes during warmups; no unverified lineup changes have been added here.",
+            "url": "https://www.maxpreps.com/ok/roland/roland-rangers/football/roster/",
+            "date": "Checked November 1, 2026",
+            "label": "MaxPreps roster"
+          }
+        ]
+      },
+      "rosterFacts": {
+        "Lincoln Christian": [
+          {
+            "name": "Major Brooks",
+            "facts": [
+              {
+                "text": "TEAM RESULT · Lincoln’s Oct. 30 Hugo win was 58–0; MaxPreps recorded 279 passing yards for the Bulldogs.",
+                "url": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/",
+                "date": "Checked November 1, 2026",
+                "label": "MaxPreps"
+              }
+            ]
+          }
+        ],
+        "Roland": [
+          {
+            "name": "Uriah Phillips",
+            "facts": [
+              {
+                "text": "ROSTER · Senior CB/WR, 6-foot-2, 175 pounds on the published 2026 Roland roster.",
+                "url": "https://www.maxpreps.com/ok/roland/roland-rangers/football/roster/",
+                "date": "Checked November 1, 2026",
+                "label": "MaxPreps roster"
+              }
+            ]
+          },
+          {
+            "name": "Derrick Allen",
+            "facts": [
+              {
+                "text": "ROSTER · Senior WR/CB, 6-foot-1, 164 pounds on the published 2026 Roland roster.",
+                "url": "https://www.maxpreps.com/ok/roland/roland-rangers/football/roster/",
+                "date": "Checked November 1, 2026",
+                "label": "MaxPreps roster"
+              }
+            ]
+          },
+          {
+            "name": "Kayden Hartt",
+            "facts": [
+              {
+                "text": "ROSTER · Senior QB/OLB, 5-foot-9, 203 pounds. Roster listing only; not a confirmed game-day role.",
+                "url": "https://www.maxpreps.com/ok/roland/roland-rangers/football/roster/",
+                "date": "Checked November 1, 2026",
+                "label": "MaxPreps roster"
+              }
+            ]
+          },
+          {
+            "name": "Austin Benham",
+            "facts": [
+              {
+                "text": "ROSTER · Junior QB/SS, 5-foot-11, 165 pounds. Roster listing only; not a confirmed game-day role.",
+                "url": "https://www.maxpreps.com/ok/roland/roland-rangers/football/roster/",
+                "date": "Checked November 1, 2026",
+                "label": "MaxPreps roster"
+              }
+            ]
+          }
+        ]
+      },
+      "resultNotes": [
+        {
+          "date": "2026-10-30",
+          "opponent": "Hugo",
+          "fact": {
+            "text": "FINAL · Lincoln Christian 58, Hugo 0. MaxPreps lists 279 passing yards and 148 rushing yards for Lincoln.",
+            "url": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/",
+            "date": "Checked November 1, 2026",
+            "label": "MaxPreps"
+          }
+        }
+      ]
     }
   ]
 }
