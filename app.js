@@ -134,6 +134,7 @@
 
   var state = loadState();
   migrateResearch();
+  hydrateBasketballData();
   var currentView = "home";
   var deskSections = ['prep','rosters','opponent-schedule','stats','standings','live','history','sources','print'];
   var activeDeskSection = deskSections.includes(state.deskSection) ? state.deskSection : 'prep';
@@ -166,6 +167,28 @@
     state.printOptions = Object.assign({ offense:true, defense:true, special:false, fullRosters:false, live:true, history:true, opponentSchedule:true }, state.printOptions || {});
     state.researchRevision = "2026-10-08";
   }
+
+  function hydrateBasketballData() {
+    var source = window.LincolnBasketball;
+    if (!source || !source.forSport) return;
+    ["boys-basketball","girls-basketball"].forEach(function (sport) {
+      var feed = source.forSport(sport), data = state.sports[sport];
+      if (!feed || !data) return;
+      var existing = data.roster || [];
+      feed.roster.forEach(function (entry) {
+        var match = existing.find(function (p) { return (entry.number && p.number === entry.number) || p.name.toLowerCase() === entry.name.toLowerCase(); });
+        if (match) {
+          ["number","name","grade","position","source"].forEach(function (key) { if (entry[key] && !match[key]) match[key] = entry[key]; });
+        } else {
+          existing.push(Object.assign({ note:"", spotlight:false }, entry));
+        }
+      });
+      data.roster = existing;
+      data.basketballStats = feed;
+      data.basketballCheck = { checkedAt: feed.checkedAt, source: feed.source, sourceName: feed.sourceName, games: feed.games };
+    });
+  }
+
   function visibleRoster() {
     var g = currentGame();
     if (rosterTeam === "opponent" && g) { if (!Array.isArray(g.opponentRoster)) g.opponentRoster = []; return g.opponentRoster; }
@@ -208,9 +231,32 @@
     return '<div class="table-scroll"><table class="season-table"><thead><tr>' + indices.map(function (i) { return '<th title="' + html(t.titles[i] || t.headers[i]) + '">' + html(t.headers[i] === 'Athlete Name' ? 'Player' : t.headers[i]) + '</th>'; }).join('') + '</tr></thead><tbody>' + t.rows.map(function (r) { return '<tr>' + indices.map(function (i) { return '<td>' + html(r[i] || '—') + '</td>'; }).join('') + '</tr>'; }).join('') + '</tbody>' + (t.total.length === t.headers.length ? '<tfoot><tr>' + indices.map(function (i) { return '<td><strong>' + html(t.total[i] || '—') + '</strong></td>'; }).join('') + '</tr></tfoot>' : '') + '</table></div>';
   }
   function renderSeasonStats() {
-    var el = document.getElementById('seasonStats');
-    if (state.activeSport !== 'football') { el.innerHTML = '<p class="source-note">No verified basketball player stats loaded for this season.</p>'; return; }
-    var game=currentGame(),lincoln=window.LincolnWeekly&&window.LincolnWeekly.statData(),opponent=game&&window.LincolnWeekly&&window.LincolnWeekly.teamStatData(game.opponent,game);
+    var el = document.getElementById('seasonStats'), game = currentGame();
+    if (state.activeSport !== 'football') {
+      var feed = currentSportData().basketballStats;
+      var opponentEl = document.getElementById('opponentStats');
+      if (!feed) {
+        el.innerHTML = '<p class="source-note">No verified '+html(sportLabels[state.activeSport].toLowerCase())+' player stats are loaded yet.</p>';
+        if (opponentEl) opponentEl.innerHTML = '<p class="source-note">Opponent basketball stats are not available from the current source.</p>';
+        return;
+      }
+      var team = feed.team, a = team.averages, t = team.totals;
+      function mark(v){ return v === undefined || v === null || v === '' ? '—' : html(v); }
+      function shooting(m,a,p){ return mark(m)+'–'+mark(a)+' <small>'+mark(p)+'</small>'; }
+      var cards = [
+        ['Points',mark(t.pf)+' <small>'+mark(a.ppg)+' PPG</small>'],['Allowed',mark(t.pa)+' <small>'+mark(a.papg)+' PAPG</small>'],
+        ['FG',shooting(t.fgm,t.fga,a.fgPct)],['3PT',shooting(t.threeM,t.threeA,a.threePct)],['FT',shooting(t.ftm,t.fta,a.ftPct)],
+        ['Rebounds',mark(t.reb)+' <small>'+mark(a.reb)+' /G</small>'],['Assists',mark(t.ast)+' <small>'+mark(a.ast)+' /G</small>'],
+        ['Turnovers',mark(t.turnovers)+' <small>'+mark(a.turnovers)+' /G</small>'],['Steals / blocks',mark(t.steals)+' / '+mark(t.blocks)+' <small>'+mark(a.steals)+' / '+mark(a.blocks)+' /G</small>'],['Charges',mark(t.charges)+' <small>'+mark(a.charges)+' /G</small>']
+      ];
+      var rows = feed.players.slice().sort(function(x,y){return y.pts-x.pts || x.name.localeCompare(y.name);}).map(function(p){
+        return '<tr><td>'+html(p.number ? '#'+p.number : '—')+'</td><td><strong>'+html(p.name)+'</strong></td><td>'+mark(p.gp)+'</td><td>'+mark(p.pts)+' <small>/ '+mark(p.ppg)+'</small></td><td>'+shooting(p.fgm,p.fga,p.fgPct)+'</td><td>'+shooting(p.threeM,p.threeA,p.threePct)+'</td><td>'+shooting(p.ftm,p.fta,p.ftPct)+'</td><td>'+mark(p.reb)+' <small>('+mark(p.oreb)+' O)</small></td><td>'+mark(p.ast)+'</td><td>'+mark(p.turnovers)+'</td><td>'+mark(p.steals)+'</td><td>'+mark(p.blocks)+'</td><td>'+mark(p.charges)+'</td></tr>';
+      }).join('');
+      el.innerHTML = '<section class="stat-team basketball-stat-team"><div class="stat-source"><strong>Lincoln Christian '+html(sportLabels[state.activeSport].toLowerCase())+' · '+html(feed.season)+' · '+html(feed.games)+' recorded game'+(feed.games===1?'':'s')+'</strong><p>Hudl source checked '+html(window.LincolnWeekly ? window.LincolnWeekly.stamp(feed.checkedAt) : feed.checkedAt)+'. Each display combines season totals with per-game averages; the sample is currently '+html(feed.games)+' game'+(feed.games===1?'':'s')+'.</p><a href="'+html(feed.source)+'" target="_blank" rel="noreferrer">Open Hudl report ↗</a></div><section class="basketball-team-summary"><h3>Team season summary</h3><div class="basketball-stat-cards">'+cards.map(function(c){return '<div><span>'+c[0]+'</span><strong>'+c[1]+'</strong></div>';}).join('')+'</div></section><section><h3>Player season totals / averages</h3><div class="table-scroll"><table class="basketball-player-table"><thead><tr><th>#</th><th>Player</th><th>GP</th><th>PTS / PPG</th><th>FG / %</th><th>3PT / %</th><th>FT / %</th><th>REB</th><th>AST</th><th>TO</th><th>STL</th><th>BLK</th><th>CHG</th></tr></thead><tbody>'+rows+'</tbody></table></div></section></section>';
+      if (opponentEl) opponentEl.innerHTML = '<section class="stat-team"><h2>'+html(game ? game.opponent : 'Opponent')+' basketball stats</h2><p class="source-note">No verified opponent Hudl or MaxPreps stat feed is connected for this game. This is not shown as zero.</p></section>';
+      return;
+    }
+    var lincoln=window.LincolnWeekly&&window.LincolnWeekly.statData(),opponent=game&&window.LincolnWeekly&&window.LincolnWeekly.teamStatData(game.opponent,game);
     var groups=['offense','defense','special'];
     function block(teamName,stats,prefix,isLincoln) {
       if (!stats) return isLincoln ? '<section class="stat-team"><h2>Lincoln player stats</h2><p class="source-note">Published Lincoln player stats are unavailable for this check.</p></section>' : '<section class="stat-team"><h2>'+html(teamName)+' player stats</h2><p class="source-note">No published MaxPreps player-stat tables are available for this matchup yet. This is not shown as zero.</p></section>';
@@ -221,6 +267,7 @@
     var opponentEl=document.getElementById('opponentStats');
     if(opponentEl)opponentEl.innerHTML=game?block(game.opponent,opponent,'opponent-',false):'<p class="source-note">Open a scheduled game to load its opponent’s published stats.</p>';
   }
+
   function renderPrintOptions() {
     document.getElementById('printOptions').innerHTML = Object.entries({offense:'Offensive stats',defense:'Defensive stats',special:'Special teams stats',fullRosters:'Full rosters (instead of highlights)',live:'Matching live-game stats',history:'Team history & matchup archive',opponentSchedule:'Opponent schedule & results'}).map(function (entry) { return '<label class="check-field"><input type="checkbox" data-print-option="' + entry[0] + '"' + (state.printOptions[entry[0]] ? ' checked' : '') + '>' + entry[1] + '</label>'; }).join('');
   }
@@ -235,6 +282,7 @@
     "boys-basketball": [
       { label: "Official boys schedule", url: "https://lcssports.com/sports/boys-basketball/schedule" },
       { label: "MaxPreps boys basketball", url: "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/basketball/" },
+      { label: "Hudl basketball report", url: "https://www.hudl.com/reports/teams/162299/stats" },
       { label: "SKORDLE", url: "https://skordle.com/" },
       { label: "I Was At The Game — school history", url: "https://www.iwasatthegame.com/Schools.aspx" }
     ],
@@ -629,9 +677,26 @@
     };
     reader.readAsText(file);
   }
+  function renderBasketballPrintSheet(game) {
+    var feed = currentSportData().basketballStats;
+    if (!feed) { toast("Basketball stats have not been verified yet"); return false; }
+    var t = feed.team.totals, a = feed.team.averages, names = feed.players.slice().sort(function(x,y){return y.pts-x.pts || x.name.localeCompare(y.name);});
+    function v(x){return x === undefined || x === null || x === "" ? "—" : html(x);}
+    function playerLine(p){return 'PTS '+v(p.pts)+' ('+v(p.ppg)+' PPG) · REB '+v(p.reb)+' · OREB '+v(p.oreb)+' · AST '+v(p.ast)+' · STL '+v(p.steals)+' · BLK '+v(p.blocks)+' · 3PT '+v(p.threeM)+'/'+v(p.threeA)+' ('+v(p.threePct)+') · FT '+v(p.ftm)+'/'+v(p.fta)+' ('+v(p.ftPct)+')';}
+    document.getElementById("printSheet").innerHTML =
+      '<article class="basketball-print-sheet"><header><div><p class="print-kicker">LINCOLN CHRISTIAN BASKETBALL</p><h1>Lincoln Christian vs '+html(game.opponent)+'</h1><p>'+html(formatFullDate(game.date))+' · '+html(game.time || 'Time TBD')+' · '+html(game.site || 'Site TBD')+'</p></div><strong>'+html(sportLabels[state.activeSport].toUpperCase())+' GAME SHEET</strong></header>'+
+      '<section class="bb-print-team"><h2>Lincoln season · '+html(feed.games)+' recorded game'+(feed.games===1?'':'s')+'</h2><p><b>PTS</b> '+v(t.pf)+' · '+v(a.ppg)+' PPG &nbsp; <b>OPP PTS</b> '+v(t.pa)+' · '+v(a.papg)+' PAPG &nbsp; <b>FG</b> '+v(t.fgm)+'/'+v(t.fga)+' ('+v(a.fgPct)+') &nbsp; <b>3PT</b> '+v(t.threeM)+'/'+v(t.threeA)+' ('+v(a.threePct)+') &nbsp; <b>FT</b> '+v(t.ftm)+'/'+v(t.fta)+' ('+v(a.ftPct)+')<br><b>REB</b> '+v(t.reb)+' · '+v(a.reb)+' /G &nbsp; <b>AST</b> '+v(t.ast)+' · '+v(a.ast)+' /G &nbsp; <b>TO</b> '+v(t.turnovers)+' · '+v(a.turnovers)+' /G &nbsp; <b>STL</b> '+v(t.steals)+' · <b>BLK</b> '+v(t.blocks)+' · <b>CHG</b> '+v(t.charges)+'</p></section>'+
+      '<section class="bb-print-opponent"><b>'+html(game.opponent)+' season</b> · PPG ______ · PAPG ______ · FG% ______ · 3PT% ______ · FT% ______ · REB/G ______ · TO/G ______</section>'+
+      '<section class="bb-print-players">'+names.map(function(p){return '<div class="bb-print-player"><div><strong>#'+v(p.number || '—')+' '+html(p.name)+'</strong><span>'+playerLine(p)+'</span></div><div class="bb-tally"><span>GAME PTS</span><i></i></div></div>';}).join('')+'</section>'+
+      '<section class="bb-quarter-grid"><h2>Player scoring by quarter</h2><table><thead><tr><th>Player</th><th>1ST</th><th>2ND</th><th>3RD</th><th>4TH</th><th>OT</th><th>TOTAL</th></tr></thead><tbody>'+names.map(function(p){return '<tr><th>#'+v(p.number || '—')+' '+html(p.name)+'</th><td></td><td></td><td></td><td></td><td></td><td></td></tr>';}).join('')+'</tbody></table></section>'+
+      '<footer>Hudl totals and averages checked '+html(window.LincolnWeekly ? window.LincolnWeekly.stamp(feed.checkedAt) : feed.checkedAt)+'. Opponent blanks are intentional until a verified source is connected.</footer></article>';
+    return true;
+  }
+
   function renderPrintSheet() {
     var game = currentGame();
     if (!game) { toast("Add a game before printing"); return false; }
+    if (state.activeSport !== "football") return renderBasketballPrintSheet(game);
     var roster = currentSportData().roster.filter(function (p) { return p.spotlight; });
     var notes = game.notes;
     var highlights = window.LincolnPrep ? window.LincolnPrep.facts(state.activeSport,game) : {};
