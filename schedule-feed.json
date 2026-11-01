@@ -1,7 +1,7 @@
 {
   "version": 1,
   "timeZone": "America/Chicago",
-  "generatedAt": "2026-11-01T13:38:09.699Z",
+  "generatedAt": "2026-11-01T14:00:00.000Z",
   "sports": {
     "girls-basketball": {
       "source": "https://lcssports.com/sports/womens-basketball/schedule",
@@ -378,7 +378,7 @@
     "football": {
       "source": "https://lcssports.com/sports/football/schedule",
       "season": "2026-27",
-      "checkedAt": "2026-11-01T13:38:09.699Z",
+      "checkedAt": "2026-11-01T14:00:00.000Z",
       "status": "ok",
       "events": [
         {
@@ -545,9 +545,21 @@
           "site": "Away",
           "venue": "",
           "district": false,
-          "result": "",
+          "result": "W, 58-0",
           "kind": "Game",
-          "status": "scheduled"
+          "status": "completed",
+          "providerStatus": "completed",
+          "confirmedUpdate": {
+            "status": "completed",
+            "confirmedAt": "2026-11-01T14:00:00.000Z",
+            "provenance": "Verified public final for the completed October 30 game",
+            "note": "Lincoln Christian 58, Hugo 0."
+          },
+          "resultProvenance": {
+            "source": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/",
+            "checkedAt": "2026-11-01T14:00:00.000Z",
+            "note": "MaxPreps posted the final and game statistics."
+          }
         },
         {
           "id": "official-football-5452",
