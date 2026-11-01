@@ -2,19 +2,19 @@
   "version": 1,
   "timeZone": "America/Chicago",
   "season": "2026-27",
-  "generatedAt": "2026-10-25T17:35:44.900Z",
+  "generatedAt": "2026-11-01T14:00:00.000Z",
   "target": {
-    "date": "2026-10-30",
-    "opponent": "Hugo",
+    "date": "2026-11-06",
+    "opponent": "Roland",
     "time": "19:00",
-    "site": "Away",
+    "site": "Home",
     "source": "https://lcssports.com/sports/football/schedule"
   },
   "officialSchedule": {
     "source": "https://lcssports.com/sports/football/schedule",
     "season": "2026-27",
-    "checkedAt": "2026-10-25T17:35:43.420Z",
-    "status": "error",
+    "checkedAt": "2026-11-01T14:00:00.000Z",
+    "status": "ok",
     "events": [
       {
         "id": "official-football-5428",
@@ -180,9 +180,21 @@
         "site": "Away",
         "venue": "",
         "district": false,
-        "result": "",
+        "result": "W, 58-0",
         "kind": "Game",
-        "status": "scheduled"
+        "status": "completed",
+        "providerStatus": "completed",
+        "confirmedUpdate": {
+          "status": "completed",
+          "confirmedAt": "2026-11-01T14:00:00.000Z",
+          "provenance": "Verified public final for the completed October 30 game",
+          "note": "Lincoln Christian 58, Hugo 0."
+        },
+        "resultProvenance": {
+          "source": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/",
+          "checkedAt": "2026-11-01T14:00:00.000Z",
+          "note": "MaxPreps posted the final and game statistics."
+        }
       },
       {
         "id": "official-football-5452",
@@ -198,9 +210,7 @@
         "kind": "Game",
         "status": "scheduled"
       }
-    ],
-    "attemptedAt": "2026-10-25T17:43:49.447Z",
-    "warning": "Official source could not be refreshed; last successfully checked schedule retained."
+    ]
   },
   "officialRoster": {
     "source": "https://lcssports.com/sports/football/roster",
@@ -792,7 +802,7 @@
         "school": "Lincoln Christian",
         "season": "2026-27",
         "source": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/schedule/",
-        "checkedAt": "2026-10-25T17:35:44.900Z",
+        "checkedAt": "2026-11-01T14:00:00.000Z",
         "status": "ok",
         "events": [
           {
@@ -960,12 +970,24 @@
             "mascot": "Buffaloes",
             "site": "Away",
             "district": true,
-            "result": "",
-            "score": null,
-            "opponentScore": null,
-            "status": "scheduled",
+            "result": "W 58-0",
+            "score": 58,
+            "opponentScore": 0,
+            "status": "completed",
             "url": "https://www.maxpreps.com/ok/football/game/hugo-vs-lincoln-christian-tulsa/10-30-2026/?c=8c94aa18-b1db-4b80-85a5-e121d45383de",
-            "kind": "Game"
+            "kind": "Game",
+            "providerStatus": "completed",
+            "confirmedUpdate": {
+              "status": "completed",
+              "confirmedAt": "2026-11-01T14:00:00.000Z",
+              "provenance": "Verified public final for the completed October 30 game",
+              "note": "Lincoln Christian 58, Hugo 0."
+            },
+            "resultProvenance": {
+              "source": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/",
+              "checkedAt": "2026-11-01T14:00:00.000Z",
+              "note": "MaxPreps posted the final and game statistics."
+            }
           },
           {
             "id": "7da18e17-4b8b-4e4f-ab50-afc219e1f90c",
@@ -984,8 +1006,8 @@
             "kind": "Game"
           }
         ],
-        "record": "7-1",
-        "districtRecord": "5-0",
+        "record": "8-1",
+        "districtRecord": "6-0",
         "districtPlace": "1st",
         "districtName": "2A-I District 3",
         "pointsFor": 288,
@@ -14823,7 +14845,7 @@
         "school": "Roland",
         "season": "2026-27",
         "source": "https://www.maxpreps.com/ok/roland/roland-rangers/football/schedule/",
-        "checkedAt": "2026-10-25T17:35:44.900Z",
+        "checkedAt": "2026-11-01T14:00:00.000Z",
         "status": "ok",
         "events": [
           {
@@ -14963,10 +14985,10 @@
             "mascot": "Wildcats",
             "site": "Away",
             "district": true,
-            "result": "",
-            "score": null,
-            "opponentScore": null,
-            "status": "scheduled",
+            "result": "L 56-14",
+            "score": 14,
+            "opponentScore": 56,
+            "status": "completed",
             "url": "https://www.maxpreps.com/ok/football/game/checotah-vs-roland/10-30-2026/?c=0e28ec17-f186-4862-939b-d9cda29da472",
             "kind": "Game"
           },
@@ -14987,13 +15009,13 @@
             "kind": "Game"
           }
         ],
-        "record": "4-4",
-        "districtRecord": "2-3",
+        "record": "4-5",
+        "districtRecord": "1-4",
         "districtPlace": "6th",
         "districtName": "2A-I District 3",
-        "pointsFor": 160,
-        "pointsAgainst": 166,
-        "streak": "1L",
+        "pointsFor": 174,
+        "pointsAgainst": 222,
+        "streak": "2L",
         "mascot": "Rangers"
       },
       "roster": {
