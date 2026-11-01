@@ -857,12 +857,12 @@
       if(team.roster.status==='ok')window.LincolnWeekly.mergeRoster(g.opponentRoster||(g.opponentRoster=[]),team.roster.players);
       var old=research.opponents[g.opponent]||{};research.opponents[g.opponent]=Object.assign({},old,{status:team.roster.status,checkedAt:team.roster.checkedAt,source:team.roster.source,players:g.opponentRoster||old.players||[]});
     });
-    // When the currently selected football game has concluded, move the desk to the latest public target.
-    // Never replace a same-day or future selection, and never touch any saved notes or stats.
-    var selected=currentGame(),target=feed.target;
-    if(target&&target.date&&selected&&selected.date<target.date&&(selected.status==='completed'||selected.publicSchedule&&/^W|^L|^T/.test(selected.publicSchedule.result||''))){
+    // Switch once when public data advances to a new matchup, without overwriting notes or a later user choice.
+    var target=feed.target,targetKey=target&&target.date&&target.opponent?target.date+'|'+target.opponent:'';
+    if(targetKey&&state.lastPublicFootballTarget!==targetKey){
       var next=fb.games.find(function(g){return g.date===target.date&&g.opponent===target.opponent;});
       if(next)state.activeGameIds.football=next.id;
+      state.lastPublicFootballTarget=targetKey;
     }
     // Public refreshes never assign game notes, manual comparison stats, or Sheet selections.
     saveState();
