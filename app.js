@@ -139,6 +139,8 @@
   var deskSections = ['prep','rosters','opponent-schedule','stats','standings','live','history','sources','print'];
   var activeDeskSection = deskSections.includes(state.deskSection) ? state.deskSection : 'prep';
   var activeTab = ['season','opponent'].includes(state.statsTab) ? state.statsTab : 'season';
+  // Football standings were deliberately kept as their own static snapshot; basketball gets a separate, sport-specific source/feed.
+  var footballStandingsMarkup = document.getElementById('desk-panel-standings').innerHTML;
   var saveTimer = null;
 
   // Merge new sourced fields without replacing existing user notes, manual stats or highlights.
@@ -406,12 +408,29 @@
     renderResearch();
     renderSeasonStats();
     renderPrintOptions();
+    renderStandings();
     window.LincolnHistory.render(state.activeSport,currentGame());
     renderDeskTabs();
     window.LincolnLive.configure(state.activeSport === 'football' ? currentGame() : null, saveState);
     if (window.LincolnHome) window.LincolnHome.render();
     if (window.LincolnWeekly) window.LincolnWeekly.render(state.activeSport,currentGame());
   }
+  function renderStandings() {
+    var tab = document.getElementById('desk-tab-standings');
+    var panel = document.getElementById('desk-panel-standings');
+    if (!tab || !panel) return;
+    if (state.activeSport === 'football') {
+      tab.textContent = '2A-I standings';
+      if (panel.dataset.standingsSport !== 'football') panel.innerHTML = footballStandingsMarkup;
+      panel.dataset.standingsSport = 'football';
+      return;
+    }
+    var label = sportLabels[state.activeSport] || 'Basketball';
+    tab.textContent = 'Basketball standings';
+    panel.dataset.standingsSport = state.activeSport;
+    panel.innerHTML = '<div class="section-heading"><p class="eyebrow">SPORT-SPECIFIC STANDINGS</p><h2>'+html(label.toUpperCase())+' STANDINGS &amp; RANKINGS</h2><p>Basketball uses its own class, rankings, and standings source. Football’s Class 2A-I district tables are intentionally not shown here.</p></div><section class="stat-team"><h3>Awaiting verified basketball source</h3><p class="source-note">No basketball standings have been entered yet. When a current OSSAA or other official basketball standings source is confirmed, this panel will show only '+html(label.toLowerCase())+' data.</p></section>';
+  }
+
   function renderDeskTabs() {
     document.querySelectorAll('[data-desk-tab]').forEach(function (button) {
       var selected = button.dataset.deskTab === activeDeskSection;
