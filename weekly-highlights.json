@@ -1173,7 +1173,7 @@
       "sport": "football",
       "gameDate": "2026-11-13",
       "opponent": "Sequoyah",
-      "checkedAt": "2026-11-08T21:40:00.000Z",
+      "checkedAt": "2026-11-08T22:05:00.000Z",
       "status": "published-with-gaps",
       "gaps": [
         "Sequoyah (Claremore) MaxPreps reports that 2026 player statistics have not been entered; no individual production is inferred.",
@@ -1215,6 +1215,24 @@
         ],
         "opponentStory": [
           {
+            "text": "RECENT OFFENSE · In the Oct. 30 loss to Rejoice Christian, public local reporting listed Bryson Nichols with 21 carries for 138 yards and a TD; Gunner Allison with 69 rushing yards, a rushing TD and 153 passing yards; and Mason Weeks with 6 catches for 76 yards plus 29 rushing yards. This is that game only.",
+            "url": "https://staging-aws.sports.yahoo.com/articles/football-3-things-watch-sequoyah-045900006.html",
+            "date": "Rejoice game Oct. 30, 2026 · checked Nov. 8",
+            "label": "Claremore Daily Progress"
+          },
+          {
+            "text": "EXPLOSIVE GAME · In the 50–0 win over Okmulgee, Gunner Allison went 12-for-15 for 254 yards and four TDs; Mason Weeks had 6 catches, 142 yards and three TDs; John Hull added 3 catches, 30 yards and a TD. Published game reporting, not season totals.",
+            "url": "https://sports.yahoo.com/articles/football-catoosa-sequoyah-secure-crucial-185300143.html",
+            "date": "Okmulgee game Oct. 23, 2026 · checked Nov. 8",
+            "label": "Claremore Daily Progress"
+          },
+          {
+            "text": "THROWING CEILING · Claremore Daily Progress reported Allison completed 15 of 27 for 294 yards, five TDs and no interceptions in the 45–42 game at Sperry. Use as a single-game reference, not a season average.",
+            "url": "https://staging-aws.sports.yahoo.com/articles/nothing-green-week-7-high-035900233.html",
+            "date": "Sperry game Oct. 9, 2026 · checked Nov. 8",
+            "label": "Claremore Daily Progress"
+          },
+          {
             "text": "EAGLES SNAPSHOT · Sequoyah (Claremore) is 4–6 overall and 4–3 in 2A-I District 4, and is listed with head coach Rob Gilbreath.",
             "url": "https://www.ossaarankings.com/Default.aspx?sc=274&sel=ssch&t=184191",
             "date": "Checked Nov. 8, 2026",
@@ -1234,6 +1252,18 @@
           }
         ],
         "keys": [
+          {
+            "text": "RECENT SCORING DISTRIBUTION · Against Okmulgee, the published recap credited rushing TDs to Nichols, Wyatt Mullins and Silas York in addition to Allison’s four passing TDs. It is a verified Oct. 23 game recap, not a depth chart.",
+            "url": "https://sports.yahoo.com/articles/football-catoosa-sequoyah-secure-crucial-185300143.html",
+            "date": "Okmulgee game Oct. 23, 2026 · checked Nov. 8",
+            "label": "Claremore Daily Progress"
+          },
+          {
+            "text": "DEFENSIVE CLIP · In the 42–41 Cleveland game, Touchdown Friday Night reported Wyatt Mullins recorded a sack and a fourth-down stop after Sequoyah had closed the score. One game sequence only; no season tackle/sack total is claimed.",
+            "url": "https://www.touchdownfridaynight.com/story/4854/cleveland-ekes-out-1-point-win-at-sequoyah",
+            "date": "Cleveland game Sept. 4, 2026 · checked Nov. 8",
+            "label": "Touchdown Friday Night"
+          },
           {
             "text": "STANDINGS CHECK · Lincoln finished 7–0 in 2A-I District 3 and 9–1 overall. Sequoyah (Claremore) finished 4–3 in 2A-I District 4 and 4–6 overall before this first-round matchup.",
             "url": "https://www.ossaarankings.com/Default.aspx?sc=274&sel=ssch&t=184191",
@@ -1282,6 +1312,12 @@
                 "url": "https://www.maxpreps.com/ok/claremore/sequoyah-eagles/football/roster/",
                 "date": "Checked Nov. 8, 2026",
                 "label": "MaxPreps roster"
+              },
+              {
+                "text": "GAME PRODUCTION · In the Oct. 23 Okmulgee win, Allison completed 12 of 15 for 254 yards and four TDs. Against Sperry, local reporting listed 294 passing yards, five TDs and no interceptions. These are separate game lines, not season totals.",
+                "url": "https://sports.yahoo.com/articles/football-catoosa-sequoyah-secure-crucial-185300143.html",
+                "date": "Games Oct. 9 and Oct. 23, 2026 · checked Nov. 8",
+                "label": "Claremore Daily Progress"
               }
             ]
           },
@@ -1292,6 +1328,12 @@
                 "text": "ROSTER · Senior WR/CB, 5-foot-9, 135 pounds on the published 2026 roster. Preseason local coverage identified him as a returning target, but no current player statistics are posted.",
                 "url": "https://sports.yahoo.com/articles/football-sequoyah-spreads-wings-experienced-034600311.html",
                 "date": "Article Aug. 27, 2026 · checked Nov. 8",
+                "label": "Claremore Daily Progress"
+              },
+              {
+                "text": "GAME PRODUCTION · Weeks had 6 receptions for 142 yards and three TDs against Okmulgee; he had 6 catches for 76 yards against Rejoice Christian. Separate game lines, not season totals.",
+                "url": "https://sports.yahoo.com/articles/football-catoosa-sequoyah-secure-crucial-185300143.html",
+                "date": "Games Oct. 23 and Oct. 30, 2026 · checked Nov. 8",
                 "label": "Claremore Daily Progress"
               }
             ]
@@ -1304,6 +1346,45 @@
                 "url": "https://www.maxpreps.com/ok/claremore/sequoyah-eagles/football/roster/",
                 "date": "Checked Nov. 8, 2026",
                 "label": "MaxPreps roster"
+              },
+              {
+                "text": "GAME PRODUCTION · Mullins scored a rushing TD against Okmulgee. Touchdown Friday Night also reported a sack and fourth-down stop against Cleveland. These are individual game references, not season totals.",
+                "url": "https://sports.yahoo.com/articles/football-catoosa-sequoyah-secure-crucial-185300143.html",
+                "date": "Games Sept. 4 and Oct. 23, 2026 · checked Nov. 8",
+                "label": "Claremore Daily Progress"
+              }
+            ]
+          },
+          {
+            "name": "Bryson Nichols",
+            "facts": [
+              {
+                "text": "GAME PRODUCTION · Nichols ran 21 times for 138 yards and a TD against Rejoice Christian. The preseason report described him as an important tailback in the revamped offense.",
+                "url": "https://staging-aws.sports.yahoo.com/articles/football-3-things-watch-sequoyah-045900006.html",
+                "date": "Rejoice game Oct. 30, 2026 · checked Nov. 8",
+                "label": "Claremore Daily Progress"
+              }
+            ]
+          },
+          {
+            "name": "John Hull",
+            "facts": [
+              {
+                "text": "GAME PRODUCTION · Hull caught 3 passes for 30 yards and a TD against Okmulgee. That is a single verified game line.",
+                "url": "https://sports.yahoo.com/articles/football-catoosa-sequoyah-secure-crucial-185300143.html",
+                "date": "Okmulgee game Oct. 23, 2026 · checked Nov. 8",
+                "label": "Claremore Daily Progress"
+              }
+            ]
+          },
+          {
+            "name": "Silas York",
+            "facts": [
+              {
+                "text": "GAME PRODUCTION · York was credited with a rushing TD in the Oct. 23 win over Okmulgee. This is a single-game reference.",
+                "url": "https://sports.yahoo.com/articles/football-catoosa-sequoyah-secure-crucial-185300143.html",
+                "date": "Okmulgee game Oct. 23, 2026 · checked Nov. 8",
+                "label": "Claremore Daily Progress"
               }
             ]
           }
