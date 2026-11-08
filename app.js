@@ -986,8 +986,11 @@
   }
 
   function applyPublicFootball(feed) {
-    var fb=state.sports.football;
-    var official=Object.assign({},feed.officialSchedule,{events:feed.officialSchedule.events.map(function(e){var game=fb.games.find(function(g){return scheduleMatch(g,e);}),source=feed.teams['Lincoln Christian'].schedule.events.find(function(p){return p.date===e.date&&(p.opponent===e.opponent||game&&p.opponent===game.opponent);});return Object.assign({},e,{district:!!(e.district||source&&source.district)});})});
+    var fb=state.sports.football,lincoln=feed.teams['Lincoln Christian'].schedule;
+    var events=feed.officialSchedule.events.map(function(e){var game=fb.games.find(function(g){return scheduleMatch(g,e);}),source=lincoln.events.find(function(p){return p.date===e.date&&(p.opponent===e.opponent||game&&p.opponent===game.opponent);});return Object.assign({},e,{district:!!(e.district||source&&source.district)});});
+    // Include verified playoff fixtures that appear in Lincoln’s public results feed before the school’s season page adds them.
+    lincoln.events.filter(function(p){return p.status==='scheduled'&&!events.some(function(e){return e.date===p.date&&e.opponent===p.opponent;});}).forEach(function(p){events.push({id:p.id,sourceId:'maxpreps-'+p.id,sport:'football',date:p.date,time:p.time,opponent:p.opponent,site:p.site,venue:p.site==='Home'?'Dennis Byrd Stadium/Willie George Field':'',district:!!p.district,result:'',kind:p.kind||'Game',status:'scheduled'});});
+    var official=Object.assign({},feed.officialSchedule,{events:events,checkedAt:feed.generatedAt||feed.officialSchedule.checkedAt});
     applySportSchedule('football',official);
     if(feed.officialRoster && feed.officialRoster.players && feed.officialRoster.players.length){
       research.officialRosterInfo=feed.officialRoster;
