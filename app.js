@@ -45,7 +45,7 @@
   });
 
   function blankNotes() {
-    return { opening: "", lincolnStory: "", opponentStory: "", film: "", keys: "", calls: "", liveLog: "", opponentUpdate: "", reference: "" };
+    return { opening: "", lincolnStory: "", opponentStory: "", film: "", keys: "", calls: "", liveLog: "", opponentUpdate: "", reference: "", color: "" };
   }
   function blankChecklist() {
     return { sources: false, roster: false, history: false, film: false, stats: false, opening: false };
@@ -136,7 +136,7 @@
   migrateResearch();
   hydrateBasketballData();
   var currentView = "home";
-  var deskSections = ['prep','rosters','opponent-schedule','stats','standings','live','history','sources','print'];
+  var deskSections = ['prep','color','rosters','opponent-schedule','stats','standings','live','history','sources','print'];
   var activeDeskSection = deskSections.includes(state.deskSection) ? state.deskSection : 'prep';
   var activeTab = ['season','opponent'].includes(state.statsTab) ? state.statsTab : 'season';
   // Football standings were deliberately kept as their own static snapshot; basketball gets a separate, sport-specific source/feed.
@@ -523,6 +523,8 @@
       field.value = game.notes[field.dataset.note] || "";
     });
     renderStats(game);
+    var colorStatus = document.getElementById('colorImportStatus');
+    if (colorStatus) colorStatus.textContent = game.notes.color ? 'Color content is saved with this '+sportLabels[state.activeSport].toLowerCase()+' matchup. Its email source will be shown here after the first Gmail import is configured.' : 'No color sheet has been imported for this '+sportLabels[state.activeSport].toLowerCase()+' matchup yet.';
     if (window.LincolnPrep) window.LincolnPrep.render(state.activeSport,game);
     renderDeskRoster();
   }
@@ -536,6 +538,8 @@
       '<div class="matchup-content"><div class="matchup-main"><div class="game-kicker"><span>' + html(sportLabels[state.activeSport]) + '</span></div><div class="versus"><h2>No verified games loaded</h2></div><div class="game-meta"><span>Open the official schedule, then add the first confirmed game.</span></div></div></div>';
     document.getElementById("opponentName").textContent = "Opponent";
     document.getElementById("opponentSnapshot").innerHTML = '<p class="source-note">No opponent selected.</p>';
+    var emptyColorStatus = document.getElementById('colorImportStatus');
+    if (emptyColorStatus) emptyColorStatus.textContent = 'Choose a scheduled game before importing a color sheet.';
     document.getElementById("gameSources").innerHTML = sourcesBySport[state.activeSport].map(function (s) { return sourceLink({name:s.label,note:'Sport research source — no game selected',url:s.url}); }).join('');
     document.querySelectorAll("[data-note]").forEach(function (field) { field.value = ""; field.disabled = true; });
     if (window.LincolnPrep) window.LincolnPrep.render(state.activeSport,null);
