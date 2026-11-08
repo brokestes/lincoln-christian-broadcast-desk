@@ -78,6 +78,7 @@
         <article class="matchup-hero" id="matchupHero"></article>
         <div class="desk-subnav" role="tablist" aria-label="Game desk sections">
           <button class="desk-tab active" id="desk-tab-prep" data-desk-tab="prep" role="tab" aria-selected="true" aria-controls="desk-panel-prep">Prep</button>
+          <button class="desk-tab" id="desk-tab-color" data-desk-tab="color" role="tab" aria-selected="false" aria-controls="desk-panel-color" tabindex="-1">Color</button>
           <button class="desk-tab" id="desk-tab-rosters" data-desk-tab="rosters" role="tab" aria-selected="false" aria-controls="desk-panel-rosters" tabindex="-1">Rosters</button>
           <button class="desk-tab" id="desk-tab-opponent-schedule" data-desk-tab="opponent-schedule" role="tab" aria-selected="false" aria-controls="desk-panel-opponent-schedule" tabindex="-1">Opponent schedule</button>
           <button class="desk-tab" id="desk-tab-stats" data-desk-tab="stats" role="tab" aria-selected="false" aria-controls="desk-panel-stats" tabindex="-1">Stats</button>
@@ -112,6 +113,19 @@
             </section>
           </aside>
         </div>
+        </section>
+
+        <section class="desk-section" id="desk-panel-color" data-desk-panel="color" role="tabpanel" aria-labelledby="desk-tab-color" hidden>
+          <section class="panel workbench">
+            <div class="panel-heading">
+              <span class="eyebrow">COLOR ANALYST SHEET</span><h2>Imported color</h2>
+              <p class="section-hint">A sender-filtered Word document will be matched to this sport and matchup. The original file stays out of the public desk; its transcribed content is kept here with the matching game.</p>
+            </div>
+            <div class="field-grid">
+              <div class="source-note field-wide" id="colorImportStatus">No color sheet has been imported for this game yet.</div>
+              <label class="field field-wide"><span>Color sheet content</span><textarea data-note="color" rows="18" placeholder="Imported color-sheet text will appear here after the matching email is processed. You can also paste notes manually."></textarea></label>
+            </div>
+          </section>
         </section>
 
         <section class="desk-section" id="desk-panel-rosters" data-desk-panel="rosters" role="tabpanel" aria-labelledby="desk-tab-rosters" hidden>
