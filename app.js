@@ -135,6 +135,7 @@
   var state = loadState();
   migrateResearch();
   hydrateBasketballData();
+  hydrateColorSheets();
   var currentView = "home";
   var deskSections = ['prep','color','rosters','opponent-schedule','stats','standings','live','history','sources','print'];
   var activeDeskSection = deskSections.includes(state.deskSection) ? state.deskSection : 'prep';
@@ -188,6 +189,30 @@
       data.roster = existing;
       data.basketballStats = feed;
       data.basketballCheck = { checkedAt: feed.checkedAt, source: feed.source, sourceName: feed.sourceName, games: feed.games };
+    });
+  }
+
+  function hydrateColorSheets() {
+    var feed = window.LincolnColorSheets;
+    if (!feed || !Array.isArray(feed.sheets)) return;
+    feed.sheets.forEach(function (sheet) {
+      var data = state.sports[sheet.sport];
+      if (!data || !sheet.content) return;
+      var game = data.games.find(function (g) {
+        return (sheet.gameId && g.id === sheet.gameId) ||
+          (sheet.date && g.date === sheet.date && String(g.opponent || '').toLowerCase() === String(sheet.opponent || '').toLowerCase());
+      });
+      if (!game) return;
+      var existingAt = game.colorImport && game.colorImport.importedAt;
+      if (!existingAt || String(sheet.importedAt || '') >= String(existingAt || '')) {
+        game.notes.color = sheet.content;
+        game.colorImport = {
+          importedAt: sheet.importedAt || '',
+          source: sheet.source || 'Color sheet email',
+          subject: sheet.subject || '',
+          documentName: sheet.documentName || ''
+        };
+      }
     });
   }
 
@@ -524,7 +549,12 @@
     });
     renderStats(game);
     var colorStatus = document.getElementById('colorImportStatus');
-    if (colorStatus) colorStatus.textContent = game.notes.color ? 'Color content is saved with this '+sportLabels[state.activeSport].toLowerCase()+' matchup. Its email source will be shown here after the first Gmail import is configured.' : 'No color sheet has been imported for this '+sportLabels[state.activeSport].toLowerCase()+' matchup yet.';
+    if (colorStatus) {
+      var importedColor = game.colorImport;
+      colorStatus.textContent = game.notes.color
+        ? 'Color sheet imported for this '+sportLabels[state.activeSport].toLowerCase()+' matchup' + (importedColor && importedColor.documentName ? ': '+importedColor.documentName : '.') + (importedColor && importedColor.importedAt ? ' Received '+importedColor.importedAt+'.' : '')
+        : 'No color sheet has been imported for this '+sportLabels[state.activeSport].toLowerCase()+' matchup yet.';
+    }
     if (window.LincolnPrep) window.LincolnPrep.render(state.activeSport,game);
     renderDeskRoster();
   }
