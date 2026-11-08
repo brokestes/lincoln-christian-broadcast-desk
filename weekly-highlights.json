@@ -1173,7 +1173,7 @@
       "sport": "football",
       "gameDate": "2026-11-13",
       "opponent": "Sequoyah",
-      "checkedAt": "2026-11-08T21:15:00.000Z",
+      "checkedAt": "2026-11-08T21:40:00.000Z",
       "status": "published-with-gaps",
       "gaps": [
         "Sequoyah (Claremore) MaxPreps reports that 2026 player statistics have not been entered; no individual production is inferred.",
@@ -1188,6 +1188,12 @@
       },
       "sections": {
         "lincolnStory": [
+          {
+            "text": "ROLAND STAT UPDATE · MaxPreps lists 145 passing yards and 413 rushing yards for Lincoln in the Nov. 6 win over Roland. Its current season tables were updated Nov. 7 and are displayed in the Lincoln Stats tab.",
+            "url": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/",
+            "date": "Roland game Nov. 6 · season stats checked Nov. 8, 2026",
+            "label": "MaxPreps"
+          },
           {
             "text": "PLAYOFF SET · Lincoln Christian enters the Class 2A-I first round at 9–1. The Bulldogs host Sequoyah (Claremore), not Tahlequah Sequoyah, Friday at 7 PM.",
             "url": "https://www.maxpreps.com/ok/football/game/lincoln-christian-tulsa-vs-sequoyah-claremore/11-13-2026/?c=b0a5e0df-2cb1-4f2f-8c8a-ee84e6ffc621",
@@ -1228,6 +1234,18 @@
           }
         ],
         "keys": [
+          {
+            "text": "STANDINGS CHECK · Lincoln finished 7–0 in 2A-I District 3 and 9–1 overall. Sequoyah (Claremore) finished 4–3 in 2A-I District 4 and 4–6 overall before this first-round matchup.",
+            "url": "https://www.ossaarankings.com/Default.aspx?sc=274&sel=ssch&t=184191",
+            "date": "Checked Nov. 8, 2026",
+            "label": "OSSAA Rankings"
+          },
+          {
+            "text": "LINCOLN SEASON LEADERS · Max Madrid has 971 rushing yards and 17 rushing TDs; Major Brooks has 1,774 passing yards and 24 passing TDs; Caleb Peterson has 737 receiving yards and 13 receiving TDs. These are posted season totals, not projections.",
+            "url": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/stats/",
+            "date": "Provider updated Nov. 7, 2026 · checked Nov. 8",
+            "label": "MaxPreps stats"
+          },
           {
             "text": "CLOSE-GAME PROFILE · Four Sequoyah regular-season games were decided by seven or fewer points: Cleveland 42–41, Sperry 45–42, Rejoice Christian 28–21 and Henryetta 37–34.",
             "url": "https://www.maxpreps.com/ok/claremore/sequoyah-eagles/football/schedule/",
