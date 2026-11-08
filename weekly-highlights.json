@@ -1168,6 +1168,141 @@
           }
         }
       ]
+    },
+    {
+      "sport": "football",
+      "gameDate": "2026-11-13",
+      "opponent": "Sequoyah",
+      "checkedAt": "2026-11-08T21:15:00.000Z",
+      "status": "published-with-gaps",
+      "gaps": [
+        "Sequoyah (Claremore) MaxPreps reports that 2026 player statistics have not been entered; no individual production is inferred.",
+        "Sequoyah’s public roster was last updated Aug. 5. Confirm active players, starters and jersey changes before air.",
+        "This public-source packet does not replace film review."
+      ],
+      "matchupNotice": {
+        "text": "FIRST ROUND · Lincoln Christian hosts Sequoyah (Claremore) Friday, Nov. 13 at 7:00 PM CT at Dennis Byrd Stadium / Willie George Field.",
+        "url": "https://www.maxpreps.com/ok/football/game/lincoln-christian-tulsa-vs-sequoyah-claremore/11-13-2026/?c=b0a5e0df-2cb1-4f2f-8c8a-ee84e6ffc621",
+        "date": "Playoff pairing checked Nov. 8, 2026",
+        "label": "MaxPreps matchup"
+      },
+      "sections": {
+        "lincolnStory": [
+          {
+            "text": "PLAYOFF SET · Lincoln Christian enters the Class 2A-I first round at 9–1. The Bulldogs host Sequoyah (Claremore), not Tahlequah Sequoyah, Friday at 7 PM.",
+            "url": "https://www.maxpreps.com/ok/football/game/lincoln-christian-tulsa-vs-sequoyah-claremore/11-13-2026/?c=b0a5e0df-2cb1-4f2f-8c8a-ee84e6ffc621",
+            "date": "Pairing checked Nov. 8, 2026",
+            "label": "MaxPreps matchup"
+          },
+          {
+            "text": "LAST WEEK · Lincoln completed the regular season with a 58–12 home win over Roland on Nov. 6.",
+            "url": "https://lcssports.com/sports/football/schedule/2026-27?grid=true",
+            "date": "Game Nov. 6, 2026 · checked Nov. 8",
+            "label": "Lincoln athletics"
+          },
+          {
+            "text": "RANKING CONTEXT · MaxPreps lists Lincoln Christian No. 1 in Oklahoma Class 2A-I entering the postseason.",
+            "url": "https://www.maxpreps.com/ok/football/26-27/league-rankings/2a-i-district-3/b76b48a2-4569-4036-ba76-7fdc06231910/",
+            "date": "Checked Nov. 8, 2026",
+            "label": "MaxPreps rankings"
+          }
+        ],
+        "opponentStory": [
+          {
+            "text": "EAGLES SNAPSHOT · Sequoyah (Claremore) is 4–6 overall and 4–3 in 2A-I District 4, and is listed with head coach Rob Gilbreath.",
+            "url": "https://www.ossaarankings.com/Default.aspx?sc=274&sel=ssch&t=184191",
+            "date": "Checked Nov. 8, 2026",
+            "label": "OSSAA Rankings"
+          },
+          {
+            "text": "LAST GAME · Sequoyah beat Henryetta 37–34 on Nov. 6 to close the regular season. The public result is confirmed by MaxPreps and Oklahoma Prep Football.",
+            "url": "https://www.maxpreps.com/ok/football/game/henryetta-vs-sequoyah-claremore/11-6-2026/?c=7591cb50-445c-465a-8650-12af3a49936d",
+            "date": "Game Nov. 6, 2026 · checked Nov. 8",
+            "label": "MaxPreps"
+          },
+          {
+            "text": "PRESEASON CONTEXT · Claremore Daily Progress reported Sequoyah entered 2026 with an experienced roster, transfers and an offensive change designed to get athletes into space. This is preseason context, not a current statistical claim.",
+            "url": "https://sports.yahoo.com/articles/football-sequoyah-spreads-wings-experienced-034600311.html",
+            "date": "Article Aug. 27, 2026 · checked Nov. 8",
+            "label": "Claremore Daily Progress"
+          }
+        ],
+        "keys": [
+          {
+            "text": "CLOSE-GAME PROFILE · Four Sequoyah regular-season games were decided by seven or fewer points: Cleveland 42–41, Sperry 45–42, Rejoice Christian 28–21 and Henryetta 37–34.",
+            "url": "https://www.maxpreps.com/ok/claremore/sequoyah-eagles/football/schedule/",
+            "date": "2026 schedule checked Nov. 8",
+            "label": "MaxPreps schedule"
+          },
+          {
+            "text": "OPPONENT STATS GAP · Sequoyah’s 2026 MaxPreps page says player stats have not been entered. The desk keeps opponent season-player stats unavailable instead of displaying zeroes or guesses.",
+            "url": "https://www.maxpreps.com/ok/claremore/sequoyah-eagles/football/stats/",
+            "date": "Checked Nov. 8, 2026",
+            "label": "MaxPreps stats"
+          },
+          {
+            "text": "ROSTER SPOTLIGHT · Gunner Allison is listed as a senior QB/OLB (5-foot-11, 190); Mason Weeks is a senior WR/CB (5-foot-9, 135); Wyatt Mullins is a senior MLB/RB (6-foot, 215). Listed positions and measurements are roster entries, not a depth chart.",
+            "url": "https://www.maxpreps.com/ok/claremore/sequoyah-eagles/football/roster/",
+            "date": "2026 roster checked Nov. 8",
+            "label": "MaxPreps roster"
+          },
+          {
+            "text": "AIR CHECK · The opponent is Sequoyah Eagles of Claremore. Lincoln’s Sept. 25 district opponent was the separate Sequoyah Indians program from Tahlequah.",
+            "url": "https://www.maxpreps.com/ok/football/game/lincoln-christian-tulsa-vs-sequoyah-claremore/11-13-2026/?c=b0a5e0df-2cb1-4f2f-8c8a-ee84e6ffc621",
+            "date": "Playoff matchup checked Nov. 8, 2026",
+            "label": "MaxPreps matchup"
+          }
+        ]
+      },
+      "rosterFacts": {
+        "Sequoyah": [
+          {
+            "name": "Gunner Allison",
+            "facts": [
+              {
+                "text": "ROSTER · Senior QB/OLB, 5-foot-11, 190 pounds on the published 2026 Sequoyah (Claremore) roster.",
+                "url": "https://www.maxpreps.com/ok/claremore/sequoyah-eagles/football/roster/",
+                "date": "Checked Nov. 8, 2026",
+                "label": "MaxPreps roster"
+              }
+            ]
+          },
+          {
+            "name": "Mason Weeks",
+            "facts": [
+              {
+                "text": "ROSTER · Senior WR/CB, 5-foot-9, 135 pounds on the published 2026 roster. Preseason local coverage identified him as a returning target, but no current player statistics are posted.",
+                "url": "https://sports.yahoo.com/articles/football-sequoyah-spreads-wings-experienced-034600311.html",
+                "date": "Article Aug. 27, 2026 · checked Nov. 8",
+                "label": "Claremore Daily Progress"
+              }
+            ]
+          },
+          {
+            "name": "Wyatt Mullins",
+            "facts": [
+              {
+                "text": "ROSTER · Senior MLB/RB, 6-foot, 215 pounds on the published 2026 Sequoyah (Claremore) roster.",
+                "url": "https://www.maxpreps.com/ok/claremore/sequoyah-eagles/football/roster/",
+                "date": "Checked Nov. 8, 2026",
+                "label": "MaxPreps roster"
+              }
+            ]
+          }
+        ]
+      },
+      "resultNotes": [
+        {
+          "date": "2026-11-06",
+          "opponent": "Roland",
+          "fact": {
+            "text": "FINAL · Lincoln Christian 58, Roland 12.",
+            "url": "https://lcssports.com/sports/football/schedule/2026-27?grid=true",
+            "date": "Game Nov. 6, 2026 · checked Nov. 8",
+            "label": "Lincoln athletics"
+          }
+        }
+      ]
     }
   ]
 }
