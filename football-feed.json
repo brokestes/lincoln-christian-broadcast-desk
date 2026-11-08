@@ -2,7 +2,7 @@
   "version": 1,
   "timeZone": "America/Chicago",
   "season": "2026-27",
-  "generatedAt": "2026-11-08T21:15:00.000Z",
+  "generatedAt": "2026-11-08T21:26:00.000Z",
   "target": {
     "date": "2026-11-13",
     "time": "19:00",
@@ -16,7 +16,7 @@
   "officialSchedule": {
     "source": "https://lcssports.com/sports/football/schedule",
     "season": "2026-27",
-    "checkedAt": "2026-11-08T18:52:20.698Z",
+    "checkedAt": "2026-11-08T21:26:00.000Z",
     "status": "ok",
     "events": [
       {
@@ -199,6 +199,20 @@
         "district": false,
         "result": "",
         "kind": "Game",
+        "status": "scheduled"
+      },
+      {
+        "id": "official-playoffs-b0a5e0df",
+        "sourceId": "playoffs-b0a5e0df",
+        "sport": "football",
+        "date": "2026-11-13",
+        "time": "19:00",
+        "opponent": "Sequoyah",
+        "site": "Home",
+        "venue": "Dennis Byrd Stadium/Willie George Field",
+        "district": false,
+        "result": "",
+        "kind": "OSSAA Playoffs · First Round",
         "status": "scheduled"
       }
     ]
