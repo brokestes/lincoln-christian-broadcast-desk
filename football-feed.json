@@ -2,8 +2,17 @@
   "version": 1,
   "timeZone": "America/Chicago",
   "season": "2026-27",
-  "generatedAt": "2026-11-08T18:52:38.311Z",
-  "target": null,
+  "generatedAt": "2026-11-08T21:15:00.000Z",
+  "target": {
+    "date": "2026-11-13",
+    "time": "19:00",
+    "opponent": "Sequoyah",
+    "mascot": "Eagles",
+    "site": "Home",
+    "venue": "Dennis Byrd Stadium/Willie George Field",
+    "kind": "OSSAA Playoffs · First Round",
+    "url": "https://www.maxpreps.com/ok/football/game/lincoln-christian-tulsa-vs-sequoyah-claremore/11-13-2026/?c=b0a5e0df-2cb1-4f2f-8c8a-ee84e6ffc621"
+  },
   "officialSchedule": {
     "source": "https://lcssports.com/sports/football/schedule",
     "season": "2026-27",
@@ -5820,7 +5829,7 @@
         "school": "Sequoyah",
         "season": "2026-27",
         "source": "https://www.maxpreps.com/ok/claremore/sequoyah-eagles/football/schedule/",
-        "checkedAt": "2026-11-08T18:52:38.311Z",
+        "checkedAt": "2026-11-08T21:15:00.000Z",
         "status": "ok",
         "events": [
           {
@@ -5976,9 +5985,9 @@
             "mascot": "Knights",
             "site": "Home",
             "district": true,
-            "result": "W 82-14",
-            "score": 82,
-            "opponentScore": 14,
+            "result": "W 37-34",
+            "score": 37,
+            "opponentScore": 34,
             "status": "completed",
             "url": "https://www.maxpreps.com/ok/football/game/henryetta-vs-sequoyah-claremore/11-6-2026/?c=7591cb50-445c-465a-8650-12af3a49936d",
             "kind": "Game"
@@ -6004,14 +6013,14 @@
         "districtRecord": "4-3",
         "districtPlace": "4th",
         "districtName": "2A-I District 4",
-        "pointsFor": 351,
-        "pointsAgainst": 293,
+        "pointsFor": 306,
+        "pointsAgainst": 313,
         "streak": "1W",
         "mascot": "Eagles"
       },
       "roster": {
         "source": "https://www.maxpreps.com/ok/claremore/sequoyah-eagles/football/roster/",
-        "checkedAt": "2026-11-08T18:52:38.311Z",
+        "checkedAt": "2026-11-08T21:15:00.000Z",
         "status": "ok",
         "players": [
           {
