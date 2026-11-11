@@ -996,7 +996,7 @@
     // Include verified playoff fixtures that appear in Lincoln’s public results feed before the school’s season page adds them.
     lincoln.events.filter(function(p){return p.status==='scheduled'&&!events.some(function(e){return e.date===p.date&&e.opponent===p.opponent;});}).forEach(function(p){events.push({id:p.id,sourceId:'maxpreps-'+p.id,sport:'football',date:p.date,time:p.time,opponent:p.opponent,site:p.site,venue:p.site==='Home'?'Dennis Byrd Stadium/Willie George Field':'',district:!!p.district,result:'',kind:p.kind||'Game',status:'scheduled'});});
     var official=Object.assign({},feed.officialSchedule,{events:events,checkedAt:feed.generatedAt||feed.officialSchedule.checkedAt});
-    applySportSchedule('football',official);
+    applySportSchedule('football',official,true);
     if(feed.officialRoster && feed.officialRoster.players && feed.officialRoster.players.length){
       research.officialRosterInfo=feed.officialRoster;
       var measurements=feed.teams['Lincoln Christian'].roster.players||[];
@@ -1023,11 +1023,13 @@
     var norm=function(s){var n=String(s||'').toLowerCase().replace(/[^a-z0-9]/g,'');return {sequoyah:'tahlequahsequoyah',sequoyahindians:'tahlequahsequoyahindians',sequoyahtahlequah:'tahlequahsequoyah'}[n]||n;};
     return event.sourceId&&game.scheduleSourceId===event.sourceId||game.id===event.id||game.date===event.date&&(norm(game.opponent)===norm(event.opponent)||game.mascot&&norm(game.opponent+' '+game.mascot)===norm(event.opponent));
   }
-  function applySportSchedule(sport,schedule){
+  function applySportSchedule(sport,schedule,allowOlderAdds){
     var data=state.sports[sport];if(!data||!schedule||!schedule.checkedAt)return;
-    if(data.scheduleCheck&&new Date(data.scheduleCheck.checkedAt)>new Date(schedule.checkedAt))return;
+    var older=!!(data.scheduleCheck&&new Date(data.scheduleCheck.checkedAt)>new Date(schedule.checkedAt));
+    if(older&&!allowOlderAdds)return;
     schedule.events.forEach(function(event){
       var game=data.games.find(function(g){return scheduleMatch(g,event);});
+      if(game&&older)return;
       if(!game){game=makeGame(event.id,event.date,event.opponent,'',event.site,event.venue,event.district,'');game.stats=sport==='football'?footballStats():basketballStats();game.sources=[{name:'Official Lincoln '+sportLabels[sport]+' schedule',url:schedule.source,note:'Public school schedule'}];data.games.push(game);}
       game.date=event.date;game.time=event.time||'';game.site=event.site;if(event.district)game.district=true;if(event.venue)game.venue=event.venue;
       game.scheduleSourceId=event.sourceId;game.scheduleKind=event.kind;game.status=event.status;game.confirmedUpdate=event.confirmedUpdate||null;game.publishedAward=event.publishedAward||null;
@@ -1035,7 +1037,7 @@
       game.publicSchedule={result:event.result||'',source:event.resultProvenance?.source||schedule.source,checkedAt:event.resultProvenance?.checkedAt||schedule.checkedAt,note:event.resultProvenance?.note||''};
     });
     data.games.sort(function(a,b){return (a.date+(a.time||'')).localeCompare(b.date+(b.time||''));});
-    data.scheduleCheck={checkedAt:schedule.checkedAt,status:schedule.status,source:schedule.source};
+    if(!older)data.scheduleCheck={checkedAt:schedule.checkedAt,status:schedule.status,source:schedule.source};
   }
   function applyPublicSchedules(feed){Object.keys(sportLabels).forEach(function(sport){applySportSchedule(sport,feed.sports[sport]);});saveState();}
   var initialHash = window.location ? window.location.hash : '';
