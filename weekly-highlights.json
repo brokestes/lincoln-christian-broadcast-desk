@@ -1,7 +1,7 @@
 {
   "version": 1,
   "timeZone": "America/Chicago",
-  "generatedAt": "2026-11-01T14:00:00.000Z",
+  "generatedAt": "2026-11-15T19:25:31.320Z",
   "entries": [
     {
       "sport": "football",
@@ -1402,6 +1402,151 @@
           }
         }
       ]
+    },
+    {
+      "sport": "football",
+      "gameDate": "2026-11-20",
+      "opponent": "Chisholm",
+      "checkedAt": "2026-11-15T19:25:31.320Z",
+      "status": "published-with-gaps",
+      "gaps": [
+        "Lincoln's full player stat tables could not be independently refreshed after the Sequoyah game; older dated tables remain until verified.",
+        "Chisholm leader page does not specify the games covered; verify before using averages or season totals on air.",
+        "Roster reflects posted list, not confirmed starters or game-day availability."
+      ],
+      "matchupNotice": {
+        "text": "QUARTERFINAL · Lincoln Christian hosts Chisholm Friday, November 20 at 7:00 PM CT.",
+        "url": "https://www.maxpreps.com/ok/football/game/chisholm-enid-vs-lincoln-christian-tulsa/11-20-2026/?c=e48f73bf-4675-46b7-8292-7ee140210e25",
+        "date": "Checked Nov. 15, 2026",
+        "label": "MaxPreps"
+      },
+      "sections": {
+        "lincolnStory": [
+          {
+            "text": "FIRST ROUND · Lincoln defeated Sequoyah (Claremore) 63–6 on November 13 and enters the quarterfinal at 10–1.",
+            "url": "https://www.maxpreps.com/ok/football/game/lincoln-christian-tulsa-vs-sequoyah-claremore/11-13-2026/?c=b0a5e0df-2cb1-4f2f-8c8a-ee84e6ffc621",
+            "date": "Checked Nov. 15, 2026",
+            "label": "MaxPreps"
+          },
+          {
+            "text": "TITLE DEFENSE · Lincoln is the three-time defending Class 3A champion, now in Class 2A-I.",
+            "url": "https://www.iwasatthegame.com/StateChampions.aspx?ad=23143&id=8705bd42-84e0-4b19-81bb-5fa0a184f94f",
+            "date": "Checked Nov. 15, 2026",
+            "label": "History archive"
+          }
+        ],
+        "opponentStory": [
+          {
+            "text": "LONGHORNS ADVANCE · Chisholm won 38–7 at Chandler and is 8–3 overall, 5–2 in District 1.",
+            "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/",
+            "date": "Checked Nov. 15, 2026",
+            "label": "MaxPreps"
+          },
+          {
+            "text": "SEASON PROFILE · MaxPreps lists 450 points scored, 152 allowed and a 6–0 away record; Chisholm finished third in its district.",
+            "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/schedule/",
+            "date": "Checked Nov. 15, 2026",
+            "label": "MaxPreps"
+          },
+          {
+            "text": "KEY TARGETS · MaxPreps lists Jase Hennigh at 75.0 receiving yards per game and Manu Smolinski at 69.5; reported stat coverage is not specified.",
+            "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/stats/",
+            "date": "Checked Nov. 15, 2026",
+            "label": "MaxPreps"
+          },
+          {
+            "text": "RUN GAME · Malachi Bennett is listed at 78.3 rushing yards per game and freshman quarterback Jonah Miller at 71.9; MaxPreps lists Miller with 20 passing touchdowns. Coverage is not specified.",
+            "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/stats/",
+            "date": "Checked Nov. 15, 2026",
+            "label": "MaxPreps"
+          }
+        ],
+        "keys": [
+          {
+            "text": "BRACKET · Winner advances to face the Cascia Hall–Checotah winner in the semifinals.",
+            "url": "https://oklahomaprepfootball.com/news/2026-oklahoma-high-school-football-playoff-brackets-matchups/",
+            "date": "Checked Nov. 15, 2026",
+            "label": "Oklahoma Prep Football"
+          },
+          {
+            "text": "MATCHUP · Lincoln enters 10–1; Chisholm is 8–3 after winning its first-round road game.",
+            "url": "https://www.maxpreps.com/ok/football/game/chisholm-enid-vs-lincoln-christian-tulsa/11-20-2026/?c=e48f73bf-4675-46b7-8292-7ee140210e25",
+            "date": "Checked Nov. 15, 2026",
+            "label": "MaxPreps"
+          },
+          {
+            "text": "DEFENSE · MaxPreps lists Wyatt Cordray at 7.9 tackles per game; coverage is not specified.",
+            "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/stats/",
+            "date": "Checked Nov. 15, 2026",
+            "label": "MaxPreps"
+          },
+          {
+            "text": "SCORING · Chisholm has 450 points over 11 posted results; Lincoln has 453 including the 15–0 forfeit award.",
+            "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/schedule/",
+            "date": "Checked Nov. 15, 2026",
+            "label": "MaxPreps"
+          }
+        ]
+      },
+      "rosterFacts": {
+        "Chisholm": [
+          {
+            "name": "Jonah Miller",
+            "facts": [
+              {
+                "text": "Freshman quarterback; MaxPreps lists 20 passing touchdowns and 71.9 rushing yards per game. The published stat coverage is not specified.",
+                "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/stats/",
+                "date": "Checked Nov. 15, 2026",
+                "label": "MaxPreps"
+              }
+            ]
+          },
+          {
+            "name": "Manu Smolinski",
+            "facts": [
+              {
+                "text": "Senior WR/FS, 6-foot-2 and 200 pounds; MaxPreps lists 12 receiving touchdowns. The published stat coverage is not specified.",
+                "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/stats/",
+                "date": "Checked Nov. 15, 2026",
+                "label": "MaxPreps"
+              }
+            ]
+          },
+          {
+            "name": "Jase Hennigh",
+            "facts": [
+              {
+                "text": "Senior, 6-foot-2 and 200 pounds; MaxPreps lists 75.0 receiving yards per game. The published stat coverage is not specified.",
+                "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/stats/",
+                "date": "Checked Nov. 15, 2026",
+                "label": "MaxPreps"
+              }
+            ]
+          },
+          {
+            "name": "Malachi Bennett",
+            "facts": [
+              {
+                "text": "Senior RB/OLB, 5-foot-8 and 174 pounds; MaxPreps lists 78.3 rushing yards per game. The published stat coverage is not specified.",
+                "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/stats/",
+                "date": "Checked Nov. 15, 2026",
+                "label": "MaxPreps"
+              }
+            ]
+          },
+          {
+            "name": "Wyatt Cordray",
+            "facts": [
+              {
+                "text": "Senior; MaxPreps lists 7.9 tackles per game. The published stat coverage is not specified.",
+                "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/stats/",
+                "date": "Checked Nov. 15, 2026",
+                "label": "MaxPreps"
+              }
+            ]
+          }
+        ]
+      }
     }
   ]
 }
