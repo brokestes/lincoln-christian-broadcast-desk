@@ -451,6 +451,7 @@
     if (!tab || !panel) return;
     if (state.activeSport === 'football') {
       tab.textContent = 'Standings';
+      tab.textContent = 'State bracket';
       if (panel.dataset.standingsSport !== 'football') panel.innerHTML = footballStandingsMarkup;
       panel.dataset.standingsSport = 'football';
       return;
