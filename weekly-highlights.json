@@ -1,7 +1,7 @@
 {
   "version": 1,
   "timeZone": "America/Chicago",
-  "generatedAt": "2026-11-15T19:25:31.320Z",
+  "generatedAt": "2026-11-15T19:47:09.703Z",
   "entries": [
     {
       "sport": "football",
@@ -1407,12 +1407,11 @@
       "sport": "football",
       "gameDate": "2026-11-20",
       "opponent": "Chisholm",
-      "checkedAt": "2026-11-15T19:25:31.320Z",
+      "checkedAt": "2026-11-15T19:47:09.703Z",
       "status": "published-with-gaps",
       "gaps": [
-        "Lincoln's full player stat tables could not be independently refreshed after the Sequoyah game; older dated tables remain until verified.",
-        "Chisholm leader page does not specify the games covered; verify before using averages or season totals on air.",
-        "Roster reflects posted list, not confirmed starters or game-day availability."
+        "Chisholm's full MaxPreps player tables were last updated Nov. 12, before the Nov. 13 Chandler playoff game; its stats do not yet reflect that game.",
+        "Roster reflects the posted list, not confirmed starters or game-day availability."
       ],
       "matchupNotice": {
         "text": "QUARTERFINAL · Lincoln Christian hosts Chisholm Friday, November 20 at 7:00 PM CT.",
@@ -1449,13 +1448,13 @@
             "label": "MaxPreps"
           },
           {
-            "text": "KEY TARGETS · MaxPreps lists Jase Hennigh at 75.0 receiving yards per game and Manu Smolinski at 69.5; reported stat coverage is not specified.",
+            "text": "KEY TARGETS · MaxPreps lists Jase Hennigh at 75.0 receiving yards per game and Manu Smolinski at 69.5; the posted player tables were updated Nov. 12, before the Chandler game.",
             "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/stats/",
             "date": "Checked Nov. 15, 2026",
             "label": "MaxPreps"
           },
           {
-            "text": "RUN GAME · Malachi Bennett is listed at 78.3 rushing yards per game and freshman quarterback Jonah Miller at 71.9; MaxPreps lists Miller with 20 passing touchdowns. Coverage is not specified.",
+            "text": "RUN GAME · Malachi Bennett is listed at 78.3 rushing yards per game and freshman quarterback Jonah Miller at 71.9; MaxPreps lists Miller with 20 passing touchdowns. The posted player tables were updated Nov. 12, before the Chandler game.",
             "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/stats/",
             "date": "Checked Nov. 15, 2026",
             "label": "MaxPreps"
@@ -1475,7 +1474,7 @@
             "label": "MaxPreps"
           },
           {
-            "text": "DEFENSE · MaxPreps lists Wyatt Cordray at 7.9 tackles per game; coverage is not specified.",
+            "text": "DEFENSE · MaxPreps lists Wyatt Cordray at 7.9 tackles per game; the posted player tables were updated Nov. 12, before the Chandler game.",
             "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/stats/",
             "date": "Checked Nov. 15, 2026",
             "label": "MaxPreps"
@@ -1494,7 +1493,7 @@
             "name": "Jonah Miller",
             "facts": [
               {
-                "text": "Freshman quarterback; MaxPreps lists 20 passing touchdowns and 71.9 rushing yards per game. The published stat coverage is not specified.",
+                "text": "Freshman quarterback; MaxPreps lists 20 passing touchdowns and 71.9 rushing yards per game. MaxPreps updated its tables Nov. 12, before the Chandler game.",
                 "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/stats/",
                 "date": "Checked Nov. 15, 2026",
                 "label": "MaxPreps"
@@ -1505,7 +1504,7 @@
             "name": "Manu Smolinski",
             "facts": [
               {
-                "text": "Senior WR/FS, 6-foot-2 and 200 pounds; MaxPreps lists 12 receiving touchdowns. The published stat coverage is not specified.",
+                "text": "Senior WR/FS, 6-foot-2 and 200 pounds; MaxPreps lists 12 receiving touchdowns. MaxPreps updated its tables Nov. 12, before the Chandler game.",
                 "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/stats/",
                 "date": "Checked Nov. 15, 2026",
                 "label": "MaxPreps"
@@ -1516,7 +1515,7 @@
             "name": "Jase Hennigh",
             "facts": [
               {
-                "text": "Senior, 6-foot-2 and 200 pounds; MaxPreps lists 75.0 receiving yards per game. The published stat coverage is not specified.",
+                "text": "Senior, 6-foot-2 and 200 pounds; MaxPreps lists 75.0 receiving yards per game. MaxPreps updated its tables Nov. 12, before the Chandler game.",
                 "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/stats/",
                 "date": "Checked Nov. 15, 2026",
                 "label": "MaxPreps"
@@ -1527,7 +1526,7 @@
             "name": "Malachi Bennett",
             "facts": [
               {
-                "text": "Senior RB/OLB, 5-foot-8 and 174 pounds; MaxPreps lists 78.3 rushing yards per game. The published stat coverage is not specified.",
+                "text": "Senior RB/OLB, 5-foot-8 and 174 pounds; MaxPreps lists 78.3 rushing yards per game. MaxPreps updated its tables Nov. 12, before the Chandler game.",
                 "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/stats/",
                 "date": "Checked Nov. 15, 2026",
                 "label": "MaxPreps"
@@ -1538,7 +1537,7 @@
             "name": "Wyatt Cordray",
             "facts": [
               {
-                "text": "Senior; MaxPreps lists 7.9 tackles per game. The published stat coverage is not specified.",
+                "text": "Senior; MaxPreps lists 7.9 tackles per game. MaxPreps updated its tables Nov. 12, before the Chandler game.",
                 "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/stats/",
                 "date": "Checked Nov. 15, 2026",
                 "label": "MaxPreps"
