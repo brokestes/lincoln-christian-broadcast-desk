@@ -55,6 +55,7 @@
     if(!s)return 'Player stats have not been checked for this matchup yet.';
     if(s.status==='not-published')return 'No player stat tables published on the checked MaxPreps page. Missing stats are not zeros.';
     if(!s.tables||!s.tables.length)return 'Stats could not be refreshed; availability is unverified.';
+    if(!Number.isFinite(s.games)||s.games<=0)return 'The number of games covered by these published leaders is unknown; verify before using per-game averages.';
     return (s.games<finals?'Player rows cover up to '+s.games+' games, but '+finals+' final scores are posted. Forfeits or missing submissions may explain the gap; verify coverage before using per-game averages.':'Published game coverage matches the number of posted finals; this does not guarantee every player/stat is recorded.')+(s.status==='error'?' Latest source check failed.':'');
   }
   function result(e){return e.publishedAward?e.publishedAward.result+' · forfeit; not played':e.status==='cancelled'?'Cancelled':e.status==='completed'&&e.score!=null&&e.opponentScore!=null?(e.result||'').slice(0,1)+' '+e.score+'–'+e.opponentScore:e.date<day()?'Final not posted':time(e.time);}
