@@ -2,16 +2,16 @@
   "version": 1,
   "timeZone": "America/Chicago",
   "season": "2026-27",
-  "generatedAt": "2026-11-08T21:26:00.000Z",
+  "generatedAt": "2026-11-15T19:24:44.110Z",
   "target": {
-    "date": "2026-11-13",
+    "date": "2026-11-20",
     "time": "19:00",
-    "opponent": "Sequoyah",
-    "mascot": "Eagles",
+    "opponent": "Chisholm",
+    "mascot": "Longhorns",
     "site": "Home",
     "venue": "Dennis Byrd Stadium/Willie George Field",
-    "kind": "OSSAA Playoffs · First Round",
-    "url": "https://www.maxpreps.com/ok/football/game/lincoln-christian-tulsa-vs-sequoyah-claremore/11-13-2026/?c=b0a5e0df-2cb1-4f2f-8c8a-ee84e6ffc621"
+    "kind": "OSSAA Playoffs · Quarterfinal",
+    "url": "https://www.maxpreps.com/ok/football/game/chisholm-enid-vs-lincoln-christian-tulsa/11-20-2026/?c=e48f73bf-4675-46b7-8292-7ee140210e25"
   },
   "officialSchedule": {
     "source": "https://lcssports.com/sports/football/schedule",
@@ -211,8 +211,27 @@
         "site": "Home",
         "venue": "Dennis Byrd Stadium/Willie George Field",
         "district": false,
-        "result": "",
+        "result": "W 63-6",
         "kind": "OSSAA Playoffs · First Round",
+        "status": "completed",
+        "resultProvenance": {
+          "source": "https://www.maxpreps.com/ok/football/game/lincoln-christian-tulsa-vs-sequoyah-claremore/11-13-2026/?c=b0a5e0df-2cb1-4f2f-8c8a-ee84e6ffc621",
+          "checkedAt": "2026-11-15T19:24:44.110Z",
+          "note": "MaxPreps playoff final; school schedule pending."
+        }
+      },
+      {
+        "id": "playoffs-e48f73bf",
+        "sourceId": "playoffs-e48f73bf",
+        "sport": "football",
+        "date": "2026-11-20",
+        "time": "19:00",
+        "opponent": "Chisholm",
+        "site": "Home",
+        "venue": "Dennis Byrd Stadium/Willie George Field",
+        "district": false,
+        "result": "",
+        "kind": "OSSAA Playoffs · Quarterfinal",
         "status": "scheduled"
       }
     ]
@@ -807,7 +826,7 @@
         "school": "Lincoln Christian",
         "season": "2026-27",
         "source": "https://www.maxpreps.com/ok/tulsa/lincoln-christian-bulldogs/football/schedule/",
-        "checkedAt": "2026-11-08T18:52:38.311Z",
+        "checkedAt": "2026-11-15T19:24:44.110Z",
         "status": "ok",
         "events": [
           {
@@ -1007,20 +1026,36 @@
             "mascot": "Eagles",
             "site": "Home",
             "district": false,
+            "result": "W 63-6",
+            "score": 63,
+            "opponentScore": 6,
+            "status": "completed",
+            "url": "https://www.maxpreps.com/ok/football/game/lincoln-christian-tulsa-vs-sequoyah-claremore/11-13-2026/?c=b0a5e0df-2cb1-4f2f-8c8a-ee84e6ffc621",
+            "kind": "Game"
+          },
+          {
+            "id": "e48f73bf-4675-46b7-8292-7ee140210e25",
+            "date": "2026-11-20",
+            "time": "19:00",
+            "opponent": "Chisholm",
+            "opponentBase": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/",
+            "mascot": "Longhorns",
+            "site": "Home",
+            "district": false,
             "result": "",
             "score": null,
             "opponentScore": null,
             "status": "scheduled",
-            "url": "https://www.maxpreps.com/ok/football/game/lincoln-christian-tulsa-vs-sequoyah-claremore/11-13-2026/?c=b0a5e0df-2cb1-4f2f-8c8a-ee84e6ffc621",
-            "kind": "Game"
+            "url": "https://www.maxpreps.com/ok/football/game/chisholm-enid-vs-lincoln-christian-tulsa/11-20-2026/?c=e48f73bf-4675-46b7-8292-7ee140210e25",
+            "kind": "OSSAA Playoffs · Quarterfinal"
           }
         ],
-        "record": "9-1",
+        "record": "10-1",
         "districtRecord": "7-0",
         "districtPlace": "1st",
         "districtName": "2A-I District 3",
-        "pointsFor": 390,
-        "pointsAgainst": 132,
+        "pointsFor": 453,
+        "pointsAgainst": 138,
         "streak": "7W",
         "mascot": "Bulldogs"
       },
@@ -15443,6 +15478,690 @@
         ],
         "games": 8,
         "updatedAt": "2026-10-24T16:58:24Z"
+      }
+    },
+    "Chisholm": {
+      "base": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/",
+      "schedule": {
+        "school": "Chisholm",
+        "season": "2026-27",
+        "source": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/schedule/",
+        "checkedAt": "2026-11-15T19:24:44.110Z",
+        "status": "ok",
+        "events": [
+          {
+            "id": "chisholm-2026-08-28",
+            "date": "2026-08-28",
+            "time": "19:00",
+            "opponent": "Hennessey",
+            "site": "Away",
+            "district": false,
+            "result": "W 35-6",
+            "score": 35,
+            "opponentScore": 6,
+            "status": "completed",
+            "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/schedule/",
+            "kind": "Game"
+          },
+          {
+            "id": "chisholm-2026-09-04",
+            "date": "2026-09-04",
+            "time": "19:00",
+            "opponent": "Fairview",
+            "site": "Home",
+            "district": false,
+            "result": "L 21-35",
+            "score": 21,
+            "opponentScore": 35,
+            "status": "completed",
+            "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/schedule/",
+            "kind": "Game"
+          },
+          {
+            "id": "chisholm-2026-09-11",
+            "date": "2026-09-11",
+            "time": "19:00",
+            "opponent": "Alva",
+            "site": "Away",
+            "district": false,
+            "result": "W 40-0",
+            "score": 40,
+            "opponentScore": 0,
+            "status": "completed",
+            "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/schedule/",
+            "kind": "Game"
+          },
+          {
+            "id": "chisholm-2026-09-25",
+            "date": "2026-09-25",
+            "time": "19:00",
+            "opponent": "Bethel",
+            "site": "Home",
+            "district": true,
+            "result": "W 70-12",
+            "score": 70,
+            "opponentScore": 12,
+            "status": "completed",
+            "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/schedule/",
+            "kind": "Game"
+          },
+          {
+            "id": "chisholm-2026-10-02",
+            "date": "2026-10-02",
+            "time": "19:00",
+            "opponent": "Perry",
+            "site": "Away",
+            "district": true,
+            "result": "W 42-6",
+            "score": 42,
+            "opponentScore": 6,
+            "status": "completed",
+            "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/schedule/",
+            "kind": "Game"
+          },
+          {
+            "id": "chisholm-2026-10-09",
+            "date": "2026-10-09",
+            "time": "19:00",
+            "opponent": "Cascia Hall",
+            "site": "Home",
+            "district": true,
+            "result": "L 21-44",
+            "score": 21,
+            "opponentScore": 44,
+            "status": "completed",
+            "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/schedule/",
+            "kind": "Game"
+          },
+          {
+            "id": "chisholm-2026-10-15",
+            "date": "2026-10-15",
+            "time": "19:00",
+            "opponent": "Dewey",
+            "site": "Away",
+            "district": true,
+            "result": "W 56-14",
+            "score": 56,
+            "opponentScore": 14,
+            "status": "completed",
+            "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/schedule/",
+            "kind": "Game"
+          },
+          {
+            "id": "chisholm-2026-10-23",
+            "date": "2026-10-23",
+            "time": "19:00",
+            "opponent": "Blackwell",
+            "site": "Home",
+            "district": true,
+            "result": "W 70-6",
+            "score": 70,
+            "opponentScore": 6,
+            "status": "completed",
+            "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/schedule/",
+            "kind": "Game"
+          },
+          {
+            "id": "chisholm-2026-10-30",
+            "date": "2026-10-30",
+            "time": "19:00",
+            "opponent": "Crooked Oak",
+            "site": "Away",
+            "district": true,
+            "result": "W 45-0",
+            "score": 45,
+            "opponentScore": 0,
+            "status": "completed",
+            "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/schedule/",
+            "kind": "Game"
+          },
+          {
+            "id": "chisholm-2026-11-06",
+            "date": "2026-11-06",
+            "time": "19:00",
+            "opponent": "Kiefer",
+            "site": "Home",
+            "district": true,
+            "result": "L 12-22",
+            "score": 12,
+            "opponentScore": 22,
+            "status": "completed",
+            "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/schedule/",
+            "kind": "Game"
+          },
+          {
+            "id": "chisholm-2026-11-13",
+            "date": "2026-11-13",
+            "time": "19:00",
+            "opponent": "Chandler",
+            "site": "Away",
+            "district": false,
+            "result": "W 38-7",
+            "score": 38,
+            "opponentScore": 7,
+            "status": "completed",
+            "url": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/schedule/",
+            "kind": "Playoff"
+          },
+          {
+            "id": "chisholm-quarterfinal",
+            "date": "2026-11-20",
+            "time": "19:00",
+            "opponent": "Lincoln Christian",
+            "site": "Away",
+            "district": false,
+            "result": "",
+            "score": null,
+            "opponentScore": null,
+            "status": "scheduled",
+            "url": "https://www.maxpreps.com/ok/football/game/chisholm-enid-vs-lincoln-christian-tulsa/11-20-2026/?c=e48f73bf-4675-46b7-8292-7ee140210e25",
+            "kind": "Playoff"
+          }
+        ],
+        "record": "8-3",
+        "districtRecord": "5-2",
+        "districtPlace": "3rd",
+        "districtName": "2A-I District 1",
+        "pointsFor": 450,
+        "pointsAgainst": 152,
+        "streak": "1W",
+        "mascot": "Longhorns"
+      },
+      "roster": {
+        "source": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/",
+        "checkedAt": "2026-11-15T19:24:44.110Z",
+        "status": "ok",
+        "players": [
+          {
+            "number": "2",
+            "name": "Xander Meyer",
+            "grade": "Fr.",
+            "position": "WR, CB",
+            "height": "5'8\"",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "3",
+            "name": "Keith Morris Iii",
+            "grade": "So.",
+            "position": "CB, WR",
+            "height": "6'1\"",
+            "weight": "176 lbs",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "4",
+            "name": "MJ Cordray",
+            "grade": "Fr.",
+            "position": "WR, S",
+            "height": "5'4\"",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "5",
+            "name": "Jonah Miller",
+            "grade": "Fr.",
+            "position": "QB",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "6",
+            "name": "Cooper Crosswhite",
+            "grade": "Jr.",
+            "position": "DB, RB",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "7",
+            "name": "Colt Espinoza",
+            "grade": "So.",
+            "position": "DE, TE",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "8",
+            "name": "Blake Van Meter",
+            "grade": "Jr.",
+            "position": "C, WR",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "9",
+            "name": "Manu Smolinski",
+            "grade": "Sr.",
+            "position": "WR, FS",
+            "height": "6'2\"",
+            "weight": "200 lbs",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "10",
+            "name": "Jagger Lohmann",
+            "grade": "Sr.",
+            "position": "",
+            "height": "5'8\"",
+            "weight": "155 lbs",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "11",
+            "name": "Gabe Sebranek",
+            "grade": "Sr.",
+            "position": "WR, CB",
+            "height": "5'10\"",
+            "weight": "160 lbs",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "12",
+            "name": "Slade Smith",
+            "grade": "Sr.",
+            "position": "OLB, RB",
+            "height": "5'9\"",
+            "weight": "160 lbs",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "13",
+            "name": "Brayson Barnes",
+            "grade": "Jr.",
+            "position": "QB, OLB",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "14",
+            "name": "Gavin Smith",
+            "grade": "Jr.",
+            "position": "MLB, RB",
+            "height": "5'8\"",
+            "weight": "183 lbs",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "15",
+            "name": "Kaleb King",
+            "grade": "Fr.",
+            "position": "S, WR",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "16",
+            "name": "Wyatt Cordray",
+            "grade": "Sr.",
+            "position": "",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "17",
+            "name": "Hank Cecil",
+            "grade": "Jr.",
+            "position": "WR, DB",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "18",
+            "name": "Haden Reinart",
+            "grade": "Fr.",
+            "position": "QB",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "19",
+            "name": "Jaxon Spencer",
+            "grade": "So.",
+            "position": "WR, DB",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "20",
+            "name": "Anthony Franco",
+            "grade": "Fr.",
+            "position": "DB, RB",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "21",
+            "name": "Dayton Rolens",
+            "grade": "Fr.",
+            "position": "OLB, RB",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "22",
+            "name": "Malachi Bennett",
+            "grade": "Sr.",
+            "position": "RB, OLB",
+            "height": "5'8\"",
+            "weight": "174 lbs",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "23",
+            "name": "Hedwin Lopez",
+            "grade": "So.",
+            "position": "K",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "24",
+            "name": "Bronc Snider",
+            "grade": "Fr.",
+            "position": "TE, ILB",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "25",
+            "name": "Mason Weatherford",
+            "grade": "Fr.",
+            "position": "RB, CB",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "27",
+            "name": "James Mabie",
+            "grade": "Jr.",
+            "position": "DB, RB",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "28",
+            "name": "Pelayo Blanco",
+            "grade": "So.",
+            "position": "K",
+            "height": "5'8\"",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "40",
+            "name": "Teag Weaver",
+            "grade": "Jr.",
+            "position": "TE, MLB",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "43",
+            "name": "Jase Hennigh",
+            "grade": "Sr.",
+            "position": "",
+            "height": "6'2\"",
+            "weight": "200 lbs",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "50",
+            "name": "Colin McVay",
+            "grade": "Sr.",
+            "position": "MLB, TE",
+            "height": "5'11\"",
+            "weight": "195 lbs",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "51",
+            "name": "Ashton Whisenhunt",
+            "grade": "Sr.",
+            "position": "DL, OL",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "52",
+            "name": "Trevin Reneau",
+            "grade": "Sr.",
+            "position": "NG, C",
+            "height": "6'0\"",
+            "weight": "215 lbs",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "53",
+            "name": "Peyton Flanagan",
+            "grade": "Jr.",
+            "position": "DE",
+            "height": "5'9\"",
+            "weight": "185 lbs",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "54",
+            "name": "Teagan Weaver",
+            "grade": "Sr.",
+            "position": "OL, DL",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "55",
+            "name": "Derek Boese",
+            "grade": "Sr.",
+            "position": "",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "57",
+            "name": "Denham Romero",
+            "grade": "So.",
+            "position": "DE, T",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "58",
+            "name": "Kaden Figurelli",
+            "grade": "Jr.",
+            "position": "DE, G",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "62",
+            "name": "Briley Lyda",
+            "grade": "Fr.",
+            "position": "OL, DL",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "63",
+            "name": "Dan Mabie",
+            "grade": "Jr.",
+            "position": "OL, DL",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "65",
+            "name": "Paxton Snow",
+            "grade": "Fr.",
+            "position": "OL, DL",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "74",
+            "name": "Kole Smith",
+            "grade": "So.",
+            "position": "T",
+            "height": "6'2\"",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "75",
+            "name": "Alex Barker",
+            "grade": "Fr.",
+            "position": "OL, DL",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "77",
+            "name": "Braeyden Hunt",
+            "grade": "Jr.",
+            "position": "OL, DL",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "78",
+            "name": "Braxton Buffalo",
+            "grade": "Fr.",
+            "position": "OL, DL",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "80",
+            "name": "Cooper Schlegel",
+            "grade": "Fr.",
+            "position": "WR, DB",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "81",
+            "name": "Miles Woolverton",
+            "grade": "Jr.",
+            "position": "OLB, TE",
+            "height": "5'10\"",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          },
+          {
+            "number": "85",
+            "name": "Wyatt Sutton",
+            "grade": "Fr.",
+            "position": "WR, DB",
+            "height": "",
+            "weight": "",
+            "profile": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/roster/"
+          }
+        ]
+      },
+      "stats": {
+        "source": "https://www.maxpreps.com/ok/enid/chisholm-longhorns/football/stats/",
+        "checkedAt": "2026-11-15T19:24:44.110Z",
+        "updatedAt": null,
+        "status": "ok",
+        "games": null,
+        "tables": [
+          {
+            "title": "Published season leaders · coverage not specified",
+            "headers": [
+              "#",
+              "Athlete Name",
+              "Published category",
+              "Value"
+            ],
+            "titles": [
+              "#",
+              "Athlete Name",
+              "Published category",
+              "Value"
+            ],
+            "rows": [
+              [
+                "43",
+                "Jase Hennigh",
+                "Receiving yards/game",
+                "75.0"
+              ],
+              [
+                "9",
+                "Manu Smolinski",
+                "Receiving yards/game",
+                "69.5"
+              ],
+              [
+                "3",
+                "Keith Morris Iii",
+                "Receiving yards/game",
+                "61.9"
+              ],
+              [
+                "22",
+                "Malachi Bennett",
+                "Rushing yards/game",
+                "78.3"
+              ],
+              [
+                "5",
+                "Jonah Miller",
+                "Rushing yards/game",
+                "71.9"
+              ],
+              [
+                "5",
+                "Jonah Miller",
+                "Passing TD",
+                "20"
+              ],
+              [
+                "9",
+                "Manu Smolinski",
+                "Receiving TD",
+                "12"
+              ],
+              [
+                "16",
+                "Wyatt Cordray",
+                "Tackles/game",
+                "7.9"
+              ]
+            ],
+            "total": []
+          }
+        ]
       }
     }
   },
