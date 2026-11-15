@@ -1,7 +1,7 @@
 {
   "version": 1,
   "timeZone": "America/Chicago",
-  "generatedAt": "2026-11-15T16:25:17.690Z",
+  "generatedAt": "2026-11-15T19:26:57.871Z",
   "sports": {
     "boys-basketball": {
       "source": "https://lcssports.com/sports/boys-basketball/schedule",
@@ -722,7 +722,7 @@
     "football": {
       "source": "https://lcssports.com/sports/football/schedule",
       "season": "2026-27",
-      "checkedAt": "2026-11-15T16:25:17.690Z",
+      "checkedAt": "2026-11-15T19:26:57.871Z",
       "status": "ok",
       "events": [
         {
@@ -889,9 +889,14 @@
           "site": "Away",
           "venue": "",
           "district": false,
-          "result": "",
+          "result": "W 58-0",
           "kind": "Game",
-          "status": "scheduled"
+          "status": "completed",
+          "resultProvenance": {
+            "source": "https://lcssports.com/news/2026/11/2/football-bulldogs-roll-in-58-0-shutout-at-hugo-clinch-9th-straight-district-title.aspx",
+            "checkedAt": "2026-11-15T19:26:57.871Z",
+            "note": "Verified public final; school calendar pending."
+          }
         },
         {
           "id": "official-football-5452",
@@ -903,8 +908,46 @@
           "site": "Home",
           "venue": "Dennis Byrd Stadium/Willie George Field",
           "district": false,
-          "result": "",
+          "result": "W 58-12",
           "kind": "Game",
+          "status": "completed",
+          "resultProvenance": {
+            "source": "https://www.maxpreps.com/ok/football/game/lincoln-christian-tulsa-vs-roland/11-6-2026/?c=7da18e17-4b8b-4e4f-ab50-afc219e1f90c",
+            "checkedAt": "2026-11-15T19:26:57.871Z",
+            "note": "Verified public final; school calendar pending."
+          }
+        },
+        {
+          "id": "official-playoffs-b0a5e0df",
+          "sourceId": "playoffs-b0a5e0df",
+          "sport": "football",
+          "date": "2026-11-13",
+          "time": "19:00",
+          "opponent": "Sequoyah",
+          "site": "Home",
+          "venue": "Dennis Byrd Stadium/Willie George Field",
+          "district": false,
+          "result": "W 63-6",
+          "kind": "OSSAA Playoffs · First Round",
+          "status": "completed",
+          "resultProvenance": {
+            "source": "https://www.maxpreps.com/ok/football/game/lincoln-christian-tulsa-vs-sequoyah-claremore/11-13-2026/?c=b0a5e0df-2cb1-4f2f-8c8a-ee84e6ffc621",
+            "checkedAt": "2026-11-15T19:24:44.110Z",
+            "note": "MaxPreps playoff final; school schedule pending."
+          }
+        },
+        {
+          "id": "playoffs-e48f73bf",
+          "sourceId": "playoffs-e48f73bf",
+          "sport": "football",
+          "date": "2026-11-20",
+          "time": "19:00",
+          "opponent": "Chisholm",
+          "site": "Home",
+          "venue": "Dennis Byrd Stadium/Willie George Field",
+          "district": false,
+          "result": "",
+          "kind": "OSSAA Playoffs · Quarterfinal",
           "status": "scheduled"
         }
       ]
